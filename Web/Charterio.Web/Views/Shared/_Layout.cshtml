@@ -1,58 +1,226 @@
 ﻿@using Charterio.Common
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+   
+    <!-- Plugins css Style -->
+    <link href='~/assets/plugins/fontawesome-5.15.2/css/all.min.css' rel='stylesheet' asp-append-version="true">
+    <link href='~/assets/plugins/fontawesome-5.15.2/css/fontawesome.min.css' rel='stylesheet' asp-append-version="true">
+    <link href="~/assets/plugins/animate/animate.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/plugins/menuzord/css/menuzord.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/assets/plugins/menuzord/css/menuzord-animations.css" rel="stylesheet" asp-append-version="true">
+
+    <link href='~/assets/plugins/isotope/isotope.min.css' rel='stylesheet' asp-append-version="true">
+    <link href='~/assets/plugins/fancybox/jquery.fancybox.min.css' rel='stylesheet' asp-append-version="true">
     
-    <div class="container">
+    <link href='~/assets/plugins/selectric/selectric.css' rel='stylesheet' asp-append-version="true">
+    <link href='~/assets/plugins/daterangepicker/css/daterangepicker.css' rel='stylesheet' asp-append-version="true">
+    
+    <link href='~/assets/plugins/dzsparallaxer/dzsparallaxer.css' rel='stylesheet' asp-append-version="true">                 
+    <link href='~/assets/plugins/revolution/css/settings.css' rel='stylesheet' asp-append-version="true">
+
+    <!-- GOOGLE FONT -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700' rel='stylesheet' asp-append-version="true">
+
+    <!-- CUSTOM CSS -->
+    <link href="~/assets/css/main.css" id="option_style" rel="stylesheet" asp-append-version="true">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="body" class="up-scroll">
+
+    <!-- Preloader -->
+  <div id="preloader" class="smooth-loader-wrapper">
+    <div class="smooth-loader">
+      <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+      </div>
+    </div>
+  </div>
+
+<!-- Header begin -->
+  @if (IsSectionDefined("HomeMenuWithSlider"))
+    {
+        @RenderSection("HomeMenuWithSlider");        
+    }
+    else
+    {
+  <header class="header" id="pageTop">
+    <!-- Menu Zord -->
+    <nav class="nav-menuzord navbar-sticky">
+      <div class="container clearfix">
+        <div id="menuzord" class="menuzord">
+          <a asp-controller="Home" asp-action="Index" class="menuzord-brand">
+            <img class="lazyestload" data-src="/assets/img/logo-color-big.png" src="/assets/img/logo-color-big.png" alt="Charterio">
+          </a>
+          
+          <ul class="menuzord-menu menuzord-right">            
+            <li class=""><a class="" asp-controller="Home" asp-action="Index">Search Flights</a></li>
+            <li class=""><a class="" href="">Schedule</a></li>
+            <li class=""><a class="" href="">FAQ</a></li>
+            <li class=""><a class="" href="">Contacts</a></li>
+            <li class=""><a class="" href="">Login / Register</a></li>      
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+    }
+<!--Header end-->
+
+
+    
+    <div class="main-wrapper">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @this.RenderBody()
         </main>
     </div>
-    
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
-    <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <footer class="footer">
+      <div class="footer-bg-color py-9">
+        <div class="container">
+          <div class="row">
+            
+            <div class="col-md-12 col-lg-6 mt-md-4 mb-7 mb-lg-0">
+              <div class="title-tag">
+                <h6>Contact us</h6>
+              </div>
+
+              <p>Our contact details</p>
+              <ul class="list-unstyled mb-0">
+                <li class="media mb-2">
+                  <div class="me-3">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body">
+                     <a href="contact.html">World Wide Web, charterio.com</a>
+                  </div>
+                </li>
+
+                <li class="media mb-2">
+                  <div class="me-3">
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body">
+                    <a href="">[555] 123 456</a>
+                  </div>
+                </li>
+                
+                <li class="media">
+                  <div class="me-3">
+                    <i class="far fa-envelope" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body">
+                    <a href="">info@Charterio.com</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+    
+            
+    
+            <div class="col-md-12 col-lg-6 mt-lg-4">
+              <div class="title-tag">
+                <h6>Newsletter</h6>
+              </div>
+
+              <p>Subscribe and get infomation about the Charterio new releases.</p>
+
+              <form class="mb-6" action="index.html" method="post">
+                <div class="input-group input-group-sm">
+                  <input type="email" class="form-control form-control-sm form-transparent" required="" placeholder="Enter your email" aria-label="Enter your email">
+                  <button class="btn border-0 btn btn-append hover-bg-primary" type="submit">
+                    <i class="fas fa-long-arrow-alt-right text-white ltr" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </form>
+
+              <ul class="list-inline d-flex mb-0">
+                <li class="me-3 me-lg-2 me-xl-3">
+                  <a class="icon-default icon-border rounded-circle hover-bg-primary" href="javascript:void(0)">
+                    <i class="fab fa-facebook-f text-white" aria-hidden="true"></i>
+                  </a>
+                </li>
+
+                <li class="me-3 me-lg-2 me-xl-3">
+                  <a class="icon-default icon-border rounded-circle hover-bg-primary" href="javascript:void(0)">
+                    <i class="fab fa-twitter text-white" aria-hidden="true"></i>
+                  </a>
+                </li>                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="copyright py-6">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 order-1 order-md-0">
+              <p class="mb-0 mb-md-0 text-md-start">&copy; @DateTime.Now.Year - @GlobalConstants.SystemName</p>
+            </div>
+            
+            <div class="col-md-6">
+              <ul class="list-inline text-capitalize d-flex align-items-center justify-content-md-end justify-content-center mb-md-0">
+                <li class="me-3">
+                  <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>                  
+                </li>        
+                <li class="">
+                  <a asp-area="" asp-controller="Home" asp-action="Privacy">Terms and Conditions</a>                   
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </footer>    
+
+    <script src="~/assets/plugins/jquery/jquery-3.4.1.min.js" asp-append-version="true"></script>
+    <script src="~/assets/plugins/bootstrap/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/assets/plugins/menuzord/js/menuzord.js" asp-append-version="true"></script>
+    
+    <script src='~/assets/plugins/isotope/isotope.min.js' asp-append-version="true"></script>
+    <script src='~/assets/plugins/images-loaded/js/imagesloaded.pkgd.min.js' asp-append-version="true"></script>
+    <script src='~/assets/plugins/fancybox/jquery.fancybox.min.js' asp-append-version="true"></script>
+    
+    <script src='~/assets/plugins/selectric/jquery.selectric.min.js' asp-append-version="true"></script>
+    <script src='~/assets/plugins/daterangepicker/js/moment.min.js' asp-append-version="true"></script>
+    <script src='~/assets/plugins/daterangepicker/js/daterangepicker.min.js' asp-append-version="true"></script>
+    
+    <script src="~/assets/plugins/lazyestload/lazyestload.js" asp-append-version="true"></script>
+    <script src='~/assets/plugins/dzsparallaxer/dzsparallaxer.js' asp-append-version="true"></script>               
+    
+    <script src='~/assets/plugins/revolution/js/jquery.themepunch.tools.min.js' asp-append-version="true"></script>
+    <script src='~/assets/plugins/revolution/js/jquery.themepunch.revolution.min.js' asp-append-version="true"></script>
+    <script src="~/assets/plugins/smoothscroll/SmoothScroll.js" asp-append-version="true"></script>
+    
+    <script src="~/assets/js/charterio.js" asp-append-version="true"></script>
+
     @await this.RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
