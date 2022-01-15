@@ -1,4 +1,6 @@
 ﻿@using Charterio.Common
+@using Charterio.Web.ViewModels.Search
+@model SearchFlightInputModel
 @{
     this.ViewData["Title"] = "Charterio - Ticket Management System For Charter Flights";
 }
@@ -175,7 +177,7 @@
                   <div class="select-dropdown">
                     <div class="mb-3 mb-lg-0">
                       <div class="select-default select-search-box">
-                        <select class="select-option" name="StartApt">
+                        <select class="select-option" asp-for="StartApt">
                           <option>Leaving from</option>
                           <option value="SOF">SOF - Sofia</option>
                           <option value="BLL">BLL - Billund</option>

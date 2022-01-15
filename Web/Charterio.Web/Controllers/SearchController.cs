@@ -13,6 +13,11 @@
 
         public IActionResult SearchFlight(SearchFlightInputModel input)
         {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(input);
+            }
+
             return this.View(input);
         }
     }
