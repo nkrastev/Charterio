@@ -1,5 +1,6 @@
 ﻿namespace Charterio.Web
 {
+    using System.IO;
     using System.Reflection;
 
     using Charterio.Data;
@@ -104,6 +105,7 @@
                 endpoints =>
                     {
                         endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                        endpoints.MapControllerRoute("searchForFlight", "Search/{startApt}/{endApt}/{startFlightDate}/{endFlightDate}/{paxCount}", new { controller = "Search", action = "SearchFlight" });
                         endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapRazorPages();
                     });
