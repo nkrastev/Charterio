@@ -155,6 +155,104 @@
 }
 
 <!-- TODO View components for separate sections -->
+<section class="bg-dark-light py-7">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-xl-2">
+        <div class="section-title-bg mb-1 mb-lg-3 mb-xl-0">
+          <h1 class="text-white text-uppercase mb-0">Search</h1>
+          <h2 class="text-white text-uppercase font-weight-bold mb-0">your <span class="text-primary">flight</span></h2>
+        </div>
+      </div>
+    
+      <div class="col-xl-10">
+        <form method="get" asp-controller="Search" asp-action="RedirectRequest">
+          <div class="row">
+            <div class="col-lg-12">
+              
+              <div class="row">                
+                <div class="col-md-12 col-lg-6">
+                  <div class="select-dropdown">
+                    <div class="mb-3 mb-lg-0">
+                      <div class="select-default select-search-box">
+                        <select class="select-option" name="StartApt">
+                          <option>Leaving from</option>
+                          <option value="SOF">SOF - Sofia</option>
+                          <option value="BLL">BLL - Billund</option>
+                          <option value="FRA">FRA - Frankfurt</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                  <div class="select-dropdown">
+                    <div class="mb-3 mb-lg-0">
+                      <div class="select-default select-search-box">
+                        <select class="select-option" name="EndApt">
+                          <option>Destination</option>
+                          <option value="SOF">SOF - Sofia</option>
+                          <option value="BLL">BLL - Billund</option>
+                          <option value="FRA">FRA - Frankfurt</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>                                                        
+              </div>
+
+              <div class="row">                                
+                <div class="col-md-4 col-lg-4">
+                  <div class="select-dropdown">
+                    <div class="mb-3 mb-lg-0">
+                      <div class="select-default select-search-box">
+                        <select class="select-option form-control" name="PaxCount" placeholder>
+                          <option value="" >Number of passangers</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-4">
+                  <div class="mb-3 form-group-icon mb-lg-0">
+                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                    <input type="text" class="form-control daterange-picker" autocomplete="off" name="StartFlightDate" value=""
+                      placeholder="DD/MM/YYYY" />
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-lg-4">
+                  <div class="mb-3 form-group-icon mb-lg-0">
+                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                    <input type="text" class="form-control daterange-picker" autocomplete="off" name="EndFlightDate" value=""
+                      placeholder="DD/MM/YYYY" />
+                  </div>
+                </div>
+
+              </div>
+
+
+              
+
+              <div class="row pt-5">
+                <div class="col-md-12 col-lg-12 d-grid gap-2">
+                  <button class="btn btn-primary text-uppercase" type="submit">Search</button>
+                </div>
+              </div>
+
+            </div>    
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <div class="text-center">
     <h1 class="display-4">Welcome to @GlobalConstants.SystemName!</h1>
