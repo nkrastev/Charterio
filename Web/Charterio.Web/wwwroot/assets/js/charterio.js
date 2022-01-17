@@ -550,25 +550,44 @@
   }
   
   //============================== daterangepicker =========================
-  var daterangepicker = $('input[name="dateRange"]');
+  var daterangepicker = $('input[name="StartFlightDate"]');
 
   if (daterangepicker.length !== 0) {
     daterangepicker.daterangepicker({
       autoUpdateInput: false,
-      singleDatePicker: true,
-      locale: {
-        cancelLabel: 'Clear'
-      }
+      singleDatePicker: true,      
+      
     });
   }
 
-  $('input[name="dateRange"]').on('apply.daterangepicker', function (ev, picker) {
-    $(this).val(picker.startDate.format('MM/DD/YYYY'));
-  });
+    $('input[name="StartFlightDate"]').on('apply.daterangepicker', function (ev, picker)
+    {
+        $(this).val(picker.startDate.format('MM/DD/YYYY'));
+    });
 
-  $('input[name="dateRange"]').on('cancel.daterangepicker', function (ev, picker) {
-    $(this).val('');
-  });
+    $('input[name="StartFlightDate"]').on('cancel.daterangepicker', function (ev, picker) {$(this).val('');});
+
+
+
+    var daterangepicker = $('input[name="EndFlightDate"]');
+
+    if (daterangepicker.length !== 0) {
+        daterangepicker.daterangepicker({
+            autoUpdateInput: false,
+            singleDatePicker: true,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+    }
+
+    $('input[name="EndFlightDate"]').on('apply.daterangepicker', function (ev, picker) { $(this).val(picker.endDate.format('MM/DD/YYYY'));});
+
+    $('input[name="EndFlightDate"]').on('cancel.daterangepicker', function (ev, picker) { $(this).val(''); });
+
+
+
+
 
   //============================== VIDEOBOX =========================
   var videoBox = $('.video-box img');
@@ -850,5 +869,7 @@
   }
 
 })(jQuery);
+
+
 
 /*======== Google Analytics  ========*/
