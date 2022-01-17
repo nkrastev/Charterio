@@ -8234,6 +8234,10 @@ fieldset:disabled .btn {
   width: 25% !important;
 }
 
+.w-40 {
+    width: 40% !important;
+}
+
 .w-50 {
   width: 50% !important;
 }
@@ -9183,7 +9187,7 @@ fieldset:disabled .btn {
 }
 
 .p-3 {
-  padding: 1rem !important;
+  padding: 0.2rem !important;
 }
 
 .p-4 {
@@ -17700,7 +17704,7 @@ img.fancybox-image {
 @media (min-width: 768px) {
   .media-list-view.media-border .media-body {
     border-bottom-left-radius: 0;
-    border-top-right-radius: 5px;
+    border-top-right-radius: 0px;
   }
 }
 
@@ -17741,13 +17745,13 @@ img.fancybox-image {
 
 @media (min-width: 1200px) {
   .media-list-fullwidth .media-body {
-    padding: 2rem !important;
+    padding: 1rem !important;
   }
 }
 
 @media (min-width: 768px) {
   .media-list-fullwidth .media-body {
-    padding: 1.45rem;
+    padding: 0.45rem;
   }
 }
 

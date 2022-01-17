@@ -30,7 +30,7 @@
                             <option>Leaving from</option>
                             @foreach (var item in Model.AirportsForDropDown)
                             {
-                                    <option value="@item.IataCode">@item.IataCode - @item.Name</option>
+                                <option value="@item.IataCode">@item.IataCode - @item.Name</option>
                             }
                         </select>
                     </div>
@@ -41,7 +41,7 @@
                             <option>Destination</option>
                             @foreach (var item in Model.AirportsForDropDown)
                             {
-                                    <option value="@item.IataCode">@item.IataCode - @item.Name</option>
+                                <option value="@item.IataCode">@item.IataCode - @item.Name</option>
                             }
                         </select>
                     </div>
@@ -62,50 +62,70 @@
                     </div>
                 </div>
 
-                
+
             </div>
             <div class="row mt-5">
-                <div class="col-lg-4 col-md-6">                     
-                    <i class="far fa-calendar-alt" aria-hidden="true"></i>                    
-                    <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off" 
-                        asp-for="StartFlightDate" value="@if(@Model.StartFlightDate!=null){@Model.StartFlightDate.ToString("d", CultureInfo.InvariantCulture)} else {DateTime.UtcNow.ToString("d", CultureInfo.InvariantCulture);}"
-                        placeholder="Please select start date interval" />                                         
-                </div>
-                <div class="col-lg-4 col-md-6">                    
+                <div class="col-lg-4 col-md-6">
                     <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                    <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off" 
-                        asp-for="EndFlightDate" value="@if(@Model.EndFlightDate!=null){@Model.EndFlightDate.ToString("d", CultureInfo.InvariantCulture)} else { DateTime.UtcNow.ToString("d", CultureInfo.InvariantCulture);}"                         
-                        placeholder="Please select end date interval" />
+                    <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off"
+                           asp-for="StartFlightDate" value="@if(@Model.StartFlightDate!=null){
+                    @Model.StartFlightDate.ToString("d", CultureInfo.InvariantCulture)
+} else {DateTime.UtcNow.ToString("d", CultureInfo.InvariantCulture);}"
+                           placeholder="Please select start date interval" />
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                    <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off"
+                           asp-for="EndFlightDate" value="@if(@Model.EndFlightDate!=null){
+                    @Model.EndFlightDate.ToString("d", CultureInfo.InvariantCulture)
+} else { DateTime.UtcNow.ToString("d", CultureInfo.InvariantCulture);}"
+                           placeholder="Please select end date interval" />
 
 
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <button  id="SubmitSearchBtn" class="btn btn-primary text-uppercase width100percent" type="submit">Search Again</button>
+                    <button id="SubmitSearchBtn" class="btn btn-primary text-uppercase width100percent" type="submit">Search Again</button>
                 </div>
             </div>
         </form>
     </div>
 </section>
-<section class="py-8 py-md-5">
+<section class="py-8 py-md-4">
     <div class="container">
         <div asp-validation-summary="All" class="text-center"></div>
-        
-        <h2 class="text-center">Available flights:</h2>
-        <div class="text-center border-bottom pb-6 mb-7">
-            <p class="text-capitalize line-height-24 h4 mb-5">
-            
+
+        <h2 class="text-center">Flights Available: ( @Model.FlightResults.Count )</h2>
 
 
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p class="">
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut
-                perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis
-            </p>
+
+        <div class="media media-list-view media-list-fullwidth media-border flex-column flex-md-row align-items-stretch mb-5">
+            <div class="media-body">                
+                <div class="row">
+                    <div class="col-md-6 col-xl-6 position-relative">
+                        <p class="mb-6 line-height-28 h4">
+                            Departs from: <strong>Paris Charles de gaulle</strong><br />
+                            Arrives at: <strong>Domodedovo Moskow</strong>
+                        </p>
+                        <div class="date-view">
+                            <span><i class="far fa-calendar-alt" aria-hidden="true"></i> 27 JAN, 2021</span>
+                            <span><i class="far fa-clock" aria-hidden="true"></i> Departure time: 15:20 UTC</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-6">
+                        <div class="bg-primary text-center p-3 view-details">
+                            <h2 class="text-white font-weight-bold h1">25 Euro</h2>
+                            <div>
+                                <a href="/FlightDetails/" class="btn btn-xs w-40 mx-auto btn-outline-white btn-booking text-uppercase mb-2">Details</a>
+                                <a href="/Book/" class="btn btn-xs w-40 mx-auto btn-outline-white btn-booking text-uppercase mb-2">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h2 class="text-center">Return flights:</h2>
+
+        
+
+
     </div>
 </section>
