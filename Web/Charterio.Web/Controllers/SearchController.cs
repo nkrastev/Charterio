@@ -13,12 +13,12 @@
             this.flightService = flightService;
         }
 
-        public IActionResult RedirectRequest(SearchFlightInputModel input)
+        public IActionResult RedirectRequest(SearchViewModel input)
         {
             return this.RedirectToRoute("searchForFlight", input);
         }
 
-        public IActionResult SearchFlight(SearchFlightInputModel input)
+        public IActionResult SearchFlight(SearchViewModel input)
         {
 
             var airportsList = this.flightService.GetAllAirports();

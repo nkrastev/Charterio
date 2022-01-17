@@ -11,21 +11,21 @@
 
     public class HomeController : BaseController
     {
-        private readonly IFlightService airportsService;
+        private readonly IFlightService flightService;
 
 
-        public HomeController(IFlightService airportsService)
+        public HomeController(IFlightService flightService)
         {
-            this.airportsService = airportsService;
+            this.flightService = flightService;
         }
 
         public IActionResult Index()
         {
-            var homeViewModel = new SearchFlightInputModel()
+            var homeViewModel = new SearchViewModel()
             {
             };
 
-            var airportsList = this.airportsService.GetAllAirports();
+            var airportsList = this.flightService.GetAllAirports();
 
             foreach (var airportItem in airportsList)
             {
