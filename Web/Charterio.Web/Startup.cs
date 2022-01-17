@@ -66,6 +66,8 @@
             // Application services
             services.AddTransient<IEmailSender>(s => new SendGridEmailSender(this.configuration["SendGridApiKey"]));
             services.AddTransient<ISettingsService, SettingsService>();
+
+            services.AddTransient<IFlightService, FlightService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -92,6 +94,16 @@
                 app.UseHsts();
             }
 
+            app.Use(async (context, next) =>
+            {
+                await next();
+                if (context.Response.StatusCode == 404)
+                {
+                    context.Request.Path = "/NotFound";
+                    await next();
+                }
+            });
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -105,7 +117,7 @@
                 endpoints =>
                     {
                         endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-                        endpoints.MapControllerRoute("searchForFlight", "Search/{startApt}/{endApt}/{startFlightDate}/{endFlightDate}/{paxCount}", new { controller = "Search", action = "SearchFlight" });
+                        endpoints.MapControllerRoute("searchForFlight", "Search/{startApt}/{endApt}/{paxCount}", new { controller = "Search", action = "SearchFlight" });
                         endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapRazorPages();
                     });

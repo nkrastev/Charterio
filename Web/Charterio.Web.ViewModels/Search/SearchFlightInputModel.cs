@@ -4,7 +4,9 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    using Charterio.Common;    
+    using Charterio.Common;
+    using Charterio.Web.ViewModels.Airport;
+    using Charterio.Web.ViewModels.Result;
 
     public class SearchFlightInputModel : IValidatableObject
     {
@@ -31,6 +33,10 @@
         [Display(Name = "Passanger Number")]
         public int PaxCount { get; set; }
 
+        public List<AirportViewModel> AirportsForDropDown { get; } = new List<AirportViewModel>();
+
+        public List<ResultViewModel> FlightResults { get; } = new List<ResultViewModel>();
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if (this.StartApt == this.EndApt)
@@ -49,4 +55,6 @@
             }
         }
     }
+
+
 }

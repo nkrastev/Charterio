@@ -13,12 +13,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.312" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Charterio.Common\Charterio.Common.csproj" />
+    <ProjectReference Include="..\..\Data\Charterio.Data.Common\Charterio.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\Charterio.Data.Models\Charterio.Data.Models.csproj" />
     <ProjectReference Include="..\..\Services\Charterio.Services.Mapping\Charterio.Services.Mapping.csproj" />
   </ItemGroup>

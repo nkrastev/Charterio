@@ -1,262 +1,146 @@
 ﻿@using Charterio.Common
 @using Charterio.Web.ViewModels.Search
+@using System.Globalization
 @model SearchFlightInputModel
 @{
     this.ViewData["Title"] = "Charterio - Ticket Management System For Charter Flights";
 }
 
 @section HomeMenuWithSlider {
-<header class="header" id="pageTop">             
+<header class="header" id="pageTop">
     <nav class="nav-menuzord nav-menuzord-transparent navbar-sticky">
-      <div class="container clearfix">
-        <div id="menuzord" class="menuzord">
-          <a asp-controller="Home" asp-action="Index" class="menuzord-logo-brand"></a>                    
-          <ul class="menuzord-menu menuzord-right">            
-            <li>
-              <a class="active" asp-controller="Home" asp-action="Index">Search for Flights</a>              
-            </li>
-            <li>
-              <a class="" href="">Schedule</a>              
-            </li>
-            <li>
-              <a class="" href="">FAQ</a>              
-            </li>            
-            <li>
-              <a class="" href="">Contact Us</a>              
-            </li>
-            <li>
-              <a class="" href="">Register / Login</a>              
-            </li>                                   
-          </ul>
+        <div class="container clearfix">
+            <div id="menuzord" class="menuzord">
+                <a asp-controller="Home" asp-action="Index" class="menuzord-logo-brand"></a>
+                <ul class="menuzord-menu menuzord-right">
+                    <li>
+                        <a class="active" asp-controller="Home" asp-action="Index">Search for Flights</a>
+                    </li>
+                    <li>
+                        <a class="" href="">Schedule</a>
+                    </li>
+                    <li>
+                        <a class="" href="">FAQ</a>
+                    </li>
+                    <li>
+                        <a class="" href="">Contact Us</a>
+                    </li>
+                    <li>
+                        <a class="" href="">Register / Login</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
-  </header>
-
-<div id="rev_slider_12_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="star-test"
-  data-source="gallery"
-  style="margin:0px auto;background:rgba(0,0,0,0.15);padding:0px;margin-top:0px;margin-bottom:0px;background-repeat:no-repeat;background-size:cover;background-position:center center;" dir="ltr">
-  <!-- START REVOLUTION SLIDER 5.4.8.1 fullwidth mode -->
-  <div id="rev_slider_12_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.8.1">
-    <ul>
-      <!-- SLIDE  -->
-      <li data-index="rs-33" data-transition="slideoverdown" data-slotamount="default" data-hideafterloop="0"
-        data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
-        data-thumb="assets/img/slider1.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
-        data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
-        data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-        <!-- MAIN IMAGE -->
-        <img src="assets/img/slider1.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
-          data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina style="width: 100% !important">
-        <!-- LAYERS -->
-
-        <!-- LAYER NR. 1 -->
-        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" id="slide-33-layer-22"
-          data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
-          data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="wrap"
-          data-type="shape" data-basealign="slide" data-responsive_offset="on"
-          data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-          data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-          style="z-index: 5;background-color:rgba(0,0,0,0.15);"> </div>
-
-        <!-- LAYER NR. 2 -->
-        <div class="tp-caption   tp-resizeme" id="slide-33-layer-6" data-x="['center','center','center','center']"
-          data-hoffset="['0','100','50','70']" data-y="['middle','middle','middle','middle']"
-          data-voffset="['-100','-100','-100','-100']" data-fontsize="['30','30','22','20']" data-width="none"
-          data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
-          data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+4340","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
-          data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-          style="z-index: 6; white-space: wrap; font-size: 30px; line-height: 35px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Montserrat;text-transform:uppercase;">
-          Explore your travel options with Charterio</div>
-
-        <!-- LAYER NR. 3 -->
-        <div class="tp-caption   tp-resizeme" id="slide-33-layer-7" data-x="['center','center','center','center']"
-          data-hoffset="['0','100','50','70']" data-y="['middle','middle','middle','middle']"
-          data-voffset="['-40','-40','-55','-50']" data-fontsize="['65','65','40','30']" data-width="none"
-          data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
-          data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+4340","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
-          data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-          style="z-index: 7; white-space: wrap; font-size: 65px; line-height: 70px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:montserrat;text-transform:uppercase;">
-          Flight Tickets </div>
-
-        <!-- LAYER NR. 4 -->
-        <div class="tp-caption   tp-resizeme" id="slide-33-layer-10" data-x="['center','center','center','center']"
-          data-hoffset="['0','100','50','0']" data-y="['middle','middle','middle','middle']"
-          data-voffset="['35','30','10','29']" data-fontsize="['14','14','13','14']" data-width="none"
-          data-height="none" data-whitespace="wrap" data-visibility="['on','on','on','off']" data-type="text"
-          data-responsive_offset="on"
-          data-frames='[{"delay":1050,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+3940","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
-          data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-          style="z-index: 8; white-space: wrap; font-size: 14px; line-height: 21px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:montserrat;">
-          Cheap charter flights in Europe. Book direct at our official web site <br> to get the best prices on cheap flights to more than 10 destinations</div>        
-      </li>
-      <!-- SLIDE  -->
-      <li data-index="rs-54" data-transition="slideoverdown" data-slotamount="default" data-hideafterloop="0"
-        data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
-        data-thumb="assets/img/slider2.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
-        data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
-        data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-        <!-- MAIN IMAGE -->
-        <img src="assets/img/slider2.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
-          data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina style="width: 100% !important">
-        <!-- LAYERS -->
-
-        <!-- LAYER NR. 6 -->
-        <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" id="slide-54-layer-12"
-          data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
-          data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="wrap"
-          data-type="shape" data-basealign="slide" data-responsive_offset="on"
-          data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-          data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-          style="z-index: 5;background-color:rgba(0,0,0,0.15);"> </div>
-
-        <!-- LAYER NR. 7 -->
-        <div class="tp-caption   tp-resizeme" id="slide-54-layer-6" data-x="['center','center','center','center']"
-          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-          data-voffset="['-100','-100','-100','-100']" data-fontsize="['30','30','22','20']" data-width="none"
-          data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
-          data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+4330","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
-          data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-          style="z-index: 6; white-space: nowrap; font-size: 30px; line-height: 35px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Montserrat;text-transform:uppercase;">
-          Discover The Most Amazing </div>
-
-        <!-- LAYER NR. 8 -->
-        <div class="tp-caption tp-resizeme" id="slide-54-layer-7" data-x="['center','center','center','center']"
-          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-          data-voffset="['-40','-40','-55','-50']" data-fontsize="['65','65','40','30']" data-width="none"
-          data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
-          data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+4330","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
-          data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-          style="z-index: 7; white-space: nowrap; font-size: 65px; line-height: 70px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:montserrat;text-transform:uppercase;">
-          Direct flights </div>
-
-        <!-- LAYER NR. 9 -->
-        <div class="tp-caption   tp-resizeme" id="slide-54-layer-10" data-x="['center','center','center','center']"
-          data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-          data-voffset="['35','30','10','29']" data-fontsize="['14','14','13','14']" data-width="none"
-          data-height="none" data-whitespace="wrap" data-visibility="['on','on','on','off']" data-type="text"
-          data-responsive_offset="on"
-          data-frames='[{"delay":1050,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+3930","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
-          data-textAlign="['center','center','center','inherit']" data-paddingtop="[0,0,0,0]"
-          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-          style="z-index: 8; white-space: nowrap; font-size: 14px; line-height: 21px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:montserrat;">
-          No hidden taxes, no small letters. What you see is what you get (WYSIWYG).</div>        
-      </li>
-      
-    </ul>
-    <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
-  </div>
-</div>
+</header>
+<partial name="_HomeSliderPartitial" />
 }
 
 <!-- TODO View components for separate sections -->
 <section class="bg-dark-light py-7">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-xl-2">
-        <div class="section-title-bg mb-1 mb-lg-3 mb-xl-0">
-          <h1 class="text-white text-uppercase mb-0">Search</h1>
-          <h2 class="text-white text-uppercase font-weight-bold mb-0">your <span class="text-primary">flight</span></h2>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-2">
+                <div class="section-title-bg mb-1 mb-lg-3 mb-xl-0">
+                    <h1 class="text-white text-uppercase mb-0">Search</h1>
+                    <h2 class="text-white text-uppercase font-weight-bold mb-0">your <span class="text-primary">flight</span></h2>
+                </div>
+            </div>
+
+            <div class="col-xl-10">
+                <form method="get" asp-controller="Search" asp-action="RedirectRequest">
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="row">
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="select-dropdown">
+                                        <div class="mb-3 mb-lg-0">                                            
+                                            <div class="select-default select-search-box">                                                
+                                                <select class="select-option" asp-for="StartApt">
+                                                    <option>Leaving from</option>
+                                                    @foreach (var item in Model.AirportsForDropDown)
+                                                    {
+                                                         <option value="@item.IataCode">@item.IataCode - @item.Name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="select-dropdown">
+                                        <div class="mb-3 mb-lg-0">
+                                            <div class="select-default select-search-box">
+                                                <select class="select-option" asp-for="EndApt">
+                                                    <option>Destination</option>
+                                                    @foreach (var item in Model.AirportsForDropDown)
+                                                    {
+                                                         <option value="@item.IataCode">@item.IataCode - @item.Name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="select-dropdown">
+                                        <div class="mb-3 mb-lg-0">
+                                            <div class="select-default select-search-box">
+                                                <select class="select-option form-control" asp-for="PaxCount">
+                                                    <option value="">Number of passangers</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="mb-3 form-group-icon mb-lg-0">
+                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                        <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off" 
+                                            asp-for="StartFlightDate" value="" placeholder="Please select start date interval" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="mb-3 form-group-icon mb-lg-0">
+                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                        <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off" 
+                                            asp-for="EndFlightDate" value="" placeholder="Please select end date interval" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row pt-5">
+                                <div class="col-md-12 col-lg-12 d-grid gap-2">
+                                    <button id="SubmitSearchBtn" class="btn btn-primary text-uppercase" type="submit">Search</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-    
-      <div class="col-xl-10">
-        <form method="get" asp-controller="Search" asp-action="RedirectRequest">
-          <div class="row">
-            <div class="col-lg-12">
-              
-              <div class="row">                
-                <div class="col-md-12 col-lg-6">
-                  <div class="select-dropdown">
-                    <div class="mb-3 mb-lg-0">
-                      <div class="select-default select-search-box">
-                        <select class="select-option" asp-for="StartApt">
-                          <option>Leaving from</option>
-                          <option value="SOF">SOF - Sofia</option>
-                          <option value="BLL">BLL - Billund</option>
-                          <option value="FRA">FRA - Frankfurt</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6">
-                  <div class="select-dropdown">
-                    <div class="mb-3 mb-lg-0">
-                      <div class="select-default select-search-box">
-                        <select class="select-option" name="EndApt">
-                          <option>Destination</option>
-                          <option value="SOF">SOF - Sofia</option>
-                          <option value="BLL">BLL - Billund</option>
-                          <option value="FRA">FRA - Frankfurt</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>                                                        
-              </div>
-
-              <div class="row">                                
-                <div class="col-md-4 col-lg-4">
-                  <div class="select-dropdown">
-                    <div class="mb-3 mb-lg-0">
-                      <div class="select-default select-search-box">
-                        <select class="select-option form-control" name="PaxCount" placeholder>
-                          <option value="" >Number of passangers</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-4 col-lg-4">
-                  <div class="mb-3 form-group-icon mb-lg-0">
-                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                    <input type="text" class="form-control daterange-picker" autocomplete="off" name="StartFlightDate" value=""
-                      placeholder="DD/MM/YYYY" />
-                  </div>
-                </div>
-
-                <div class="col-md-4 col-lg-4">
-                  <div class="mb-3 form-group-icon mb-lg-0">
-                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                    <input type="text" class="form-control daterange-picker" autocomplete="off" name="EndFlightDate" value=""
-                      placeholder="DD/MM/YYYY" />
-                  </div>
-                </div>
-
-              </div>
-
-
-              
-
-              <div class="row pt-5">
-                <div class="col-md-12 col-lg-12 d-grid gap-2">
-                  <button class="btn btn-primary text-uppercase" type="submit">Search</button>
-                </div>
-              </div>
-
-            </div>    
-            
-          </div>
-        </form>
-      </div>
     </div>
-  </div>
 </section>
 
 
 <div class="text-center">
     <h1 class="display-4">Welcome to @GlobalConstants.SystemName!</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
 </div>
