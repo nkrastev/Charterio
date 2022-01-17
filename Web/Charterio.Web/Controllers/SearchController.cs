@@ -20,14 +20,9 @@
 
         public IActionResult SearchFlight(SearchViewModel input)
         {
+            input.AirportsForDropDown = this.flightService.GetAllAirports();
 
-            var airportsList = this.flightService.GetAllAirports();
-            var flightsList = this.flightService.GetFlightsBySearchTerms(input);
-            
-            foreach (var airportItem in airportsList)
-            {
-                input.AirportsForDropDown.Add(new ViewModels.Airport.AirportViewModel { IataCode = airportItem.IataCode, Name = airportItem.Name });
-            }
+
 
             if (!this.ModelState.IsValid)
             {
