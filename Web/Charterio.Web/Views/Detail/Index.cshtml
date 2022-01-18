@@ -1,1 +1,100 @@
-﻿<h1>Flight details for id...</h1>
+﻿@model FlightViewModel
+@{
+    this.ViewData["Title"] = $"{Model.Start} to {Model.End}";
+}
+<section class="page-title">
+    <div class="page-title-img bg-img bg-overlay-darken">
+        <div class="container">
+            <div class="row align-items-center justify-content-center height100px">
+                <div class="col-lg-6">
+                    <div class="page-title-content">
+                        <div class="title-border">
+                            <h1 class="text-uppercase text-white font-weight-bold">Flight Details</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-9 pt-md-10">
+    <div class="container">
+      
+      <hr class="p-0 mb-3 mt-0">
+      <div class="row">
+        <div class="col-md-5 col-lg-5 col-xl-5">        
+          <div class="media mb-2 mb-md-2 mb-lg-2">
+              <i class="fas fa-map-marker-alt icon-item-default border rounded border-dark bg-dark text-white me-5" aria-hidden="true"></i>  
+              <div class="media-body">
+                <p class="text-capitalize pb-0 mb-0">Departs from:</p>
+                <h3>@Model.Start</h3>
+                <p><b>@Model.StartDate.ToShortDateString()</b> at <b>@Model.StartDate.AddHours(@Model.StartUtcPosition).ToShortTimeString()</b> Local time</p>
+              </div>
+          </div>                              
+        </div>
+  
+        <div class="col-md-2 col-lg-2 col-xl-2 justify-content-center align-self-center text-center">
+          <i class="fas fa-arrow-right detailsArrow"></i>
+        </div>
+  
+        <div class="col-md-5 col-lg-5 col-xl-5 justify-content-center">        
+          <div class="media mb-2 mb-md-2 mb-lg-2">
+              <i class="fas fa-map-marker-alt icon-item-default border rounded border-dark bg-dark text-white me-5" aria-hidden="true"></i>  
+              <div class="media-body">
+                <p class="text-capitalize pb-0 mb-0">Arrives at:</p>
+                <h3>@Model.End</h3>
+                <p><b>@Model.EndDate.ToShortDateString()</b> at <b>@Model.EndDate.AddHours(@Model.EndUtcPosition).ToShortTimeString()</b> Local time</p>
+              </div>
+          </div>                              
+        </div>     
+      </div>
+      <hr class="p-0 mt-3">
+      <div class="row">
+          <div class="col-md-4 col-lg-4 col-xl-4">        
+            <div class="media mb-2 mb-md-2 mb-lg-2">            
+                <div class="media-body">
+                  <p class="text-capitalize pb-0 mb-0"><b>Luggage</b></p>                
+                  <p>Included 20 kg checked in luggage, 5 kg cabin luggage</p>
+                </div>
+            </div>                              
+          </div>        
+    
+          <div class="col-md-4 col-lg-4 col-xl-4 justify-content-center">        
+            <div class="media mb-2 mb-md-2 mb-lg-2">             
+                <div class="media-body">
+                  <p class="text-capitalize pb-0 mb-0"><b>Cattering</b></p>                
+                  <p>1 bottle of water</p>
+                </div>
+            </div>                              
+          </div>
+          
+          <div class="col-md-4 col-lg-4 col-xl-4 justify-content-center">        
+              <div class="media mb-2 mb-md-2 mb-lg-2">               
+                  <div class="media-body">
+                    <p class="text-capitalize pb-0 mb-0"><b>Flight Number</b></p>                
+                    <p>@Model.FlightNumber</p>
+                  </div>
+              </div>                              
+            </div>
+      </div>
+      <hr class="p-0 mt-3">
+      <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-6">
+                    <div class="media mb-2 mb-md-2 mb-lg-2">
+                
+                <div class="media-body">
+                  <p class="text-capitalize pb-0 mb-0"><b>Price per person</b></p>
+                  <h3>@Model.Price €</h3>                
+                </div>
+            </div>                              
+          </div>          
+    
+          <div class="col-md-6 col-lg-6 col-xl-6 justify-content-center">  
+            Your have to be logged in order to book this flight...      
+            <a href="" class="btn btn-sm btn-outline-secondary text-uppercase w-100">Book Now</a>
+          </div>     
+        </div>
+  
+    </div>
+  </section>

@@ -1,10 +1,11 @@
 ﻿namespace Charterio.Services.Data
 {
-    using System.Collections;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
     using Charterio.Data;
+    using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Airport;
     using Charterio.Web.ViewModels.Result;
     using Charterio.Web.ViewModels.Search;
@@ -58,6 +59,30 @@
             }
 
             return flightResults.OrderBy(x => x.Price).ToList();
+        }
+
+        public FlightViewModel GetFlightById(int id)
+        {
+            var flight = this.db.Offers.FirstOrDefault(x => x.Id == id);
+            var startAirport = this.db.Airports.Where(x => x.Id == flight.StartAirportId).FirstOrDefault();
+            var endAirport = this.db.Airports.Where(x => x.Id == flight.EndAirportId).FirstOrDefault();
+            var flightNumber = this.db.Flights.Where(x => x.Id == flight.FlightId).FirstOrDefault();            
+
+            var data = new FlightViewModel
+            {
+                Id = flight.Id,
+                Start = startAirport.Name,
+                End = endAirport.Name,
+                StartDate = flight.StartTimeUtc,
+                EndDate = flight.EndTimeUtc,
+                StartUtcPosition = flight.StartAirport.UtcPosition,
+                EndUtcPosition = flight.EndAirport.UtcPosition,
+                Luggage = "luggage data insert field in DB",
+                Catering = "catering data insert field in DB !!!",
+                FlightNumber = flightNumber.Number,
+                Price = flight.Price,
+            };
+            return data;
         }
     }
 }

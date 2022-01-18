@@ -21771,3 +21771,8 @@ img.lazyestload {
 .width100percent{
     width:100%;
 }
+
+.detailsArrow {
+    font-size: 3em;
+    color: #c2c2c2;
+}

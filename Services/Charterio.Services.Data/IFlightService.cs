@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
 
+    using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Airport;
     using Charterio.Web.ViewModels.Result;
     using Charterio.Web.ViewModels.Search;
@@ -11,5 +12,8 @@
         ICollection<AirportViewModel> GetAllAirports();
 
         ICollection<ResultViewModel> GetFlightsBySearchTerms(SearchViewModel term);
+
+        FlightViewModel GetFlightById(int id);
+
     }
 }
