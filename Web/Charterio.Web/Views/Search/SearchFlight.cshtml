@@ -96,33 +96,38 @@
 
         <h2 class="text-center">Flights Available: ( @Model.FlightResults.Count )</h2>
 
-
-
-        <div class="media media-list-view media-list-fullwidth media-border flex-column flex-md-row align-items-stretch mb-5">
+        @foreach (var result in Model.FlightResults)
+       {
+           <div class="media media-list-view media-list-fullwidth media-border flex-column flex-md-row align-items-stretch mb-5">
             <div class="media-body">                
                 <div class="row">
                     <div class="col-md-6 col-xl-6 position-relative">
                         <p class="mb-6 line-height-28 h4">
-                            Departs from: <strong>Paris Charles de gaulle</strong><br />
-                            Arrives at: <strong>Domodedovo Moskow</strong>
+                            Departs from: <strong>@result.StartApt</strong><br />
+                            Arrives at: <strong>@result.EndApt</strong>
                         </p>
                         <div class="date-view">
-                            <span><i class="far fa-calendar-alt" aria-hidden="true"></i> 27 JAN, 2021</span>
-                            <span><i class="far fa-clock" aria-hidden="true"></i> Departure time: 15:20 UTC</span>
+                            <span><i class="far fa-calendar-alt" aria-hidden="true"></i> @result.DepartureDate.Date</span>
+                            <span><i class="far fa-clock" aria-hidden="true"></i> Departure time: @result.DepartureDate.TimeOfDay UTC</span>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-6">
                         <div class="bg-primary text-center p-3 view-details">
-                            <h2 class="text-white font-weight-bold h1">25 Euro</h2>
+                            <h2 class="text-white font-weight-bold h1">@result.Price €</h2>
                             <div>
-                                <a href="/FlightDetails/" class="btn btn-xs w-40 mx-auto btn-outline-white btn-booking text-uppercase mb-2">Details</a>
-                                <a href="/Book/" class="btn btn-xs w-40 mx-auto btn-outline-white btn-booking text-uppercase mb-2">Book Now</a>
+                                <a href="/FlightDetails/@result.Id" class="btn btn-xs w-40 mx-auto btn-outline-white btn-booking text-uppercase mb-2">Details</a>
+                                <a href="/Book/@result.Id" class="btn btn-xs w-40 mx-auto btn-outline-white btn-booking text-uppercase mb-2">Book Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+       }
+
+
+
+        
 
         
 
