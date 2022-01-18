@@ -13,7 +13,6 @@
     {
         private readonly IFlightService flightService;
 
-
         public HomeController(IFlightService flightService)
         {
             this.flightService = flightService;

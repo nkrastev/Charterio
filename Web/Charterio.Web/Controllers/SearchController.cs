@@ -23,7 +23,6 @@
             input.AirportsForDropDown = this.flightService.GetAllAirports();
             input.FlightResults = this.flightService.GetFlightsBySearchTerms(input);
 
-
             if (!this.ModelState.IsValid)
             {
                 return this.View(input);

@@ -20,5 +20,4 @@
 
         public const string ErrorSomeOfDateIsTodayOrInThePast = "Start or End date is Today or in the past. Please change dates.";
     }
-
 }
