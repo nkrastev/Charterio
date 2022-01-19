@@ -27,6 +27,12 @@
                           {
                               new RolesSeeder(),
                               new SettingsSeeder(),
+                              new AirportsSeeder(),
+                              new CompaniesSeeder(),
+                              new PlanesSeeder(),
+                              new FlightsSeeder(),
+                              new CurrenciesSeeder(),
+                              new OfferSeeder(),
                           };
 
             foreach (var seeder in seeders)
