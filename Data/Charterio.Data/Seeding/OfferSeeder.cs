@@ -43,7 +43,7 @@
                     EndAirportId = 7,
                     StartTimeUtc = new DateTime(2022, 5, 27, 9, 20, 00).ToUniversalTime(),
                     EndTimeUtc = new DateTime(2022, 5, 27, 13, 55, 00).ToUniversalTime(),
-                    Price = 189,
+                    Price = 355,
                     CurrencyId = 1,
                     AllotmentCount = 25,
                     IsActiveInWeb = true,

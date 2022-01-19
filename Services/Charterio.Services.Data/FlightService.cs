@@ -83,12 +83,41 @@
                 EndDate = flight.EndTimeUtc,
                 StartUtcPosition = flight.StartAirport.UtcPosition,
                 EndUtcPosition = flight.EndAirport.UtcPosition,
-                Luggage = "luggage data insert field in DB",
-                Catering = "catering data insert field in DB !!!",
+                Luggage = flight.Luggage,
+                Catering = flight.Categing,
                 FlightNumber = flightNumber.Number,
                 Price = flight.Price,
+                DistanceInKm = this.CalculateDistance(startAirport.Latitude, endAirport.Latitude, startAirport.Longtitude, endAirport.Longtitude),
             };
             return data;
+        }
+
+        private double CalculateDistance(double latitude1, double latitude2, double longtitude1, double longtitude2)
+        {
+            var lon1 = this.ToRadians(longtitude1);
+            var lon2 = this.ToRadians(longtitude2);
+            var lat1 = this.ToRadians(latitude1);
+            var lat2 = this.ToRadians(latitude2);
+
+            // Haversine formula
+            double dlon = lon2 - lon1;
+            double dlat = lat2 - lat1;
+            double a = Math.Pow(Math.Sin(dlat / 2), 2) + (Math.Cos(lat1) * Math.Cos(lat2) * Math.Pow(Math.Sin(dlon / 2), 2));
+
+            double c = 2 * Math.Asin(Math.Sqrt(a));
+
+            // Radius of earth in
+            // kilometers. Use 3956
+            // for miles
+            double r = 6371;
+
+            // calculate the result
+            return c * r;
+        }
+
+        private double ToRadians(double angleIn10thofaDegree)
+        {
+            return (angleIn10thofaDegree * Math.PI) / 180;
         }
     }
 }

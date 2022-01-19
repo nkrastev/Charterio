@@ -51,32 +51,41 @@
       </div>
       <hr class="p-0 mt-3">
       <div class="row">
-          <div class="col-md-4 col-lg-4 col-xl-4">        
+          <div class="col-md-3 col-lg-3 col-xl-3">        
             <div class="media mb-2 mb-md-2 mb-lg-2">            
                 <div class="media-body">
                   <p class="text-capitalize pb-0 mb-0"><b>Luggage</b></p>                
-                  <p>Included 20 kg checked in luggage, 5 kg cabin luggage</p>
+                  <p>@Model.Luggage</p>
                 </div>
             </div>                              
           </div>        
     
-          <div class="col-md-4 col-lg-4 col-xl-4 justify-content-center">        
+          <div class="col-md-3 col-lg-3 col-xl-3 justify-content-center">        
             <div class="media mb-2 mb-md-2 mb-lg-2">             
                 <div class="media-body">
-                  <p class="text-capitalize pb-0 mb-0"><b>Cattering</b></p>                
-                  <p>1 bottle of water</p>
+                  <p class="text-capitalize pb-0 mb-0"><b>Catering</b></p>                
+                  <p>@Model.Catering</p>
                 </div>
             </div>                              
           </div>
           
-          <div class="col-md-4 col-lg-4 col-xl-4 justify-content-center">        
+          <div class="col-md-3 col-lg-3 col-xl-3 justify-content-center">        
               <div class="media mb-2 mb-md-2 mb-lg-2">               
                   <div class="media-body">
                     <p class="text-capitalize pb-0 mb-0"><b>Flight Number</b></p>                
                     <p>@Model.FlightNumber</p>
                   </div>
               </div>                              
-            </div>
+           </div>
+
+           <div class="col-md-3 col-lg-3 col-xl-3 justify-content-center">        
+              <div class="media mb-2 mb-md-2 mb-lg-2">               
+                  <div class="media-body">
+                    <p class="text-capitalize pb-0 mb-0"><b>Distance in KM</b></p>                
+                    <p>@Model.DistanceInKm.ToString("f2") km</p>
+                  </div>
+              </div>                              
+           </div>
       </div>
       <hr class="p-0 mt-3">
       <div class="row">
