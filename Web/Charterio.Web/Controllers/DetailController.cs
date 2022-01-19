@@ -15,6 +15,12 @@
         public IActionResult Index(int id)
         {
             var data = this.flightService.GetFlightById(id);
+
+            if (data == null)
+            {
+                return this.RedirectToRoute("NotFound");
+            }
+
             return this.View(data);
         }
     }

@@ -14,6 +14,5 @@
         ICollection<ResultViewModel> GetFlightsBySearchTerms(SearchViewModel term);
 
         FlightViewModel GetFlightById(int id);
-
     }
 }

@@ -4,6 +4,7 @@ using Charterio.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Charterio.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220119222939_RebuildConnectionsOfferToTicket")]
+    partial class RebuildConnectionsOfferToTicket
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -203,9 +205,6 @@ namespace Charterio.Data.Migrations
                     b.Property<int>("TicketStatusId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("OfferId");
@@ -215,8 +214,6 @@ namespace Charterio.Data.Migrations
                     b.HasIndex("TicketIssuerId");
 
                     b.HasIndex("TicketStatusId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Tickets");
                 });
@@ -695,10 +692,6 @@ namespace Charterio.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Charterio.Data.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
                     b.Navigation("Offer");
 
                     b.Navigation("Payment");
@@ -706,8 +699,6 @@ namespace Charterio.Data.Migrations
                     b.Navigation("TicketIssuer");
 
                     b.Navigation("TicketStatus");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Data.Models.Flight", b =>

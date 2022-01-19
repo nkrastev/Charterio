@@ -25,9 +25,19 @@
 
         public int TicketIssuerId { get; set; }
 
-        public virtual ICollection<Offer> TicketServices { get; set; } = new HashSet<Offer>();
+        [Required]
+        public int OfferId { get; set; }
 
-        public virtual ICollection<Payment> TicketPayments { get; set; } = new HashSet<Payment>();
+        public Offer Offer { get; set; }
+
+        [Required]
+        public Payment Payment { get; set; }
+
+        public int PaymentId { get; set; }
+
+        public string UserId { get; set; }
+
+        public ApplicationUser User { get; set; }
 
         public virtual ICollection<TicketPassanger> TicketPassangers { get; set; } = new HashSet<TicketPassanger>();
     }

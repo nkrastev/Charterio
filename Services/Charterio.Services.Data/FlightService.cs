@@ -44,7 +44,7 @@
                     x.IsActiveInWeb == true)
                 .ToList();
 
-            List<ResultViewModel> flightResults = new List<ResultViewModel>();
+            List<ResultViewModel> flightResults = new();
 
             foreach (var flight in targetFlights)
             {
@@ -64,9 +64,15 @@
         public FlightViewModel GetFlightById(int id)
         {
             var flight = this.db.Offers.FirstOrDefault(x => x.Id == id);
+
+            if (flight == null)
+            {
+                return null;
+            }
+
             var startAirport = this.db.Airports.Where(x => x.Id == flight.StartAirportId).FirstOrDefault();
             var endAirport = this.db.Airports.Where(x => x.Id == flight.EndAirportId).FirstOrDefault();
-            var flightNumber = this.db.Flights.Where(x => x.Id == flight.FlightId).FirstOrDefault();            
+            var flightNumber = this.db.Flights.Where(x => x.Id == flight.FlightId).FirstOrDefault();
 
             var data = new FlightViewModel
             {

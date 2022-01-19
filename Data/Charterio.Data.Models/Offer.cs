@@ -39,6 +39,10 @@
 
         public int CurrencyId { get; set; }
 
+        public string Luggage { get; set; }
+
+        public string Categing { get; set; }
+
         public int? AllotmentCount { get; set; }
 
         public bool IsActiveInWeb { get; set; }

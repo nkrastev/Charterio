@@ -4,6 +4,7 @@ using Charterio.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Charterio.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220119221749_AddedAdditionalFieldsInOfferTable")]
+    partial class AddedAdditionalFieldsInOfferTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -187,12 +189,6 @@ namespace Charterio.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OfferId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PaymentId")
-                        .HasColumnType("int");
-
                     b.Property<string>("TicketCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -203,20 +199,11 @@ namespace Charterio.Data.Migrations
                     b.Property<int>("TicketStatusId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("OfferId");
-
-                    b.HasIndex("PaymentId");
 
                     b.HasIndex("TicketIssuerId");
 
                     b.HasIndex("TicketStatusId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Tickets");
                 });
@@ -399,6 +386,9 @@ namespace Charterio.Data.Migrations
                     b.Property<DateTime>("StartTimeUtc")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("TicketId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CurrencyId");
@@ -408,6 +398,8 @@ namespace Charterio.Data.Migrations
                     b.HasIndex("FlightId");
 
                     b.HasIndex("StartAirportId");
+
+                    b.HasIndex("TicketId");
 
                     b.ToTable("Offers");
                 });
@@ -440,10 +432,10 @@ namespace Charterio.Data.Migrations
                     b.Property<double>("Amount")
                         .HasColumnType("float");
 
-                    b.Property<bool>("IsSuccessful")
-                        .HasColumnType("bit");
-
                     b.Property<int>("PaymentMethodId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TicketId")
                         .HasColumnType("int");
 
                     b.Property<string>("TransactionCode")
@@ -457,6 +449,8 @@ namespace Charterio.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("PaymentMethodId");
+
+                    b.HasIndex("TicketId");
 
                     b.ToTable("Payments");
                 });
@@ -671,18 +665,6 @@ namespace Charterio.Data.Migrations
 
             modelBuilder.Entity("Charterio.Data.Models.Ticket", b =>
                 {
-                    b.HasOne("Data.Models.Offer", "Offer")
-                        .WithMany()
-                        .HasForeignKey("OfferId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Data.Models.Payment", "Payment")
-                        .WithMany()
-                        .HasForeignKey("PaymentId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Data.Models.TicketIssuer", "TicketIssuer")
                         .WithMany()
                         .HasForeignKey("TicketIssuerId")
@@ -695,19 +677,9 @@ namespace Charterio.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Charterio.Data.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("Offer");
-
-                    b.Navigation("Payment");
-
                     b.Navigation("TicketIssuer");
 
                     b.Navigation("TicketStatus");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Data.Models.Flight", b =>
@@ -755,6 +727,10 @@ namespace Charterio.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Charterio.Data.Models.Ticket", null)
+                        .WithMany("TicketServices")
+                        .HasForeignKey("TicketId");
+
                     b.Navigation("Currency");
 
                     b.Navigation("EndAirport");
@@ -772,7 +748,15 @@ namespace Charterio.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Charterio.Data.Models.Ticket", "Ticket")
+                        .WithMany("TicketPayments")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("PaymentMethod");
+
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("Data.Models.TicketPassanger", b =>
@@ -857,6 +841,10 @@ namespace Charterio.Data.Migrations
             modelBuilder.Entity("Charterio.Data.Models.Ticket", b =>
                 {
                     b.Navigation("TicketPassangers");
+
+                    b.Navigation("TicketPayments");
+
+                    b.Navigation("TicketServices");
                 });
 #pragma warning restore 612, 618
         }

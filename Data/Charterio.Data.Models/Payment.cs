@@ -8,10 +8,7 @@
     {
         public int Id { get; set; }
 
-        [Required]
-        public Ticket Ticket { get; set; }
-
-        public int TicketId { get; set; }
+        public bool IsSuccessful { get; set; }
 
         public PaymentMethod PaymentMethod { get; set; }
 
