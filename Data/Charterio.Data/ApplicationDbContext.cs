@@ -30,6 +30,8 @@
 
         public DbSet<Company> Companies { get; set; }
 
+        public DbSet<Faq> Faqs { get; set; }
+
         public DbSet<Flight> Flights { get; set; }
 
         public DbSet<Payment> Payments { get; set; }
@@ -53,6 +55,7 @@
         public DbSet<TicketStatus> TicketStatuses { get; set; }
 
         public DbSet<Setting> Settings { get; set; }
+        public DbSet<UserQuestion> UserQuestions { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

@@ -53,6 +53,44 @@
                     Luggage = "32 kg checked in luggage, 5 kg hand luggage",
                 });
 
+            await dbContext.Offers.AddAsync(
+                new Offer
+                {
+                    Name = "Charter > London - Minsk",
+                    FlightId = 1,
+                    StartAirportId = 1,
+                    EndAirportId = 7,
+                    StartTimeUtc = new DateTime(2022, 5, 29, 9, 20, 00).ToUniversalTime(),
+                    EndTimeUtc = new DateTime(2022, 5, 29, 12, 55, 00).ToUniversalTime(),
+                    Price = 157,
+                    CurrencyId = 1,
+                    AllotmentCount = 30,
+                    IsActiveInWeb = true,
+                    IsActiveInAdmin = true,
+                    CreatedOn = new DateTime(2022, 1, 20, 13, 05, 00).ToUniversalTime(),
+                    Categing = "Nothing included",
+                    Luggage = "5 kg hand luggage",
+                });
+            
+            await dbContext.Offers.AddAsync(
+                new Offer
+                {
+                    Name = "Charter > London - Minsk lowcost",
+                    FlightId = 1,
+                    StartAirportId = 1,
+                    EndAirportId = 7,
+                    StartTimeUtc = new DateTime(2022, 5, 29, 9, 20, 00).ToUniversalTime(),
+                    EndTimeUtc = new DateTime(2022, 5, 29, 17, 10, 00).ToUniversalTime(),
+                    Price = 87,
+                    CurrencyId = 1,
+                    AllotmentCount = 10,
+                    IsActiveInWeb = true,
+                    IsActiveInAdmin = true,
+                    CreatedOn = new DateTime(2022, 1, 20, 13, 05, 00).ToUniversalTime(),
+                    Categing = "Nothing included",
+                    Luggage = "3 kg hand luggage",
+                });
+
         }
     }
 }
