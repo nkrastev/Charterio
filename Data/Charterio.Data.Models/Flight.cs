@@ -15,12 +15,9 @@
         [Required]
         public Plane Plane { get; set; }
 
-
         public int CompanyId { get; set; }
 
         [Required]
         public Company Company { get; set; }
-
-
     }
 }

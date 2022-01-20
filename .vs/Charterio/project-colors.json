@@ -1,0 +1,56 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b90d1067-fe4c-400e-ba78-5413e30ab9ed": {
+      "ProjectGuid": "b90d1067-fe4c-400e-ba78-5413e30ab9ed",
+      "DisplayName": "Charterio.Web",
+      "ColorIndex": 0
+    },
+    "13b7aacb-9c85-4409-8d4b-95a67d0dfff7": {
+      "ProjectGuid": "13b7aacb-9c85-4409-8d4b-95a67d0dfff7",
+      "DisplayName": "Charterio.Web.ViewModels",
+      "ColorIndex": 1
+    },
+    "4d39c126-3fb5-4b26-b08c-1bf48effa23e": {
+      "ProjectGuid": "4d39c126-3fb5-4b26-b08c-1bf48effa23e",
+      "DisplayName": "Charterio.Services.Data",
+      "ColorIndex": 2
+    },
+    "a2288c46-0fbf-43b6-80b6-3072fd65bc32": {
+      "ProjectGuid": "a2288c46-0fbf-43b6-80b6-3072fd65bc32",
+      "DisplayName": "Charterio.Common",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "e9fdb52f-52dc-48b2-86e1-0176377bb53f": {
+      "ProjectGuid": "e9fdb52f-52dc-48b2-86e1-0176377bb53f",
+      "DisplayName": "Charterio.Data.Models",
+      "ColorIndex": 4
+    },
+    "4b844ecb-e845-49a6-8b31-85e577933598": {
+      "ProjectGuid": "4b844ecb-e845-49a6-8b31-85e577933598",
+      "DisplayName": "Charterio.Data",
+      "ColorIndex": 5
+    },
+    "415fd7fa-0453-4fe1-9a29-c6e1d8b45c3d": {
+      "ProjectGuid": "415fd7fa-0453-4fe1-9a29-c6e1d8b45c3d",
+      "DisplayName": "Charterio.Services.Mapping",
+      "ColorIndex": 6
+    },
+    "8522212f-f01e-4e20-9975-fcf5e10d71db": {
+      "ProjectGuid": "8522212f-f01e-4e20-9975-fcf5e10d71db",
+      "DisplayName": "Charterio.Services",
+      "ColorIndex": 7
+    },
+    "d0d59508-cf8b-4656-a344-396c530bb9df": {
+      "ProjectGuid": "d0d59508-cf8b-4656-a344-396c530bb9df",
+      "DisplayName": "Charterio.Data.Common",
+      "ColorIndex": 8
+    }
+  },
+  "NextColorIndex": 9
+}

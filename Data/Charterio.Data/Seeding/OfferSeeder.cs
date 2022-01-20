@@ -71,7 +71,7 @@
                     Categing = "Nothing included",
                     Luggage = "5 kg hand luggage",
                 });
-            
+
             await dbContext.Offers.AddAsync(
                 new Offer
                 {
@@ -90,7 +90,6 @@
                     Categing = "Nothing included",
                     Luggage = "3 kg hand luggage",
                 });
-
         }
     }
 }

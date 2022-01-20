@@ -1,6 +1,6 @@
 ﻿namespace Charterio.Data.Models
-{    
-    using System.ComponentModel.DataAnnotations;    
+{
+    using System.ComponentModel.DataAnnotations;
 
     public class UserQuestion
     {

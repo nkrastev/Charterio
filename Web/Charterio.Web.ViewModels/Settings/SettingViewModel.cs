@@ -1,9 +1,8 @@
 ﻿namespace Charterio.Web.ViewModels.Settings
 {
+    using AutoMapper;
     using Charterio.Data.Models;
     using Charterio.Services.Mapping;
-
-    using AutoMapper;
 
     public class SettingViewModel : IMapFrom<Setting>, IHaveCustomMappings
     {

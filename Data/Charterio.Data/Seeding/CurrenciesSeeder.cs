@@ -16,7 +16,7 @@
             }
 
             await dbContext.Currencies.AddAsync(
-                new Currency { Code = "EUR", Name = "European Euro", Ratio=1, IsActive=true });
+                new Currency { Code = "EUR", Name = "European Euro", Ratio = 1, IsActive = true });
         }
     }
 }

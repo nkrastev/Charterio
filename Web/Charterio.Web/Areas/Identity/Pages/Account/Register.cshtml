@@ -1,0 +1,78 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register and create your new account";
+}
+<section class="page-title">
+    <div class="page-title-img bg-img bg-overlay-darken">
+        <div class="container">
+            <div class="row align-items-center justify-content-center height100px">
+                <div class="col-lg-8">
+                    <div class="page-title-content">
+                        <div class="title-border">
+                            <h1 class="text-white">@ViewData["Title"]</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-9 pt-md-10">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+              <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+              <div class="mb-3">
+                <input asp-for="Input.FirstName" class="form-control bg-smoke" autocomplete="firstname" aria-required="true" placeholder="First Name"/>                
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>                
+              </div>
+
+              <div class="mb-3">
+                <input asp-for="Input.LastName" class="form-control bg-smoke" autocomplete="lastname" aria-required="true" placeholder="Last Name"/>                
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>                
+              </div>
+
+              <div class="mb-3">
+                <input asp-for="Input.PhoneNumber" class="form-control bg-smoke" autocomplete="phone" aria-required="true" placeholder="Phone Number"/>                
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>                
+              </div>
+
+              <div class="mb-3">
+                <input asp-for="Input.Email" class="form-control bg-smoke" autocomplete="username" aria-required="true" placeholder="Email address"/>                
+                <span asp-validation-for="Input.Email" class="text-danger"></span>                
+              </div>
+
+              <div class="mb-3">
+                <input asp-for="Input.Password" class="form-control bg-smoke" autocomplete="new-password" aria-required="true" placeholder="Password" />                
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+              </div>
+    
+              <div class="mb-3">                            
+                <input asp-for="Input.ConfirmPassword" class="form-control bg-smoke" autocomplete="new-password" aria-required="true" placeholder="Confirm Password" />                
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>            
+              </div>
+    
+              <div class="mb-3 form-check mb-0">
+                <input type="checkbox" class="form-check-input" id="exampleCheck4">
+                <label class="form-check-label text-gray-color mb-3" for="exampleCheck4">
+                  I agree to the terms of use and privacy.
+                </label>
+              </div>
+
+              <div class="d-grid">
+                  <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>                
+              </div>
+              
+            </form>
+          </div>                
+    </div>
+  </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

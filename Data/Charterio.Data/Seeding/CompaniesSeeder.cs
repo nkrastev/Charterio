@@ -19,7 +19,6 @@
             await dbContext.Companies.AddAsync(new Company { Name = "Bulgaria Air" });
             await dbContext.Companies.AddAsync(new Company { Name = "Balkan Holidays" });
             await dbContext.Companies.AddAsync(new Company { Name = "AIR LUBO" });
-
         }
     }
 }
