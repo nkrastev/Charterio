@@ -18760,7 +18760,7 @@ li.default-nav-item > .btn i {
 
 @media (min-width: 768px) {
   .section-title-bg {
-    background-image: url(../img/home/devider.png);
+    
     background-position: right center;
     background-repeat: no-repeat;
     background-size: 8px 45px;

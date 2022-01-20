@@ -69,17 +69,13 @@
                 <div class="col-lg-4 col-md-6">
                     <i class="far fa-calendar-alt" aria-hidden="true"></i>
                     <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off"
-                           asp-for="StartFlightDate" value="@if(@Model.StartFlightDate!=null){
-                    @Model.StartFlightDate.ToString("d", CultureInfo.InvariantCulture)
-} else {DateTime.UtcNow.ToString("d", CultureInfo.InvariantCulture);}"
+                           asp-for="StartFlightDate" value="@Model.StartFlightDate.ToString("d", CultureInfo.InvariantCulture)"
                            placeholder="Please select start date interval" />
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <i class="far fa-calendar-alt" aria-hidden="true"></i>
                     <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off"
-                           asp-for="EndFlightDate" value="@if(@Model.EndFlightDate!=null){
-                    @Model.EndFlightDate.ToString("d", CultureInfo.InvariantCulture)
-} else { DateTime.UtcNow.ToString("d", CultureInfo.InvariantCulture);}"
+                           asp-for="EndFlightDate" value="@Model.EndFlightDate.ToString("d", CultureInfo.InvariantCulture)"
                            placeholder="Please select end date interval" />
 
 

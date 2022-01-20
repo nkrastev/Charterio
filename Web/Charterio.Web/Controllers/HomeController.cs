@@ -1,9 +1,7 @@
 ﻿namespace Charterio.Web.Controllers
 {
     using System.Diagnostics;
-    using System.Linq;
 
-    using Charterio.Data;
     using Charterio.Services.Data;
     using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Search;
@@ -44,6 +42,12 @@
         {
             return this.View(
                 new ErrorViewModel { RequestId = Activity.Current?.Id ?? this.HttpContext.TraceIdentifier });
+        }
+
+        [Route("/NotFound")]
+        public IActionResult PageNotFound()
+        {
+            return this.View();
         }
     }
 }
