@@ -82,8 +82,14 @@
             <li class=""><a class="" asp-controller="Home" asp-action="Index">Search Flights</a></li>
             <li class=""><a class="" href="">Schedule</a></li>
             <li class=""><a class="" href="">FAQ</a></li>
-            <li class=""><a class="" href="">Contacts</a></li>
-            <li class=""><a class="" href="">Login / Register</a></li>      
+            <li class=""><a class="" href="">Contacts</a></li> 
+            @if (User.Identity.IsAuthenticated){
+                        <li class=""><a asp-area="Identity" asp-page="/Account/Login">My Account</a></li>      
+                    }
+                    else{
+                        <li class=""><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>      
+                        <li class=""><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                    }                  
           </ul>
         </div>
       </div>
@@ -186,7 +192,7 @@
             </div>
             
             <div class="col-md-6">
-              <ul class="list-inline text-capitalize d-flex align-items-center justify-content-md-end justify-content-center mb-md-0">
+              <ul class="list-inline text-capitalize d-flex align-items-center justify-content-md-end justify-content-center mb-md-0">                
                 <li class="me-3">
                   <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>                  
                 </li>        

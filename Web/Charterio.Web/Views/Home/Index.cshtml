@@ -22,12 +22,16 @@
                     <li>
                         <a class="" href="">FAQ</a>
                     </li>
-                    <li>
-                        <a class="" href="">Contact Us</a>
-                    </li>
-                    <li>
-                        <a class="" href="">Register / Login</a>
-                    </li>
+
+                    @if (User.Identity.IsAuthenticated){
+                        <li class=""><a asp-area="Identity" asp-page="/Account/Login">My Account</a></li>      
+                    }
+                    else{
+                        <li class=""><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>      
+                        <li class=""><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                    }
+
+                    
                 </ul>
             </div>
         </div>
@@ -36,7 +40,6 @@
 <partial name="_HomeSliderPartitial" />
 }
 
-<!-- TODO View components for separate sections -->
 <section class="bg-dark-light py-7">
     <div class="container">
         <div class="row align-items-center">
