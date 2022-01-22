@@ -156,17 +156,9 @@
               </div>
 
               <p>Subscribe and get infomation about the Charterio new releases.</p>
+              <partial name="_MailChimp" />              
 
-              <form class="mb-6" action="index.html" method="post">
-                <div class="input-group input-group-sm">
-                  <input type="email" class="form-control form-control-sm form-transparent" required="" placeholder="Enter your email" aria-label="Enter your email">
-                  <button class="btn border-0 btn btn-append hover-bg-primary" type="submit">
-                    <i class="fas fa-long-arrow-alt-right text-white ltr" aria-hidden="true"></i>
-                  </button>
-                </div>
-              </form>
-
-              <ul class="list-inline d-flex mb-0">
+              <ul class="list-inline d-flex mb-0 mt-5">
                 <li class="me-3 me-lg-2 me-xl-3">
                   <a class="icon-default icon-border rounded-circle hover-bg-primary" href="javascript:void(0)">
                     <i class="fab fa-facebook-f text-white" aria-hidden="true"></i>
@@ -174,9 +166,10 @@
                 </li>
 
                 <li class="me-3 me-lg-2 me-xl-3">
-                  <a class="icon-default icon-border rounded-circle hover-bg-primary" href="javascript:void(0)">
-                    <i class="fab fa-twitter text-white" aria-hidden="true"></i>
+                    <a class="icon-default icon-border rounded-circle hover-bg-primary" href="https://github.com/nkrastev/Charterio" target="_blank" title="Charterio Source Code">
+                    <i class="fab fa-github text-white" aria-hidden="true"></i>
                   </a>
+                  
                 </li>                
               </ul>
             </div>
@@ -188,7 +181,8 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6 order-1 order-md-0">
-              <p class="mb-0 mb-md-0 text-md-start">&copy; @DateTime.Now.Year - @GlobalConstants.SystemName</p>
+              <p class="mb-0 mb-md-0 text-md-start">&copy; @DateTime.Now.Year - @GlobalConstants.SystemName: Ticket Management System For Charter Flights
+</p>
             </div>
             
             <div class="col-md-6">
