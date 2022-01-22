@@ -1,0 +1,40 @@
+﻿@page
+@model PersonalDataModel
+@{
+    ViewData["Title"] = "Personal Data";
+    ViewData["ActivePage"] = ManageNavPages.PersonalData;
+}
+
+
+<section class="py-9 pt-md-5">
+    <div class="container">
+        <div class="row">
+            <partial name="_ProfileMenuPartitial" />
+
+            <div class="col-md-6 col-lg-6 col-xl-9">
+                <h2 class="text-center pb-3">Your personal data</h2>
+                <p>Your account contains personal data that you have given us. This page allows you to download or delete that data.</p>
+                <p><strong>Deleting this data will permanently remove your account, and this cannot be recovered.</strong></p>
+                <div class="row pb-3">
+                    <div class="col-6">
+                        <form id="download-data" asp-page="DownloadPersonalData" method="post">
+                            <button class="btn btn-primary btn-sm mb-1 w-100" type="submit">Download</button>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <a id="delete" asp-page="DeletePersonalData" class="btn btn-danger btn-sm mb-1 w-100">Delete</a>
+                    </div>
+                </div>
+                <p>
+                    The term ‘personal data’ is the entryway to the application of the General Data Protection Regulation (GDPR). Only if a processing of data concerns personal data, the General Data Protection Regulation applies. The term is defined in Art. 4 (1). Personal data are any information which are related to an identified or identifiable natural person.</p>
+                <p>
+                    The data subjects are identifiable if they can be directly or indirectly identified, especially by reference to an identifier such as a name, an identification number, location data, an online identifier or one of several special characteristics, which expresses the physical, physiological, genetic, mental, commercial, cultural or social identity of these natural persons. In practice, these also include all data which are or can be assigned to a person in any kind of way. For example, the telephone, credit card or personnel number of a person, account data, number plate, appearance, customer number or address are all personal data.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}

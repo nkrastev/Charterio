@@ -6,6 +6,7 @@
 
     using Charterio.Common;
     using Charterio.Web.ViewModels.Airport;
+    using Charterio.Web.ViewModels.Flight;
     using Charterio.Web.ViewModels.Result;
 
     public class SearchViewModel : IValidatableObject
@@ -36,6 +37,8 @@
         public ICollection<AirportViewModel> AirportsForDropDown { get; set; } = new List<AirportViewModel>();
 
         public ICollection<ResultViewModel> FlightResults { get; set; } = new List<ResultViewModel>();
+
+        public ICollection<Cheapest3FlightsViewModel> Cheapest3Flights { get; set; } = new List<Cheapest3FlightsViewModel>();
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

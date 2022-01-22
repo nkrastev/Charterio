@@ -1,0 +1,41 @@
+﻿@using Charterio.Common
+@using Charterio.Web.ViewModels.Search
+@using System.Globalization
+@model SearchViewModel
+
+<div class="container">
+    <div class="text-center section-title">
+        <h2 class="text-uppercase font-weight-bold position-relative">
+            <span class="bg-smoke">
+                Cheapest flight tickets
+            </span>
+        </h2>
+        <p class="text-capitalize text-center">Your dates are flexible? Here are our deals.</p>
+    </div>
+    <div class="row justify-content-center">
+
+        @foreach (var item in Model.Cheapest3Flights)
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-hover mb-5 mb-lg-0">
+                    <div class="card-body">
+                        <h5>
+                            <a href="~/FlightDetails/@item.Id" class="card-title text-uppercase">@item.Start - @item.End ( @item.StartDate.ToShortDateString() )</a>
+                        </h5>
+                        <p>(Departure: @item.StartDate.AddHours(@item.StartUtcPosition).ToShortTimeString(), Arrival: @item.EndDate.AddHours(@item.EndUtcPosition).ToShortTimeString())</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h3 class="text-primary">@item.Price €</h3>
+                                <p class="mb-0 text-capitalize">Per ticket</p>
+                            </div>
+
+                            <div>
+                                <a href="~/FlightDetails/@item.Id" class="btn btn-sm btn-outline-secondary text-uppercase">Flight details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        }
+    </div>
+</div>

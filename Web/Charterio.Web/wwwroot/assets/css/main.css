@@ -21705,11 +21705,16 @@ img.lazyestload {
 .height100px {
     height: 100px;
 }
-.width100percent{
-    width:100%;
+
+.width100percent {
+    width: 100%;
 }
 
 .detailsArrow {
     font-size: 3em;
     color: #c2c2c2;
+}
+
+.ReviewHeight {
+    height: 700px;
 }

@@ -7,6 +7,7 @@
     using Charterio.Data;
     using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Airport;
+    using Charterio.Web.ViewModels.Flight;
     using Charterio.Web.ViewModels.Result;
     using Charterio.Web.ViewModels.Search;
     using global::Data.Models;
@@ -89,6 +90,32 @@
                 Price = flight.Price,
                 DistanceInKm = this.CalculateDistance(startAirport.Latitude, endAirport.Latitude, startAirport.Longtitude, endAirport.Longtitude),
             };
+            return data;
+        }
+
+        public ICollection<Cheapest3FlightsViewModel> GetCheapest3Flights()
+        {
+            var flights = this.db.Offers.ToList().OrderBy(x => x.Price).Take(3).ToList();
+            var data = new List<Cheapest3FlightsViewModel>();
+
+            foreach (var flight in flights)
+            {
+                var startAirport = this.db.Airports.Where(x => x.Id == flight.StartAirportId).FirstOrDefault();
+                var endAirport = this.db.Airports.Where(x => x.Id == flight.EndAirportId).FirstOrDefault();
+
+                data.Add(new Cheapest3FlightsViewModel
+                {
+                    Id = flight.Id,
+                    Start = startAirport.IataCode,
+                    StartDate = flight.StartTimeUtc,
+                    StartUtcPosition = flight.StartAirport.UtcPosition,
+                    End = endAirport.IataCode,
+                    EndDate = flight.EndTimeUtc,
+                    EndUtcPosition = flight.EndAirport.UtcPosition,
+                    Price = flight.Price,
+                });
+            }
+
             return data;
         }
 

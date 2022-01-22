@@ -4,6 +4,7 @@
 
     using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Airport;
+    using Charterio.Web.ViewModels.Flight;
     using Charterio.Web.ViewModels.Result;
     using Charterio.Web.ViewModels.Search;
 
@@ -14,5 +15,7 @@
         ICollection<ResultViewModel> GetFlightsBySearchTerms(SearchViewModel term);
 
         FlightViewModel GetFlightById(int id);
+
+        ICollection<Cheapest3FlightsViewModel> GetCheapest3Flights();
     }
 }

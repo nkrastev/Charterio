@@ -20,7 +20,10 @@
         {
             var homeViewModel = new SearchViewModel()
             {
+
             };
+
+            homeViewModel.Cheapest3Flights = this.flightService.GetCheapest3Flights();
 
             var airportsList = this.flightService.GetAllAirports();
 

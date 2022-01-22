@@ -11,10 +11,10 @@
     <nav class="nav-menuzord nav-menuzord-transparent navbar-sticky">
         <div class="container clearfix">
             <div id="menuzord" class="menuzord">
-                <a asp-controller="Home" asp-action="Index" class="menuzord-logo-brand"></a>
+                <a href="~/" class="menuzord-logo-brand"></a>
                 <ul class="menuzord-menu menuzord-right">
                     <li>
-                        <a class="active" asp-controller="Home" asp-action="Index">Search for Flights</a>
+                        <a href="~/">Search for Flights</a>
                     </li>
                     <li>
                         <a class="" href="">Schedule</a>
@@ -23,13 +23,13 @@
                         <a class="" href="">FAQ</a>
                     </li>
 
-                    @if (User.Identity.IsAuthenticated){
-                        <li class=""><a asp-area="Identity" asp-page="/Account/Login">My Account</a></li>      
+                     @if (User.Identity.IsAuthenticated){
+                        <li class=""><a href="~/Identity/Account/Manage">My Account</a></li>      
                     }
                     else{
-                        <li class=""><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>      
-                        <li class=""><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
-                    }
+                        <li class=""><a href="~/Identity/Account/Login">Login</a></li>      
+                        <li class=""><a href="~/Identity/Account/Register">Register</a></li>
+                    } 
 
                     
                 </ul>
@@ -139,6 +139,14 @@
             </div>
         </div>
     </div>
+</section>
+
+<section class="bg-smoke py-8 py-lg-9">
+    <partial name="_Cheapest3Flights" />
+</section>
+
+<section class="dzsparallaxer auto-init use-loading promotion-paralax">
+    <partial name="_ReviewsPartitial" />
 </section>
 
 

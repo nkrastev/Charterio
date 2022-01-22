@@ -74,21 +74,21 @@
     <nav class="nav-menuzord navbar-sticky">
       <div class="container clearfix">
         <div id="menuzord" class="menuzord">
-          <a asp-controller="Home" asp-action="Index" class="menuzord-brand">
+          <a href="/" class="menuzord-brand">
             <img class="lazyestload" data-src="/assets/img/logo-color-big.png" src="/assets/img/logo-color-big.png" alt="Charterio">
           </a>
           
           <ul class="menuzord-menu menuzord-right">            
-            <li class=""><a class="" asp-controller="Home" asp-action="Index">Search Flights</a></li>
+            <li class=""><a class="" href="/">Search Flights</a></li>
             <li class=""><a class="" href="">Schedule</a></li>
             <li class=""><a class="" href="">FAQ</a></li>
             <li class=""><a class="" href="">Contacts</a></li> 
             @if (User.Identity.IsAuthenticated){
-                        <li class=""><a asp-area="Identity" asp-page="/Account/Login">My Account</a></li>      
+                        <li class=""><a href="/Identity/Account/Manage">My Account</a></li>      
                     }
                     else{
-                        <li class=""><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>      
-                        <li class=""><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                        <li class=""><a href="/Identity/Account/Login">Login</a></li>      
+                        <li class=""><a href="/Identity/Account/Register">Register</a></li>
                     }                  
           </ul>
         </div>

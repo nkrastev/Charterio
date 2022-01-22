@@ -2,29 +2,66 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Profile";
-    ViewData["ActivePage"] = ManageNavPages.Index;
 }
 
-<h3>@ViewData["Title"]</h3>
-<partial name="_StatusMessage" for="StatusMessage" />
-<div class="row">
-    <div class="col-md-6">
-        <form id="profile-form" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-floating">
-                <input asp-for="Username" class="form-control" disabled />
-                <label asp-for="Username" class="form-label"></label>
-            </div>
-            <div class="form-floating">
-                <input asp-for="Input.PhoneNumber" class="form-control" />
-                <label asp-for="Input.PhoneNumber" class="form-label"></label>
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-            </div>
-            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
-        </form>
-    </div>
-</div>
+<section class="py-9 pt-md-5">
+    <div class="container">
+        <div class="row">
+            <partial name="_StatusMessage" for="StatusMessage" />
+        </div>
+        <div class="row">
+            <partial name="_ProfileMenuPartitial" />
 
+            <div class="col-md-6 col-lg-6 col-xl-9">
+                <h2 class="text-center pb-3">My Tickets</h2>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Ticket Number</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Order date</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Details</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>154789_154781</td>
+                            <td>CPH-BOJ</td>
+                            <td>12-01-2022</td>
+                            <td><span class="badge bg-success">Paid / Confirmed</span></td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>154789_154781</td>
+                            <td>FRA-SOF</td>
+                            <td>12-01-2022</td>
+                            <td><span class="badge bg-danger">Not Paid / Canceled</span></td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>154789_154781</td>
+                            <td>AMS-FRA</td>
+                            <td>12-01-2022</td>
+                            <td><span class="badge bg-success">Paid / Confirmed</span></td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        </div>
+    </div>
+</section>
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+<partial name="_ValidationScriptsPartial" />
 }
