@@ -23,28 +23,49 @@
     <div class="container">
         <div class="row">
             <div class="pt-5 mb-5" id="accordion">
-                                 
-
-                    @foreach (var faq in Model.FaqList)
-                    {
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="icon-bg mb-0">
-                                    <span class="text-capitalize font-weight-medium font-size-base text-dark">@faq.Question</span>
-                                </h5>
-                            </div>
-
-                            
-                                <div class="card-body pt-3">
-                                    @faq.Answer
-                                </div>
-                            
+                @foreach (var faq in Model.FaqsList)
+                {
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="icon-bg mb-0">
+                                <span class="text-capitalize font-weight-medium font-size-base text-dark">@faq.Question</span>
+                            </h5>
                         </div>
-                    }
-
-
-               
+                        <div class="card-body pt-3">
+                            @faq.Answer
+                        </div>
+                    </div>
+                }
             </div>
         </div>
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination align-items-center justify-content-center">
+                @if (Model.HasPreviousPage)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-action="Index" asp-controller="Faq" asp-route-pagenum="@Model.PreviousPageNumber">
+                            Previous
+                            <i class="fas fa-long-arrow-alt-left d-none d-md-inline-block ms-md-1" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                }
+                
+                <li class="page-item current">
+                    @Model.PageNumber
+                </li>
+
+                @if (Model.HasNextPage)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-action="Index" asp-controller="Faq" asp-route-pagenum="@Model.NextPageNumber">
+                            Next
+                            <i class="fas fa-long-arrow-alt-right d-none d-md-inline-block ms-md-1" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                }
+
+            </ul>
+        </nav>
     </div>
 </section>

@@ -65,7 +65,6 @@
 
             // Application services
             services.AddTransient<IEmailSender>(s => new SendGridEmailSender(this.configuration["SendGridApiKey"]));
-            services.AddTransient<ISettingsService, SettingsService>();
 
             services.AddTransient<IFlightService, FlightService>();
             services.AddTransient<IScheduleService, ScheduleService>();
@@ -121,6 +120,7 @@
                         endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapControllerRoute("searchForFlight", "Search/{startApt}/{endApt}/{paxCount}", new { controller = "Search", action = "SearchFlight" });
                         endpoints.MapControllerRoute("flightDetail", "FlightDetails/{id}/", new { controller = "Detail", action = "Index" });
+                        endpoints.MapControllerRoute("faq", "faq/{pageNum?}", new { controller = "Faq", action = "Index" });
                         endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapRazorPages();
                     });

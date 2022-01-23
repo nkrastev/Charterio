@@ -54,8 +54,6 @@
 
         public DbSet<TicketStatus> TicketStatuses { get; set; }
 
-        public DbSet<Setting> Settings { get; set; }
-
         public DbSet<UserQuestion> UserQuestions { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);

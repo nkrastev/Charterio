@@ -21726,3 +21726,7 @@ img.lazyestload {
 .card-header{
     border-radius:0 !important;
 }
+
+.current{
+    padding: 1rem 1rem;
+}

@@ -17,21 +17,24 @@
                         <a href="~/">Search for Flights</a>
                     </li>
                     <li>
-                        <a class="" href="~/schedule">Schedule</a>
+                        <a href="~/schedule">Schedule</a>
                     </li>
                     <li>
-                        <a class="" href="~/faq">FAQ</a>
+                        <a href="~/faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="~/contacts">Contacts</a>
                     </li>
 
-                     @if (User.Identity.IsAuthenticated){
-                        <li class=""><a href="~/identity/account/manage">My Account</a></li>      
+                    @if (User.Identity.IsAuthenticated){
+                    <li><a href="~/identity/account/manage">My Account</a></li>
                     }
                     else{
-                        <li class=""><a href="~/identity/account/login">Login</a></li>      
-                        <li class=""><a href="~/identity/account/register">Register</a></li>
-                    } 
+                    <li><a href="~/identity/account/login">Login</a></li>
+                    <li><a href="~/identity/account/register">Register</a></li>
+                    }
 
-                    
+
                 </ul>
             </div>
         </div>
@@ -58,13 +61,13 @@
                             <div class="row">
                                 <div class="col-md-12 col-lg-6">
                                     <div class="select-dropdown">
-                                        <div class="mb-3 mb-lg-0">                                            
-                                            <div class="select-default select-search-box">                                                
+                                        <div class="mb-3 mb-lg-0">
+                                            <div class="select-default select-search-box">
                                                 <select class="select-option" asp-for="StartApt">
                                                     <option>Leaving from</option>
                                                     @foreach (var item in Model.AirportsForDropDown)
                                                     {
-                                                         <option value="@item.IataCode">@item.IataCode - @item.Name</option>
+                                                        <option value="@item.IataCode">@item.IataCode - @item.Name</option>
                                                     }
                                                 </select>
                                             </div>
@@ -79,7 +82,7 @@
                                                     <option>Destination</option>
                                                     @foreach (var item in Model.AirportsForDropDown)
                                                     {
-                                                         <option value="@item.IataCode">@item.IataCode - @item.Name</option>
+                                                        <option value="@item.IataCode">@item.IataCode - @item.Name</option>
                                                     }
                                                 </select>
                                             </div>
@@ -112,16 +115,16 @@
                                 <div class="col-md-4 col-lg-4">
                                     <div class="mb-3 form-group-icon mb-lg-0">
                                         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                        <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off" 
-                                            asp-for="StartFlightDate" value="" placeholder="Please select start date interval" />
+                                        <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off"
+                                               asp-for="StartFlightDate" value="" placeholder="Please select start date interval" />
                                     </div>
                                 </div>
 
                                 <div class="col-md-4 col-lg-4">
                                     <div class="mb-3 form-group-icon mb-lg-0">
                                         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                        <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off" 
-                                            asp-for="EndFlightDate" value="" placeholder="Please select end date interval" />
+                                        <input type="text" class="form-control daterange-picker sidebar-daterange-picker" autocomplete="off"
+                                               asp-for="EndFlightDate" value="" placeholder="Please select end date interval" />
                                     </div>
                                 </div>
                             </div>

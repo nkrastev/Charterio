@@ -50,7 +50,12 @@
       "ProjectGuid": "d0d59508-cf8b-4656-a344-396c530bb9df",
       "DisplayName": "Charterio.Data.Common",
       "ColorIndex": 8
+    },
+    "8ab6b92a-0837-4bde-b950-10be3ff2b6a8": {
+      "ProjectGuid": "8ab6b92a-0837-4bde-b950-10be3ff2b6a8",
+      "DisplayName": "Sandbox",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 10
 }
