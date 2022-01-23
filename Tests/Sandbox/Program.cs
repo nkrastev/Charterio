@@ -3,6 +3,7 @@
     using System;
     using System.Diagnostics;
     using System.IO;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Charterio.Data;
@@ -54,6 +55,7 @@
 
             var settingsService = serviceProvider.GetService<ISettingsService>();
             Console.WriteLine($"Count of settings: {settingsService.GetCount()}");
+            Console.WriteLine($"Options: {options}");
 
             Console.WriteLine(sw.Elapsed);
             return await Task.FromResult(0);

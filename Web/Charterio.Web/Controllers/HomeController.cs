@@ -18,12 +18,10 @@
 
         public IActionResult Index()
         {
-            var homeViewModel = new SearchViewModel()
+            var homeViewModel = new SearchViewModel
             {
-
+                Cheapest3Flights = this.flightService.GetCheapest3Flights(),
             };
-
-            homeViewModel.Cheapest3Flights = this.flightService.GetCheapest3Flights();
 
             var airportsList = this.flightService.GetAllAirports();
 

@@ -80,15 +80,15 @@
           
           <ul class="menuzord-menu menuzord-right">            
             <li class=""><a class="" href="/">Search Flights</a></li>
-            <li class=""><a class="" href="">Schedule</a></li>
+            <li class=""><a class="" href="~/Schedule">Schedule</a></li>
             <li class=""><a class="" href="">FAQ</a></li>
             <li class=""><a class="" href="">Contacts</a></li> 
             @if (User.Identity.IsAuthenticated){
-                        <li class=""><a href="/Identity/Account/Manage">My Account</a></li>      
+                        <li class=""><a href="~/Identity/Account/Manage">My Account</a></li>      
                     }
                     else{
-                        <li class=""><a href="/Identity/Account/Login">Login</a></li>      
-                        <li class=""><a href="/Identity/Account/Register">Register</a></li>
+                        <li class=""><a href="~/Identity/Account/Login">Login</a></li>      
+                        <li class=""><a href="~/Identity/Account/Register">Register</a></li>
                     }                  
           </ul>
         </div>
