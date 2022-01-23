@@ -21722,3 +21722,7 @@ img.lazyestload {
 #mce-responses .response{
     color:#dee2e6;
 }
+
+.card-header{
+    border-radius:0 !important;
+}

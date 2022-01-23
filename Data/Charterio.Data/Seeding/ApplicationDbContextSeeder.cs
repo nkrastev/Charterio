@@ -33,6 +33,7 @@
                               new FlightsSeeder(),
                               new CurrenciesSeeder(),
                               new OfferSeeder(),
+                              new FaqsSeeder(),
                           };
 
             foreach (var seeder in seeders)

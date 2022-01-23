@@ -144,7 +144,7 @@
 
         private double ToRadians(double angleIn10thofaDegree)
         {
-            return (angleIn10thofaDegree * Math.PI) / 180;
+            return angleIn10thofaDegree * Math.PI / 180;
         }
     }
 }

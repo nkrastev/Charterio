@@ -69,6 +69,7 @@
 
             services.AddTransient<IFlightService, FlightService>();
             services.AddTransient<IScheduleService, ScheduleService>();
+            services.AddTransient<IFaqService, FaqService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

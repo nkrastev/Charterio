@@ -17,18 +17,18 @@
                         <a href="~/">Search for Flights</a>
                     </li>
                     <li>
-                        <a class="" href="~/Schedule">Schedule</a>
+                        <a class="" href="~/schedule">Schedule</a>
                     </li>
                     <li>
-                        <a class="" href="">FAQ</a>
+                        <a class="" href="~/faq">FAQ</a>
                     </li>
 
                      @if (User.Identity.IsAuthenticated){
-                        <li class=""><a href="~/Identity/Account/Manage">My Account</a></li>      
+                        <li class=""><a href="~/identity/account/manage">My Account</a></li>      
                     }
                     else{
-                        <li class=""><a href="~/Identity/Account/Login">Login</a></li>      
-                        <li class=""><a href="~/Identity/Account/Register">Register</a></li>
+                        <li class=""><a href="~/identity/account/login">Login</a></li>      
+                        <li class=""><a href="~/identity/account/register">Register</a></li>
                     } 
 
                     
