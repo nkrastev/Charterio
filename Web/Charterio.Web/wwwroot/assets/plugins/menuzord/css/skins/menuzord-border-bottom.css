@@ -96,11 +96,22 @@ Border-bottom Skin
 	border-bottom-color: #D770AD; 
 }
 
+
+
 /* Mobile mode (Responsive mode) */
 @media (max-width: 768px){
 	/* Menu items */
 	.menuzord-responsive .menuzord-menu > li > a{
 		padding: 12px 20px !important;
+		border-bottom-width: 1px;
+	}
+}
+
+
+@media (max-width: 1000px) {
+	/* Menu items */
+	.menuzord-menu > li > a {
+		padding: 12px 10px !important;
 		border-bottom-width: 1px;
 	}
 }

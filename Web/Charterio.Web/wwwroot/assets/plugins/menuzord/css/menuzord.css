@@ -562,4 +562,17 @@ License: http://codecanyon.net/licenses
 		width: 100%;
 	}
 }
-
+@media (max-width: 992px) {
+	.menuzord-menu > li > a {
+		padding: 36px 10px;
+		display: inline-block;
+		text-decoration: none;
+		font-size: 14px;
+		font-weight: 600;
+		color: #888;
+		outline: 0;
+		line-height: 1.42857143;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+		-webkit-tap-highlight-color: transparent;
+	}
+}

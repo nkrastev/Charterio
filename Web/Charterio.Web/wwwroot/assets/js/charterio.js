@@ -1,8 +1,10 @@
-
 (function ($) {
     'use strict';
 
-    /*======== 1. PREELOADER ========*/
+   
+
+    /*======== 1. PREELOADER ========*/    
+
     $(window).on('load', function () {
         $('#preloader').fadeOut(500);
     });

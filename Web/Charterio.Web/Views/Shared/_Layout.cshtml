@@ -52,6 +52,8 @@
 </head>
 <body id="body" class="up-scroll">
 
+            
+
     <!-- Preloader -->
     <div id="preloader" class="smooth-loader-wrapper">
         <div class="smooth-loader">
@@ -72,6 +74,13 @@
         </div>
     </div>
 
+    <!-- IE 11 bypass the preloader -->
+    <script>
+            if (window.document.documentMode) {                
+                window.document.getElementById("preloader").style.display = "none";                              
+            }
+    </script>
+    
     <!-- Header begin -->
     @if (IsSectionDefined("HomeMenuWithSlider"))
 
@@ -240,5 +249,7 @@
     <script src="~/assets/js/charterio.js" asp-append-version="true"></script>
 
     @await this.RenderSectionAsync("Scripts", required: false)
+
+   
 </body>
 </html>

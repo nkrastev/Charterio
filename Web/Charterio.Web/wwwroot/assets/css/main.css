@@ -17613,15 +17613,16 @@ img.fancybox-image {
 }
 
 .media-list-view .media-body .date-view span {
-  height: 35px;
-  line-height: 35px;
-  border-radius: 4px;
-  border: 1px solid #dedede;
-  padding: 0 14px;
-  color: #969696;
-  text-transform: uppercase;
-  font-size: 13px;
-  display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 4px;
+    border: 1px solid #dedede;
+    padding: 0 14px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: inline-block;
+    background-color: #ededed;
 }
 
 .media-list-view .media-body .view-details {
@@ -17648,7 +17649,7 @@ img.fancybox-image {
 
 @media (min-width: 768px) {
   .media-list-view.media-border .media-body .date-view {
-    position: absolute;
+    /*position: absolute;*/
   }
 }
 
@@ -21729,4 +21730,11 @@ img.lazyestload {
 
 .current{
     padding: 1rem 1rem;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS */
+    .navbar-sticky{
+        position:inherit;
+    }
 }

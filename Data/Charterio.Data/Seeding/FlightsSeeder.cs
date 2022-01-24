@@ -18,6 +18,10 @@
             await dbContext.Flights.AddAsync(new Flight { Number = "EAC1853", PlaneId = 3, CompanyId = 2 });
             await dbContext.Flights.AddAsync(new Flight { Number = "EAC1854", PlaneId = 3, CompanyId = 2 });
             await dbContext.Flights.AddAsync(new Flight { Number = "FB319", PlaneId = 2, CompanyId = 2 });
+            await dbContext.Flights.AddAsync(new Flight { Number = "FB114", PlaneId = 2, CompanyId = 2 });
+            await dbContext.Flights.AddAsync(new Flight { Number = "FB8414", PlaneId = 1, CompanyId = 2 });
+            await dbContext.Flights.AddAsync(new Flight { Number = "FB852", PlaneId = 1, CompanyId = 2 });
+            await dbContext.Flights.AddAsync(new Flight { Number = "EAC1141", PlaneId = 1, CompanyId = 1 });
         }
     }
 }
