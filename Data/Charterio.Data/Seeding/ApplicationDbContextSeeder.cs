@@ -33,6 +33,9 @@
                               new CurrenciesSeeder(),
                               new OfferSeeder(),
                               new FaqsSeeder(),
+                              new UsersSeeder(),
+                              new PaymentMethodsSeeder(),
+                              new PaymentsSeeder(),
                           };
 
             foreach (var seeder in seeders)

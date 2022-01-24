@@ -13,6 +13,7 @@
     using Charterio.Data.Repositories;
     using Charterio.Data.Seeding;
     using Charterio.Services.Data;
+    using Charterio.Services.Data.Flight;
     using Charterio.Services.Messaging;
 
     using CommandLine;
@@ -53,6 +54,12 @@
         {
             var sw = Stopwatch.StartNew();
 
+            // var db = serviceProvider.GetService<ApplicationDbContext>();
+            var allotmentCheck = serviceProvider.GetService<IAllotmentService>();
+
+            Console.WriteLine($"Checking allotment service. Offer id = 6 has data (10 initial allotment, 2 sold tickets with 1 and 3 pax in it.)");
+            Console.WriteLine($"Checking: {allotmentCheck.AreSeatsAvailable(6, 10)}");
+
             Console.WriteLine($"Options: {options}");
 
             Console.WriteLine(sw.Elapsed);
@@ -81,6 +88,7 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
+            services.AddTransient<IAllotmentService, AllotmentService>();
         }
     }
 }

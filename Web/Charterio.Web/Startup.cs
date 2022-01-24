@@ -11,6 +11,7 @@
     using Charterio.Data.Seeding;
     using Charterio.Services.Data;
     using Charterio.Services.Data.Contacts;
+    using Charterio.Services.Data.Flight;
     using Charterio.Services.Mapping;
     using Charterio.Services.Messaging;
     using Charterio.Web.ViewModels;
@@ -68,10 +69,12 @@
             // Application services
             services.AddTransient<IEmailSender>(s => new SendGridEmailSender(this.configuration["SendGridApiKey"]));
 
-            services.AddTransient<IFlightService, FlightService>();
             services.AddTransient<IScheduleService, ScheduleService>();
             services.AddTransient<IFaqService, FaqService>();
             services.AddTransient<IContactsService, ContactsService>();
+
+            services.AddTransient<IFlightService, FlightService>();
+            services.AddTransient<IAllotmentService, AllotmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

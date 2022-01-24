@@ -43,7 +43,7 @@
 
         public string Categing { get; set; }
 
-        public int? AllotmentCount { get; set; }
+        public int AllotmentCount { get; set; }
 
         public bool IsActiveInWeb { get; set; }
 

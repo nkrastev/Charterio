@@ -162,7 +162,6 @@
                     Categing = "Nothing included",
                     Luggage = "3 kg hand luggage",
                 });
-
         }
     }
 }

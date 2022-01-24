@@ -6,6 +6,8 @@
 
         public const string AdministratorRoleName = "Administrator";
 
+        public const string CustomerRoleName = "Customer";
+
         public const string ErrorSameAirports = "You cannot search flight from/to same airports. Please change departure or arrival destination";
 
         public const string ErrorStartApt = "Departure destination is invalid. Please select another departure destination.";
