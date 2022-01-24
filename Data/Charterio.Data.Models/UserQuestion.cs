@@ -9,9 +9,14 @@
         [Required]
         public string Question { get; set; }
 
-        public string UserId { get; set; }
+        [Required]
+        public string UserName { get; set; }
 
-        public ApplicationUser User { get; set; }
+        [Required]
+        public string UserEmail { get; set; }
+
+        [Required]
+        public string UserPhone { get; set; }
 
         public bool IsAnswered { get; set; }
     }

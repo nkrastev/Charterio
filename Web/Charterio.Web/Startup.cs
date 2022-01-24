@@ -10,10 +10,11 @@
     using Charterio.Data.Repositories;
     using Charterio.Data.Seeding;
     using Charterio.Services.Data;
+    using Charterio.Services.Data.Contacts;
     using Charterio.Services.Mapping;
     using Charterio.Services.Messaging;
     using Charterio.Web.ViewModels;
-
+    using Ganss.XSS;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -57,6 +58,7 @@
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddSingleton(this.configuration);
+            services.AddSingleton<IHtmlSanitizer, HtmlSanitizer>();
 
             // Data repositories
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
@@ -69,6 +71,7 @@
             services.AddTransient<IFlightService, FlightService>();
             services.AddTransient<IScheduleService, ScheduleService>();
             services.AddTransient<IFaqService, FaqService>();
+            services.AddTransient<IContactsService, ContactsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

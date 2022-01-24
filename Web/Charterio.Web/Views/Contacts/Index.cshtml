@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Charterio.Web.ViewModels.Contacts
+@model ContactsViewModel
+@{
     this.ViewData["Title"] = $"Contact information";
 }
 <section class="page-title">
@@ -53,21 +55,26 @@
       </div>
 
       <div class="col-md-6 col-lg-6 col-xl-6">
-        <form action="" method="POST" role="form" class="form">
-          <div class="form-group">
-            <input type="text" class="form-control border-0 bg-smoke" required="" placeholder="Your Name">
+        <div asp-validation-summary="All" class="text-center"></div>
+        <form method="POST" role="form" class="form" asp-controller="Contacts" asp-action="Index">
+          <div class="form-group">            
+            <input type="text" class="form-control border-0 bg-smoke" asp-for="Name" placeholder="Your Name">
+            <span asp-validation-for="Name" class="badge bg-danger"></span><br />
           </div>
 
           <div class="form-group">
-            <input type="email" class="form-control border-0 bg-smoke" placeholder="Your Email">
+            <input type="email" class="form-control border-0 bg-smoke" asp-for="Email" placeholder="Your Email">
+            <span asp-validation-for="Email"  class="badge bg-danger"></span><br />
           </div>
 
           <div class="form-group">
-            <input type="number" class="form-control border-0 bg-smoke" placeholder="Your Phone">
+            <input type="number" class="form-control border-0 bg-smoke" asp-for="Phone" placeholder="Your Phone">
+            <span asp-validation-for="Phone"  class="badge bg-danger"></span><br />
           </div>
 
           <div class="form-group">
-            <textarea class="form-control border-0 bg-smoke" rows="6" placeholder="Your Message"></textarea>
+            <textarea class="form-control border-0 bg-smoke" rows="6" asp-for="Message" placeholder="Your Message"></textarea>
+            <span asp-validation-for="Message"  class="badge bg-danger"></span><br />
           </div>
 
           <div class="d-flex justify-content-end">
