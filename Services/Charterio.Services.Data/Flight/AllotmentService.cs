@@ -65,5 +65,10 @@
 
             return initialAllotment.AllotmentCount;
         }
+
+        public int GetAvailableSeatsForOffer(int offerId)
+        {
+            return this.GetInitialAllotment(offerId) - this.SoldTicketsPaxCount(offerId);
+        }
     }
 }

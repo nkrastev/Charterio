@@ -1,8 +1,11 @@
 ﻿namespace Charterio.Data.Models
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class UserQuestion
+    using Charterio.Data.Common.Models;
+
+    public class UserQuestion : IAuditInfo
     {
         public int Id { get; set; }
 
@@ -19,5 +22,9 @@
         public string UserPhone { get; set; }
 
         public bool IsAnswered { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+
+        public DateTime? ModifiedOn { get; set; }
     }
 }

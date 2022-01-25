@@ -8184,6 +8184,10 @@ fieldset:disabled .btn {
   width: 75% !important;
 }
 
+.w-90 {
+    width: 90% !important;
+}
+
 .w-100 {
   width: 100% !important;
 }
@@ -21737,4 +21741,11 @@ img.lazyestload {
     .navbar-sticky{
         position:inherit;
     }
+}
+
+.mmenuBtn {
+    text-transform: uppercase;
+    padding: 34px 0;
+    margin: 0 15px;
+    font-weight:bold;    
 }

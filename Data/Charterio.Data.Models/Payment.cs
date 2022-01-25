@@ -1,10 +1,11 @@
 ﻿namespace Data.Models
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
 
-    using Charterio.Data.Models;
+    using Charterio.Data.Common.Models;
 
-    public class Payment
+    public class Payment : IAuditInfo
     {
         public int Id { get; set; }
 
@@ -22,5 +23,9 @@
 
         [Required]
         public double Amount { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+
+        public DateTime? ModifiedOn { get; set; }
     }
 }

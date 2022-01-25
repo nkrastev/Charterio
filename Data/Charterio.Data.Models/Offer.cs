@@ -3,7 +3,9 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class Offer
+    using Charterio.Data.Common.Models;
+
+    public class Offer : IAuditInfo
     {
         public int Id { get; set; }
 
@@ -50,5 +52,7 @@
         public bool IsActiveInAdmin { get; set; }
 
         public DateTime CreatedOn { get; set; }
+
+        public DateTime? ModifiedOn { get; set; }
     }
 }

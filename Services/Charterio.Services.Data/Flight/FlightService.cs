@@ -5,6 +5,7 @@
     using System.Linq;
 
     using Charterio.Data;
+    using Charterio.Services.Data.Flight;
     using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Airport;
     using Charterio.Web.ViewModels.Flight;
@@ -15,10 +16,12 @@
     public class FlightService : IFlightService
     {
         private readonly ApplicationDbContext db;
+        private readonly IAllotmentService allotmentService;
 
-        public FlightService(ApplicationDbContext db)
+        public FlightService(ApplicationDbContext db, IAllotmentService allotmentService)
         {
             this.db = db;
+            this.allotmentService = allotmentService;
         }
 
         public ICollection<AirportViewModel> GetAllAirports()
@@ -36,30 +39,27 @@
 
         public ICollection<ResultViewModel> GetFlightsBySearchTerms(SearchViewModel terms)
         {
-            var targetFlights = this.db.Offers.
+            var flightResults = this.db.Offers.
                 Where(
                     x => x.StartAirport.IataCode == terms.StartApt &&
                     x.EndAirport.IataCode == terms.EndApt &&
                     x.StartTimeUtc >= terms.StartFlightDate &&
                     x.EndTimeUtc <= terms.EndFlightDate &&
                     x.IsActiveInWeb == true)
+                .Select(x => new ResultViewModel()
+                {
+                    Id = x.Id,
+                    StartAptName = x.StartAirport.Name,
+                    StartAptUtc = x.StartAirport.UtcPosition,
+                    EndAptName = x.EndAirport.Name,
+                    FlightStartDate = x.StartTimeUtc,
+                    AvailableSeats = this.allotmentService.GetAvailableSeatsForOffer(x.Id),
+                    Price = x.Price,
+                })
+                .OrderBy(x => x.Price)
                 .ToList();
 
-            List<ResultViewModel> flightResults = new();
-
-            foreach (var flight in targetFlights)
-            {
-                flightResults.Add(new ResultViewModel
-                    {
-                        Id = flight.Id,
-                        StartApt = flight.StartAirport.Name,
-                        EndApt = flight.EndAirport.Name,
-                        DepartureDate = flight.StartTimeUtc,
-                        Price = flight.Price,
-                    });
-            }
-
-            return flightResults.OrderBy(x => x.Price).ToList();
+            return flightResults;
         }
 
         public FlightViewModel GetFlightById(int id)

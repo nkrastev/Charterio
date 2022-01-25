@@ -1,11 +1,13 @@
 ﻿namespace Charterio.Data.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    using Charterio.Data.Common.Models;
     using global::Data.Models;
 
-    public class Ticket
+    public class Ticket : IAuditInfo
     {
         public int Id { get; set; }
 
@@ -38,5 +40,9 @@
         public ApplicationUser User { get; set; }
 
         public virtual ICollection<TicketPassanger> TicketPassangers { get; set; } = new HashSet<TicketPassanger>();
+
+        public DateTime CreatedOn { get; set; }
+
+        public DateTime? ModifiedOn { get; set; }
     }
 }

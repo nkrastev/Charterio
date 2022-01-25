@@ -100,20 +100,32 @@
                 <div class="row">
                     <div class="col-md-6 col-xl-6 position-relative">
                         <p class="mb-6 line-height-28 h4">
-                            Departs from: <strong>@result.StartApt</strong><br />
-                            Arrives at: <strong>@result.EndApt</strong>
+                            Departs from: <strong>@result.StartAptName</strong><br />
+                            Arrives at: <strong>@result.EndAptName</strong>
                         </p>
                         <div class="date-view">
-                            <span><i class="far fa-calendar-alt" aria-hidden="true"></i> @result.DepartureDate.Date</span>
-                            <span><i class="far fa-clock" aria-hidden="true"></i> Departure time: @result.DepartureDate.TimeOfDay UTC</span>
+                            <span><i class="far fa-calendar-alt" aria-hidden="true"></i> @result.FlightStartDate.Date.ToShortDateString()</span>
+                            <span><i class="far fa-clock" aria-hidden="true"></i> Departure time: @result.FlightStartDate.AddHours(result.StartAptUtc).ToShortTimeString() Local time</span>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-6">
                         <div class="bg-primary text-center p-3 view-details">
                             <h2 class="text-white font-weight-bold h1">@result.Price €</h2>
-                            <div>
-                                <a href="/FlightDetails/@result.Id" class="btn btn-xs w-40 mx-auto btn-outline-white btn-booking text-uppercase mb-2">Details</a>
-                                <a href="/Book/@result.Id" class="btn btn-xs w-40 mx-auto btn-outline-white btn-booking text-uppercase mb-2">Book Now</a>
+                            <div class="row">
+                                <div class="col-6 mt-2 text-uppercase text-white">
+                                    @if (Model.PaxCount>=@result.AvailableSeats)
+                                   {
+                                            <span><b>Only @result.AvailableSeats seats remaining</b></span>
+                                        }
+                                        else
+                                        {
+                                            <span>There are available seats</span>
+                                        }
+                                        
+                                </div>
+                                <div  class="col-6">                                
+                                    <a href="/FlightDetails/@result.Id" class="btn btn-xs w-90 mx-auto btn-outline-white btn-booking text-uppercase mb-2">Details</a>                                
+                                </div>
                             </div>
                         </div>
                     </div>

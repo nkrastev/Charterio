@@ -7,5 +7,7 @@
         int SoldTicketsPaxCount(int offerId);
 
         int GetInitialAllotment(int offerId);
+
+        int GetAvailableSeatsForOffer(int offerId);
     }
 }

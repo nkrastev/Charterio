@@ -57,10 +57,11 @@
               </div>
     
               <div class="mb-3 form-check mb-0">
-                <input type="checkbox" class="form-check-input" id="exampleCheck4">
-                <label class="form-check-label text-gray-color mb-3" for="exampleCheck4">
+                <input asp-for="Input.ConfirmTos" type="checkbox" class="form-check-input" aria-required="true" id="TosCheckbox">
+                <label class="form-check-label text-gray-color mb-3" for="TosCheckbox">
                   I agree to the terms of use and privacy.
-                </label>
+                </label>                
+                <span asp-validation-for="Input.ConfirmTos" class="text-danger"></span> 
               </div>
 
               <div class="d-grid">
@@ -74,5 +75,5 @@
 </section>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <partial name="_ValidationScriptsPartial" />    
 }
