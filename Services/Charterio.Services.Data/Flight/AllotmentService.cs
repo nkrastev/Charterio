@@ -29,12 +29,12 @@
                 .Where(x => x.OfferId == offerId)
                 .Select(x => new
                 {
-                    Pax = this.db.TicketPassangers.Where(t => t.TicketId == x.Id).Sum(t => t.Id),
+                    Pax = this.db.TicketPassangers.Where(t => t.TicketId == x.Id).Count(),
                 })
                 .ToList();
 
             // compare needed seat with initial allotment and sum of all tickets with all paxes in them
-            if (neededSeats > initialSeats.Count - soldTicketsForOffer.Sum(x => x.Pax))
+            if (neededSeats >= initialSeats.Count - soldTicketsForOffer.Sum(x => x.Pax))
             {
                 return false;
             }
@@ -42,6 +42,28 @@
             {
                 return true;
             }
+        }
+
+        public int SoldTicketsPaxCount(int offerId)
+        {
+            // count of sold tickets for particular offer
+            var soldTicketsForOffer = this
+                .db.Tickets
+                .Where(x => x.OfferId == offerId)
+                .Select(x => new
+                {
+                    Pax = this.db.TicketPassangers.Where(t => t.TicketId == x.Id).Count(),
+                })
+                .ToList();
+
+            return soldTicketsForOffer.Sum(x => x.Pax);
+        }
+
+        public int GetInitialAllotment(int offerId)
+        {
+            var initialAllotment = this.db.Offers.Where(x => x.Id == offerId).FirstOrDefault();
+
+            return initialAllotment.AllotmentCount;
         }
     }
 }

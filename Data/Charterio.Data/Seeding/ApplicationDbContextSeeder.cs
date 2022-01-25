@@ -21,8 +21,7 @@
                 throw new ArgumentNullException(nameof(serviceProvider));
             }
 
-            var logger = serviceProvider.GetService<ILoggerFactory>().CreateLogger(typeof(ApplicationDbContextSeeder));
-
+            // var logger = serviceProvider.GetService<ILoggerFactory>().CreateLogger(typeof(ApplicationDbContextSeeder));
             var seeders = new List<ISeeder>
                           {
                               new RolesSeeder(),
@@ -36,13 +35,19 @@
                               new UsersSeeder(),
                               new PaymentMethodsSeeder(),
                               new PaymentsSeeder(),
+                              new TicketStatusesSeeder(),
+                              new TicketIssuersSeeder(),
+                              new TicketsSeeder(),
+                              new PaxTitlesSeeder(),
+                              new TicketPassangersSeeder(),
                           };
 
             foreach (var seeder in seeders)
             {
                 await seeder.SeedAsync(dbContext, serviceProvider);
                 await dbContext.SaveChangesAsync();
-                logger.LogInformation($"Seeder {seeder.GetType().Name} done.");
+
+                // logger.LogInformation($"Seeder {seeder.GetType().Name} done.");
             }
         }
     }
