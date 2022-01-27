@@ -133,6 +133,23 @@
             return data;
         }
 
+        public double GetOfferPrice(int id)
+        {
+            var offer = this.db.Offers.Where(x => x.Id == id).FirstOrDefault();
+            return offer.Price;
+        }
+
+        public string GetOfferAirportsAsString(int offer)
+        {
+            var airports = this.db.Offers.Where(x => x.Id == offer).Select(x => new
+                    {
+                        Start = x.StartAirport.IataCode,
+                        End = x.EndAirport.IataCode,
+                    })
+                .FirstOrDefault();
+            return airports.Start + " - " + airports.End;
+        }
+
         private double CalculateDistance(double latitude1, double latitude2, double longtitude1, double longtitude2)
         {
             var lon1 = this.ToRadians(longtitude1);

@@ -55,5 +55,11 @@
         {
             return this.View();
         }
+
+        [Route("/SomethingIsWrong")]
+        public IActionResult SomethingIsWrong()
+        {
+            return this.View();
+        }
     }
 }

@@ -19,5 +19,9 @@
         ICollection<Cheapest3FlightsViewModel> GetCheapest3Flights();
 
         bool IsFlightExisting(int id);
+
+        double GetOfferPrice(int id);
+
+        string GetOfferAirportsAsString(int offer);
     }
 }

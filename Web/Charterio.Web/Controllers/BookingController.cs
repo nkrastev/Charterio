@@ -32,6 +32,12 @@
         [HttpGet]
         public async Task<IActionResult> Index(int offer, int pax)
         {
+            // check if flight is valid to get the price
+            if (!this.flightService.IsFlightExisting(offer))
+            {
+                return this.Redirect("~/SomethingIsWrong");
+            }
+
             var data = new BookingViewModel();
             var user = await this.userManager.GetUserAsync(this.User);
             data.CustomerName = user.FirstName + " " + user.LastName;
@@ -39,6 +45,8 @@
             data.CustomerPhone = user.PhoneNumber;
             data.OfferId = offer;
             data.PaxCount = pax;
+            data.PricePerTicket = this.flightService.GetOfferPrice(offer);
+            data.Airports = this.flightService.GetOfferAirportsAsString(offer);
             data.PaxList = new List<BookingPaxViewModel>(new BookingPaxViewModel[pax]);
 
             return this.View(data);

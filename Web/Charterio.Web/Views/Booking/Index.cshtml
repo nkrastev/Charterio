@@ -38,23 +38,20 @@
 
         <div class="row text-center">            
             <div class="col-4 font-size-22">
-                <i class="fas fa-plane-departure"></i> LON - CDG
+                <i class="fas fa-plane-departure"></i> @Model.Airports
             </div>
             <div class="col-4 font-size-22">
                 @Model.PaxCount x <i class="fas fa-user"></i>
             </div>
             <div class="col-4 font-size-22">
-                @Model.PaxCount x 132 = 478 €
+                @Model.PaxCount x @Model.PricePerTicket = @(@Model.PaxCount*@Model.PricePerTicket) €
             </div>            
         </div>
 
-        <hr />
-        Offer Id: @Model.OfferId, Pax: @Model.PaxCount
-
+        <hr />        
 
         <div class="row text-center">
-            
-                
+                            
                 <form method="post" asp-controller="Booking">
                     <div asp-validation-summary="All" class="text-center"></div>
                     <input type="text" asp-for="CustomerName" value="@this.Model.CustomerName" hidden />

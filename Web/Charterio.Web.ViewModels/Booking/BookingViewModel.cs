@@ -25,6 +25,10 @@
         [Range(1, 8)]
         public int PaxCount { get; set; }
 
+        public string Airports { get; set; }
+
+        public double PricePerTicket { get; set; }
+
         public List<BookingPaxViewModel> PaxList { get; set; }
     }
 }
