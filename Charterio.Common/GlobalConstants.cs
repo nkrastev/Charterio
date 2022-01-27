@@ -21,5 +21,9 @@
         public const string ErrorStartDateAfterEndDate = "End date is before Start date, or they are the same.";
 
         public const string ErrorSomeOfDateIsTodayOrInThePast = "Start or End date is Today or in the past. Please change dates.";
+
+        public const string ErrorNotEnoughtAvailableSeats = "Not enought available seats for this flight. Please restart your booking.";
+
+        public const string ErrorFlightDoesNotExists = "The selected flight does not exists. Please restart your booking.";
     }
 }

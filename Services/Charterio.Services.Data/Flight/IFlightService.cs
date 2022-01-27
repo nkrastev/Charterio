@@ -17,5 +17,7 @@
         FlightViewModel GetFlightById(int id);
 
         ICollection<Cheapest3FlightsViewModel> GetCheapest3Flights();
+
+        bool IsFlightExisting(int id);
     }
 }

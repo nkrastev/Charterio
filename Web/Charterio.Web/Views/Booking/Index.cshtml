@@ -1,0 +1,88 @@
+﻿@using Charterio.Web.ViewModels.Booking
+@model BookingViewModel
+@{
+    this.ViewData["Title"] = $"Booking (Add passangers details)";
+}
+<section class="page-title">
+    <div class="page-title-img bg-img bg-overlay-darken">
+        <div class="container">
+            <div class="row align-items-center justify-content-center height100px">
+                <div class="col-lg-8">
+                    <div class="page-title-content">
+                        <div class="title-border">
+                            <h1 class="text-uppercase text-white font-weight-bold">Booking ( Add passangers details )</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-9 pt-md-6">
+    <div class="container">
+        
+        <div class="row text-center">            
+            <div class="col-4 font-size-22">
+                <i class="fas fa-user-check"></i> @Model.CustomerName
+            </div>
+            <div class="col-4 font-size-22">
+                <i class="far fa-envelope"></i> @Model.CustomerEmail
+            </div>
+            <div class="col-4 font-size-22">
+                <i class="fas fa-phone-alt"></i> @Model.CustomerPhone
+            </div>            
+        </div>
+
+        <hr />
+
+        <div class="row text-center">            
+            <div class="col-4 font-size-22">
+                <i class="fas fa-plane-departure"></i> LON - CDG
+            </div>
+            <div class="col-4 font-size-22">
+                @Model.PaxCount x <i class="fas fa-user"></i>
+            </div>
+            <div class="col-4 font-size-22">
+                @Model.PaxCount x 132 = 478 €
+            </div>            
+        </div>
+
+        <hr />
+        Offer Id: @Model.OfferId, Pax: @Model.PaxCount
+
+
+        <div class="row text-center">
+            
+                
+                <form method="post" asp-controller="Booking">
+                    <div asp-validation-summary="All" class="text-center"></div>
+                    <input type="text" asp-for="CustomerName" value="@this.Model.CustomerName" hidden />
+                    <input type="text" asp-for="CustomerEmail" value="@Model.CustomerEmail" hidden />
+                    <input type="text" asp-for="CustomerPhone" value="@Model.CustomerPhone" hidden />
+                    <input type="text" asp-for="OfferId" value="@Model.OfferId" hidden />
+                    <input type="text" asp-for="PaxCount" value="@Model.PaxCount" hidden />                                       
+
+                    @for (var i = 1; i <= @Model.PaxCount; i++)
+                       {
+                           <div class="row pb-2">
+                               <div class="col-4">
+                                    <input type="text" asp-for="@Model.PaxList[i-1].PaxTitle"  placeholder="Add pax title"  class="w-90"/>
+                               </div>
+                               <div class="col-4">
+                                    <input type="text" asp-for="@Model.PaxList[i-1].PaxFirstName" placeholder="First name" class="w-90"/>
+                               </div>
+                               <div class="col-4">
+                                    <input type="text" asp-for="@Model.PaxList[i-1].PaxLastName" placeholder="Last name" class="w-90"/>
+                               </div>
+                           </div>
+                       }                    
+                    
+                    <input type="submit" value="Confirm passangers" class="w-100 mt-3" />
+                </form>
+            
+        </div>
+    </div>
+</section>
+
+

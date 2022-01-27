@@ -1,0 +1,30 @@
+﻿namespace Charterio.Web.ViewModels.Booking
+{
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
+    using Charterio.Common;
+
+    public class BookingViewModel
+    {
+        [Required]
+        public string CustomerName { get; set; }
+
+        [Required]
+        public string CustomerEmail { get; set; }
+
+        [Required]
+        public string CustomerPhone { get; set; }
+
+        // Validate if offer ID is a valid one in controller
+        [Required]
+        public int OfferId { get; set; }
+
+        // Validate if enought seats available in controller
+        [Required]
+        [Range(1, 8)]
+        public int PaxCount { get; set; }
+
+        public List<BookingPaxViewModel> PaxList { get; set; }
+    }
+}

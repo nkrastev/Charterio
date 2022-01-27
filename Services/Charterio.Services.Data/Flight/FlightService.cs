@@ -93,6 +93,20 @@
             return data;
         }
 
+        public bool IsFlightExisting(int id)
+        {
+            var flight = this.db.Offers.FirstOrDefault(x => x.Id == id);
+
+            if (flight == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public ICollection<Cheapest3FlightsViewModel> GetCheapest3Flights()
         {
             var flights = this.db.Offers.ToList().OrderBy(x => x.Price).Take(3).ToList();
