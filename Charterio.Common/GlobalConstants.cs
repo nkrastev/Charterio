@@ -2,6 +2,15 @@
 {
     public static class GlobalConstants
     {
+        public const string PaxTitleMr = "MR";
+        public const string PaxTitleMrs = "MRS";
+        public const string PaxTitleChd = "CHD";
+        public const string PaxTitleInf = "INF";
+
+        public const string ErrorEmptyOrWrongDob = "Date of birth field is required for infants in the format DD-MM-YYYY";
+
+        public const string ErrorDobIsNotDobOfChild = "Infants are less than 2 years old. The Date you've entered is wrong.";
+
         public const string SystemName = "Charterio";
 
         public const string AdministratorRoleName = "Administrator";

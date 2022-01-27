@@ -5746,10 +5746,7 @@ fieldset:disabled .btn {
 
 .alert {
   position: relative;
-  padding: 1rem 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
+  padding: 1rem 1rem;  
 }
 
 .alert-heading {
@@ -21748,4 +21745,9 @@ img.lazyestload {
     padding: 34px 0;
     margin: 0 15px;
     font-weight:bold;    
+}
+
+.validation-summary-errors ul {
+    list-style-type:none;
+    color:#ff0000;
 }

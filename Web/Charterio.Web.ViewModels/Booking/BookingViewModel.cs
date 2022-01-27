@@ -23,6 +23,7 @@
         // Validate if enought seats available in controller
         [Required]
         [Range(1, 8)]
+        [Display(Name = "Passenger count")]
         public int PaxCount { get; set; }
 
         public string Airports { get; set; }

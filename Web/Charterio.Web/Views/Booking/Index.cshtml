@@ -1,4 +1,5 @@
-﻿@using Charterio.Web.ViewModels.Booking
+﻿@using Charterio.Common
+@using Charterio.Web.ViewModels.Booking
 @model BookingViewModel
 @{
     this.ViewData["Title"] = $"Booking (Add passangers details)";
@@ -63,19 +64,29 @@
                     @for (var i = 1; i <= @Model.PaxCount; i++)
                        {
                            <div class="row pb-2">
-                               <div class="col-4">
-                                    <input type="text" asp-for="@Model.PaxList[i-1].PaxTitle"  placeholder="Add pax title"  class="w-90"/>
+                               <div class="col-2">
+                                   <select asp-for="@Model.PaxList[i-1].PaxTitle" class="w-90 form-control border-0 bg-smoke">
+                                       <option value="@GlobalConstants.PaxTitleMr">Mister</option>
+                                       <option value="@GlobalConstants.PaxTitleMrs">Miss.</option>
+                                       <option value="@GlobalConstants.PaxTitleChd">Children</option>
+                                       <option value="@GlobalConstants.PaxTitleInf">Infant</option>
+                                   </select>                                    
                                </div>
                                <div class="col-4">
-                                    <input type="text" asp-for="@Model.PaxList[i-1].PaxFirstName" placeholder="First name" class="w-90"/>
+                                    <input type="text" asp-for="@Model.PaxList[i-1].PaxFirstName" placeholder="First name" class="w-90 form-control border-0 bg-smoke"/>                                    
                                </div>
                                <div class="col-4">
-                                    <input type="text" asp-for="@Model.PaxList[i-1].PaxLastName" placeholder="Last name" class="w-90"/>
+                                    <input type="text" asp-for="@Model.PaxList[i-1].PaxLastName" placeholder="Last name" class="w-90 form-control border-0 bg-smoke"/>
+                               </div>
+                               <div class="col-2">
+                                    <input type="text" asp-for="@Model.PaxList[i-1].Dob" placeholder="DOB for infant" class="w-90 form-control border-0 bg-smoke"/>
                                </div>
                            </div>
                        }                    
-                    
-                    <input type="submit" value="Confirm passangers" class="w-100 mt-3" />
+                    <div class="row">
+                        <div class="col-12  pb-1 pt-1 col-12 text-center">Date of Birth (DOB) is required for infants in format (DD-MM-YYYY)</div>
+                        </div>
+                    <input type="submit" value="Confirm passangers" class="w-100 mt-3 btn btn-primary text-uppercase" />
                 </form>
             
         </div>

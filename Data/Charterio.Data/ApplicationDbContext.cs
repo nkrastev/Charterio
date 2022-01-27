@@ -44,8 +44,6 @@
 
         public DbSet<Currency> Currencies { get; set; }
 
-        public DbSet<PaxTitle> PaxTitles { get; set; }
-
         public DbSet<Ticket> Tickets { get; set; }
 
         public DbSet<TicketPassanger> TicketPassangers { get; set; }

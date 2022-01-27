@@ -14,9 +14,7 @@
         public int TicketId { get; set; }
 
         [Required]
-        public PaxTitle PaxTitle { get; set; }
-
-        public int PaxTitleId { get; set; }
+        public string PaxTitle { get; set; }
 
         [Required]
         public string PaxFirstName { get; set; }

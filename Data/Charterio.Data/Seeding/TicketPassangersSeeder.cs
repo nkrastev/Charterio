@@ -15,11 +15,11 @@
                 return;
             }
 
-            await dbContext.TicketPassangers.AddAsync(new TicketPassanger { TicketId = 1, PaxTitleId = 1, PaxFirstName = "John", PaxLastName = "Stone", });
-            await dbContext.TicketPassangers.AddAsync(new TicketPassanger { TicketId = 1, PaxTitleId = 1, PaxFirstName = "Ponnappa", PaxLastName = "Priya", });
-            await dbContext.TicketPassangers.AddAsync(new TicketPassanger { TicketId = 1, PaxTitleId = 1, PaxFirstName = "Mia", PaxLastName = "Wong", });
-            await dbContext.TicketPassangers.AddAsync(new TicketPassanger { TicketId = 1, PaxTitleId = 1, PaxFirstName = "Peter", PaxLastName = "Stanbrige", });
-            await dbContext.TicketPassangers.AddAsync(new TicketPassanger { TicketId = 1, PaxTitleId = 1, PaxFirstName = "Natalie", PaxLastName = "Lee-Walsh", });
+            await dbContext.TicketPassangers.AddAsync(new TicketPassanger { TicketId = 1, PaxTitle = "MR", PaxFirstName = "John", PaxLastName = "Stone", });
+            await dbContext.TicketPassangers.AddAsync(new TicketPassanger { TicketId = 1, PaxTitle = "MR", PaxFirstName = "Ponnappa", PaxLastName = "Priya", });
+            await dbContext.TicketPassangers.AddAsync(new TicketPassanger { TicketId = 1, PaxTitle = "MRS", PaxFirstName = "Mia", PaxLastName = "Wong", });
+            await dbContext.TicketPassangers.AddAsync(new TicketPassanger { TicketId = 1, PaxTitle = "MR", PaxFirstName = "Peter", PaxLastName = "Stanbrige", });
+            await dbContext.TicketPassangers.AddAsync(new TicketPassanger { TicketId = 1, PaxTitle = "MRS", PaxFirstName = "Natalie", PaxLastName = "Lee-Walsh", });
         }
     }
 }
