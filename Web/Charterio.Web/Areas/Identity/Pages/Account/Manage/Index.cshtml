@@ -2,6 +2,7 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Profile";
+    var counter = 1;
 }
 
 <section class="py-9 pt-md-5">
@@ -20,7 +21,6 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Ticket Number</th>
-                            <th scope="col">Destination</th>
                             <th scope="col">Order date</th>
                             <th scope="col">Status</th>
                             <th scope="col">Details</th>
@@ -28,36 +28,36 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>154789_154781</td>
-                            <td>CPH-BOJ</td>
-                            <td>12-01-2022</td>
-                            <td><span class="badge bg-success">Paid / Confirmed</span></td>
-                            <td><a href="">View</a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>154789_154781</td>
-                            <td>FRA-SOF</td>
-                            <td>12-01-2022</td>
-                            <td><span class="badge bg-danger">Not Paid / Canceled</span></td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>154789_154781</td>
-                            <td>AMS-FRA</td>
-                            <td>12-01-2022</td>
-                            <td><span class="badge bg-success">Paid / Confirmed</span></td>
-                            <td><a href="">View</a></td>
-                        </tr>
+                        @foreach (var ticket in @Model.Input.Tickets)
+                        {
+                            <tr>
+                                <th scope="row">@(counter++)</th>
+                                <td>@ticket.TicketCode</td>
+                                <td>@ticket.CreatedOn</td>
+                                <td><span class="badge 
+                                    @if(@ticket.TicketStatus=="Paid, confirmed"){<text>bg-success</text>}
+                                    @if(@ticket.TicketStatus=="Not paid, cancelled"){<text>bg-danger</text>}
+                                    @if(@ticket.TicketStatus=="Waiting for payment"){<text>bg-secondary</text>}
+                                        ">@ticket.TicketStatus
+                                    </span></td>
+                                <td>
+                                    @if(@ticket.TicketStatus=="Paid, confirmed"){<text><a href="~/Booking/Ticket?tid=@ticket.Id">View</a></text>}
+                                    @if(@ticket.TicketStatus=="Not paid, cancelled"){<text>-</text>}
+                                    @if(@ticket.TicketStatus=="Waiting for payment"){<text><a href="~/Booking/Pay?tid=@ticket.Id">Pay now</a></text>}                                    
+                                     
+                                </td>
+                            </tr>
+                        }
+
+
                     </tbody>
                 </table>
 
 
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Here you will find a list with all your ticket requests. Have in mind the system is monitoring the tickets every 30 minutes. If your ticket is not paid in the time frame, the system automatically marks it as not paid and cancels the ticket. You will not be able to pay for canceled ticket.</p>
+                <p>Status: <span class="badge bg-success">"Paid, confirmed"</span> Your ticket is valid, confirmed and paid. Enjoy your flight.</p>
+                <p>Status: <span class="badge bg-secondary">"Waiting for payment"</span> The system is waiting for your payment. You have 30 minutes available for payment, otherwise the system will cancel your ticket.</p>
+                <p>Status: <span class="badge bg-danger">"Not paid, cancelled"</span> The ticket is canceled by the system and the reserved places are released.</p>
             </div>
         </div>
     </div>

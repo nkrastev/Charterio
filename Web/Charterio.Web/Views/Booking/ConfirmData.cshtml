@@ -47,6 +47,7 @@
                 Passengers details:
             </div>
             <div class="col-md-8 font-size-15">
+                <hr />
                 @foreach (var pax in @Model.PaxList)
                 {
                     <span>@pax.PaxTitle.ToLower() @pax.PaxFirstName @pax.PaxLastName @pax.PaxDob</span> <hr />
@@ -55,9 +56,12 @@
             </div>
         </div>
         <hr />
-         <div class="row">            
+         <div class="row"> 
+             <div class="col-md-6">
+                
+            </div>
             <div class="col-md-6">
-                <button>Pay with Stripe</button>
+                <a href="" class="btn btn-primary text-uppercase w-100"> Pay with Stripe</a>
             </div>
         </div>
     </div>

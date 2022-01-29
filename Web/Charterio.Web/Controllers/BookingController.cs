@@ -103,10 +103,10 @@
             });
 
             // check if currentTicketId is 0 then some error in creation ticket
-            return this.RedirectToAction("Confirm", new { tid = currentTicketId });
+            return this.RedirectToAction("ConfirmData", new { tid = currentTicketId });
         }
 
-        public async Task<IActionResult> Confirm(int tid)
+        public async Task<IActionResult> ConfirmData(int tid)
         {
             var user = await this.userManager.GetUserAsync(this.User);
 

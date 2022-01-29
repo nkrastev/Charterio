@@ -4,9 +4,12 @@
 #nullable disable
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using Charterio.Data;
 using Charterio.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -18,13 +21,16 @@ namespace Charterio.Web.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly ApplicationDbContext db;
 
         public IndexModel(
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager,
+            ApplicationDbContext db)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            this.db = db;
         }
 
         /// <summary>
@@ -60,18 +66,40 @@ namespace Charterio.Web.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            public List<TicketsForMyTicketsViewModel> Tickets { get; set; }
+        }
+
+        public class TicketsForMyTicketsViewModel
+        {
+            public int Id { get; set; }
+            public string TicketCode { get; set; }
+
+            public string CreatedOn { get; set; }
+
+            public string TicketStatus { get; set; }
         }
 
         private async Task LoadAsync(ApplicationUser user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+            var tickets = this.
 
             Username = userName;
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                Tickets = this.db.Tickets.Where(x => x.User.UserName.ToLower() == userName.ToLower())
+                    .Select(x => new TicketsForMyTicketsViewModel()
+                    {
+                        Id = x.Id,
+                        TicketCode = x.TicketCode,
+                        CreatedOn = x.CreatedOn.ToLocalTime().ToString(),
+                        TicketStatus = x.TicketStatus.Status,
+                    })
+                    .ToList(),
             };
         }
 
