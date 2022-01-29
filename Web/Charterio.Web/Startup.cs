@@ -25,6 +25,7 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Stripe;
 
     public class Startup
     {
@@ -66,6 +67,9 @@
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
+
+            // Payment configuration
+            StripeConfiguration.ApiKey = this.configuration["StripeApiKey"];
 
             // Application services
             services.AddTransient<IEmailSender>(s => new SendGridEmailSender(this.configuration["SendGridApiKey"]));

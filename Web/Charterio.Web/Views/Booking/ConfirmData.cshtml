@@ -1,6 +1,9 @@
 ﻿@using Charterio.Web.ViewModels.Booking
 @using Charterio.Web.ViewModels.Ticket
+@using Microsoft.Extensions.Configuration
+
 @model TicketViewModel
+
 
 @{
     this.ViewData["Title"] = $"Booking (Confirm details)";
@@ -61,7 +64,19 @@
                 
             </div>
             <div class="col-md-6">
-                <a href="" class="btn btn-primary text-uppercase w-100"> Pay with Stripe</a>
+                
+            <form asp-action="Processing">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="pk_test_51K6al8DAcMTKZAyL2XzfPoMQU0EI9zkAlWehHtMIxvnBnn8uFx9tb2NibpdJ58sohY9kXSxxrmrik559eA0sFv2e00ssLHZ4ze"
+                            data-amount="700"
+                            data-name="Charterio"
+                            data-description="Payment for Ticket: @Model.TicketCode"
+                            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                            data-locale="en"
+                            data-zip-code="true"
+                            data-label="Pay with Stripe">
+                    </script>
+            </form>                
             </div>
         </div>
     </div>

@@ -1,6 +1,8 @@
 ﻿namespace Charterio.Web.Controllers
 {
+    using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Threading.Tasks;
 
     using Charterio.Common;
@@ -13,6 +15,8 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Configuration;
+    using Stripe;
 
     [Authorize]
     public class BookingController : Controller
@@ -21,6 +25,7 @@
         private readonly IAllotmentService allotmentService;
         private readonly IFlightService flightService;
         private readonly ITicketService ticketService;
+        private readonly string webhookSecret = "whsec_CharterioSecretSaltAndWater17";
 
         public BookingController(
             UserManager<ApplicationUser> userManager,
@@ -126,6 +131,60 @@
 
             // ticket is valid, user has access, vizualize data
             return this.View(ticket);
+        }
+
+        [HttpPost]
+        public IActionResult Processing(string stripeToken, string stripeEmail)
+        {
+            Dictionary<string, string> metadata = new()
+            {
+                { "Product", "Flight Ticket" },
+                { "Quantity", "1" },
+            };
+            var options = new ChargeCreateOptions
+            {
+                Amount = 1700,
+                Currency = "EUR",
+                Description = "Payment for ticket with id ....",
+                Source = stripeToken,
+                ReceiptEmail = stripeEmail,
+                Metadata = metadata,
+            };
+            var service = new ChargeService();
+            Charge charge = service.Create(options);
+            return this.View();
+        }
+
+        [HttpPost]
+        public IActionResult ChargeChange()
+        {
+            var json = new StreamReader(this.HttpContext.Request.Body).ReadToEnd();
+
+            try
+            {
+                var stripeEvent = EventUtility.ConstructEvent(json, this.Request.Headers["Stripe-Signature"], this.webhookSecret, throwOnApiVersionMismatch: true);
+                Charge charge = (Charge)stripeEvent.Data.Object;
+                switch (charge.Status)
+                {
+                    case "succeeded":
+                        // This is an example of what to do after a charge is successful
+                        charge.Metadata.TryGetValue("Product", out string product);
+                        charge.Metadata.TryGetValue("Quantity", out string quantity);
+
+                        // SAVE SOMETHING TO THE DB
+                        break;
+                    case "failed":
+                        // Code to execute on a failed charge
+                        break;
+                }
+            }
+            catch (Exception e)
+            {
+                // Console.WriteLine(e.Message);
+                return this.BadRequest();
+            }
+
+            return this.Ok();
         }
     }
 }
