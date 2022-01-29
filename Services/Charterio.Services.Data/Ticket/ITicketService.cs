@@ -5,5 +5,9 @@
     public interface ITicketService
     {
         int CreateTicket(TicketCreateViewModel input);
+
+        TicketViewModel GetTicketById(int ticketId);
+
+        bool IsTicketIdValid(int ticketId);
     }
 }

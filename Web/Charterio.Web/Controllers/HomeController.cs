@@ -61,5 +61,11 @@
         {
             return this.View();
         }
+
+        [Route("/AccessDenied")]
+        public IActionResult AccessDenied()
+        {
+            return this.View();
+        }
     }
 }

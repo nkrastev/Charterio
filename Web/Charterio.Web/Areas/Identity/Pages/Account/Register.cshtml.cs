@@ -83,10 +83,7 @@ namespace Charterio.Web.Areas.Identity.Pages.Account
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-            public string ConfirmPassword { get; set; }
-            
-            [Range(typeof(bool), "true", "true", ErrorMessage = "You have to agree with our Terms of Use in order to create account.")]
-            public bool ConfirmTos { get; set; }
+            public string ConfirmPassword { get; set; }                        
 
         }
 

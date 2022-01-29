@@ -75,6 +75,45 @@
             return lastAddedTicket.Id;
         }
 
+        public TicketViewModel GetTicketById(int ticketId)
+        {
+            var targetTicket = this.db.Tickets.Where(x => x.Id == ticketId)
+                .Select(x => new TicketViewModel
+                {
+                    TicketId = ticketId,
+                    TicketCode = x.TicketCode,
+                    UserId = x.UserId,
+                    StartAptName = x.Offer.StartAirport.Name,
+                    EndAptName = x.Offer.EndAirport.Name,
+                    StartInUtc = x.Offer.StartTimeUtc.AddHours(x.Offer.StartAirport.UtcPosition).ToString(),
+                    EndInUtc = x.Offer.EndTimeUtc.AddHours(x.Offer.EndAirport.UtcPosition).ToString(),
+                    PaxList = this.db.TicketPassengers.Where(p => p.TicketId == ticketId)
+                        .Select(p => new TicketPaxViewModel
+                        {
+                            PaxTitle = p.PaxTitle,
+                            PaxFirstName = p.PaxFirstName,
+                            PaxLastName = p.PaxLastName,
+                            PaxDob = p.DOB,
+                        })
+                        .ToList(),
+                })
+                .FirstOrDefault();
+
+            return targetTicket;
+        }
+
+        public bool IsTicketIdValid(int ticketId)
+        {
+            if (!this.db.Tickets.Where(x => x.Id == ticketId).Any())
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private static string RandomString(int length)
         {
             Random random = new();

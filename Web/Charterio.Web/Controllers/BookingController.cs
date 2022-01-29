@@ -106,10 +106,26 @@
             return this.RedirectToAction("Confirm", new { tid = currentTicketId });
         }
 
-        public IActionResult Confirm(int ticketId)
+        public async Task<IActionResult> Confirm(int tid)
         {
-            // Ticket is created link to pay now
-            return this.View();
+            var user = await this.userManager.GetUserAsync(this.User);
+
+            // Check if ticketId is valid
+            if (!this.ticketService.IsTicketIdValid(tid))
+            {
+                return this.Redirect("~/SomethingIsWrong");
+            }
+
+            var ticket = this.ticketService.GetTicketById(tid);
+
+            // ticket is valid, check if user has access to it
+            if (user.Id != ticket.UserId)
+            {
+                return this.Redirect("~/AccessDenied");
+            }
+
+            // ticket is valid, user has access, vizualize data
+            return this.View(ticket);
         }
     }
 }

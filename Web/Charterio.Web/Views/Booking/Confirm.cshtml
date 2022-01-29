@@ -1,4 +1,6 @@
 ﻿@using Charterio.Web.ViewModels.Booking
+@using Charterio.Web.ViewModels.Ticket
+@model TicketViewModel
 
 @{
     this.ViewData["Title"] = $"Booking (Confirm details)";
@@ -20,21 +22,13 @@
 </section>
 
 <section class="py-9 pt-md-5">
-    <div class="container">        
-        <div class="row pb-3">
-            <div class="col-md-4 font-size-15">
-                Customer details:
-            </div>
-            <div class="col-md-8 font-size-15">
-                 Ivan Ivanov, email: test@test.com, phone: 08741111111
-            </div>
-        </div>
+    <div class="container">                
         <div class="row pb-3">
             <div class="col-md-4 font-size-15">
                 Ticket details:
             </div>
             <div class="col-md-8 font-size-15">
-                JVOC-8P2W-00004
+                @Model.TicketCode
             </div>
         </div>
         <div class="row pb-3">
@@ -42,10 +36,10 @@
                 Flight details:
             </div>
             <div class="col-md-8 font-size-15">
-                From: London<br />
-                To: Paris<br />
-                Departure: 11/11/2021 06:12 Local time<br />
-                Arrival: 11/11/2021 06:12 Local time
+                From: @Model.StartAptName<br />
+                To: @Model.EndAptName<br />
+                Departure: @Model.StartInUtc Local time<br />
+                Arrival: @Model.EndInUtc Local time
             </div>
         </div>
         <div class="row">
@@ -53,15 +47,15 @@
                 Passengers details:
             </div>
             <div class="col-md-8 font-size-15">
-                1. Mr. Ivan Ivanov<br />
-                2. Mr. Petar Petrov
+                @foreach (var pax in @Model.PaxList)
+                {
+                    <span>@pax.PaxTitle.ToLower() @pax.PaxFirstName @pax.PaxLastName @pax.PaxDob</span> <hr />
+                }
+                
             </div>
         </div>
         <hr />
-         <div class="row">
-            <div class="col-md-6">
-                <button>Pay with Paypal</button>
-            </div>
+         <div class="row">            
             <div class="col-md-6">
                 <button>Pay with Stripe</button>
             </div>
