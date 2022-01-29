@@ -37,7 +37,7 @@
                               new PaymentsSeeder(),
                               new TicketStatusesSeeder(),
                               new TicketIssuersSeeder(),
-                              new TicketsSeeder(),                              
+                              new TicketsSeeder(),
                               new TicketPassengersSeeder(),
                           };
 

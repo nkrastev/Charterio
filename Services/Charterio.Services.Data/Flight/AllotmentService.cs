@@ -29,7 +29,7 @@
                 .Where(x => x.OfferId == offerId)
                 .Select(x => new
                 {
-                    Pax = this.db.TicketPassangers.Where(t => t.TicketId == x.Id).Count(),
+                    Pax = this.db.TicketPassengers.Where(t => t.TicketId == x.Id).Count(),
                 })
                 .ToList();
 
@@ -52,7 +52,7 @@
                 .Where(x => x.OfferId == offerId)
                 .Select(x => new
                 {
-                    Pax = this.db.TicketPassangers.Where(t => t.TicketId == x.Id).Count(),
+                    Pax = this.db.TicketPassengers.Where(t => t.TicketId == x.Id).Count(),
                 })
                 .ToList();
 

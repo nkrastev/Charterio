@@ -7,7 +7,9 @@
     using Charterio.Data.Models;
     using Charterio.Services.Data;
     using Charterio.Services.Data.Flight;
+    using Charterio.Services.Data.Ticket;
     using Charterio.Web.ViewModels.Booking;
+    using Charterio.Web.ViewModels.Ticket;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
@@ -18,15 +20,18 @@
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IAllotmentService allotmentService;
         private readonly IFlightService flightService;
+        private readonly ITicketService ticketService;
 
         public BookingController(
             UserManager<ApplicationUser> userManager,
             IAllotmentService allotmentService,
-            IFlightService flightService)
+            IFlightService flightService,
+            ITicketService ticketService)
         {
             this.userManager = userManager;
             this.allotmentService = allotmentService;
             this.flightService = flightService;
+            this.ticketService = ticketService;
         }
 
         [HttpGet]
@@ -53,8 +58,10 @@
         }
 
         [HttpPost]
-        public IActionResult Index(BookingViewModel inputData)
+        public async Task<IActionResult> Index(BookingViewModel inputData)
         {
+            var user = await this.userManager.GetUserAsync(this.User);
+
             if (!this.ModelState.IsValid)
             {
                 return this.View(inputData);
@@ -74,8 +81,29 @@
                 return this.View(inputData);
             }
 
+            // prepare passengers for ticket creation
+            var passengers = new List<TicketPaxCreateViewModel>();
+            foreach (var pax in inputData.PaxList)
+            {
+                passengers.Add(new TicketPaxCreateViewModel
+                {
+                    PaxTitle = pax.PaxTitle,
+                    PaxFirstName = pax.PaxFirstName,
+                    PaxLastName = pax.PaxLastName,
+                    Dob = pax.Dob,
+                });
+            }
+
             // create and save ticket
-            return this.RedirectToAction("Confirm", new { tid = 7 });
+            var currentTicketId = this.ticketService.CreateTicket(new ViewModels.Ticket.TicketCreateViewModel
+            {
+                OfferId = inputData.OfferId,
+                UserId = user.Id,
+                PaxList = passengers,
+            });
+
+            // check if currentTicketId is 0 then some error in creation ticket
+            return this.RedirectToAction("Confirm", new { tid = currentTicketId });
         }
 
         public IActionResult Confirm(int ticketId)

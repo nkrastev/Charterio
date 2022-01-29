@@ -38,7 +38,7 @@
 
         public ApplicationUser User { get; set; }
 
-        public virtual ICollection<TicketPassenger> TicketPassangers { get; set; } = new HashSet<TicketPassenger>();
+        public virtual ICollection<TicketPassenger> TicketPassengers { get; set; } = new HashSet<TicketPassenger>();
 
         public DateTime CreatedOn { get; set; }
 

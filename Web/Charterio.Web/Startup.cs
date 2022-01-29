@@ -12,6 +12,7 @@
     using Charterio.Services.Data;
     using Charterio.Services.Data.Contacts;
     using Charterio.Services.Data.Flight;
+    using Charterio.Services.Data.Ticket;
     using Charterio.Services.Mapping;
     using Charterio.Services.Messaging;
     using Charterio.Web.ViewModels;
@@ -75,6 +76,7 @@
 
             services.AddTransient<IFlightService, FlightService>();
             services.AddTransient<IAllotmentService, AllotmentService>();
+            services.AddTransient<ITicketService, TicketService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

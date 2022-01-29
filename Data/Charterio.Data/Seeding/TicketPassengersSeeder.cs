@@ -10,16 +10,16 @@
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
-            if (dbContext.TicketPassangers.Any())
+            if (dbContext.TicketPassengers.Any())
             {
                 return;
             }
 
-            await dbContext.TicketPassangers.AddAsync(new TicketPassenger { TicketId = 1, PaxTitle = "MR", PaxFirstName = "John", PaxLastName = "Stone", });
-            await dbContext.TicketPassangers.AddAsync(new TicketPassenger { TicketId = 1, PaxTitle = "MR", PaxFirstName = "Ponnappa", PaxLastName = "Priya", });
-            await dbContext.TicketPassangers.AddAsync(new TicketPassenger { TicketId = 1, PaxTitle = "MRS", PaxFirstName = "Mia", PaxLastName = "Wong", });
-            await dbContext.TicketPassangers.AddAsync(new TicketPassenger { TicketId = 1, PaxTitle = "MR", PaxFirstName = "Peter", PaxLastName = "Stanbrige", });
-            await dbContext.TicketPassangers.AddAsync(new TicketPassenger { TicketId = 1, PaxTitle = "MRS", PaxFirstName = "Natalie", PaxLastName = "Lee-Walsh", });
+            await dbContext.TicketPassengers.AddAsync(new TicketPassenger { TicketId = 1, PaxTitle = "MR", PaxFirstName = "John", PaxLastName = "Stone", });
+            await dbContext.TicketPassengers.AddAsync(new TicketPassenger { TicketId = 1, PaxTitle = "MR", PaxFirstName = "Ponnappa", PaxLastName = "Priya", });
+            await dbContext.TicketPassengers.AddAsync(new TicketPassenger { TicketId = 1, PaxTitle = "MRS", PaxFirstName = "Mia", PaxLastName = "Wong", });
+            await dbContext.TicketPassengers.AddAsync(new TicketPassenger { TicketId = 1, PaxTitle = "MR", PaxFirstName = "Peter", PaxLastName = "Stanbrige", });
+            await dbContext.TicketPassengers.AddAsync(new TicketPassenger { TicketId = 1, PaxTitle = "MRS", PaxFirstName = "Natalie", PaxLastName = "Lee-Walsh", });
         }
     }
 }
