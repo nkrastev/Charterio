@@ -29,17 +29,16 @@
 
         public Offer Offer { get; set; }
 
-        [Required]
         public Payment Payment { get; set; }
 
-        public int PaymentId { get; set; }
+        public int? PaymentId { get; set; }
 
         [Required]
         public string UserId { get; set; }
 
         public ApplicationUser User { get; set; }
 
-        public virtual ICollection<TicketPassanger> TicketPassangers { get; set; } = new HashSet<TicketPassanger>();
+        public virtual ICollection<TicketPassenger> TicketPassangers { get; set; } = new HashSet<TicketPassenger>();
 
         public DateTime CreatedOn { get; set; }
 

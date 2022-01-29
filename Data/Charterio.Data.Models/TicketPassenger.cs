@@ -4,7 +4,7 @@
 
     using Charterio.Data.Models;
 
-    public class TicketPassanger
+    public class TicketPassenger
     {
         public int Id { get; set; }
 

@@ -83,6 +83,5 @@
             // Ticket is created link to pay now
             return this.View();
         }
-
     }
 }

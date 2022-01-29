@@ -46,7 +46,7 @@
 
         public DbSet<Ticket> Tickets { get; set; }
 
-        public DbSet<TicketPassanger> TicketPassangers { get; set; }
+        public DbSet<TicketPassenger> TicketPassangers { get; set; }
 
         public DbSet<TicketIssuer> TicketIssuers { get; set; }
 

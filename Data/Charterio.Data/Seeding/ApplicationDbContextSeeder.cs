@@ -38,7 +38,7 @@
                               new TicketStatusesSeeder(),
                               new TicketIssuersSeeder(),
                               new TicketsSeeder(),                              
-                              new TicketPassangersSeeder(),
+                              new TicketPassengersSeeder(),
                           };
 
             foreach (var seeder in seeders)
