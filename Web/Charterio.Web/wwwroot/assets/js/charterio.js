@@ -149,67 +149,7 @@
         });
     }
 
-    //============================== food-slider =========================
-    var food_slider = $('.food-slider');
-
-    if (food_slider.length !== 0) {
-        food_slider.owlCarousel({
-            loop: true,
-            margin: 30,
-            nav: false,
-            dots: true,
-            responsiveClass: true,
-            responsive: {
-                320: {
-                    margin: 0,
-                    items: 1
-                },
-                480: {
-                    items: 2
-                },
-                991: {
-                    items: 3
-                }
-            }
-        });
-    }
-
-    //============================== testimonial-slider =========================
-    var testimonial = $('.testimonial');
-
-    if (testimonial.length !== 0) {
-        testimonial.owlCarousel({
-            margin: 0,
-            loop: true,
-            autoplay: true,
-            autoplayHoverPause: true,
-            dots: true,
-            autoplayTimeout: 3000,
-            smartSpeed: 1000,
-            items: 1
-        });
-    }
-
-    //============================== package-slider =========================
-    var package_slider = $('#package-slider');
-
-    if (package_slider.length !== 0) {
-        package_slider.owlCarousel({
-            margin: 0,
-            loop: true,
-            autoplay: true,
-            autoplayHoverPause: true,
-            rtl: true,
-            dots: false,
-            nav: true,
-            navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
-            autoplayTimeout: 3000,
-            smartSpeed: 800,
-            mouseDrag: false,
-            items: 1
-        });
-    }
-
+ 
 
 
     //===================== owl-carousel active data-hash =====================
@@ -245,64 +185,7 @@
         });
     }
 
-    //============================== blog-slider =========================
-    var blog_slider = $('.blog-slider');
-
-    if (blog_slider.length !== 0) {
-        blog_slider.owlCarousel({
-            margin: 0,
-            loop: true,
-            autoplay: false,
-            autoplayTimeout: 6000,
-            dots: false,
-            nav: true,
-            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-            items: 1
-        });
-    }
-
-
-
-    //============================== BRAND SLIDER =========================
-    var brand_slider = $('.brand-slider');
-
-    if (brand_slider.length !== 0) {
-        brand_slider.slick({
-            loop: true,
-            autoplay: true,
-            autoplayHoverPause: true,
-            autoplayTimeout: 3000,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            centerMode: true,
-            rtl: true,
-            centerPadding: '0px',
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
-    }
+ 
 
     //============================== Rev-Slider =========================
     var homeMain = $('#rev_slider_12_1');
@@ -569,82 +452,7 @@
 
 
 
-    //============================== ISOTOPE =========================
-    // init Isotope
-    var $grid = $('.grid');
-
-    if ($grid.length !== 0) {
-        $grid.imagesLoaded(function () {
-            // init Isotope after all images have loaded
-            $grid.isotope({
-                itemSelector: '.element-item',
-                layoutMode: 'fitRows'
-            });
-        });
-    }
-
-    // filter functions
-    var filterFns = {
-        // show if number is greater than 50
-        numberGreaterThan50: function () {
-            var number = $(this).find('.number').text();
-            return parseInt(number, 10) > 50;
-        },
-        // show if name ends with -ium
-        ium: function () {
-            var name = $(this).find('.name').text();
-            return name.match(/ium$/);
-        }
-    };
-
-    // bind filter button click
-    $('#filters').on('click', 'button', function () {
-        var filterValue = $(this).attr('data-filter');
-        // use filterFn if matches value
-        filterValue = filterFns[filterValue] || filterValue;
-        $grid.isotope({ filter: filterValue });
-    });
-
-    // bind sort button click
-    $('#sorts').on('click', 'button', function () {
-        var sortByValue = $(this).attr('data-sort-by');
-        $grid.isotope({ sortBy: sortByValue });
-    });
-
-    // change is-checked class on buttons
-    $('.button-group').each(function (i, buttonGroup) {
-        var $buttonGroup = $(buttonGroup);
-        $buttonGroup.on('click', 'button', function () {
-            $buttonGroup.find('.is-checked').removeClass('is-checked');
-            $(this).addClass('is-checked');
-        });
-    });
-
-    // element-right-sidebar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.element-right-sidebar').addClass('sidebar-fixed');
-        } else {
-            $('.element-right-sidebar').removeClass('sidebar-fixed');
-        }
-
-        if ($(window).scrollTop() + $(window).height() > $(document).height() - 590) {
-            $('.element-right-sidebar').addClass('right-sidebar-absolute').removeClass('sidebar-fixed');
-        } else {
-            $('.element-right-sidebar').removeClass('right-sidebar-absolute');
-        }
-    });
-
-    // Form Search
-    $('.navbar-search .search-link').on('click', function () {
-        $('.navbar-search .navbar-search-form').toggleClass('active');
-    });
-
-    // favourite-icon
-    $('.favourite-icon .icon').on('click', function () {
-        $(this).find('i').toggleClass('fa-heart-o');
-        $(this).find('i').toggleClass('fa-heart');
-    });
+  
 
     //============================== ICON TOGGLER ANIMATION =========================
     var searchItem = $('.search-item');
