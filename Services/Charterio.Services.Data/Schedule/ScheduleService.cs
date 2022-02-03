@@ -23,6 +23,7 @@
                 .Where(x => x.StartTimeUtc > DateTime.UtcNow)
                 .Select(x => new FlightItemViewModel
                 {
+                    Id = x.Id,
                     StartDestination = x.StartAirport.Name,
                     EndDestination = x.EndAirport.Name,
                     StartDate = x.StartTimeUtc,

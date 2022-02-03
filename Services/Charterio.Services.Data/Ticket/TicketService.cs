@@ -114,6 +114,14 @@
             }
         }
 
+        public double CalculateTicketPrice(int ticketId)
+        {
+            var price = this.db.Tickets.Where(x => x.Id == ticketId).Select(x => new { PerPerson = x.Offer.Price, }).FirstOrDefault();
+            var ticketPax = this.db.TicketPassengers.Where(x => x.TicketId == ticketId).Count();
+
+            return price.PerPerson * ticketPax;
+        }
+
         private static string RandomString(int length)
         {
             Random random = new();

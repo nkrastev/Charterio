@@ -9,5 +9,7 @@
         TicketViewModel GetTicketById(int ticketId);
 
         bool IsTicketIdValid(int ticketId);
+
+        double CalculateTicketPrice(int ticketId);
     }
 }

@@ -66,6 +66,7 @@
             <div class="col-md-6">
                 
             <form asp-action="Processing">
+                    <input asp-for="TicketId" value="@this.Model.TicketId" type="text" hidden />
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                             data-key="pk_test_51K6al8DAcMTKZAyL2XzfPoMQU0EI9zkAlWehHtMIxvnBnn8uFx9tb2NibpdJ58sohY9kXSxxrmrik559eA0sFv2e00ssLHZ4ze"
                             data-amount="700"

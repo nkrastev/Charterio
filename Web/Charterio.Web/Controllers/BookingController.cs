@@ -134,24 +134,25 @@
         }
 
         [HttpPost]
-        public IActionResult Processing(string stripeToken, string stripeEmail)
+        public IActionResult Processing(string stripeToken, string stripeEmail, int ticketId)
         {
-            Dictionary<string, string> metadata = new()
+            // Check if ticketId is valid
+            if (!this.ticketService.IsTicketIdValid(ticketId))
             {
-                { "Product", "Flight Ticket" },
-                { "Quantity", "1" },
-            };
+                return this.Redirect("~/SomethingIsWrong");
+            }
+
             var options = new ChargeCreateOptions
             {
-                Amount = 1700,
+                Amount = (long?)(this.ticketService.CalculateTicketPrice(ticketId) * 100),
                 Currency = "EUR",
-                Description = "Payment for ticket with id ....",
+                Description = $"Payment for ticket with id {ticketId}",
                 Source = stripeToken,
                 ReceiptEmail = stripeEmail,
-                Metadata = metadata,
+                Metadata = new Dictionary<string, string> { { "Product", "Flight Ticket" }, { "Quantity", "1" }, },
             };
             var service = new ChargeService();
-            Charge charge = service.Create(options);
+            service.Create(options);
             return this.View();
         }
 
@@ -167,20 +168,19 @@
                 switch (charge.Status)
                 {
                     case "succeeded":
-                        // This is an example of what to do after a charge is successful
+
+                        // TODO Mark ticket as paid and send email
                         charge.Metadata.TryGetValue("Product", out string product);
                         charge.Metadata.TryGetValue("Quantity", out string quantity);
 
-                        // SAVE SOMETHING TO THE DB
                         break;
                     case "failed":
                         // Code to execute on a failed charge
                         break;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                // Console.WriteLine(e.Message);
                 return this.BadRequest();
             }
 

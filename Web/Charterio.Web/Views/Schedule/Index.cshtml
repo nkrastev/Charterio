@@ -27,17 +27,20 @@
                     <div class="col-md-2 col-xl-2">
                         <b>Date</b>
                     </div>
-                    <div class="col-md-3 col-xl-3">
+                    <div class="col-md-2 col-xl-2">
                         <b>Departure</b>
                     </div>
-                    <div class="col-md-3 col-xl-3">
+                    <div class="col-md-2 col-xl-2">
                         <b>Arrival</b>
                     </div>
                     <div class="col-md-2 col-xl-2">
-                        <b>Dep. time</b>
+                        <b>Departure (local time)</b>
                     </div>
                     <div class="col-md-2 col-xl-2">
-                        <b>Arrival time</b>
+                        <b>Arrival (local time)</b>
+                    </div>
+                    <div class="col-md-2 col-xl-2">
+                        <b></b>
                     </div>
                     
                 </div>
@@ -51,17 +54,20 @@
                     <div class="col-md-2 col-xl-2">
                         @flight.StartDate.ToShortDateString()
                     </div>
-                    <div class="col-md-3 col-xl-3">
+                    <div class="col-md-2 col-xl-2">
                         @flight.StartDestination
                     </div>
-                    <div class="col-md-3 col-xl-3">
+                    <div class="col-md-2 col-xl-2">
                         @flight.EndDestination
                     </div>
                     <div class="col-md-2 col-xl-2">
-                        @flight.StartDate.AddHours(flight.StartDateUtcPosition).ToShortTimeString() Local time
+                        @flight.StartDate.AddHours(flight.StartDateUtcPosition).ToShortTimeString()
                     </div>
                     <div class="col-md-2 col-xl-2">
-                        @flight.EndDate.AddHours(flight.EndDateUtcPosition).ToShortTimeString() Local time
+                        @flight.EndDate.AddHours(flight.EndDateUtcPosition).ToShortTimeString()
+                    </div>
+                    <div class="col-md-2 col-xl-2">
+                        <a href="/FlightDetails/@flight.Id" class="text-uppercase">View Details</a>
                     </div>
                     
                 </div>

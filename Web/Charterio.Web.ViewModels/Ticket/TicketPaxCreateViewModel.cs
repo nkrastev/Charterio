@@ -27,8 +27,7 @@
             if (this.PaxTitle == GlobalConstants.PaxTitleInf)
             {
                 string pattern = "dd-MM-yyyy";
-                DateTime parsedDate;
-                if (!DateTime.TryParseExact(this.Dob, pattern, null, DateTimeStyles.None, out parsedDate))
+                if (!DateTime.TryParseExact(this.Dob, pattern, null, DateTimeStyles.None, out DateTime parsedDate))
                 {
                     yield return new ValidationResult(GlobalConstants.ErrorEmptyOrWrongDob);
                 }
