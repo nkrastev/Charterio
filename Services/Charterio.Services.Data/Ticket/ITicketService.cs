@@ -11,5 +11,7 @@
         bool IsTicketIdValid(int ticketId);
 
         double CalculateTicketPrice(int ticketId);
+
+        string MarkTicketAsPaidviaStripe(int ticketId, string transactionId, string transactionCode, double amount);
     }
 }

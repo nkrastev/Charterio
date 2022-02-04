@@ -114,6 +114,28 @@
             }
         }
 
+        public string MarkTicketAsPaidviaStripe(int ticketId, string transactionId, string transactionCode, double amount)
+        {
+            // Change ticket status
+            var targetTicket = this.db.Tickets.Where(x => x.Id == ticketId).FirstOrDefault();
+            targetTicket.TicketStatusId = 1;
+
+            // Insert Payment
+            var payment = new Payment
+            {
+                PaymentMethodId = 1,
+                TransactionId = transactionId,
+                TransactionCode = transactionCode,
+                Amount = amount,
+                IsSuccessful = true,
+            };
+
+            this.db.Payments.Add(payment);
+            this.db.SaveChanges();
+
+            return "OK";
+        }
+
         public double CalculateTicketPrice(int ticketId)
         {
             var price = this.db.Tickets.Where(x => x.Id == ticketId).Select(x => new { PerPerson = x.Offer.Price, }).FirstOrDefault();

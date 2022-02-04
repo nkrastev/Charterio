@@ -92,13 +92,15 @@ namespace Charterio.Web.Areas.Identity.Pages.Account.Manage
             {
                 PhoneNumber = phoneNumber,
                 Tickets = this.db.Tickets.Where(x => x.User.UserName.ToLower() == userName.ToLower())
+                    .OrderByDescending(x=> x.CreatedOn)
                     .Select(x => new TicketsForMyTicketsViewModel()
                     {
                         Id = x.Id,
                         TicketCode = x.TicketCode,
                         CreatedOn = x.CreatedOn.ToLocalTime().ToString(),
                         TicketStatus = x.TicketStatus.Status,
-                    })
+                    })  
+                    .Take(20)
                     .ToList(),
             };
         }

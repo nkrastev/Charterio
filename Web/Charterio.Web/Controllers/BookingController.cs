@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.IO;
     using System.Threading.Tasks;
 
@@ -152,39 +153,20 @@
                 Metadata = new Dictionary<string, string> { { "Product", "Flight Ticket" }, { "Quantity", "1" }, },
             };
             var service = new ChargeService();
-            service.Create(options);
+            var response = service.Create(options);
+
+            if (response.Status == "succeeded")
+            {
+                // charge is OK, mark it, send confirmation, prepare view
+                this.ticketService.MarkTicketAsPaidviaStripe(ticketId, response.Id, response.PaymentMethod, response.AmountCaptured);
+            }
+            else
+            {
+                // charge is failed
+            }
+
             return this.View();
         }
 
-        [HttpPost]
-        public IActionResult ChargeChange()
-        {
-            var json = new StreamReader(this.HttpContext.Request.Body).ReadToEnd();
-
-            try
-            {
-                var stripeEvent = EventUtility.ConstructEvent(json, this.Request.Headers["Stripe-Signature"], this.webhookSecret, throwOnApiVersionMismatch: true);
-                Charge charge = (Charge)stripeEvent.Data.Object;
-                switch (charge.Status)
-                {
-                    case "succeeded":
-
-                        // TODO Mark ticket as paid and send email
-                        charge.Metadata.TryGetValue("Product", out string product);
-                        charge.Metadata.TryGetValue("Quantity", out string quantity);
-
-                        break;
-                    case "failed":
-                        // Code to execute on a failed charge
-                        break;
-                }
-            }
-            catch (Exception)
-            {
-                return this.BadRequest();
-            }
-
-            return this.Ok();
-        }
     }
 }
