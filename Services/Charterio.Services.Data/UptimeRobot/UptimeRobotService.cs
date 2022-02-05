@@ -4,19 +4,22 @@
 
     using Charterio.Data;
     using Charterio.Data.Common.Models;
+    using Microsoft.Extensions.Configuration;
     using Newtonsoft.Json.Linq;
     using RestSharp;
 
     public class UptimeRobotService : IUptimeRobotService
     {
         private readonly ApplicationDbContext db;
+        private readonly IConfiguration configuration;
 
-        public UptimeRobotService(ApplicationDbContext db)
+        public UptimeRobotService(ApplicationDbContext db, IConfiguration configuration)
         {
             this.db = db;
+            this.configuration = configuration;
         }
 
-        public static string ApiKey { get; set; }
+        private string ApiKey => this.configuration["UptimeApiKey"];
 
         public string GetRatio()
         {
@@ -25,7 +28,7 @@
             // empty table
             if (!this.db.UptimeRobots.Any())
             {
-                result = this.GetRatioFromApi(ApiKey);
+                result = GetRatioFromApi(this.ApiKey);
                 this.db.UptimeRobots.Add(new Charterio.Data.Models.UptimeRobot
                 {
                     Ratio = result,
@@ -41,7 +44,7 @@
                 if (lastEntry.CreatedOn.AddHours(2) > System.DateTime.UtcNow)
                 {
                     // the last entry is older than 2 hours, generate new
-                    result = this.GetRatioFromApi(ApiKey);
+                    result = GetRatioFromApi(this.ApiKey);
                     this.db.UptimeRobots.Add(new Charterio.Data.Models.UptimeRobot
                     {
                         Ratio = result,
@@ -57,7 +60,7 @@
             return result;
         }
 
-        private string GetRatioFromApi(string apiKey)
+        private static string GetRatioFromApi(string apiKey)
         {
             string result;
 

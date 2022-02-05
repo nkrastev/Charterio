@@ -71,7 +71,6 @@
 
             // Payment configuration
             StripeConfiguration.ApiKey = this.configuration["StripeApiKey"];
-            UptimeRobotService.ApiKey = this.configuration["UptimeApiKey"];
 
             // Application services
             services.AddTransient<IEmailSender>(s => new SendGridEmailSender(this.configuration["SendGridApiKey"]));
