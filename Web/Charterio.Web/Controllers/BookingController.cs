@@ -26,7 +26,6 @@
         private readonly IAllotmentService allotmentService;
         private readonly IFlightService flightService;
         private readonly ITicketService ticketService;
-        private readonly string webhookSecret = "whsec_CharterioSecretSaltAndWater17";
 
         public BookingController(
             UserManager<ApplicationUser> userManager,
@@ -152,13 +151,14 @@
                 ReceiptEmail = stripeEmail,
                 Metadata = new Dictionary<string, string> { { "Product", "Flight Ticket" }, { "Quantity", "1" }, },
             };
+
             var service = new ChargeService();
             var response = service.Create(options);
 
             if (response.Status == "succeeded")
             {
                 // charge is OK, mark it, send confirmation, prepare view
-                this.ticketService.MarkTicketAsPaidviaStripe(ticketId, response.Id, response.PaymentMethod, response.AmountCaptured);
+                this.ticketService.MarkTicketAsPaidviaStripe(ticketId, response.Id, response.PaymentMethod, response.AmountCaptured / 100.0);
             }
             else
             {

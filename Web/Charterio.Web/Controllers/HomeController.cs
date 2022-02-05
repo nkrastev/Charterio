@@ -3,6 +3,7 @@
     using System.Diagnostics;
 
     using Charterio.Services.Data;
+    using Charterio.Services.Data.UptimeRobot;
     using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Search;
     using Microsoft.AspNetCore.Mvc;
@@ -10,10 +11,12 @@
     public class HomeController : BaseController
     {
         private readonly IFlightService flightService;
+        private readonly IUptimeRobotService uptimeRobotService;
 
-        public HomeController(IFlightService flightService)
+        public HomeController(IFlightService flightService, IUptimeRobotService uptimeRobotService)
         {
             this.flightService = flightService;
+            this.uptimeRobotService = uptimeRobotService;
         }
 
         public IActionResult Index()
@@ -29,6 +32,8 @@
             {
                 homeViewModel.AirportsForDropDown.Add(new ViewModels.Airport.AirportViewModel { IataCode = airportItem.IataCode, Name = airportItem.Name });
             }
+
+            this.ViewBag.Uptime = this.uptimeRobotService.GetRatio();
 
             return this.View(homeViewModel);
         }

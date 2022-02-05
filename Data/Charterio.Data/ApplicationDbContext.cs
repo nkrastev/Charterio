@@ -54,6 +54,8 @@
 
         public DbSet<UserQuestion> UserQuestions { get; set; }
 
+        public DbSet<UptimeRobot> UptimeRobots { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
