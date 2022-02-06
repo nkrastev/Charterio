@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "chmxEcvKfYOQmfjaSjSpoVZL5wXnN9fB23sD9MvY3acmkHS+n0Kzd60VgXYu8k80boMXK8rw6kBl8FU5GXXy5w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Nikolay\\source\\repos\\Charterio\\Services\\Charterio.Services\\Charterio.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nikolay\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.312\\stylecop.analyzers.1.2.0-beta.312.nupkg.sha512",
+    "C:\\Users\\Nikolay\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.312\\stylecop.analyzers.unstable.1.2.0.312.nupkg.sha512"
+  ],
+  "logs": []
+}

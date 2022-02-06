@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "DVu93WO/hqaeEgutxUUBlYbyXmGFESHmsnCd6EYJepWZwl1TVcJ6QD65rF/owYoatsY8xQsYIGcF/quCSJHUXw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Nikolay\\source\\repos\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nikolay\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.312\\stylecop.analyzers.1.2.0-beta.312.nupkg.sha512",
+    "C:\\Users\\Nikolay\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.312\\stylecop.analyzers.unstable.1.2.0.312.nupkg.sha512",
+    "C:\\Users\\Nikolay\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
