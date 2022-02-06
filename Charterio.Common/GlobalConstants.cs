@@ -36,5 +36,7 @@
         public const string ErrorNotEnoughtAvailableSeats = "Not enought available seats for this flight. Please restart your booking.";
 
         public const string ErrorFlightDoesNotExists = "The selected flight does not exists. Please restart your booking.";
+
+        public const string StripePaymentDescription = "Flight ticket from Charterio.com";
     }
 }

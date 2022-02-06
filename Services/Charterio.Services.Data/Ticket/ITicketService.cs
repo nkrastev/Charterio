@@ -14,6 +14,6 @@
 
         double CalculateTicketPrice(int ticketId);
 
-        Task<string> MarkTicketAsPaidviaStripe(int ticketId, string transactionId, string transactionCode, double amount);
+        Task<string> MarkTicketAsPaidviaStripe(int ticketId, string transactionId, double amount);
     }
 }

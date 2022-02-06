@@ -124,7 +124,7 @@
             }
         }
 
-        public async Task<string> MarkTicketAsPaidviaStripe(int ticketId, string transactionId, string transactionCode, double amount)
+        public async Task<string> MarkTicketAsPaidviaStripe(int ticketId, string transactionId, double amount)
         {
             // Change ticket status
             var targetTicket = this.db.Tickets.Where(x => x.Id == ticketId).FirstOrDefault();
@@ -135,7 +135,6 @@
             {
                 PaymentMethodId = 1,
                 TransactionId = transactionId,
-                TransactionCode = transactionCode,
                 Amount = amount,
                 IsSuccessful = true,
             };

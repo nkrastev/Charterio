@@ -67,16 +67,7 @@
                 
             <form asp-action="Processing">
                     <input asp-for="TicketId" value="@this.Model.TicketId" type="text" hidden />
-                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                            data-key="pk_test_51K6al8DAcMTKZAyL2XzfPoMQU0EI9zkAlWehHtMIxvnBnn8uFx9tb2NibpdJ58sohY9kXSxxrmrik559eA0sFv2e00ssLHZ4ze"
-                            data-amount=""
-                            data-name="Charterio"
-                            data-description="Payment for Ticket: @Model.TicketCode"
-                            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                            data-locale="en"
-                            data-zip-code="true"
-                            data-label="Pay with Stripe">
-                    </script>
+                    <button type="submit" class="w-100 mt-3 btn btn-primary text-uppercase">Pay With Stripe</button>                    
             </form>                
             </div>
         </div>

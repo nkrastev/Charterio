@@ -15,10 +15,10 @@
                 return;
             }
 
-            await dbContext.Payments.AddAsync(new Payment { PaymentMethodId = 1, TransactionId = "NODATA_1", TransactionCode = "NOCODE_1", Amount = 147.4, IsSuccessful = true });
-            await dbContext.Payments.AddAsync(new Payment { PaymentMethodId = 1, TransactionId = "NODATA_2", TransactionCode = "NOCODE_2", Amount = 88.30, IsSuccessful = true });
-            await dbContext.Payments.AddAsync(new Payment { PaymentMethodId = 1, TransactionId = "NODATA_3", TransactionCode = "NOCODE_3", Amount = 188.30, IsSuccessful = true });
-            await dbContext.Payments.AddAsync(new Payment { PaymentMethodId = 1, TransactionId = "NODATA_4", TransactionCode = "NOCODE_4", Amount = 288.30, IsSuccessful = true });
+            await dbContext.Payments.AddAsync(new Payment { PaymentMethodId = 1, TransactionId = "NODATA_1", Amount = 147.4, IsSuccessful = true });
+            await dbContext.Payments.AddAsync(new Payment { PaymentMethodId = 1, TransactionId = "NODATA_2", Amount = 88.30, IsSuccessful = true });
+            await dbContext.Payments.AddAsync(new Payment { PaymentMethodId = 1, TransactionId = "NODATA_3", Amount = 188.30, IsSuccessful = true });
+            await dbContext.Payments.AddAsync(new Payment { PaymentMethodId = 1, TransactionId = "NODATA_4", Amount = 288.30, IsSuccessful = true });
         }
     }
 }

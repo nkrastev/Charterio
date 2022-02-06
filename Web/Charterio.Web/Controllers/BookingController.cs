@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Threading.Tasks;
 
     using Charterio.Common;
@@ -15,6 +16,7 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Stripe;
+    using Stripe.Checkout;
 
     [Authorize]
     public class BookingController : Controller
@@ -139,27 +141,58 @@
                 return this.Redirect("~/SomethingIsWrong");
             }
 
-            var options = new ChargeCreateOptions
+            var domain = "https://localhost:44319";
+            var options = new SessionCreateOptions
             {
-                Amount = (long?)(this.ticketService.CalculateTicketPrice(ticketId) * 100),
-                Currency = "EUR",
-                Description = $"Payment for ticket with id {ticketId}",
-                Source = stripeToken,
-                ReceiptEmail = stripeEmail,
-                Metadata = new Dictionary<string, string> { { "Product", "Flight Ticket" }, { "Quantity", "1" }, },
+                LineItems = new List<SessionLineItemOptions>
+                {
+                  new SessionLineItemOptions
+                  {
+                    Name = "Flight Ticket",
+                    Quantity = 1,
+                    Amount = (long?)(this.ticketService.CalculateTicketPrice(ticketId) * 100),
+                    Currency = "EUR",
+                    Description = GlobalConstants.StripePaymentDescription,
+                  },
+                },
+                Metadata = new Dictionary<string, string> { { "TicketId", ticketId.ToString() } },
+                Mode = "payment",
+                SuccessUrl = domain + "/booking/SuccessPayment?sid={CHECKOUT_SESSION_ID}",
+                CancelUrl = domain + "/booking/CancelPayment",
+
             };
+            var service = new SessionService();
+            Session session = service.Create(options);
 
-            var service = new ChargeService();
-            var response = service.Create(options);
+            this.Response.Headers.Add("Location", session.Url);
 
-            if (response.Status == "succeeded")
+            return new StatusCodeResult(303);
+        }
+
+        public IActionResult SuccessPayment(string sid)
+        {
+            if (sid == null)
             {
-                // charge is OK, mark it, send confirmation, prepare view
-                this.ticketService.MarkTicketAsPaidviaStripe(ticketId, response.Id, response.PaymentMethod, response.AmountCaptured / 100.0);
+                return this.Redirect("~/AccessDenied");
             }
-            else
+
+            var service = new SessionService();
+
+            try
             {
-                // charge is failed
+                var response = service.Get(sid);
+                var ticketId = int.Parse(response.Metadata["TicketId"]);
+
+                if (response.PaymentStatus == "paid")
+                {
+                    // charge is OK, mark it, send confirmation, prepare view
+                    this.ticketService.MarkTicketAsPaidviaStripe(ticketId, response.Id, (double)(response.AmountTotal != null ? (response.AmountTotal / 100.0) : 0));
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return this.Redirect("~/AccessDenied");
             }
 
             return this.View();
