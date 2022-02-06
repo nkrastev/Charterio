@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+
     using Charterio.Common;
     using Charterio.Data;
     using Charterio.Data.Models;
@@ -94,8 +95,8 @@
                     UserId = x.UserId,
                     StartAptName = x.Offer.StartAirport.Name,
                     EndAptName = x.Offer.EndAirport.Name,
-                    StartInUtc = x.Offer.StartTimeUtc.AddHours(x.Offer.StartAirport.UtcPosition).ToString(),
-                    EndInUtc = x.Offer.EndTimeUtc.AddHours(x.Offer.EndAirport.UtcPosition).ToString(),
+                    StartInLocal = x.Offer.StartTimeUtc.AddHours(x.Offer.StartAirport.UtcPosition),
+                    EndInLocal = x.Offer.EndTimeUtc.AddHours(x.Offer.EndAirport.UtcPosition),
                     PaxList = this.db.TicketPassengers.Where(p => p.TicketId == ticketId)
                         .Select(p => new TicketPaxViewModel
                         {

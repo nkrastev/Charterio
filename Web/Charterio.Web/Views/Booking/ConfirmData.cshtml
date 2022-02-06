@@ -39,10 +39,10 @@
                 Flight details:
             </div>
             <div class="col-md-8 font-size-15">
-                From: @Model.StartAptName<br />
-                To: @Model.EndAptName<br />
-                Departure: @Model.StartInUtc Local time<br />
-                Arrival: @Model.EndInUtc Local time
+                <strong>From:</strong> @Model.StartAptName<br />
+                <strong>To:</strong> @Model.EndAptName<br />
+                <strong>Departure:</strong> @Model.StartInLocal.ToString("dd/MM/yyyy HH:mm:ss") Local time<br />
+                <strong>Arrival:</strong> @Model.EndInLocal.ToString("dd/MM/yyyy HH:mm:ss") Local time
             </div>
         </div>
         <div class="row">
@@ -69,7 +69,7 @@
                     <input asp-for="TicketId" value="@this.Model.TicketId" type="text" hidden />
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                             data-key="pk_test_51K6al8DAcMTKZAyL2XzfPoMQU0EI9zkAlWehHtMIxvnBnn8uFx9tb2NibpdJ58sohY9kXSxxrmrik559eA0sFv2e00ssLHZ4ze"
-                            data-amount="700"
+                            data-amount=""
                             data-name="Charterio"
                             data-description="Payment for Ticket: @Model.TicketCode"
                             data-image="https://stripe.com/img/documentation/checkout/marketplace.png"

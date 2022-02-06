@@ -15,7 +15,7 @@
     using Charterio.Services.Data;
     using Charterio.Services.Data.Flight;
     using Charterio.Services.Data.SendGrid;
-
+    using Charterio.Web.ViewModels;
     using CommandLine;
 
     using Microsoft.EntityFrameworkCore;
@@ -56,7 +56,7 @@
         {
             var sw = Stopwatch.StartNew();
 
-            // var db = serviceProvider.GetService<ApplicationDbContext>();
+            var db = serviceProvider.GetService<ApplicationDbContext>();
             var allotmentCheck = serviceProvider.GetService<IAllotmentService>();
             var mailSender = serviceProvider.GetService<ISendGrid>();
 

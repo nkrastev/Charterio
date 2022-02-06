@@ -164,5 +164,18 @@
 
             return this.View();
         }
+
+        public IActionResult Ticket(int tid)
+        {
+            // Check if ticketId is valid
+            if (!this.ticketService.IsTicketIdValid(tid))
+            {
+                return this.Redirect("~/SomethingIsWrong");
+            }
+
+            var data = this.ticketService.GetTicketById(tid);
+
+            return this.View(data);
+        }
     }
 }

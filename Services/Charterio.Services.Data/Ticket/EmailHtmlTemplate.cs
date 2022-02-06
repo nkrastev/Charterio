@@ -1,9 +1,10 @@
 ﻿namespace Charterio.Services.Data.Ticket
 {
-    using Charterio.Web.ViewModels;
-    using Charterio.Web.ViewModels.Ticket;
     using System.Collections.Generic;
     using System.Text;
+
+    using Charterio.Web.ViewModels;
+    using Charterio.Web.ViewModels.Ticket;
 
     internal class EmailHtmlTemplate
     {

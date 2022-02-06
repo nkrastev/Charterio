@@ -1,6 +1,8 @@
 ﻿namespace Charterio.Web.ViewModels.Ticket
 {
+    using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class TicketViewModel
     {
@@ -14,9 +16,9 @@
 
         public string EndAptName { get; set; }
 
-        public string StartInUtc { get; set; }
+        public DateTime StartInLocal { get; set; }
 
-        public string EndInUtc { get; set; }
+        public DateTime EndInLocal { get; set; }
 
         public List<TicketPaxViewModel> PaxList { get; set; }
     }
