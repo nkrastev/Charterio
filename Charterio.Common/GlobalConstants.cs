@@ -13,6 +13,8 @@
 
         public const string SystemName = "Charterio";
 
+        public const string SystemEmail = "info@charterio.com";
+
         public const string AdministratorRoleName = "Administrator";
 
         public const string CustomerRoleName = "Customer";

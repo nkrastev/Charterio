@@ -4,11 +4,12 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-
+    using Charterio.Common;
     using Charterio.Data;
     using Charterio.Data.Models;
     using Charterio.Services.Data.Flight;
     using Charterio.Services.Data.SendGrid;
+    using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Ticket;
     using global::Data.Models;
 
@@ -165,11 +166,34 @@
         {
             var user = this.db.Tickets.Where(x => x.Id == ticketId).Select(x => new { Email = x.User.Email, }).FirstOrDefault();
             var ticket = this.db.Tickets.Where(x => x.Id == ticketId).FirstOrDefault();
+            var flightDetails = this.db.Tickets.Where(x => x.Id == ticketId).Select(x => new FlightViewModel()
+            {
+                Id = 0,
+                Start = x.Offer.StartAirport.Name,
+                End = x.Offer.EndAirport.Name,
+                StartDate = x.Offer.StartTimeUtc,
+                StartUtcPosition = x.Offer.StartAirport.UtcPosition,
+                EndDate = x.Offer.EndTimeUtc,
+                EndUtcPosition = x.Offer.EndAirport.UtcPosition,
+                Luggage = x.Offer.Luggage,
+                Catering = x.Offer.Categing,
+                FlightNumber = x.Offer.Flight.Number,
+                Price = 0,
+                DistanceInKm = 0,
+            }).FirstOrDefault();
+
+            var paxList = this.db.TicketPassengers.Where(x => x.TicketId == ticketId).Select(x => new TicketPaxViewModel
+            {
+                    PaxTitle = x.PaxTitle,
+                    PaxFirstName = x.PaxFirstName,
+                    PaxLastName = x.PaxLastName,
+                    PaxDob = x.DOB,
+            }).ToList();
 
             if (user != null && ticket != null)
             {
-                var html = new EmailHtmlTemplate().GenerateTemplate(ticket.TicketCode);
-                await this.emailSender.SendEmailAsync("info@charterio.com", "Charterio", user.Email, $"Flight Ticket {ticket.TicketCode}", html);
+                var html = new EmailHtmlTemplate().GenerateTemplate(ticket.TicketCode, paxList, flightDetails);
+                await this.emailSender.SendEmailAsync(GlobalConstants.SystemEmail, GlobalConstants.SystemName, user.Email, $"Flight Ticket {ticket.TicketCode}", html);
             }
         }
     }

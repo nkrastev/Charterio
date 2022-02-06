@@ -1,5 +1,8 @@
 ﻿namespace Charterio.Services.Data.Ticket
 {
+    using Charterio.Web.ViewModels;
+    using Charterio.Web.ViewModels.Ticket;
+    using System.Collections.Generic;
     using System.Text;
 
     internal class EmailHtmlTemplate
@@ -8,7 +11,7 @@
         {
         }
 
-        public string GenerateTemplate(string ticketCode)
+        public string GenerateTemplate(string ticketCode, List<TicketPaxViewModel> paxList, FlightViewModel flight)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("<!DOCTYPE html PUBLIC \" -//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">");
@@ -28,9 +31,16 @@
             sb.AppendLine($"<h1>{ticketCode}</h1>");
             sb.AppendLine("<tr><td><hr /></td></tr>");
             sb.AppendLine("<tr><td><h3>Passengers info:</h3></td></tr>");
-            sb.AppendLine("<tr><td>Mr. Ivan Ivanov</td></tr>");
+
+            foreach (var pax in paxList)
+            {
+                sb.AppendLine($"<tr><td>{pax.PaxTitle} {pax.PaxFirstName} {pax.PaxLastName}</td></tr>");
+            }
+
             sb.AppendLine("<tr><td><hr /></td></tr>");
-            sb.AppendLine("<tr><td><h3>Flight number: W6 4378</h3></td></tr>");
+            sb.AppendLine($"<tr><td><h3>Flight number: {flight.FlightNumber}</h3></td></tr>");
+            sb.AppendLine($"<tr><td><strong>Departs from:</strong> {flight.Start} <strong>at</strong> {flight.StartDate.AddHours(flight.StartUtcPosition)}</td></tr>");
+            sb.AppendLine($"<tr><td><strong>Arrives at:</strong> {flight.End} <strong>at</strong> {flight.EndDate.AddHours(flight.EndUtcPosition)}</td></tr>");
             sb.AppendLine("<tr><td><hr /></td></tr>");
             sb.AppendLine("<tr><td><p style=\"text - align:justify; font - size:12px; padding - left:5px; padding - right:5px; \">When making a reservation, the passenger is obliged to provide the Charterer with his / her telephone number and e-mail address at which the Charterer will be able to inform the passenger on short notice about important matters concerning reservation . The Passenger is liable for correctness and functionality of the contacts provided to the Carrier The Charterer or its authorized representative will register the passenger's reservation and will provide him with an E-ticket either via e-mail to the e-mail address provided by the passenger . The contract is considered as concluded at the moment of payment of the fare. Children and infant age is determined at the time of travel, not at booking time.</p></td></tr>");
             sb.AppendLine("</table></td></tr></table></body></html>");
