@@ -11,7 +11,7 @@ build_property.RootNamespace = Charterio.Web
 build_property.ProjectDir = C:\Users\Nikolay\source\repos\Charterio\Web\Charterio.Web\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\Nikolay\source\repos\Charterio\Web\Charterio.Web
 build_property._RazorSourceGeneratorDebug = 
 

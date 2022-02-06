@@ -11,7 +11,6 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-Charterio-BBB373B5-EF3F-4DBB-B8AA-7152CEC275BF")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Charterio.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]

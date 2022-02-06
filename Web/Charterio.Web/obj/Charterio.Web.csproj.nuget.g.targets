@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.web.librarymanager.build\2.1.161\build\Microsoft.Web.LibraryManager.Build.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.web.librarymanager.build\2.1.161\build\Microsoft.Web.LibraryManager.Build.targets')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.mvc.razor.runtimecompilation\6.0.1\buildTransitive\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.mvc.razor.runtimecompilation\6.0.1\buildTransitive\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.targets')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.identity.ui\6.0.1\buildTransitive\Microsoft.AspNetCore.Identity.UI.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.identity.ui\6.0.1\buildTransitive\Microsoft.AspNetCore.Identity.UI.targets')" />
-    <Import Project="$(NuGetPackageRoot)buildbundlerminifier\3.2.449\build\BuildBundlerMinifier.targets" Condition="Exists('$(NuGetPackageRoot)buildbundlerminifier\3.2.449\build\BuildBundlerMinifier.targets')" />
-  </ImportGroup>
-</Project>
