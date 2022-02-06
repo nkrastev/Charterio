@@ -14,7 +14,7 @@
     using Charterio.Data.Seeding;
     using Charterio.Services.Data;
     using Charterio.Services.Data.Flight;
-    using Charterio.Services.Messaging;
+    using Charterio.Services.Data.SendGrid;
 
     using CommandLine;
 
@@ -22,6 +22,8 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
+    using SendGrid;
+    using SendGrid.Helpers.Mail;
 
     public static class Program
     {
@@ -56,11 +58,13 @@
 
             // var db = serviceProvider.GetService<ApplicationDbContext>();
             var allotmentCheck = serviceProvider.GetService<IAllotmentService>();
+            var mailSender = serviceProvider.GetService<ISendGrid>();
 
-            Console.WriteLine($"Checking allotment service. Offer id = 6 has data (10 initial allotment, 2 sold tickets with 1 and 3 pax in it.)");
-            Console.WriteLine($"Checking: {allotmentCheck.AreSeatsAvailable(6, 10)}");
+            Console.WriteLine(mailSender);
 
-            Console.WriteLine($"Options: {options}");
+            await mailSender.SendEmailAsync("info@charterio.com", "Charterio Test", "nikolay.krystev@gmail.com", "test ticket", "<h1>test</h1>");
+
+            Console.WriteLine("mail sent");
 
             Console.WriteLine(sw.Elapsed);
             return await Task.FromResult(0);
@@ -87,8 +91,8 @@
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
             // Application services
-            services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<IAllotmentService, AllotmentService>();
+            services.AddTransient<ISendGrid, SendGrid>();
         }
     }
 }

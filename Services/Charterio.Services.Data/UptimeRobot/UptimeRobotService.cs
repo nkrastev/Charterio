@@ -3,7 +3,6 @@
     using System.Linq;
 
     using Charterio.Data;
-    using Charterio.Data.Common.Models;
     using Microsoft.Extensions.Configuration;
     using Newtonsoft.Json.Linq;
     using RestSharp;
@@ -41,7 +40,7 @@
             {
                 var lastEntry = this.db.UptimeRobots.OrderByDescending(x => x.Id).FirstOrDefault();
 
-                if (lastEntry.CreatedOn.AddHours(2) > System.DateTime.UtcNow)
+                if (lastEntry.CreatedOn.AddHours(2) < System.DateTime.UtcNow)
                 {
                     // the last entry is older than 2 hours, generate new
                     result = GetRatioFromApi(this.ApiKey);

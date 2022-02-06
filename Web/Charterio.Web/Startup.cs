@@ -12,10 +12,10 @@
     using Charterio.Services.Data;
     using Charterio.Services.Data.Contacts;
     using Charterio.Services.Data.Flight;
+    using Charterio.Services.Data.SendGrid;
     using Charterio.Services.Data.Ticket;
     using Charterio.Services.Data.UptimeRobot;
     using Charterio.Services.Mapping;
-    using Charterio.Services.Messaging;
     using Charterio.Web.ViewModels;
     using Ganss.XSS;
     using Microsoft.AspNetCore.Builder;
@@ -73,8 +73,7 @@
             StripeConfiguration.ApiKey = this.configuration["StripeApiKey"];
 
             // Application services
-            services.AddTransient<IEmailSender>(s => new SendGridEmailSender(this.configuration["SendGridApiKey"]));
-
+            services.AddTransient<ISendGrid, SendGrid>();
             services.AddTransient<IUptimeRobotService, UptimeRobotService>();
 
             services.AddTransient<IScheduleService, ScheduleService>();

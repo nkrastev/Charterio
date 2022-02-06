@@ -1,24 +1,23 @@
-﻿namespace Charterio.Services.Messaging
+﻿namespace Charterio.Services.Data.SendGrid
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
+    using global::SendGrid;
+    using global::SendGrid.Helpers.Mail;
     using Microsoft.Extensions.Configuration;
 
-    using SendGrid;
-    using SendGrid.Helpers.Mail;
-
-    public class SendGridEmailSender : IEmailSender
+    public class SendGrid : ISendGrid
     {
         private readonly SendGridClient client;
         private readonly IConfiguration configuration;
 
-        public SendGridEmailSender(IConfiguration configuration)
+        public SendGrid(IConfiguration configuration)
         {
-            this.client = new SendGridClient(this.ApiKey);
             this.configuration = configuration;
+            this.client = new SendGridClient(this.ApiKey);
         }
 
         private string ApiKey => this.configuration["SendGridApiKey"];

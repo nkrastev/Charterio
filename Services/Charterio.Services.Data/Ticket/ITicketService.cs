@@ -1,5 +1,7 @@
 ﻿namespace Charterio.Services.Data.Ticket
 {
+    using System.Threading.Tasks;
+
     using Charterio.Web.ViewModels.Ticket;
 
     public interface ITicketService
@@ -12,6 +14,6 @@
 
         double CalculateTicketPrice(int ticketId);
 
-        string MarkTicketAsPaidviaStripe(int ticketId, string transactionId, string transactionCode, double amount);
+        Task<string> MarkTicketAsPaidviaStripe(int ticketId, string transactionId, string transactionCode, double amount);
     }
 }

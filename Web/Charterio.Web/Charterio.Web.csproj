@@ -39,7 +39,6 @@
     <ProjectReference Include="..\..\Data\Charterio.Data\Charterio.Data.csproj" />
     <ProjectReference Include="..\..\Services\Charterio.Services.Data\Charterio.Services.Data.csproj" />
     <ProjectReference Include="..\..\Services\Charterio.Services.Mapping\Charterio.Services.Mapping.csproj" />
-    <ProjectReference Include="..\..\Services\Charterio.Services.Messaging\Charterio.Services.Messaging.csproj" />
     <ProjectReference Include="..\..\Services\Charterio.Services\Charterio.Services.csproj" />
     <ProjectReference Include="..\Charterio.Web.Infrastructure\Charterio.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\Charterio.Web.ViewModels\Charterio.Web.ViewModels.csproj" />

@@ -19,6 +19,5 @@
         public string EndInUtc { get; set; }
 
         public List<TicketPaxViewModel> PaxList { get; set; }
-
     }
 }

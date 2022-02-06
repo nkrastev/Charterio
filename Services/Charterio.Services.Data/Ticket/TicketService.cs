@@ -3,10 +3,12 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
 
     using Charterio.Data;
     using Charterio.Data.Models;
     using Charterio.Services.Data.Flight;
+    using Charterio.Services.Data.SendGrid;
     using Charterio.Web.ViewModels.Ticket;
     using global::Data.Models;
 
@@ -15,12 +17,18 @@
         private readonly ApplicationDbContext db;
         private readonly IFlightService flightService;
         private readonly IAllotmentService allotmentService;
+        private readonly ISendGrid emailSender;
 
-        public TicketService(ApplicationDbContext db, IFlightService flightService, IAllotmentService allotmentService)
+        public TicketService(
+            ApplicationDbContext db,
+            IFlightService flightService,
+            IAllotmentService allotmentService,
+            ISendGrid emailSender)
         {
             this.db = db;
             this.flightService = flightService;
             this.allotmentService = allotmentService;
+            this.emailSender = emailSender;
         }
 
         public int CreateTicket(TicketCreateViewModel input)
@@ -114,7 +122,7 @@
             }
         }
 
-        public string MarkTicketAsPaidviaStripe(int ticketId, string transactionId, string transactionCode, double amount)
+        public async Task<string> MarkTicketAsPaidviaStripe(int ticketId, string transactionId, string transactionCode, double amount)
         {
             // Change ticket status
             var targetTicket = this.db.Tickets.Where(x => x.Id == ticketId).FirstOrDefault();
@@ -133,6 +141,8 @@
             this.db.Payments.Add(payment);
             this.db.SaveChanges();
 
+            await this.SendConfirmationEmailAsync(ticketId);
+
             return "OK";
         }
 
@@ -149,6 +159,18 @@
             Random random = new();
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        private async Task SendConfirmationEmailAsync(int ticketId)
+        {
+            var user = this.db.Tickets.Where(x => x.Id == ticketId).Select(x => new { Email = x.User.Email, }).FirstOrDefault();
+            var ticket = this.db.Tickets.Where(x => x.Id == ticketId).FirstOrDefault();
+
+            if (user != null && ticket != null)
+            {
+                var html = new EmailHtmlTemplate().GenerateTemplate(ticket.TicketCode);
+                await this.emailSender.SendEmailAsync("info@charterio.com", "Charterio", user.Email, $"Flight Ticket {ticket.TicketCode}", html);
+            }
         }
     }
 }

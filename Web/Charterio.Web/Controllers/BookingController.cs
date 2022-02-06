@@ -2,8 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.IO;
     using System.Threading.Tasks;
 
     using Charterio.Common;
@@ -16,7 +14,6 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Configuration;
     using Stripe;
 
     [Authorize]
@@ -167,6 +164,5 @@
 
             return this.View();
         }
-
     }
 }
