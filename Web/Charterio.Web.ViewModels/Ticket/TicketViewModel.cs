@@ -10,6 +10,8 @@
 
         public string TicketCode { get; set; }
 
+        public int TicketStatusId { get; set; }
+
         public string UserId { get; set; }
 
         public string StartAptName { get; set; }

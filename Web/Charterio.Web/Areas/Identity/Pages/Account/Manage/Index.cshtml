@@ -43,7 +43,7 @@
                                 <td>
                                     @if(@ticket.TicketStatus=="Paid, confirmed"){<text><a href="~/Booking/Ticket?tid=@ticket.Id">View</a></text>}
                                     @if(@ticket.TicketStatus=="Not paid, cancelled"){<text>-</text>}
-                                    @if(@ticket.TicketStatus=="Waiting for payment"){<text><a href="~/Booking/Pay?tid=@ticket.Id">Pay now</a></text>}                                    
+                                    @if(@ticket.TicketStatus=="Waiting for payment"){<text><a href="~/Booking/ConfirmData?tid=@ticket.Id">Pay now</a></text>}                                    
                                      
                                 </td>
                             </tr>

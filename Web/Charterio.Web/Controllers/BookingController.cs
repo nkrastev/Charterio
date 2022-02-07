@@ -128,6 +128,12 @@
                 return this.Redirect("~/AccessDenied");
             }
 
+            // ticket is valid, check if it is not paid or cancelled
+            if (ticket.TicketStatusId != 3)
+            {
+                return this.Redirect("~/AccessDenied");
+            }
+
             // ticket is valid, user has access, vizualize data
             return this.View(ticket);
         }
@@ -158,7 +164,7 @@
                 Metadata = new Dictionary<string, string> { { "TicketId", ticketId.ToString() } },
                 Mode = "payment",
                 SuccessUrl = domain + "/booking/SuccessPayment?sid={CHECKOUT_SESSION_ID}",
-                CancelUrl = domain + "/booking/CancelPayment",
+                CancelUrl = domain + "/booking/CancelPayment?sid={CHECKOUT_SESSION_ID}",
 
             };
             var service = new SessionService();
@@ -189,9 +195,32 @@
                     this.ticketService.MarkTicketAsPaidviaStripe(ticketId, response.Id, (double)(response.AmountTotal != null ? (response.AmountTotal / 100.0) : 0));
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                return this.Redirect("~/AccessDenied");
+            }
 
+            return this.View();
+        }
+
+        public IActionResult CancelPayment(string sid)
+        {
+            if (sid == null)
+            {
+                return this.Redirect("~/AccessDenied");
+            }
+
+            var service = new SessionService();
+            try
+            {
+                var response = service.Get(sid);
+                var ticketId = int.Parse(response.Metadata["TicketId"]);
+
+                // mark ticket as cancelled
+                this.ticketService.MarkTicketAsCancelled(ticketId);
+            }
+            catch (Exception)
+            {
                 return this.Redirect("~/AccessDenied");
             }
 

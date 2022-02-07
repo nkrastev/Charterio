@@ -15,5 +15,7 @@
         double CalculateTicketPrice(int ticketId);
 
         Task<string> MarkTicketAsPaidviaStripe(int ticketId, string transactionId, double amount);
+
+        void MarkTicketAsCancelled(int ticketId);
     }
 }

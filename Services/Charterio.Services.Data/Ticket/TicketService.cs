@@ -92,6 +92,7 @@
                 {
                     TicketId = ticketId,
                     TicketCode = x.TicketCode,
+                    TicketStatusId = x.TicketStatus.Id,
                     UserId = x.UserId,
                     StartAptName = x.Offer.StartAirport.Name,
                     EndAptName = x.Offer.EndAirport.Name,
@@ -126,10 +127,6 @@
 
         public async Task<string> MarkTicketAsPaidviaStripe(int ticketId, string transactionId, double amount)
         {
-            // Change ticket status
-            var targetTicket = this.db.Tickets.Where(x => x.Id == ticketId).FirstOrDefault();
-            targetTicket.TicketStatusId = 1;
-
             // Insert Payment
             var payment = new Payment
             {
@@ -142,9 +139,27 @@
             this.db.Payments.Add(payment);
             this.db.SaveChanges();
 
+            // Get paymend back via transactionId
+            var targetPayment = this.db.Payments.Where(x => x.TransactionId == payment.TransactionId).FirstOrDefault();
+
+            // Change ticket status
+            var targetTicket = this.db.Tickets.Where(x => x.Id == ticketId).FirstOrDefault();
+            targetTicket.TicketStatusId = 1;
+            targetTicket.PaymentId = targetPayment.Id;
+            this.db.SaveChanges();
+
             await this.SendConfirmationEmailAsync(ticketId);
 
             return "OK";
+        }
+
+        public void MarkTicketAsCancelled(int ticketId)
+        {
+            // Change ticket status
+            var targetTicket = this.db.Tickets.Where(x => x.Id == ticketId).FirstOrDefault();
+            targetTicket.TicketStatusId = 2;
+
+            this.db.SaveChanges();
         }
 
         public double CalculateTicketPrice(int ticketId)
