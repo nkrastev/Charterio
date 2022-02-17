@@ -55,7 +55,17 @@
       "ProjectGuid": "8ab6b92a-0837-4bde-b950-10be3ff2b6a8",
       "DisplayName": "Sandbox",
       "ColorIndex": 9
+    },
+    "43fdc0c4-f250-45de-93f8-3ca8a9247cc9": {
+      "ProjectGuid": "43fdc0c4-f250-45de-93f8-3ca8a9247cc9",
+      "DisplayName": "Charterio.Services.Messaging",
+      "ColorIndex": 10
+    },
+    "3ee06c6e-c8f3-418a-a309-8ac81976a074": {
+      "ProjectGuid": "3ee06c6e-c8f3-418a-a309-8ac81976a074",
+      "DisplayName": "Charterio.Web.Tests",
+      "ColorIndex": 11
     }
   },
-  "NextColorIndex": 10
+  "NextColorIndex": 12
 }
