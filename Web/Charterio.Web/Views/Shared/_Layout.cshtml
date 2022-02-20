@@ -13,12 +13,12 @@
     <link href='~/assets/plugins/fontawesome-5.15.2/css/fontawesome.min.css' rel='stylesheet' asp-append-version="true">
     <link href="~/assets/plugins/animate/animate.css" rel="stylesheet" asp-append-version="true">
     <link href="~/assets/plugins/menuzord/css/menuzord.css" rel="stylesheet" asp-append-version="true">
-    <link href="~/assets/plugins/menuzord/css/menuzord-animations.css" rel="stylesheet" asp-append-version="true">       
+    <link href="~/assets/plugins/menuzord/css/menuzord-animations.css" rel="stylesheet" asp-append-version="true">
 
     <link href='~/assets/plugins/selectric/selectric.css' rel='stylesheet' asp-append-version="true">
     <link href='~/assets/plugins/daterangepicker/css/daterangepicker.css' rel='stylesheet' asp-append-version="true">
 
-    
+
     <link href='~/assets/plugins/revolution/css/settings.css' rel='stylesheet' asp-append-version="true">
 
     <!-- GOOGLE FONT -->
@@ -96,24 +96,38 @@
                             <img data-src="/assets/img/logo-color-big.png" src="/assets/img/logo-color-big.png" alt="Charterio">
                         </a>
                         <ul class="menuzord-menu menuzord-right">
-                            <li><a href="~/">Search Flights</a></li>
-                            <li><a href="~/schedule">Schedule</a></li>
-                            <li><a href="~/faq">FAQ</a></li>
-                            <li><a href="~/contacts">Contacts</a></li>
-                            @if (User.Identity.IsAuthenticated)
+                            @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
                             {
-                                <li><a href="~/identity/account/manage">My Account</a></li>
+                                <li><a href="~/administration/" class="text-dark">Administration Dashboard</a></li>
                                 <li>
-                                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@this.Url.Action("Index", "Home", new { area = string.Empty })">
-                                        <button type="submit" class="nav-link btn btn-link text-dark mmenuBtn">Logout</button>
-                                    </form>
+                                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@this.Url.Action("Index", "Home", new { area = string.Empty })">
+                                            <button type="submit" class="nav-link btn btn-link text-dark mmenuBtn">Logout</button>
+                                        </form>
                                 </li>
                             }
                             else
                             {
-                                <li><a href="~/identity/account/login">Login</a></li>
-                                <li><a href="~/identity/account/register">Register</a></li>
+                                <li><a href="~/">Search Flights</a></li>
+                                <li><a href="~/schedule">Schedule</a></li>
+                                <li><a href="~/faq">FAQ</a></li>
+                                <li><a href="~/contacts">Contacts</a></li>
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li><a href="~/identity/account/manage">My Account</a></li>
+                                    <li>
+                                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@this.Url.Action("Index", "Home", new { area = string.Empty })">
+                                            <button type="submit" class="nav-link btn btn-link text-dark mmenuBtn">Logout</button>
+                                        </form>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li><a href="~/identity/account/login">Login</a></li>
+                                    <li><a href="~/identity/account/register">Register</a></li>
+                                }
                             }
+
                         </ul>
                     </div>
                 </div>
@@ -228,15 +242,15 @@
     <script src="~/assets/plugins/jquery/jquery-3.4.1.min.js" asp-append-version="true"></script>
     <script src="~/assets/plugins/bootstrap/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
     <script src="~/assets/plugins/menuzord/js/menuzord.js" asp-append-version="true"></script>
-  
-    
+
+
 
     <script src='~/assets/plugins/selectric/jquery.selectric.min.js' asp-append-version="true"></script>
     <script src='~/assets/plugins/daterangepicker/js/moment.min.js' asp-append-version="true"></script>
-    <script src='~/assets/plugins/daterangepicker/js/daterangepicker.min.js' asp-append-version="true"></script>       
+    <script src='~/assets/plugins/daterangepicker/js/daterangepicker.min.js' asp-append-version="true"></script>
 
     <script src='~/assets/plugins/revolution/js/jquery.themepunch.tools.min.js' asp-append-version="true"></script>
-    <script src='~/assets/plugins/revolution/js/jquery.themepunch.revolution.min.js' asp-append-version="true"></script>    
+    <script src='~/assets/plugins/revolution/js/jquery.themepunch.revolution.min.js' asp-append-version="true"></script>
 
     <script src="~/assets/plugins/jquery/jquery.validate.min.js" asp-append-version="true"></script>
     <script src="~/assets/plugins/jquery/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>

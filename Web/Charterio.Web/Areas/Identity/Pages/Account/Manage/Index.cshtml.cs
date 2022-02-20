@@ -9,6 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using Charterio.Common;
 using Charterio.Data;
 using Charterio.Data.Models;
 using Microsoft.AspNetCore.Identity;
@@ -111,6 +112,11 @@ namespace Charterio.Web.Areas.Identity.Pages.Account.Manage
             if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            if (User.IsInRole(GlobalConstants.AdministratorRoleName))
+            {
+                return Redirect("~/Administration/");
             }
 
             await LoadAsync(user);

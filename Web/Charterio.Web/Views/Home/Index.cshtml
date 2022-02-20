@@ -13,6 +13,17 @@
             <div id="menuzord" class="menuzord">
                 <a href="~/" class="menuzord-logo-brand"></a>
                 <ul class="menuzord-menu menuzord-right">
+                    @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
+                    {
+                    <li><a href="~/administration/" class="text-dark">Administration Dashboard</a></li>
+                    <li>
+                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@this.Url.Action("Index", "Home", new { area = string.Empty })">
+                            <button type="submit" class="nav-link btn btn-link text-dark mmenuBtn">Logout</button>
+                        </form>
+                    </li>
+                    }
+
+                    else{
                     <li>
                         <a href="~/">Search for Flights</a>
                     </li>
@@ -26,13 +37,16 @@
                         <a href="~/contacts">Contacts</a>
                     </li>
 
-                    @if (User.Identity.IsAuthenticated){
-                    <li><a href="~/identity/account/manage">My Account</a></li>
+                        @if (User.Identity.IsAuthenticated){
+                            <li><a href="~/identity/account/manage">My Account</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="~/identity/account/login">Login</a></li>
+                            <li><a href="~/identity/account/register">Register</a></li>
+                        }
                     }
-                    else{
-                    <li><a href="~/identity/account/login">Login</a></li>
-                    <li><a href="~/identity/account/register">Register</a></li>
-                    }
+
 
 
                 </ul>

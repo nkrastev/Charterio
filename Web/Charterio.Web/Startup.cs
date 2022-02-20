@@ -135,6 +135,7 @@
                         endpoints.MapControllerRoute("searchForFlight", "Search/{startApt}/{endApt}/{paxCount}", new { controller = "Search", action = "SearchFlight" });
                         endpoints.MapControllerRoute("flightDetail", "FlightDetails/{id}/", new { controller = "Detail", action = "Index" });
                         endpoints.MapControllerRoute("faq", "faq/{pageNum?}", new { controller = "Faq", action = "Index" });
+                        endpoints.MapControllerRoute(name: "Administration", pattern: "{area:exists}/{controller=Administration}/{action=Index}/{id?}");
                         endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapRazorPages();
                     });

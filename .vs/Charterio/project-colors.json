@@ -65,7 +65,12 @@
       "ProjectGuid": "3ee06c6e-c8f3-418a-a309-8ac81976a074",
       "DisplayName": "Charterio.Web.Tests",
       "ColorIndex": 11
+    },
+    "901ab2da-6e52-4fb2-91f0-58eb0115f2f7": {
+      "ProjectGuid": "901ab2da-6e52-4fb2-91f0-58eb0115f2f7",
+      "DisplayName": "Charterio.Services.Data.Tests",
+      "ColorIndex": 12
     }
   },
-  "NextColorIndex": 12
+  "NextColorIndex": 13
 }
