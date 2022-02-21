@@ -54,6 +54,7 @@
             }
         }
 
+        // Administration services
         public void Edit(FaqViewModel model)
         {
             var faq = this.db.Faqs.Where(x => x.Id == model.Id).FirstOrDefault();

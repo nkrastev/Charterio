@@ -46,7 +46,11 @@
 
         public IActionResult Delete(int id)
         {
-            return this.View();
+            this.faqService.Delete(id);
+            
+            //TODO confirmation for delete?
+
+            return this.RedirectToAction("Index");
         }
     }
 }

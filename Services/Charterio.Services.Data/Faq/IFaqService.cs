@@ -1,6 +1,7 @@
 ﻿namespace Charterio.Services.Data
 {
     using System.Collections.Generic;
+
     using Charterio.Web.ViewModels.Administration.Faq;
     using Charterio.Web.ViewModels.Faq;
 

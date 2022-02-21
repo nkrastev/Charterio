@@ -23,7 +23,7 @@
 <section class="py-9 pt-md-5">
     <div class="container">
         <partial name="_AdminMenu" />
-
+        <div class="text-center"><a asp-action="Add" class="btn btn-outline-secondary mb-2">Add New Faq</a></div>
         <div class="col-12">
             <table class="table table-striped">
                 <thead>
@@ -44,17 +44,11 @@
                             <td>@item.Question</td>
                             <td>@item.Answer</td>
                             <td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
-                            <td><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>                            
+                            <td><a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure you want to delete?');">Delete</a></td>                            
                         </tr>
                     }
                 </tbody>
-
-
             </table>
-
         </div>
-
-
     </div>
 </section>
-
