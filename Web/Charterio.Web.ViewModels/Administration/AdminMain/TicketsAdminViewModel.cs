@@ -1,6 +1,5 @@
 ﻿namespace Charterio.Web.ViewModels.Administration.AdminMain
 {
-
     public class TicketsAdminViewModel
     {
         public string Code { get; set; }

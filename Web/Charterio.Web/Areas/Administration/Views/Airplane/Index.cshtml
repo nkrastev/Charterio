@@ -1,0 +1,52 @@
+﻿@using Charterio.Web.ViewModels.Administration.Airplane
+@model List<AirplaneViewModel>
+@{
+    this.ViewData["Title"] = "Administration / Airplane";
+}
+<section class="page-title">
+    <div class="page-title-img bg-img bg-overlay-darken">
+        <div class="container">
+            <div class="row align-items-center justify-content-center height100px">
+                <div class="col-lg-8">
+                    <div class="page-title-content">
+                        <div class="title-border">
+                            <h1 class="text-white text-uppercase font-weight-bold">@this.ViewData["Title"]</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-9 pt-md-5">
+    <div class="container">
+        <partial name="_AdminMenu" />
+        <div class="text-center"><a asp-action="Add" class="btn btn-outline-secondary mb-2">Add New Airplane</a></div>
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Model</th>                        
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Model</td>                            
+                            <td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
+                            <td><a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure you want to delete?');">Delete</a></td>                            
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

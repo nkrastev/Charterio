@@ -165,7 +165,6 @@
                 Mode = "payment",
                 SuccessUrl = domain + "/booking/SuccessPayment?sid={CHECKOUT_SESSION_ID}",
                 CancelUrl = domain + "/booking/CancelPayment?sid={CHECKOUT_SESSION_ID}",
-
             };
             var service = new SessionService();
             Session session = service.Create(options);
