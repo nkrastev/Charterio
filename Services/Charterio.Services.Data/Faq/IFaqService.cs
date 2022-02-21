@@ -14,7 +14,7 @@
         // Administration services
         List<FaqViewModel> GetAll();
 
-        void Add(FaqViewModel model);
+        void Add(FaqAddViewModel model);
 
         void Edit(FaqViewModel model);
 

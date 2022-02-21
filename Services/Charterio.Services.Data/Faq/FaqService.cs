@@ -5,6 +5,7 @@
     using System.Linq;
 
     using Charterio.Data;
+    using Charterio.Data.Models;
     using Charterio.Web.ViewModels.Administration.Faq;
     using Charterio.Web.ViewModels.Faq;
     using Microsoft.EntityFrameworkCore;
@@ -100,9 +101,16 @@
             return faqs;
         }
 
-        public void Add(FaqViewModel model)
+        public void Add(FaqAddViewModel model)
         {
-            throw new System.NotImplementedException();
+            var faq = new Faq
+            {
+                Question = model.Question,
+                Answer = model.Answer,
+            };
+
+            this.db.Faqs.Add(faq);
+            this.db.SaveChanges();
         }
     }
 }

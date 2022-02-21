@@ -25,6 +25,23 @@
             return this.View(model);
         }
 
+        public IActionResult Add()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(FaqAddViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+
+            this.faqService.Add(model);
+            return this.RedirectToAction("Index");
+        }
+
         public IActionResult Edit(int id)
         {
             var faq = this.faqService.GetById(id);
@@ -47,9 +64,6 @@
         public IActionResult Delete(int id)
         {
             this.faqService.Delete(id);
-            
-            //TODO confirmation for delete?
-
             return this.RedirectToAction("Index");
         }
     }
