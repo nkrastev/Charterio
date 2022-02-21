@@ -10,6 +10,7 @@
     using Charterio.Data.Repositories;
     using Charterio.Data.Seeding;
     using Charterio.Services.Data;
+    using Charterio.Services.Data.Administration;
     using Charterio.Services.Data.Contacts;
     using Charterio.Services.Data.Flight;
     using Charterio.Services.Data.SendGrid;
@@ -76,9 +77,11 @@
             services.AddTransient<ISendGrid, SendGrid>();
             services.AddTransient<IUptimeRobotService, UptimeRobotService>();
 
+            services.AddTransient<IAdminService, AdminService>();
+
             services.AddTransient<IScheduleService, ScheduleService>();
             services.AddTransient<IFaqService, FaqService>();
-            services.AddTransient<IContactsService, ContactsService>();
+            services.AddTransient<IContactService, ContactService>();
 
             services.AddTransient<IFlightService, FlightService>();
             services.AddTransient<IAllotmentService, AllotmentService>();

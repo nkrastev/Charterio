@@ -6,9 +6,9 @@
 
     public class ContactsController : Controller
     {
-        private readonly IContactsService contactsService;
+        private readonly IContactService contactsService;
 
-        public ContactsController(IContactsService contactsServicе)
+        public ContactsController(IContactService contactsServicе)
         {
             this.contactsService = contactsServicе;
         }
