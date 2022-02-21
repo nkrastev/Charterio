@@ -15,7 +15,7 @@
                 <ul class="menuzord-menu menuzord-right">
                     @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
                     {
-                    <li><a asp-area="Administration" class="text-dark">Administration Dashboard</a></li>
+                    <li><a asp-area="Administration" asp-controller="Administration" asp-action="Index" class="text-dark">Administration Dashboard</a></li>
                     <li>
                         <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@this.Url.Action("Index", "Home", new { area = string.Empty })">
                             <button type="submit" class="nav-link btn btn-link text-dark mmenuBtn">Logout</button>
