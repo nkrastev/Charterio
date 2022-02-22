@@ -1,0 +1,40 @@
+﻿@using Charterio.Web.ViewModels.Administration.Question
+@model QuestionAnswerViewModel
+@{
+    this.ViewData["Title"] = "Administration / User questions / Send answer";
+}
+<section class="page-title">
+    <div class="page-title-img bg-img bg-overlay-darken">
+        <div class="container">
+            <div class="row align-items-center justify-content-center height100px">
+                <div class="col-lg-10">
+                    <div class="page-title-content">
+                        <div class="title-border">
+                            <h1 class="text-white text-uppercase font-weight-bold">@this.ViewData["Title"]</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-9 pt-md-5">
+    <div class="container">
+        <partial name="_AdminMenu" />
+        <div class="col-12">
+            <form method="post">
+                <input type="text" name="questionid" value="@Model.QuestionId" hidden />
+                <input type="text" name="useremail" value="@Model.UserEmail" hidden />
+                <input type="text" name="question" value="@Model.Question" hidden />
+
+                <p><b>From:</b> @Model.UserEmail</p>
+                <p><b>Question</b> @Model.Question</p>
+                <hr />
+                <textarea placeholder="Insert the answer here..." rows="5" name="answer" class="width100percent mb-3"></textarea>
+                <button type="submit" class="btn btn-primary btn-sm width100percent">Send the answer</button>
+            </form>
+        </div>
+    </div>
+</section>

@@ -38,5 +38,7 @@
         public const string ErrorFlightDoesNotExists = "The selected flight does not exists. Please restart your booking.";
 
         public const string StripePaymentDescription = "Flight ticket from Charterio.com";
+
+        public const string AnswerToYourQuestionSubject = "Answer to your question at Charterio.com";
     }
 }

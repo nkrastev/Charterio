@@ -60,6 +60,5 @@
             this.flightService.Add(modelInput);
             return this.RedirectToAction("Index");
         }
-
     }
 }

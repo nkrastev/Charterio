@@ -16,6 +16,7 @@
     using Charterio.Services.Data.Company;
     using Charterio.Services.Data.Contacts;
     using Charterio.Services.Data.Flight;
+    using Charterio.Services.Data.Question;
     using Charterio.Services.Data.SendGrid;
     using Charterio.Services.Data.Ticket;
     using Charterio.Services.Data.UptimeRobot;
@@ -85,6 +86,7 @@
             services.AddTransient<IAirportService, AirportService>();
 
             services.AddTransient<ICompanyService, CompanyService>();
+            services.AddTransient<IQuestionService, QuestionService>();
 
             services.AddTransient<IScheduleService, ScheduleService>();
             services.AddTransient<IFaqService, FaqService>();

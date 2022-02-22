@@ -13,6 +13,5 @@
         CompanyViewModel GetById(int id);
 
         void Edit(CompanyViewModel model);
-        
     }
 }
