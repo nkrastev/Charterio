@@ -1,0 +1,40 @@
+﻿@using Charterio.Web.ViewModels.Administration.Airport
+@model AirportAddViewModel
+@{
+    this.ViewData["Title"] = "Administration / Airport / Add";
+}
+<section class="page-title">
+    <div class="page-title-img bg-img bg-overlay-darken">
+        <div class="container">
+            <div class="row align-items-center justify-content-center height100px">
+                <div class="col-lg-8">
+                    <div class="page-title-content">
+                        <div class="title-border">
+                            <h1 class="text-white text-uppercase font-weight-bold">@this.ViewData["Title"]</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-9 pt-md-5">
+    <div class="container">
+        <partial name="_AdminMenu" />
+
+        <div class="col-12">
+            <form method="post">  
+                <input type="text" name="name" placeholder="Airport name" class="width100percent  mb-3" />
+                <input type="text" name="iatacode"placeholder="Iata code" class="width100percent mb-3" />
+                <input type="text" name="utcposition" placeholder="Utc position" class="width100percent mb-3" />
+                <input type="text" name="latitude" placeholder="Latitude" class="width100percent mb-3" />
+                <input type="text" name="longtitude" placeholder="Longtitude" class="width100percent mb-3" />
+
+                <button type="submit" class="btn btn-primary btn-sm width100percent">Save New Item</button>
+            </form>
+        </div>
+    </div>
+</section>
+

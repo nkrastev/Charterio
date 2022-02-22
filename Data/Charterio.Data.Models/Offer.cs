@@ -4,6 +4,7 @@
     using System.ComponentModel.DataAnnotations;
 
     using Charterio.Data.Common.Models;
+    using Charterio.Data.Models;
 
     public class Offer : IAuditInfo
     {

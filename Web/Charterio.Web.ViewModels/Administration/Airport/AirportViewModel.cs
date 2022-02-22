@@ -1,17 +1,11 @@
-﻿namespace Charterio.Data.Models
+﻿namespace Charterio.Web.ViewModels.Administration.Airport
 {
-    using System.ComponentModel.DataAnnotations;
-
-    public class Airport
+    public class AirportViewModel
     {
-        [Key]
         public int Id { get; set; }
 
-        [Required]
-        [MaxLength(3)]
         public string IataCode { get; set; }
 
-        [Required]
         public string Name { get; set; }
 
         public int UtcPosition { get; set; }
