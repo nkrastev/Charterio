@@ -1,7 +1,8 @@
 ﻿namespace Charterio.Services.Data.Airport
 {
-    using Charterio.Web.ViewModels.Administration.Airport;
     using System.Collections.Generic;
+
+    using Charterio.Web.ViewModels.Administration.Airport;
 
     public interface IAirportService
     {

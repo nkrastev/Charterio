@@ -7,6 +7,7 @@
     using Charterio.Data;
     using Charterio.Services.Data.Flight;
     using Charterio.Web.ViewModels;
+    using Charterio.Web.ViewModels.Administration.Flight;
     using Charterio.Web.ViewModels.Airport;
     using Charterio.Web.ViewModels.Flight;
     using Charterio.Web.ViewModels.Result;
@@ -150,6 +151,96 @@
             return airports.Start + " - " + airports.End;
         }
 
+        // Administration Methods
+        public List<FlightAdminViewModel> GetAll()
+        {
+            var list = this.db.Flights.Select(x => new FlightAdminViewModel
+            {
+                Id = x.Id,
+                Number = x.Number,
+                Plane = x.Plane.Model,
+                Company = x.Company.Name,
+            }).ToList();
+
+            return list;
+        }
+
+        public FlightAdminDropdownsViewModel GetDropdowns()
+        {
+            var model = new FlightAdminDropdownsViewModel
+            {
+                AirplaneForDropDown = this.db.Planes.Select(a => new Web.ViewModels.Administration.Airplane.AirplaneViewModel
+                {
+                    Id = a.Id,
+                    Model = a.Model,
+                }).ToList(),
+                CompanyForDropDown = this.db.Companies.Select(ap => new Web.ViewModels.Administration.Flight.CompanyViewModel
+                {
+                    Id = ap.Id,
+                    Name = ap.Name,
+                }).ToList(),
+            };
+            return model;
+        }
+
+        public void Add(FlightAdminAddViewModel model)
+        {
+            if (model != null && this.IsANumber(model.PlaneId) && this.IsANumber(model.CompanyId))
+            {
+                var flight = new Charterio.Data.Models.Flight
+                {
+                    Number = model.Number,
+                    Plane = this.db.Planes.Where(x => x.Id == int.Parse(model.PlaneId)).FirstOrDefault(),
+                    Company = this.db.Companies.Where(x => x.Id == int.Parse(model.CompanyId)).FirstOrDefault(),
+                };
+
+                this.db.Flights.Add(flight);
+                this.db.SaveChanges();
+            }
+        }
+
+        public void Edit(FlightAdminViewModel model)
+        {
+            var flight = this.db.Flights.Where(x => x.Id == model.Id).FirstOrDefault();
+
+            if (flight != null && this.IsANumber(model.Plane) && this.IsANumber(model.Company))
+            {
+                flight.Number = model.Number;
+                flight.Plane = this.db.Planes.Where(x => x.Id == int.Parse(model.Plane)).FirstOrDefault();
+                flight.Company = this.db.Companies.Where(x => x.Id == int.Parse(model.Company)).FirstOrDefault();
+                this.db.SaveChanges();
+            }
+        }
+
+        public FlightAdminViewModel GetById(int id)
+        {
+            var flight = this.db.Flights.Where(x => x.Id == id).Select(x => new FlightAdminViewModel
+            {
+                Id = x.Id,
+                Number = x.Number,
+                AirplaneForDropDown = this.db.Planes.Select(a => new Web.ViewModels.Administration.Airplane.AirplaneViewModel
+                {
+                    Id = a.Id,
+                    Model = a.Model,
+                }).ToList(),
+                CompanyForDropDown = this.db.Companies.Select(ap => new Web.ViewModels.Administration.Flight.CompanyViewModel
+                {
+                    Id = ap.Id,
+                    Name = ap.Name,
+                }).ToList(),
+            })
+                .FirstOrDefault();
+            if (flight != null)
+            {
+                return flight;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        // Private method for frontend calculation
         private double CalculateDistance(double latitude1, double latitude2, double longtitude1, double longtitude2)
         {
             var lon1 = this.ToRadians(longtitude1);
@@ -176,6 +267,19 @@
         private double ToRadians(double angleIn10thofaDegree)
         {
             return angleIn10thofaDegree * Math.PI / 180;
+        }
+
+        private bool IsANumber(string item)
+        {
+            bool canParse = int.TryParse(item, out var numberItem);
+            if (canParse)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

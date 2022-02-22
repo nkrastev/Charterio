@@ -1,6 +1,8 @@
-﻿namespace Data.Models
+﻿namespace Charterio.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
+
+    using global::Data.Models;
 
     public class Flight
     {

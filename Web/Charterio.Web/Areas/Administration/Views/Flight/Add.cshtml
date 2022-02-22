@@ -1,0 +1,59 @@
+﻿@using Charterio.Web.ViewModels.Administration.Flight
+@model FlightAdminDropdownsViewModel
+@{
+    this.ViewData["Title"] = "Administration / Flight / Add";
+}
+<section class="page-title">
+    <div class="page-title-img bg-img bg-overlay-darken">
+        <div class="container">
+            <div class="row align-items-center justify-content-center height100px">
+                <div class="col-lg-8">
+                    <div class="page-title-content">
+                        <div class="title-border">
+                            <h1 class="text-white text-uppercase font-weight-bold">@this.ViewData["Title"]</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-9 pt-md-5">
+    <div class="container">
+        <partial name="_AdminMenu" />
+
+        <div class="col-12">
+            <form method="post">                
+                <div class="form-group">
+                    <label for="number">Flight number</label>
+                    <input type="text" name="number" id="number" class="width100percent mb-3"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="plane">Plane for the flight</label>                    
+                    <select name="PlaneId" id="plane" class="width100percent mb-3">
+                        @foreach (var item in Model.AirplaneForDropDown)
+                       {
+                           <option value="@item.Id">@item.Model</option>
+                       }                        
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company operation flight</label>
+                    <select name="CompanyId" id="company" class="width100percent mb-3">
+                        @foreach (var item in Model.CompanyForDropDown)
+                       {
+                           <option value="@item.Id">@item.Name</option>
+                       }                        
+                    </select>                    
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-sm width100percent">Save New Item</button>
+            </form>
+        </div>
+    </div>
+</section>
+

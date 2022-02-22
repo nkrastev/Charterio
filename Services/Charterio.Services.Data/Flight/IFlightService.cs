@@ -3,6 +3,7 @@
     using System.Collections.Generic;
 
     using Charterio.Web.ViewModels;
+    using Charterio.Web.ViewModels.Administration.Flight;
     using Charterio.Web.ViewModels.Airport;
     using Charterio.Web.ViewModels.Flight;
     using Charterio.Web.ViewModels.Result;
@@ -23,5 +24,17 @@
         double GetOfferPrice(int id);
 
         string GetOfferAirportsAsString(int offer);
+
+        // Administrative
+        List<FlightAdminViewModel> GetAll();
+
+        FlightAdminViewModel GetById(int id);
+
+        void Edit(FlightAdminViewModel model);
+
+        void Add(FlightAdminAddViewModel model);
+
+        FlightAdminDropdownsViewModel GetDropdowns();
+
     }
 }
