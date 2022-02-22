@@ -13,6 +13,7 @@
     using Charterio.Services.Data.Administration;
     using Charterio.Services.Data.Airplane;
     using Charterio.Services.Data.Airport;
+    using Charterio.Services.Data.Company;
     using Charterio.Services.Data.Contacts;
     using Charterio.Services.Data.Flight;
     using Charterio.Services.Data.SendGrid;
@@ -82,6 +83,8 @@
             services.AddTransient<IAdminService, AdminService>();
             services.AddTransient<IAirplaneService, AirplaneService>();
             services.AddTransient<IAirportService, AirportService>();
+
+            services.AddTransient<ICompanyService, CompanyService>();
 
             services.AddTransient<IScheduleService, ScheduleService>();
             services.AddTransient<IFaqService, FaqService>();

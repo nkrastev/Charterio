@@ -1,0 +1,35 @@
+﻿@using Charterio.Web.ViewModels.Administration.Company
+@model CompanyAddViewModel
+@{
+    this.ViewData["Title"] = "Administration / Company / Add";
+}
+<section class="page-title">
+    <div class="page-title-img bg-img bg-overlay-darken">
+        <div class="container">
+            <div class="row align-items-center justify-content-center height100px">
+                <div class="col-lg-8">
+                    <div class="page-title-content">
+                        <div class="title-border">
+                            <h1 class="text-white text-uppercase font-weight-bold">@this.ViewData["Title"]</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-9 pt-md-5">
+    <div class="container">
+        <partial name="_AdminMenu" />
+
+        <div class="col-12">
+            <form method="post">                              
+                <input type="text" name="name" class="width100percent mb-3" placeholder="Insert new company name"/>                
+                <button type="submit" class="btn btn-primary btn-sm width100percent">Save New Item</button>
+            </form>
+        </div>
+    </div>
+</section>
+
