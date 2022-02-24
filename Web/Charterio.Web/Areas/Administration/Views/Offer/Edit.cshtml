@@ -1,0 +1,162 @@
+﻿@using Charterio.Web.ViewModels.Administration.Offer
+@model OfferAdminViewModel
+@{
+    this.ViewData["Title"] = "Administration / Offer / Edit";
+}
+<section class="page-title">
+    <div class="page-title-img bg-img bg-overlay-darken">
+        <div class="container">
+            <div class="row align-items-center justify-content-center height100px">
+                <div class="col-lg-8">
+                    <div class="page-title-content">
+                        <div class="title-border">
+                            <h1 class="text-white text-uppercase font-weight-bold">@this.ViewData["Title"]</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-9 pt-md-5">
+    <div class="container">
+        <partial name="_AdminMenu" />
+
+        <div class="col-12">
+            <p class="alert text-center">N.B. Changing parameters Flight number, Start and End Airports and Date/Time, Luggage and Catering will affect all existing tickets. Use with caution.</p>
+            <form method="post">
+                <input type="text" name="id" value="@Model.Id" hidden />
+                <div class="form-group">
+                    <label for="name">Offer description</label>
+                    <input type="text" name="name" id="name" class="width100percent mb-3" value="@Model.Name" />
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="flightNumber">Select flight number</label>
+                            <select name="flightNumber" id="flightNumber" class="width100percent mb-3">
+                                @foreach (var item in Model.FlightsDropDown)
+                                {
+                                    if (@item.Number == Model.FlightNumber)
+                                    {
+                                        <option value="@item.Id" selected>@item.Number</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Id">@item.Number</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="StartAirportCode">Select start airport</label>
+                            <select name="StartAirportCode" id="StartAirportCode" class="width100percent mb-3">
+                                @foreach (var item in Model.AirportsDropDown)
+                                {
+                                    if (@item.AirportCode == Model.StartAirportCode)
+                                    {
+                                        <option value="@item.Id" selected>@item.AirportCode</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Id">@item.AirportCode</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="EndAirportCode">Select end airport</label>
+                            <select name="EndAirportCode" id="EndAirportCode" class="width100percent mb-3">
+                                @foreach (var item in Model.AirportsDropDown)
+                                {
+                                    if (@item.AirportCode == Model.EndAirportCode)
+                                    {
+                                        <option value="@item.Id" selected>@item.AirportCode</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Id">@item.AirportCode</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="StartUTC">Start time in UTC</label>
+                            <input asp-for="@Model.StartUTC" type="datetime-local" name="StartUTC" class="width100percent"/>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="EndUTC">End time in UTC</label>
+                            <input asp-for="@Model.EndUTC" type="datetime-local" name="EndUTC" class="width100percent"/>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="number" name="price" class="width100percent" value="@Model.Price" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="allotmentCount">Allotment count</label>
+                            <input type="number" name="allotmentCount" class="width100percent" value="@Model.AllotmentCount" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="luggage">Luggage</label><br />
+                            <textarea name="luggage" class="width100percent" rows="3">@Model.Luggage</textarea>                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="catering">Catering</label><br />
+                            <textarea name="catering" class="width100percent" rows="3">@Model.Catering</textarea>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="IsActiveInWeb">Is offer active in website @Model.IsActiveInWeb</label>
+                            <select name="IsActiveInWeb" id="IsActiveInWeb" class="width100percent mb-3">
+                                @if(Model.IsActiveInWeb)
+                                {
+                                    <option value="True" selected>Yes, it is enabled.</option>
+                                    <option value="False">No, it is disabled.</option>
+                                }
+                                else
+                                {
+                                    <option value="True">Yes, it is enabled.</option>
+                                    <option value="False" selected>No, it is disabled.</option>
+                                }
+                               
+                            </select>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-sm width100percent">Save Changes</button>
+            </form>
+        </div>
+
+
+    </div>
+</section>
+

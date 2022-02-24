@@ -4,6 +4,7 @@
 
     using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Administration.Flight;
+    using Charterio.Web.ViewModels.Administration.Offer;
     using Charterio.Web.ViewModels.Airport;
     using Charterio.Web.ViewModels.Flight;
     using Charterio.Web.ViewModels.Result;
@@ -26,7 +27,7 @@
         string GetOfferAirportsAsString(int offer);
 
         // Administrative
-        List<FlightAdminViewModel> GetAll();
+        List<FlightAdminViewModel> GetAllFlights();
 
         FlightAdminViewModel GetById(int id);
 

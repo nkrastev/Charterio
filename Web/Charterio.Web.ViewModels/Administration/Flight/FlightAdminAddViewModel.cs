@@ -15,6 +15,5 @@
         public string PlaneId { get; set; }
 
         public string CompanyId { get; set; }
-
     }
 }

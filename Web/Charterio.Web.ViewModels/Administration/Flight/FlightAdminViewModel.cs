@@ -3,6 +3,7 @@
     using System.Collections.Generic;
 
     using Charterio.Web.ViewModels.Administration.Airplane;
+    using Charterio.Web.ViewModels.Administration.Company;
 
     public class FlightAdminViewModel
     {

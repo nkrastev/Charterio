@@ -1,8 +1,6 @@
 (function ($) {
     'use strict';
 
-   
-
     /*======== 1. PREELOADER ========*/    
 
     $(window).on('load', function () {

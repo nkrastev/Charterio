@@ -2,11 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     using Charterio.Web.ViewModels.Administration.Airplane;
+    using Charterio.Web.ViewModels.Administration.Company;
 
     public class FlightAdminDropdownsViewModel
     {

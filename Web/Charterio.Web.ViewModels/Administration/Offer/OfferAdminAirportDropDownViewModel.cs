@@ -1,4 +1,4 @@
-﻿namespace Charterio.Web.ViewModels.Administration.Flight
+﻿namespace Charterio.Web.ViewModels.Administration.Offer
 {
     using System;
     using System.Collections.Generic;
@@ -6,10 +6,10 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class CompanyViewModel
+    public class OfferAdminAirportDropDownViewModel
     {
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        public string AirportCode { get; set; }
     }
 }

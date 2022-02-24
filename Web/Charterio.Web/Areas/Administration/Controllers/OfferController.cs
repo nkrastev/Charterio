@@ -2,47 +2,49 @@
 {
     using Charterio.Common;
     using Charterio.Services.Data;
-    using Charterio.Web.ViewModels.Administration.Flight;
+    using Charterio.Services.Data.Offer;
+    using Charterio.Web.ViewModels.Administration.Offer;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     [Area("Administration")]
 
-    public class FlightController : Controller
+    public class OfferController : Controller
     {
-        private readonly IFlightService flightService;
+        private readonly IOfferService offerService;
 
-        public FlightController(IFlightService flightService)
+        public OfferController(IOfferService offerService)
         {
-            this.flightService = flightService;
+            this.offerService = offerService;
         }
 
         public IActionResult Index()
         {
-            var model = this.flightService.GetAllFlights();
+            var model = this.offerService.GetAll();
             return this.View(model);
         }
 
         public IActionResult Edit(int id)
         {
-            var airport = this.flightService.GetById(id);
-            return this.View(airport);
+            var offer = this.offerService.GetById(id);
+            return this.View(offer);
         }
 
         [HttpPost]
-        public IActionResult Edit(FlightAdminViewModel modelInput)
+        public IActionResult Edit(OfferAdminViewModel modelInput)
         {
             if (!this.ModelState.IsValid)
             {
                 return this.View(modelInput);
             }
 
-            this.flightService.Edit(modelInput);
+            this.offerService.Edit(modelInput);
 
             return this.RedirectToAction("Index");
         }
 
+        /*
         public IActionResult Add()
         {
             FlightAdminDropdownsViewModel dropDownData = this.flightService.GetDropdowns();
@@ -59,6 +61,6 @@
 
             this.flightService.Add(modelInput);
             return this.RedirectToAction("Index");
-        }
+        }*/
     }
 }

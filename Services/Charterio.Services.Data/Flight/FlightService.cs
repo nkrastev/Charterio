@@ -8,6 +8,7 @@
     using Charterio.Services.Data.Flight;
     using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Administration.Flight;
+    using Charterio.Web.ViewModels.Administration.Offer;
     using Charterio.Web.ViewModels.Airport;
     using Charterio.Web.ViewModels.Flight;
     using Charterio.Web.ViewModels.Result;
@@ -152,7 +153,8 @@
         }
 
         // Administration Methods
-        public List<FlightAdminViewModel> GetAll()
+
+        public List<FlightAdminViewModel> GetAllFlights()
         {
             var list = this.db.Flights.Select(x => new FlightAdminViewModel
             {
@@ -174,7 +176,7 @@
                     Id = a.Id,
                     Model = a.Model,
                 }).ToList(),
-                CompanyForDropDown = this.db.Companies.Select(ap => new Web.ViewModels.Administration.Flight.CompanyViewModel
+                CompanyForDropDown = this.db.Companies.Select(ap => new Web.ViewModels.Administration.Company.CompanyViewModel
                 {
                     Id = ap.Id,
                     Name = ap.Name,
@@ -223,7 +225,7 @@
                     Id = a.Id,
                     Model = a.Model,
                 }).ToList(),
-                CompanyForDropDown = this.db.Companies.Select(ap => new Web.ViewModels.Administration.Flight.CompanyViewModel
+                CompanyForDropDown = this.db.Companies.Select(ap => new Web.ViewModels.Administration.Company.CompanyViewModel
                 {
                     Id = ap.Id,
                     Name = ap.Name,
