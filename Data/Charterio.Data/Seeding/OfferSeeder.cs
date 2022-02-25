@@ -4,6 +4,7 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using Charterio.Data.Models;
     using global::Data.Models;
 
     internal class OfferSeeder : ISeeder

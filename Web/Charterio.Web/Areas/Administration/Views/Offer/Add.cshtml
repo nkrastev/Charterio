@@ -1,5 +1,5 @@
 ﻿@using Charterio.Web.ViewModels.Administration.Offer
-@model OfferAdminViewModel
+@model OfferAdminDropDownsViewModel
 @{
     this.ViewData["Title"] = "Administration / Offer / Add";
 }
@@ -25,7 +25,106 @@
         <partial name="_AdminMenu" />
 
         <div class="col-12">
-            offer add admin
+            <form method="post">
+                <div class="form-group">
+                    <label for="name">Offer description</label>
+                    <input type="text" name="name" id="name" class="width100percent mb-3" />
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="flightNumber">Select flight number</label>
+                            <select name="flightNumber" id="flightNumber" class="width100percent mb-3">
+                                <option value="0" selected>- Please select -</option>
+                                @foreach (var item in Model.FlightsDropDown)
+                                {
+                                    <option value="@item.Id">@item.Number</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="StartAirportCode">Select start airport</label>
+                            <select name="StartAirportCode" id="StartAirportCode" class="width100percent mb-3">
+                                <option value="0" selected>- Please select -</option>
+                                @foreach (var item in Model.AirportsDropDown)
+                                {
+                                    <option value="@item.Id">@item.AirportCode</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="EndAirportCode">Select end airport</label>
+                            <select name="EndAirportCode" id="EndAirportCode" class="width100percent mb-3">
+                                <option value="0" selected>- Please select -</option>
+                                @foreach (var item in Model.AirportsDropDown)
+                                {
+                                    <option value="@item.Id">@item.AirportCode</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="StartUTC">Start time in UTC</label>
+                            <input type="datetime-local" name="StartUTC" class="width100percent"/>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="EndUTC">End time in UTC</label>
+                            <input type="datetime-local" name="EndUTC" class="width100percent"/>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="number" name="price" class="width100percent" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="allotmentCount">Allotment count</label>
+                            <input type="number" name="allotmentCount" class="width100percent" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="luggage">Luggage</label><br />
+                            <textarea name="luggage" class="width100percent" rows="3"></textarea>                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="catering">Catering</label><br />
+                            <textarea name="catering" class="width100percent" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="IsActiveInWeb">Is offer active in website </label>
+                            <select name="IsActiveInWeb" id="IsActiveInWeb" class="width100percent mb-3">
+                                <option value="True">Yes, it is enabled.</option>
+                                <option value="False" selected>No, it is disabled.</option>                               
+                            </select>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-sm width100percent">Save New Item</button>
+            </form>
         </div>
     </div>
 </section>

@@ -40,5 +40,11 @@
         public const string StripePaymentDescription = "Flight ticket from Charterio.com";
 
         public const string AnswerToYourQuestionSubject = "Answer to your question at Charterio.com";
+
+        public const string AdminSameAirports = "You cannot add offer with same departure and arrival airports.";
+
+        public const string AdminDatesInPast = "Start or End date cannot be in the past.";
+
+        public const string AdminEndBeforeStart = "End date cannot be before Start date.";
     }
 }

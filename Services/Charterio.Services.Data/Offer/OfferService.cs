@@ -20,7 +20,25 @@
 
         public void Add(OfferAdminAddViewModel model)
         {
-            throw new NotImplementedException();
+            var offer = new Charterio.Data.Models.Offer
+            {
+                Name = model.Name,
+                Flight = this.db.Flights.Where(x => x.Id == int.Parse(model.FlightNumber)).FirstOrDefault(),
+                StartAirport = this.db.Airports.Where(x => x.Id == int.Parse(model.StartAirportCode)).FirstOrDefault(),
+                EndAirport = this.db.Airports.Where(x => x.Id == int.Parse(model.EndAirportCode)).FirstOrDefault(),
+                StartTimeUtc = model.StartUTC,
+                EndTimeUtc = model.EndUTC,
+                Price = model.Price,
+                CurrencyId = 1,
+                Luggage = model.Luggage,
+                Categing = model.Catering,
+                AllotmentCount = model.AllotmentCount,
+                IsActiveInWeb = model.IsActiveInWeb,
+                IsActiveInAdmin = true,
+            };
+
+            this.db.Offers.Add(offer);
+            this.db.SaveChanges();
         }
 
         public void Edit(OfferAdminViewModel model)
@@ -42,8 +60,6 @@
                 offer.Categing = model.Catering;
 
                 offer.IsActiveInWeb = model.IsActiveInWeb;
-
-                //var offerFlight = this.db.Flights.Where(x => x.Id == model.FlightNumber).FirstOrDefault();
 
                 this.db.SaveChanges();
             }
@@ -104,6 +120,26 @@
                .FirstOrDefault();
 
             return model;
+        }
+
+        public OfferAdminDropDownsViewModel GetDropdowns()
+        {
+            var dropDowns = new OfferAdminDropDownsViewModel
+            {
+                FlightsDropDown = this.db.Flights
+                            .Select(f => new OfferAdminFlightDropDownViewModel
+                            {
+                                Id = f.Id,
+                                Number = f.Number,
+                            }).ToList(),
+                AirportsDropDown = this.db.Airports
+                            .Select(a => new OfferAdminAirportDropDownViewModel
+                            {
+                                Id = a.Id,
+                                AirportCode = a.IataCode,
+                            }).ToList(),
+            };
+            return dropDowns;
         }
     }
 }

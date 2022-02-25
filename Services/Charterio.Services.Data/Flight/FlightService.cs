@@ -5,6 +5,7 @@
     using System.Linq;
 
     using Charterio.Data;
+    using Charterio.Data.Models;
     using Charterio.Services.Data.Flight;
     using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Administration.Flight;
@@ -13,7 +14,6 @@
     using Charterio.Web.ViewModels.Flight;
     using Charterio.Web.ViewModels.Result;
     using Charterio.Web.ViewModels.Search;
-    using global::Data.Models;
 
     public class FlightService : IFlightService
     {

@@ -3,8 +3,6 @@
     using System;
     using System.Collections.Generic;
 
-    using Charterio.Web.ViewModels.Administration.Flight;
-
     public class OfferAdminViewModel
     {
         public int Id { get; set; }
@@ -34,6 +32,7 @@
         public bool IsActiveInAdmin { get; set; }
 
         public ICollection<OfferAdminFlightDropDownViewModel> FlightsDropDown { get; set; } = new List<OfferAdminFlightDropDownViewModel>();
+
         public ICollection<OfferAdminAirportDropDownViewModel> AirportsDropDown { get; set; } = new List<OfferAdminAirportDropDownViewModel>();
     }
 }

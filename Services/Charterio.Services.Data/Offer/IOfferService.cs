@@ -17,5 +17,7 @@
         void Edit(OfferAdminViewModel model);
 
         void Add(OfferAdminAddViewModel model);
+
+        OfferAdminDropDownsViewModel GetDropdowns();
     }
 }

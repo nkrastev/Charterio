@@ -44,23 +44,23 @@
             return this.RedirectToAction("Index");
         }
 
-        /*
         public IActionResult Add()
         {
-            FlightAdminDropdownsViewModel dropDownData = this.flightService.GetDropdowns();
+            OfferAdminDropDownsViewModel dropDownData = this.offerService.GetDropdowns();
             return this.View(dropDownData);
         }
 
         [HttpPost]
-        public IActionResult Add(FlightAdminAddViewModel modelInput)
+        public IActionResult Add(OfferAdminAddViewModel modelInput)
         {
+
             if (!this.ModelState.IsValid)
             {
-                return this.View(modelInput);
+                return this.RedirectToAction("Add");
             }
 
-            this.flightService.Add(modelInput);
+            this.offerService.Add(modelInput);
             return this.RedirectToAction("Index");
-        }*/
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Charterio.Data.Configurations
 {
-    using global::Data.Models;
+    using Charterio.Data.Models;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
