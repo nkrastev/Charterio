@@ -1,0 +1,46 @@
+﻿@using Charterio.Web.ViewModels.Administration.Ticket
+@model List<TicketAdminViewModel>
+@{
+    this.ViewData["Title"] = "Administration / Ticket";
+}
+<section class="page-title">
+    <div class="page-title-img bg-img bg-overlay-darken">
+        <div class="container">
+            <div class="row align-items-center justify-content-center height100px">
+                <div class="col-lg-8">
+                    <div class="page-title-content">
+                        <div class="title-border">
+                            <h1 class="text-white text-uppercase font-weight-bold">@this.ViewData["Title"]</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-9 pt-md-5">
+    <div class="container">
+        <partial name="_AdminMenu" />        
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Question</th>                        
+                        <th scope="col">From (Name, email, phone)</th>                        
+                        <th scope="col">Creation date</th>                        
+                        <th scope="col">Is Answered</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
