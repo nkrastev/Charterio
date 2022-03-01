@@ -2,7 +2,7 @@
 {
     using System.IO;
     using System.Reflection;
-
+    using System.Threading;
     using Charterio.Data;
     using Charterio.Data.Common;
     using Charterio.Data.Common.Repositories;
@@ -21,6 +21,7 @@
     using Charterio.Services.Data.SendGrid;
     using Charterio.Services.Data.Ticket;
     using Charterio.Services.Data.UptimeRobot;
+    using Charterio.Services.Hosted;
     using Charterio.Services.Mapping;
     using Charterio.Web.ViewModels;
     using Ganss.XSS;
@@ -97,6 +98,10 @@
             services.AddTransient<IFlightService, FlightService>();
             services.AddTransient<IAllotmentService, AllotmentService>();
             services.AddTransient<ITicketService, TicketService>();
+
+            services.AddSingleton<CancelHostedService>();
+
+            services.AddHostedService<CancelHostedService>(provider => provider.GetService<CancelHostedService>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -104,7 +109,7 @@
         {
             AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
 
-            // Seed data on application startup
+            // Seed data on application startup, start of the Hosted Service
             using (var serviceScope = app.ApplicationServices.CreateScope())
             {
                 var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
