@@ -46,5 +46,7 @@
         public const string AdminDatesInPast = "Start or End date cannot be in the past.";
 
         public const string AdminEndBeforeStart = "End date cannot be before Start date.";
+
+        public const string MsgSearchByTicketCode = "Only tickets from last 50 days are showed.";
     }
 }

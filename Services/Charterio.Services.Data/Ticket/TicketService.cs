@@ -11,6 +11,7 @@
     using Charterio.Services.Data.Flight;
     using Charterio.Services.Data.SendGrid;
     using Charterio.Web.ViewModels;
+    using Charterio.Web.ViewModels.Administration.Ticket;
     using Charterio.Web.ViewModels.Ticket;
     using global::Data.Models;
 
@@ -160,6 +161,25 @@
             targetTicket.TicketStatusId = 2;
 
             this.db.SaveChanges();
+        }
+
+        // Administrative services
+        public ICollection<TicketAdminViewModel> GetAll()
+        {
+            var collection = this.db
+                .Tickets
+                .Where(x => x.CreatedOn.AddDays(50) >= DateTime.Now)
+                .Select(x => new TicketAdminViewModel
+                {
+                    Id = x.Id.ToString(),
+                    Code = x.TicketCode,
+                    Status = x.TicketStatus.Status,
+                    Offer = x.Offer.StartAirport.IataCode + " -> " + x.Offer.EndAirport.IataCode,
+                    PaxCount = x.TicketPassengers.Count().ToString(),
+                })
+                .OrderByDescending(x => x.Id)
+                .ToList();
+            return collection;
         }
 
         public double CalculateTicketPrice(int ticketId)

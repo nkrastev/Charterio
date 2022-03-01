@@ -1,7 +1,9 @@
 ﻿namespace Charterio.Services.Data.Ticket
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using Charterio.Web.ViewModels.Administration.Ticket;
     using Charterio.Web.ViewModels.Ticket;
 
     public interface ITicketService
@@ -17,5 +19,7 @@
         Task<string> MarkTicketAsPaidviaStripe(int ticketId, string transactionId, double amount);
 
         void MarkTicketAsCancelled(int ticketId);
+
+        ICollection<TicketAdminViewModel> GetAll();
     }
 }

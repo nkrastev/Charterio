@@ -1,4 +1,5 @@
-﻿@using Charterio.Web.ViewModels.Administration.Ticket
+﻿@using Charterio.Common
+@using Charterio.Web.ViewModels.Administration.Ticket
 @model List<TicketAdminViewModel>
 @{
     this.ViewData["Title"] = "Administration / Ticket";
@@ -22,23 +23,36 @@
 
 <section class="py-9 pt-md-5">
     <div class="container">
-        <partial name="_AdminMenu" />        
+        <partial name="_AdminMenu" />
+        <p class="text-center">@GlobalConstants.MsgSearchByTicketCode</p>
         <div class="col-12">
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Question</th>                        
-                        <th scope="col">From (Name, email, phone)</th>                        
-                        <th scope="col">Creation date</th>                        
-                        <th scope="col">Is Answered</th>
-                        <th scope="col"></th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Offer</th>
+                        <th scope="col">Pax</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
-
                 <tbody>
-                    
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td scope="col">@item.Id</td>
+                            <td scope="col">@item.Code</td>
+                            <td scope="col">@item.Status</td>
+                            <td scope="col">@item.Offer</td>
+                            <td scope="col">@item.PaxCount</td>
+                            <td scope="col">@if (@item.Status=="Waiting for payment")
+                                            {
+                                                <a asp-action="Cancel" asp-route-id="@item.Id">Cancel</a>
+                                            }</td>
+                        </tr>
+                    }
+
                 </tbody>
             </table>
         </div>
