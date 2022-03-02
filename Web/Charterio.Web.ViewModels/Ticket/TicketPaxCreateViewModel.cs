@@ -5,7 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.Globalization;
 
-    using Charterio.Common;
+    using Charterio.Global;
 
     public class TicketPaxCreateViewModel : IValidatableObject
     {

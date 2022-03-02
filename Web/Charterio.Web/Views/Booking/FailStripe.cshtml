@@ -1,8 +1,8 @@
-﻿@using Charterio.Common
+﻿@using Charterio.Global
 @using Charterio.Web.ViewModels.Ticket
 
 @{
-    this.ViewData["Title"] = $"Thank you for your order";
+    this.ViewData["Title"] = $"Your payment has been cancelled";
 }
 <section class="page-title">
     <div class="page-title-img bg-img bg-overlay-darken">
@@ -11,11 +11,18 @@
                 <div class="col-lg-8">
                     <div class="page-title-content">
                         <div class="title-border">
-                            <h1 class="text-uppercase text-white font-weight-bold">Successful payment</h1>
+                            <h1 class="text-uppercase text-white font-weight-bold">Your Payment has been cancelled</h1>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section class="py-9 pt-md-6">
+    <div class="container">
+        <div class="row text-center">
+            <p>Unfortunatelly your payment has been failed and your ticket request cancel. You can always try to rebook with another card or payment method.</p>
         </div>
     </div>
 </section>

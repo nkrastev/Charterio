@@ -70,7 +70,37 @@
       "ProjectGuid": "901ab2da-6e52-4fb2-91f0-58eb0115f2f7",
       "DisplayName": "Charterio.Services.Data.Tests",
       "ColorIndex": 12
+    },
+    "4f20e418-6123-41d7-a3ee-0a59ebe8da9b": {
+      "ProjectGuid": "4f20e418-6123-41d7-a3ee-0a59ebe8da9b",
+      "DisplayName": "Charterio.HostedServices",
+      "ColorIndex": 13
+    },
+    "9a027dc7-7609-4091-95b6-8a24c74edc7e": {
+      "ProjectGuid": "9a027dc7-7609-4091-95b6-8a24c74edc7e",
+      "DisplayName": "Charterio.Services.Hosted",
+      "ColorIndex": 14
+    },
+    "f9c97ac3-2700-4fc7-b0b0-0a870a805387": {
+      "ProjectGuid": "f9c97ac3-2700-4fc7-b0b0-0a870a805387",
+      "DisplayName": "Charterio.Services.Payment",
+      "ColorIndex": 15
+    },
+    "ad88b597-f76d-40cb-b44c-e95cea604bdb": {
+      "ProjectGuid": "ad88b597-f76d-40cb-b44c-e95cea604bdb",
+      "DisplayName": "Charterio.Common",
+      "ColorIndex": 0
+    },
+    "8cba8145-63b3-4d6c-be06-625afcab7a89": {
+      "ProjectGuid": "8cba8145-63b3-4d6c-be06-625afcab7a89",
+      "DisplayName": "Charterio.Services.Hosted",
+      "ColorIndex": 1
+    },
+    "7f612ee6-3f7f-4e43-b4bc-e74a1d03bc19": {
+      "ProjectGuid": "7f612ee6-3f7f-4e43-b4bc-e74a1d03bc19",
+      "DisplayName": "Charterio.Services.Payment",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 13
+  "NextColorIndex": 3
 }

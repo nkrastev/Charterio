@@ -3,8 +3,6 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    using Charterio.Common;
-
     public class BookingViewModel
     {
         [Required]

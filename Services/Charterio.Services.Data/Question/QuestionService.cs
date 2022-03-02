@@ -5,8 +5,9 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    using Charterio.Common;
+    
     using Charterio.Data;
+    using Charterio.Global;
     using Charterio.Services.Data.SendGrid;
     using Charterio.Web.ViewModels.Administration.Question;
     using Ganss.XSS;

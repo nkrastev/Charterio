@@ -40,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Charterio.Common\Charterio.Common.csproj" />
+    <ProjectReference Include="..\..\Global\Charterio.Global.csproj" />
     <ProjectReference Include="..\Charterio.Data.Common\Charterio.Data.Common.csproj" />
     <ProjectReference Include="..\Charterio.Data.Models\Charterio.Data.Models.csproj" />
   </ItemGroup>

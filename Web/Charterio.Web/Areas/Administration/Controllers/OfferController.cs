@@ -1,6 +1,6 @@
 ﻿namespace Charterio.Web.Areas.Administration.Controllers
 {
-    using Charterio.Common;
+    using Charterio.Global;
     using Charterio.Services.Data;
     using Charterio.Services.Data.Offer;
     using Charterio.Web.ViewModels.Administration.Offer;
@@ -53,7 +53,6 @@
         [HttpPost]
         public IActionResult Add(OfferAdminAddViewModel modelInput)
         {
-
             if (!this.ModelState.IsValid)
             {
                 return this.RedirectToAction("Add");

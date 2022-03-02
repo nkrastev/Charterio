@@ -1,4 +1,4 @@
-﻿namespace Charterio.Services.Hosted
+﻿namespace Charterio.Services.Hosted.HostedService
 {
     using Charterio.Data;
     using Microsoft.Extensions.Hosting;

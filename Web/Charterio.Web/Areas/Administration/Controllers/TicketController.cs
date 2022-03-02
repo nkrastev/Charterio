@@ -1,6 +1,6 @@
 ﻿namespace Charterio.Web.Areas.Administration.Controllers
 {
-    using Charterio.Common;
+    using Charterio.Global;
     using Charterio.Services.Data.Ticket;
     using Charterio.Web.ViewModels.Administration.Ticket;
     using Microsoft.AspNetCore.Authorization;
@@ -23,7 +23,7 @@
             var model = this.ticketService.GetAll();
             return this.View(model);
         }
-        
+
         public IActionResult Cancel(int id)
         {
             this.ticketService.MarkTicketAsCancelled(id);

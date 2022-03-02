@@ -36,6 +36,5 @@
         void Add(FlightAdminAddViewModel model);
 
         FlightAdminDropdownsViewModel GetDropdowns();
-
     }
 }

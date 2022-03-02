@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using Charterio.Common;
+using Charterio.Global;
 using Charterio.Data;
 using Charterio.Data.Models;
 using Microsoft.AspNetCore.Identity;

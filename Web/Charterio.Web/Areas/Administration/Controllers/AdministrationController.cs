@@ -1,6 +1,6 @@
 ﻿namespace Charterio.Web.Areas.Administration.Controllers
 {
-    using Charterio.Common;
+    using Charterio.Global;
     using Charterio.Services.Data.Administration;
     using Charterio.Web.Controllers;
     using Charterio.Web.ViewModels.Administration.AdminMain;

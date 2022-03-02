@@ -21,9 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Charterio.Common\Charterio.Common.csproj" />
     <ProjectReference Include="..\..\Data\Charterio.Data.Common\Charterio.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\Charterio.Data.Models\Charterio.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Global\Charterio.Global.csproj" />
     <ProjectReference Include="..\..\Services\Charterio.Services.Mapping\Charterio.Services.Mapping.csproj" />
   </ItemGroup>
 

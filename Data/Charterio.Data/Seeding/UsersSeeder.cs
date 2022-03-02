@@ -4,8 +4,8 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using Charterio.Common;
     using Charterio.Data.Models;
+    using Charterio.Global;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
 

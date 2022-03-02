@@ -2,20 +2,19 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
     using System.Threading.Tasks;
 
-    using Charterio.Common;
     using Charterio.Data.Models;
+    using Charterio.Global;
     using Charterio.Services.Data;
     using Charterio.Services.Data.Flight;
     using Charterio.Services.Data.Ticket;
+    using Charterio.Services.Payment.ViaStripe;
     using Charterio.Web.ViewModels.Booking;
     using Charterio.Web.ViewModels.Ticket;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using Stripe;
     using Stripe.Checkout;
 
     [Authorize]
@@ -25,17 +24,20 @@
         private readonly IAllotmentService allotmentService;
         private readonly IFlightService flightService;
         private readonly ITicketService ticketService;
+        private readonly IStripeService stripeService;
 
         public BookingController(
             UserManager<ApplicationUser> userManager,
             IAllotmentService allotmentService,
             IFlightService flightService,
-            ITicketService ticketService)
+            ITicketService ticketService,
+            IStripeService stripeService)
         {
             this.userManager = userManager;
             this.allotmentService = allotmentService;
             this.flightService = flightService;
             this.ticketService = ticketService;
+            this.stripeService = stripeService;
         }
 
         [HttpGet]
@@ -138,8 +140,9 @@
             return this.View(ticket);
         }
 
+        // Stripe payments
         [HttpPost]
-        public IActionResult Processing(string stripeToken, string stripeEmail, int ticketId)
+        public IActionResult ProcessingViaStripe(string stripeToken, string stripeEmail, int ticketId)
         {
             // Check if ticketId is valid
             if (!this.ticketService.IsTicketIdValid(ticketId))
@@ -147,34 +150,13 @@
                 return this.Redirect("~/SomethingIsWrong");
             }
 
-            var domain = "https://localhost:44319";
-            var options = new SessionCreateOptions
-            {
-                LineItems = new List<SessionLineItemOptions>
-                {
-                  new SessionLineItemOptions
-                  {
-                    Name = "Flight Ticket",
-                    Quantity = 1,
-                    Amount = (long?)(this.ticketService.CalculateTicketPrice(ticketId) * 100),
-                    Currency = "EUR",
-                    Description = GlobalConstants.StripePaymentDescription,
-                  },
-                },
-                Metadata = new Dictionary<string, string> { { "TicketId", ticketId.ToString() } },
-                Mode = "payment",
-                SuccessUrl = domain + "/booking/SuccessPayment?sid={CHECKOUT_SESSION_ID}",
-                CancelUrl = domain + "/booking/CancelPayment?sid={CHECKOUT_SESSION_ID}",
-            };
-            var service = new SessionService();
-            Session session = service.Create(options);
+            var sessionUrl = this.stripeService.ProcessPayment(stripeToken, stripeEmail, ticketId);
 
-            this.Response.Headers.Add("Location", session.Url);
-
+            this.Response.Headers.Add("Location", sessionUrl);
             return new StatusCodeResult(303);
         }
 
-        public IActionResult SuccessPayment(string sid)
+        public IActionResult SuccessStripe(string sid)
         {
             if (sid == null)
             {
@@ -191,7 +173,7 @@
                 if (response.PaymentStatus == "paid")
                 {
                     // charge is OK, mark it, send confirmation, prepare view
-                    this.ticketService.MarkTicketAsPaidviaStripe(ticketId, response.Id, (double)(response.AmountTotal != null ? (response.AmountTotal / 100.0) : 0));
+                    this.stripeService.MarkTicketAsPaid(ticketId, response.Id, (double)(response.AmountTotal != null ? (response.AmountTotal / 100.0) : 0));
                 }
             }
             catch (Exception)
@@ -202,7 +184,7 @@
             return this.View();
         }
 
-        public IActionResult CancelPayment(string sid)
+        public IActionResult FailStripe(string sid)
         {
             if (sid == null)
             {

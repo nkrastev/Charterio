@@ -1,8 +1,7 @@
 ﻿namespace Charterio.Web
 {
-    using System.IO;
     using System.Reflection;
-    using System.Threading;
+
     using Charterio.Data;
     using Charterio.Data.Common;
     using Charterio.Data.Common.Repositories;
@@ -21,8 +20,9 @@
     using Charterio.Services.Data.SendGrid;
     using Charterio.Services.Data.Ticket;
     using Charterio.Services.Data.UptimeRobot;
-    using Charterio.Services.Hosted;
+    using Charterio.Services.Hosted.HostedService;
     using Charterio.Services.Mapping;
+    using Charterio.Services.Payment.ViaStripe;
     using Charterio.Web.ViewModels;
     using Ganss.XSS;
     using Microsoft.AspNetCore.Builder;
@@ -98,6 +98,8 @@
             services.AddTransient<IFlightService, FlightService>();
             services.AddTransient<IAllotmentService, AllotmentService>();
             services.AddTransient<ITicketService, TicketService>();
+
+            services.AddTransient<IStripeService, StripeService>();
 
             services.AddSingleton<CancelHostedService>();
 

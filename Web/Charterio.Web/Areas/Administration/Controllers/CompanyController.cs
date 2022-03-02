@@ -1,6 +1,6 @@
 ﻿namespace Charterio.Web.Areas.Administration.Controllers
 {
-    using Charterio.Common;
+    using Charterio.Global;
     using Charterio.Services.Data.Company;
     using Charterio.Web.ViewModels.Administration.Company;
     using Microsoft.AspNetCore.Authorization;
@@ -59,6 +59,5 @@
 
             return this.RedirectToAction("Index");
         }
-
     }
 }

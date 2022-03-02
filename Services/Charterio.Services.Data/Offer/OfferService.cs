@@ -79,7 +79,6 @@
                     AllotmentCount = x.AllotmentCount,
                     Price = x.Price,
                     IsActiveInWeb = x.IsActiveInWeb,
-
                 })
                 .OrderByDescending(x => x.Id)
                 .ToList();

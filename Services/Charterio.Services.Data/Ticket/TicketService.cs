@@ -4,10 +4,10 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-
-    using Charterio.Common;
+    
     using Charterio.Data;
     using Charterio.Data.Models;
+    using Charterio.Global;
     using Charterio.Services.Data.Flight;
     using Charterio.Services.Data.SendGrid;
     using Charterio.Web.ViewModels;
@@ -126,34 +126,6 @@
             }
         }
 
-        public async Task<string> MarkTicketAsPaidviaStripe(int ticketId, string transactionId, double amount)
-        {
-            // Insert Payment
-            var payment = new Payment
-            {
-                PaymentMethodId = 1,
-                TransactionId = transactionId,
-                Amount = amount,
-                IsSuccessful = true,
-            };
-
-            this.db.Payments.Add(payment);
-            this.db.SaveChanges();
-
-            // Get paymend back via transactionId
-            var targetPayment = this.db.Payments.Where(x => x.TransactionId == payment.TransactionId).FirstOrDefault();
-
-            // Change ticket status
-            var targetTicket = this.db.Tickets.Where(x => x.Id == ticketId).FirstOrDefault();
-            targetTicket.TicketStatusId = 1;
-            targetTicket.PaymentId = targetPayment.Id;
-            this.db.SaveChanges();
-
-            await this.SendConfirmationEmailAsync(ticketId);
-
-            return "OK";
-        }
-
         public void MarkTicketAsCancelled(int ticketId)
         {
             // Change ticket status
@@ -190,14 +162,7 @@
             return price.PerPerson * ticketPax;
         }
 
-        private static string RandomString(int length)
-        {
-            Random random = new();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
-        private async Task SendConfirmationEmailAsync(int ticketId)
+        public async Task SendConfirmationEmailAsync(int ticketId)
         {
             var user = this.db.Tickets.Where(x => x.Id == ticketId).Select(x => new { Email = x.User.Email, }).FirstOrDefault();
             var ticket = this.db.Tickets.Where(x => x.Id == ticketId).FirstOrDefault();
@@ -230,6 +195,12 @@
                 var html = new EmailHtmlTemplate().GenerateTemplate(ticket.TicketCode, paxList, flightDetails);
                 await this.emailSender.SendEmailAsync(GlobalConstants.SystemEmail, GlobalConstants.SystemName, user.Email, $"Flight Ticket {ticket.TicketCode}", html);
             }
+        }
+        private static string RandomString(int length)
+        {
+            Random random = new();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }

@@ -75,7 +75,6 @@
                 UtcPosition = x.UtcPosition,
                 Latitude = x.Latitude,
                 Longtitude = x.Longtitude,
-
             }).FirstOrDefault();
             if (airport != null)
             {

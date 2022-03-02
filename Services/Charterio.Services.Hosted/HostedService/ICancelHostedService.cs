@@ -1,4 +1,4 @@
-﻿namespace Charterio.Services.Hosted
+﻿namespace Charterio.Services.Hosted.HostedService
 {
     using System;
     using System.Collections.Generic;

@@ -1,9 +1,10 @@
-﻿namespace Data.Models
+﻿namespace Charterio.Data.Models
 {
     using System;
     using System.ComponentModel.DataAnnotations;
 
     using Charterio.Data.Common.Models;
+    using global::Data.Models;
 
     public class Payment : IAuditInfo
     {

@@ -153,7 +153,6 @@
         }
 
         // Administration Methods
-
         public List<FlightAdminViewModel> GetAllFlights()
         {
             var list = this.db.Flights.Select(x => new FlightAdminViewModel

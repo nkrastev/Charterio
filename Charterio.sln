@@ -18,10 +18,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charterio.Services", "Services\Charterio.Services\Charterio.Services.csproj", "{8522212F-F01E-4E20-9975-FCF5E10D71DB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charterio.Data", "Data\Charterio.Data\Charterio.Data.csproj", "{4B844ECB-E845-49A6-8B31-85E577933598}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5C9FDD2F-EC99-4F3B-8D59-0E96271D0946} = {5C9FDD2F-EC99-4F3B-8D59-0E96271D0946}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charterio.Data.Common", "Data\Charterio.Data.Common\Charterio.Data.Common.csproj", "{D0D59508-CF8B-4656-A344-396C530BB9DF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charterio.Common", "Charterio.Common\Charterio.Common.csproj", "{A2288C46-0FBF-43B6-80B6-3072FD65BC32}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charterio.Web.Infrastructure", "Web\Charterio.Web.Infrastructure\Charterio.Web.Infrastructure.csproj", "{7A7A7986-1F5B-4EBD-9B17-8B41F8FABA58}"
 EndProject
@@ -32,15 +33,32 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "Tests\Sandbox\Sandbox.csproj", "{8AB6B92A-0837-4BDE-B950-10BE3FF2B6A8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charterio.Services.Data.Tests", "Tests\Charterio.Services.Data.Tests\Charterio.Services.Data.Tests.csproj", "{901AB2DA-6E52-4FB2-91F0-58EB0115F2F7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8522212F-F01E-4E20-9975-FCF5E10D71DB} = {8522212F-F01E-4E20-9975-FCF5E10D71DB}
+		{8CBA8145-63B3-4D6C-BE06-625AFCAB7A89} = {8CBA8145-63B3-4D6C-BE06-625AFCAB7A89}
+		{7F612EE6-3F7F-4E43-B4BC-E74A1D03BC19} = {7F612EE6-3F7F-4E43-B4BC-E74A1D03BC19}
+		{415FD7FA-0453-4FE1-9A29-C6E1D8B45C3D} = {415FD7FA-0453-4FE1-9A29-C6E1D8B45C3D}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charterio.Web.Tests", "Tests\Charterio.Web.Tests\Charterio.Web.Tests.csproj", "{3EE06C6E-C8F3-418A-A309-8AC81976A074}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charterio.Web.ViewModels", "Web\Charterio.Web.ViewModels\Charterio.Web.ViewModels.csproj", "{13B7AACB-9C85-4409-8D4B-95A67D0DFFF7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charterio.Services.Hosted", "Charterio.Services.Hosted\Charterio.Services.Hosted.csproj", "{9A027DC7-7609-4091-95B6-8A24C74EDC7E}"
 	ProjectSection(ProjectDependencies) = postProject
+		{5C9FDD2F-EC99-4F3B-8D59-0E96271D0946} = {5C9FDD2F-EC99-4F3B-8D59-0E96271D0946}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charterio.Services.Hosted", "Services\Charterio.Services.Hosted\Charterio.Services.Hosted.csproj", "{8CBA8145-63B3-4D6C-BE06-625AFCAB7A89}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D0D59508-CF8B-4656-A344-396C530BB9DF} = {D0D59508-CF8B-4656-A344-396C530BB9DF}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charterio.Services.Payment", "Services\Charterio.Services.Payment\Charterio.Services.Payment.csproj", "{7F612EE6-3F7F-4E43-B4BC-E74A1D03BC19}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4D39C126-3FB5-4B26-B08C-1BF48EFFA23E} = {4D39C126-3FB5-4B26-B08C-1BF48EFFA23E}
 		{4B844ECB-E845-49A6-8B31-85E577933598} = {4B844ECB-E845-49A6-8B31-85E577933598}
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charterio.Global", "Global\Charterio.Global.csproj", "{5C9FDD2F-EC99-4F3B-8D59-0E96271D0946}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,10 +86,6 @@ Global
 		{D0D59508-CF8B-4656-A344-396C530BB9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0D59508-CF8B-4656-A344-396C530BB9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0D59508-CF8B-4656-A344-396C530BB9DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2288C46-0FBF-43B6-80B6-3072FD65BC32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2288C46-0FBF-43B6-80B6-3072FD65BC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2288C46-0FBF-43B6-80B6-3072FD65BC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2288C46-0FBF-43B6-80B6-3072FD65BC32}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A7A7986-1F5B-4EBD-9B17-8B41F8FABA58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A7A7986-1F5B-4EBD-9B17-8B41F8FABA58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A7A7986-1F5B-4EBD-9B17-8B41F8FABA58}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -100,10 +114,18 @@ Global
 		{13B7AACB-9C85-4409-8D4B-95A67D0DFFF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13B7AACB-9C85-4409-8D4B-95A67D0DFFF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13B7AACB-9C85-4409-8D4B-95A67D0DFFF7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A027DC7-7609-4091-95B6-8A24C74EDC7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A027DC7-7609-4091-95B6-8A24C74EDC7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A027DC7-7609-4091-95B6-8A24C74EDC7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A027DC7-7609-4091-95B6-8A24C74EDC7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CBA8145-63B3-4D6C-BE06-625AFCAB7A89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CBA8145-63B3-4D6C-BE06-625AFCAB7A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CBA8145-63B3-4D6C-BE06-625AFCAB7A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CBA8145-63B3-4D6C-BE06-625AFCAB7A89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F612EE6-3F7F-4E43-B4BC-E74A1D03BC19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F612EE6-3F7F-4E43-B4BC-E74A1D03BC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F612EE6-3F7F-4E43-B4BC-E74A1D03BC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F612EE6-3F7F-4E43-B4BC-E74A1D03BC19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C9FDD2F-EC99-4F3B-8D59-0E96271D0946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9FDD2F-EC99-4F3B-8D59-0E96271D0946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9FDD2F-EC99-4F3B-8D59-0E96271D0946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9FDD2F-EC99-4F3B-8D59-0E96271D0946}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,7 +143,8 @@ Global
 		{901AB2DA-6E52-4FB2-91F0-58EB0115F2F7} = {7A731632-6714-44E2-A9E4-069EBA9E666C}
 		{3EE06C6E-C8F3-418A-A309-8AC81976A074} = {7A731632-6714-44E2-A9E4-069EBA9E666C}
 		{13B7AACB-9C85-4409-8D4B-95A67D0DFFF7} = {E389DEB6-5F90-444B-A054-12A10D39C76F}
-		{9A027DC7-7609-4091-95B6-8A24C74EDC7E} = {516E002B-9E6E-4456-B7F6-EAA353966DE6}
+		{8CBA8145-63B3-4D6C-BE06-625AFCAB7A89} = {516E002B-9E6E-4456-B7F6-EAA353966DE6}
+		{7F612EE6-3F7F-4E43-B4BC-E74A1D03BC19} = {516E002B-9E6E-4456-B7F6-EAA353966DE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {384484BE-4680-4529-9CC2-AD37BA4D12D1}

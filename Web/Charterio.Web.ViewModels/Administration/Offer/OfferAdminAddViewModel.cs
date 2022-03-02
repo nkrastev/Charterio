@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    using Charterio.Common;
+    using Charterio.Global;
 
     public class OfferAdminAddViewModel : IValidatableObject
     {

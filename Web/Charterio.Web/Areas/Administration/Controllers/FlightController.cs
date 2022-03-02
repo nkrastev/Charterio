@@ -1,6 +1,6 @@
 ﻿namespace Charterio.Web.Areas.Administration.Controllers
 {
-    using Charterio.Common;
+    using Charterio.Global;
     using Charterio.Services.Data;
     using Charterio.Web.ViewModels.Administration.Flight;
     using Microsoft.AspNetCore.Authorization;

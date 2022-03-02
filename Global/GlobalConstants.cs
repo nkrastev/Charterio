@@ -1,4 +1,4 @@
-﻿namespace Charterio.Common
+﻿namespace Charterio.Global
 {
     public static class GlobalConstants
     {

@@ -19,7 +19,6 @@
         }
 
         // Administration services
-
         public void Edit(CompanyViewModel model)
         {
             var company = this.db.Companies.Where(x => x.Id == model.Id).FirstOrDefault();
