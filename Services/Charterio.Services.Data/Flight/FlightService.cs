@@ -66,7 +66,7 @@
 
         public FlightViewModel GetFlightById(int id)
         {
-            var flight = this.db.Offers.FirstOrDefault(x => x.Id == id);
+            var flight = this.db.Offers.FirstOrDefault(x => x.Id == id && x.IsActiveInWeb == true);
 
             if (flight == null)
             {
@@ -111,7 +111,7 @@
 
         public ICollection<Cheapest3FlightsViewModel> GetCheapest3Flights()
         {
-            var flights = this.db.Offers.ToList().OrderBy(x => x.Price).Take(3).ToList();
+            var flights = this.db.Offers.Where(x => x.IsActiveInWeb).ToList().OrderBy(x => x.Price).Take(3).ToList();
             var data = new List<Cheapest3FlightsViewModel>();
 
             foreach (var flight in flights)
@@ -137,7 +137,7 @@
 
         public double GetOfferPrice(int id)
         {
-            var offer = this.db.Offers.Where(x => x.Id == id).FirstOrDefault();
+            var offer = this.db.Offers.Where(x => x.Id == id && x.IsActiveInWeb).FirstOrDefault();
             return offer.Price;
         }
 
