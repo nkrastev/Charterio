@@ -3,12 +3,13 @@
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
+    using Braintree;
     using Charterio.Data.Models;
     using Charterio.Global;
     using Charterio.Services.Data;
     using Charterio.Services.Data.Flight;
     using Charterio.Services.Data.Ticket;
+    using Charterio.Services.Payment.ViaBraintree;
     using Charterio.Services.Payment.ViaStripe;
     using Charterio.Web.ViewModels.Booking;
     using Charterio.Web.ViewModels.Ticket;
@@ -25,19 +26,22 @@
         private readonly IFlightService flightService;
         private readonly ITicketService ticketService;
         private readonly IStripeService stripeService;
+        private readonly IBraintreeService braintreeService;
 
         public BookingController(
             UserManager<ApplicationUser> userManager,
             IAllotmentService allotmentService,
             IFlightService flightService,
             ITicketService ticketService,
-            IStripeService stripeService)
+            IStripeService stripeService,
+            IBraintreeService braintreeService)
         {
             this.userManager = userManager;
             this.allotmentService = allotmentService;
             this.flightService = flightService;
             this.ticketService = ticketService;
             this.stripeService = stripeService;
+            this.braintreeService = braintreeService;
         }
 
         [HttpGet]
@@ -136,7 +140,11 @@
                 return this.Redirect("~/AccessDenied");
             }
 
-            // ticket is valid, user has access, vizualize data
+            // ticket is valid, user has access, vizualize data and prepare BrainTree for payment
+            var gateway = this.braintreeService.GetGateway();
+            var clientToken = gateway.ClientToken.Generate();  // Genarate a token
+            this.ViewBag.ClientToken = clientToken;
+
             return this.View(ticket);
         }
 
@@ -205,6 +213,54 @@
                 return this.Redirect("~/AccessDenied");
             }
 
+            return this.View();
+        }
+
+        // Braintree payment
+        [HttpPost]
+        public IActionResult ProcessingViaBraintree(BraintreeBookingViewModel model)
+        {
+            if (!this.ticketService.IsTicketIdValid(model.TicketId))
+            {
+                return this.Redirect("~/SomethingIsWrong");
+            }
+
+            var gateway = this.braintreeService.GetGateway();
+            var ticket = model.TicketId;
+            var price = this.ticketService.CalculateTicketPrice(ticket);
+
+            var request = new TransactionRequest
+            {
+                Amount = (decimal)price,
+                OrderId = $"Ticket {model.TicketId}",
+                PaymentMethodNonce = model.Nonce,
+                Options = new TransactionOptionsRequest
+                {
+                    SubmitForSettlement = true,
+                },
+            };
+
+            Result<Transaction> result = gateway.Transaction.Sale(request);
+
+            //TODO MARK PAYMENT AND MOVE TO SERVICE
+
+            if (result.IsSuccess())
+            {
+                return this.Redirect("/Booking/SuccessBraintree");
+            }
+            else
+            {
+                return this.Redirect("/Booking/FailBraintree");
+            }
+        }
+
+        public IActionResult SuccessBraintree()
+        {
+            return this.View();
+        }
+
+        public IActionResult FailBraintree()
+        {
             return this.View();
         }
 

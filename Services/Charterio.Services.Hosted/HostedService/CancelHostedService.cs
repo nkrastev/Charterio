@@ -21,9 +21,9 @@
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            this.logger.LogInformation("Calcel 'Not Paid' ticket Service running.");
+            this.logger.LogInformation("Calcel 'Not Paid for 20 min' ticket Service running.");
 
-            this.timer = new Timer(CancelNotPaidTickets, null, TimeSpan.Zero, TimeSpan.FromMinutes(5));
+            this.timer = new Timer(CancelNotPaidTickets, null, TimeSpan.Zero, TimeSpan.FromMinutes(20));
 
             return Task.CompletedTask;
         }

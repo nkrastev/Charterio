@@ -4,7 +4,6 @@
 
 @model TicketViewModel
 
-
 @{
     this.ViewData["Title"] = $"Booking (Confirm details)";
 }
@@ -25,7 +24,7 @@
 </section>
 
 <section class="py-9 pt-md-5">
-    <div class="container">                
+    <div class="container">
         <div class="row pb-3">
             <div class="col-md-4 font-size-15">
                 Ticket details:
@@ -55,23 +54,60 @@
                 {
                     <span>@pax.PaxTitle.ToLower() @pax.PaxFirstName @pax.PaxLastName @pax.PaxDob</span> <hr />
                 }
-                
+
             </div>
         </div>
         <hr />
-         <div class="row"> 
-             <div class="col-md-6">
-                
+        <div class="row">
+            <div class="col-md-6">
+                <form id="payment-form" asp-action="ProcessingViaBraintree">
+
+                    <input asp-for="TicketId" value="@this.Model.TicketId" type="text" hidden />
+
+                    <section>
+                        <div class="bt-drop-in-wrapper">
+                            <div id="bt-dropin"></div>
+                        </div>
+                    </section>
+                    <input type="text" name="Nonce" id="nonce" value="nonce" hidden />
+
+                    <hr />
+                    <button type="submit" class="w-100 mt-3 btn btn-primary text-uppercase">Pay with Braintree</button>
+                </form>
             </div>
             <div class="col-md-6">
-                
-            <form asp-action="ProcessingViaStripe">
+
+                <form asp-action="ProcessingViaStripe">
                     <input asp-for="TicketId" value="@this.Model.TicketId" type="text" hidden />
-                    <button type="submit" class="w-100 mt-3 btn btn-primary text-uppercase">Pay With Stripe</button>                    
-            </form>                
+                    <button type="submit" class="w-100 mt-3 btn btn-primary text-uppercase">Pay with Stripe</button>
+                </form>
             </div>
         </div>
     </div>
 </section>
+
+<script src="https://js.braintreegateway.com/web/dropin/1.22.0/js/dropin.min.js"></script>
+<script>
+    var client_token = "@ViewBag.ClientToken";
+    var form = document.querySelector('#payment-form');
+
+    braintree.dropin.create({
+        authorization: client_token,
+        container: '#bt-dropin'
+    }, function (createErr, instance) {
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            instance.requestPaymentMethod(function (err, payload) {
+                if (err) {
+                    return;
+                }
+
+                document.querySelector('#nonce').value = payload.nonce;
+                form.submit();
+            });
+        });
+    });
+</script>
 
 

@@ -5,7 +5,6 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    
     using Charterio.Data;
     using Charterio.Global;
     using Charterio.Services.Data.SendGrid;

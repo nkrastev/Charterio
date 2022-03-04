@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    
+
     using Charterio.Data;
     using Charterio.Data.Models;
     using Charterio.Global;
@@ -196,6 +196,7 @@
                 await this.emailSender.SendEmailAsync(GlobalConstants.SystemEmail, GlobalConstants.SystemName, user.Email, $"Flight Ticket {ticket.TicketCode}", html);
             }
         }
+
         private static string RandomString(int length)
         {
             Random random = new();

@@ -22,6 +22,7 @@
     using Charterio.Services.Data.UptimeRobot;
     using Charterio.Services.Hosted.HostedService;
     using Charterio.Services.Mapping;
+    using Charterio.Services.Payment.ViaBraintree;
     using Charterio.Services.Payment.ViaStripe;
     using Charterio.Web.ViewModels;
     using Ganss.XSS;
@@ -100,6 +101,7 @@
             services.AddTransient<ITicketService, TicketService>();
 
             services.AddTransient<IStripeService, StripeService>();
+            services.AddTransient<IBraintreeService, BraintreeService>();
 
             services.AddSingleton<CancelHostedService>();
 

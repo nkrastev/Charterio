@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -6,13 +6,25 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<PropertyGroup>
+		<CodeAnalysisRuleSet>..\..\Rules.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+	<ItemGroup>
+		<AdditionalFiles Include="..\..\stylecop.json" />
+	</ItemGroup>
+
   <ItemGroup>
+    <PackageReference Include="Braintree" Version="5.11.0" />
     <PackageReference Include="Stripe.net" Version="39.91.0" />
+	  <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.312" PrivateAssets="all">
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+	  </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Data\Charterio.Data\Charterio.Data.csproj" />
     <ProjectReference Include="..\Charterio.Services.Data\Charterio.Services.Data.csproj" />
+	  
   </ItemGroup>
 
 </Project>

@@ -8,6 +8,7 @@
 
   <PropertyGroup>
     <CodeAnalysisRuleSet>..\..\Rules.ruleset</CodeAnalysisRuleSet>
+	  <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json" />
@@ -42,4 +43,8 @@
     <ProjectReference Include="..\Charterio.Web.Infrastructure\Charterio.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\Charterio.Web.ViewModels\Charterio.Web.ViewModels.csproj" />
   </ItemGroup>
+
+	
+
 </Project>
+
