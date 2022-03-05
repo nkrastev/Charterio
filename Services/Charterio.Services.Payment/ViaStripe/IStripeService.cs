@@ -1,6 +1,5 @@
 ﻿namespace Charterio.Services.Payment.ViaStripe
 {
-    
     public interface IStripeService
     {
         Task<string> MarkTicketAsPaid(int ticketId, string transactionId, double amount);

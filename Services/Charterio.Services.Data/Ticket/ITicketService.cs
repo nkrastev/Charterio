@@ -21,5 +21,7 @@
         ICollection<TicketAdminViewModel> GetAll();
 
         Task SendConfirmationEmailAsync(int ticketId);
+
+        List<string> GetActivePaymentMethods();
     }
 }

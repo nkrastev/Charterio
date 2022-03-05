@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
+
     using Braintree;
     using Charterio.Data.Models;
     using Charterio.Global;
@@ -145,6 +146,9 @@
             var clientToken = gateway.ClientToken.Generate();  // Genarate a token
             this.ViewBag.ClientToken = clientToken;
 
+            // send active payment methods to view
+            this.ViewBag.ActivePaymentMethods = this.ticketService.GetActivePaymentMethods();
+
             return this.View(ticket);
         }
 
@@ -242,8 +246,7 @@
 
             Result<Transaction> result = gateway.Transaction.Sale(request);
 
-            //TODO MARK PAYMENT AND MOVE TO SERVICE
-
+            // TODO MARK PAYMENT AND MOVE TO SERVICE
             if (result.IsSuccess())
             {
                 return this.Redirect("/Booking/SuccessBraintree");

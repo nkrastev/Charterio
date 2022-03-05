@@ -135,6 +135,12 @@
             this.db.SaveChanges();
         }
 
+        public List<string> GetActivePaymentMethods()
+        {
+            var methods = this.db.PaymentMethods.Where(x => x.IsActive).Select(x => x.Name).ToList();
+            return methods;
+        }
+
         // Administrative services
         public ICollection<TicketAdminViewModel> GetAll()
         {

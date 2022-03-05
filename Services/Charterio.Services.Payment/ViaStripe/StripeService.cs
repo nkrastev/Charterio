@@ -1,12 +1,13 @@
 ﻿namespace Charterio.Services.Payment.ViaStripe
 {
-    using Charterio.Data;
     using System.Linq;
     using System.Threading.Tasks;
-    using Stripe.Checkout;
-    using Charterio.Services.Data.Ticket;
-    using Charterio.Services.Data.SendGrid;
+
+    using Charterio.Data;
     using Charterio.Global;
+    using Charterio.Services.Data.SendGrid;
+    using Charterio.Services.Data.Ticket;
+    using Stripe.Checkout;
 
     public class StripeService : IStripeService
     {
@@ -43,7 +44,7 @@
                 CancelUrl = domain + "/booking/FailStripe?sid={CHECKOUT_SESSION_ID}",
             };
             var service = new Stripe.Checkout.SessionService();
-            Stripe.Checkout.Session session = service.Create(options);           
+            Stripe.Checkout.Session session = service.Create(options);
 
             return session.Url;
         }
@@ -85,7 +86,7 @@
             else
             {
                 return "Fail";
-            }            
+            }
         }
     }
 }

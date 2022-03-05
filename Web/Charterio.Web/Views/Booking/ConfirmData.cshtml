@@ -49,10 +49,10 @@
                 Passengers details:
             </div>
             <div class="col-md-8 font-size-15">
-                <hr />
+
                 @foreach (var pax in @Model.PaxList)
                 {
-                    <span>@pax.PaxTitle.ToLower() @pax.PaxFirstName @pax.PaxLastName @pax.PaxDob</span> <hr />
+                    <span>@pax.PaxTitle.ToLower() @pax.PaxFirstName @pax.PaxLastName @pax.PaxDob</span> <br />
                 }
 
             </div>
@@ -60,27 +60,35 @@
         <hr />
         <div class="row">
             <div class="col-md-6">
-                <form id="payment-form" asp-action="ProcessingViaBraintree">
-
-                    <input asp-for="TicketId" value="@this.Model.TicketId" type="text" hidden />
-
-                    <section>
-                        <div class="bt-drop-in-wrapper">
-                            <div id="bt-dropin"></div>
-                        </div>
-                    </section>
-                    <input type="text" name="Nonce" id="nonce" value="nonce" hidden />
-
-                    <hr />
-                    <button type="submit" class="w-100 mt-3 btn btn-primary text-uppercase">Pay with Braintree</button>
-                </form>
             </div>
             <div class="col-md-6">
+                @if (this.ViewBag.ActivePaymentMethods.Contains("Stripe"))
+                {
+                    <form asp-action="ProcessingViaStripe">
+                        <input asp-for="TicketId" value="@this.Model.TicketId" type="text" hidden />
+                        <button type="submit" class="w-100 mt-3 btn btn-primary text-uppercase">Pay with Stripe</button>
+                    </form>
+                    <hr />
+                }
 
-                <form asp-action="ProcessingViaStripe">
-                    <input asp-for="TicketId" value="@this.Model.TicketId" type="text" hidden />
-                    <button type="submit" class="w-100 mt-3 btn btn-primary text-uppercase">Pay with Stripe</button>
-                </form>
+                @if (this.ViewBag.ActivePaymentMethods.Contains("Braintree"))
+                {
+                    <form id="payment-form" asp-action="ProcessingViaBraintree">
+
+                        <input asp-for="TicketId" value="@this.Model.TicketId" type="text" hidden />
+
+                        <section>
+                            <div class="bt-drop-in-wrapper">
+                                <div id="bt-dropin"></div>
+                            </div>
+                        </section>
+                        <input type="text" name="Nonce" id="nonce" value="nonce" hidden />
+
+                        <hr />
+                        <button type="submit" class="w-100 mt-3 btn btn-primary text-uppercase">Enter your card details and Pay with Braintree</button>
+                    </form>
+                }
+
             </div>
         </div>
     </div>
