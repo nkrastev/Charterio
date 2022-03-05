@@ -4,7 +4,7 @@
     using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Logging;
 
-    // Each 5 minutes the service is canceling not paid tickets.
+    // Each 30 minutes this service is canceling not paid tickets.
 
     public class CancelHostedService : IHostedService, IDisposable, ICancelHostedService
     {
@@ -21,9 +21,9 @@
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            this.logger.LogInformation("Calcel 'Not Paid for 20 min' ticket Service running.");
+            this.logger.LogInformation("Calcel 'Not Paid for 30 min' ticket Service running.");
 
-            this.timer = new Timer(CancelNotPaidTickets, null, TimeSpan.Zero, TimeSpan.FromMinutes(20));
+            this.timer = new Timer(CancelNotPaidTickets, null, TimeSpan.Zero, TimeSpan.FromMinutes(30));
 
             return Task.CompletedTask;
         }
