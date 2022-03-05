@@ -1,4 +1,4 @@
-﻿namespace Data.Models
+﻿namespace Charterio.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
 

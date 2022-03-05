@@ -8,7 +8,6 @@
 
     using Charterio.Data.Common.Models;
     using Charterio.Data.Models;
-    using global::Data.Models;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
@@ -25,8 +24,6 @@
         }
 
         public DbSet<Airport> Airports { get; set; }
-
-        public DbSet<Article> Articles { get; set; }
 
         public DbSet<Company> Companies { get; set; }
 
@@ -53,6 +50,8 @@
         public DbSet<TicketStatus> TicketStatuses { get; set; }
 
         public DbSet<UserQuestion> UserQuestions { get; set; }
+
+        public DbSet<UserAnswer> UserAnswers { get; set; }
 
         public DbSet<UptimeRobot> UptimeRobots { get; set; }
 

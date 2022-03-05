@@ -13,7 +13,6 @@
     using Charterio.Web.ViewModels;
     using Charterio.Web.ViewModels.Administration.Ticket;
     using Charterio.Web.ViewModels.Ticket;
-    using global::Data.Models;
 
     public class TicketService : ITicketService
     {

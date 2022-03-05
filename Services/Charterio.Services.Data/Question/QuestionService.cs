@@ -6,6 +6,7 @@
     using System.Threading.Tasks;
 
     using Charterio.Data;
+    using Charterio.Data.Models;
     using Charterio.Global;
     using Charterio.Services.Data.SendGrid;
     using Charterio.Web.ViewModels.Administration.Question;
@@ -45,7 +46,7 @@
         public QuestionViewModel GetById(int id)
         {
             var model = this.db.UserQuestions
-                .Where(x => !x.IsArchived && !x.IsAnswered)
+                .Where(x => !x.IsArchived && !x.IsAnswered && x.Id == id)
                 .Select(x => new QuestionViewModel
                 {
                     Id = x.Id,
@@ -66,6 +67,13 @@
             if (question != null && administratorUser != null)
             {
                 question.IsAnswered = true;
+                var answer = new UserAnswer
+                {
+                    QuestionId = model.QuestionId,
+                    AnswerContent = model.Answer,
+                };
+                this.db.UserAnswers.Add(answer);
+
                 this.db.SaveChanges();
 
                 await this.emailSender.SendEmailAsync(

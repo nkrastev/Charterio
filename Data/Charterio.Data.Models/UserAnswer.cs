@@ -5,21 +5,16 @@
 
     using Charterio.Data.Common.Models;
 
-    public class Payment : IAuditInfo
+    public class UserAnswer : IAuditInfo
     {
         public int Id { get; set; }
 
-        public bool IsSuccessful { get; set; }
-
-        public PaymentMethod PaymentMethod { get; set; }
-
-        public int PaymentMethodId { get; set; }
-
         [Required]
-        public string TransactionId { get; set; }
+        public int QuestionId { get; set; }
 
-        [Required]
-        public double Amount { get; set; }
+        public UserQuestion Question { get; set; }
+
+        public string AnswerContent { get; set; }
 
         public DateTime CreatedOn { get; set; }
 

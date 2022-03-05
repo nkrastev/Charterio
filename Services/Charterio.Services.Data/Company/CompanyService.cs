@@ -7,7 +7,6 @@
     using Charterio.Services.Data.Company;
     using Charterio.Web.ViewModels.Administration.Airplane;
     using Charterio.Web.ViewModels.Administration.Company;
-    using global::Data.Models;
 
     public class CompanyService : ICompanyService
     {
@@ -48,7 +47,7 @@
 
         public void Add(CompanyAddViewModel model)
         {
-            var company = new Company
+            var company = new Charterio.Data.Models.Company
             {
                 Name = model.Name,
             };

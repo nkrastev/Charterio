@@ -4,8 +4,8 @@
     using System.Linq;
 
     using Charterio.Data;
+    using Charterio.Data.Models;
     using Charterio.Web.ViewModels.Administration.Airplane;
-    using global::Data.Models;
 
     public class AirplaneService : IAirplaneService
     {

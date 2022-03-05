@@ -4,7 +4,7 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using global::Data.Models;
+    using Charterio.Data.Models;
 
     internal class PaymentMethodsSeeder : ISeeder
     {
@@ -16,7 +16,7 @@
             }
 
             await dbContext.PaymentMethods.AddAsync(new PaymentMethod { Name = "Stripe", IsActive = true });
-            await dbContext.PaymentMethods.AddAsync(new PaymentMethod { Name = "Paypal", IsActive = false });
+            await dbContext.PaymentMethods.AddAsync(new PaymentMethod { Name = "Braintree", IsActive = false });
         }
     }
 }

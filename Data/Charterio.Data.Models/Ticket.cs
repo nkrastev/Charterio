@@ -5,7 +5,6 @@
     using System.ComponentModel.DataAnnotations;
 
     using Charterio.Data.Common.Models;
-    using global::Data.Models;
 
     public class Ticket : IAuditInfo
     {
