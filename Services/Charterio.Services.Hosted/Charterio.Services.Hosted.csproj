@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Data\Charterio.Data\Charterio.Data.csproj" />
+    <ProjectReference Include="..\Data\Charterio.Data\Charterio.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,12 @@
+V1.0 from 05-03-2022
+
+Adding new payment method
+
+1. Add payment method to database ( PaymentMethods )
+2. Add service for the new payment method in Charterio.Services.Payment
+2.1. ProcessPayment is the main method for processing which is called from the BookingController.cs
+2.2. MarkTicketAsPaid is called after successful result from process payment. It marks ticket as paid in the DB and send confirmation email. 
+3. Register payment method at Startup.cs
+4. Set navigations in BookingController.cs (Success Url and Fail Url)
+5. Insert needed JS and forms in the view (Charterio.Web > Views > Booking > ConfirmData.cshtml)
+6. Disabling payment method can be done via Administation of the website from Settings page.

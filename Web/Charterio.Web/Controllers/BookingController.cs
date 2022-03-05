@@ -229,32 +229,9 @@
                 return this.Redirect("~/SomethingIsWrong");
             }
 
-            var gateway = this.braintreeService.GetGateway();
-            var ticket = model.TicketId;
-            var price = this.ticketService.CalculateTicketPrice(ticket);
+            var redirectUrl = this.braintreeService.ProcessPayment(model);
 
-            var request = new TransactionRequest
-            {
-                Amount = (decimal)price,
-                OrderId = $"Ticket {model.TicketId}",
-                PaymentMethodNonce = model.Nonce,
-                Options = new TransactionOptionsRequest
-                {
-                    SubmitForSettlement = true,
-                },
-            };
-
-            Result<Transaction> result = gateway.Transaction.Sale(request);
-
-            // TODO MARK PAYMENT AND MOVE TO SERVICE
-            if (result.IsSuccess())
-            {
-                return this.Redirect("/Booking/SuccessBraintree");
-            }
-            else
-            {
-                return this.Redirect("/Booking/FailBraintree");
-            }
+            return this.Redirect(redirectUrl);
         }
 
         public IActionResult SuccessBraintree()

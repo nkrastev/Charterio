@@ -7,6 +7,7 @@
     using System.Threading.Tasks;
 
     using Braintree;
+    using Charterio.Web.ViewModels.Booking;
 
     public interface IBraintreeService
     {
@@ -14,6 +15,6 @@
 
         Task<string> MarkTicketAsPaid(int ticketId, string transactionId, double amount);
 
-        string ProcessPayment(string stripeToken, string stripeEmail, int ticketId);
+        string ProcessPayment(BraintreeBookingViewModel model);
     }
 }
