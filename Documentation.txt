@@ -1,7 +1,19 @@
-V1.0 from 05-03-2022
+V1.1 from 06-03-2022
+
+Setup
+In appsettings.Production.json, setup your connection string.
+Add your SendGrid Api Key "SendGridApiKey": "YourApiKey"
+Add your Stripe Api Key "StripeApiKey": "YourApiKey"
+Add your Uptime Api Key "UptimeApiKey": "YourApiKey"
+Add your Braintree Api Key
+"BraintreeGateway": {
+    "Environment": "SANDBOX",
+    "MerchantId": "YourMerchantId",
+    "PublicKey": "YourPublicKey",
+    "PrivateKey": "YourPrivateKey"
+  }
 
 Adding new payment method
-
 1. Add payment method to database ( PaymentMethods )
 2. Add service for the new payment method in Charterio.Services.Payment
 2.1. ProcessPayment is the main method for processing which is called from the BookingController.cs
@@ -14,4 +26,8 @@ Adding new payment method
 Preregistered Users
 Username: user@charterio.com / Password: 00000000
 Username: administrator@charterio.com / Password: 00000000
+
+
+
+
 

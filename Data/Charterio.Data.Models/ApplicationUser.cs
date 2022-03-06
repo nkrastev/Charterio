@@ -32,6 +32,8 @@ namespace Charterio.Data.Models
 
         public DateTime? DeletedOn { get; set; }
 
+        public virtual ICollection<Ticket> Tickets { get; set; }
+
         public virtual ICollection<IdentityUserRole<string>> Roles { get; set; }
 
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }

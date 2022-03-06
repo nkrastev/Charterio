@@ -101,6 +101,9 @@
             {
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
             }
+
+            // EventId: 10622, Entity 'ApplicationUser' has a global query filter defined and is the required end of a relationship with the entity 'Ticket'
+            builder.Entity<ApplicationUser>().HasMany(t => t.Tickets).WithOne(u => u.User).IsRequired(false);
         }
 
         private static void SetIsDeletedQueryFilter<T>(ModelBuilder builder)
