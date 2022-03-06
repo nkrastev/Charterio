@@ -2,7 +2,7 @@
 {
     public class Plane
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         public string Model { get; set; }
     }

@@ -7,7 +7,7 @@
 
     public class UserAnswer : IAuditInfo
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         [Required]
         public int QuestionId { get; set; }

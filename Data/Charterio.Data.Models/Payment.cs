@@ -7,7 +7,7 @@
 
     public class Payment : IAuditInfo
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         public bool IsSuccessful { get; set; }
 

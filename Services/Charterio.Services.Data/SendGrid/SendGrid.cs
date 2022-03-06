@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-
+    using Charterio.Global;
     using global::SendGrid;
     using global::SendGrid.Helpers.Mail;
     using Microsoft.Extensions.Configuration;
@@ -26,7 +26,7 @@
         {
             if (string.IsNullOrWhiteSpace(subject) && string.IsNullOrWhiteSpace(htmlContent))
             {
-                throw new ArgumentException("Subject and message should be provided.");
+                throw new ArgumentException(GlobalConstants.SendGridNoSubjectAndMessage);
             }
 
             var fromAddress = new EmailAddress(from, fromName);

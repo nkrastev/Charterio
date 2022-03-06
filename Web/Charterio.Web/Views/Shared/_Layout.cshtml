@@ -8,9 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
 
-    <!-- Plugins css Style -->    
+    <meta property="og:url" content="https://charterio.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Charterio. Ticket Management System For Charter Flights." />
+    <meta property="og:description" content="Open source management system for selling charter flight tickets." />
+    <meta property="og:image" content="https://res.cloudinary.com/charterio/image/upload/v1646496550/assets/main_skfmky.jpg" />
+
+    <!-- Plugins css Style -->
     <script src="https://kit.fontawesome.com/eedcfd73b3.js" crossorigin="anonymous"></script>
-   
+
     <link href="~/assets/plugins/menuzord/css/menuzord.css" rel="stylesheet" asp-append-version="true">
     <link href="~/assets/plugins/menuzord/css/menuzord-animations.css" rel="stylesheet" asp-append-version="true">
 
@@ -98,9 +104,9 @@
                             {
                                 <li><a asp-area="Administration" asp-controller="Administration" asp-action="Index" class="text-dark">Administration Dashboard</a></li>
                                 <li>
-                                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@this.Url.Action("Index", "Home", new { area = string.Empty })">
-                                            <button type="submit" class="nav-link btn btn-link text-dark mmenuBtn">Logout</button>
-                                        </form>
+                                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@this.Url.Action("Index", "Home", new { area = string.Empty })">
+                                        <button type="submit" class="nav-link btn btn-link text-dark mmenuBtn">Logout</button>
+                                    </form>
                                 </li>
                             }
                             else
@@ -173,7 +179,7 @@
                                 </div>
                             </li>
 
-                            <li class="media">
+                            <li class="media mb-2">
                                 <div class="me-3">
                                     <i class="far fa-envelope" aria-hidden="true"></i>
                                 </div>
@@ -181,6 +187,29 @@
                                     <a href="mailto:info@charterio.com">info@charterio.com</a>
                                 </div>
                             </li>
+
+                            <li class="media">
+                                
+                                <div class="media-body">
+                                    <!-- Load Facebook SDK for JavaScript -->
+                                    <div id="fb-root"></div>
+                                    <script> (function(d, s, id) {
+                                                   var js, fjs = d.getElementsByTagName(s)[0];
+                                                   if (d.getElementById(id)) return;
+                                                   js = d.createElement(s); js.id = id;
+                                                   js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                                                   fjs.parentNode.insertBefore(js, fjs);
+                                                   }(document, 'script', 'facebook-jssdk'));</script>
+
+                                    <!-- Your share button code -->
+                                    <div class="fb-share-button"
+                                         data-href="https://charterio.com/"
+                                         data-layout="button_count">
+                                    </div>
+                                </div>
+                            </li>
+
+
                         </ul>
                     </div>
 

@@ -19,6 +19,11 @@
             await dbContext.Companies.AddAsync(new Company { Name = "Bulgaria Air" });
             await dbContext.Companies.AddAsync(new Company { Name = "Balkan Holidays" });
             await dbContext.Companies.AddAsync(new Company { Name = "AIR LUBO" });
+            await dbContext.Companies.AddAsync(new Company { Name = "Electra Airways" });
+            await dbContext.Companies.AddAsync(new Company { Name = "Jet Time" });
+            await dbContext.Companies.AddAsync(new Company { Name = "Corsair" });
+            await dbContext.Companies.AddAsync(new Company { Name = "Condor" });
+            await dbContext.Companies.AddAsync(new Company { Name = "TUI fly Deutschland" });
         }
     }
 }

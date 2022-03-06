@@ -45,6 +45,7 @@
                 Where(
                     x => x.StartAirport.IataCode == terms.StartApt &&
                     x.EndAirport.IataCode == terms.EndApt &&
+                    x.StartTimeUtc > DateTime.UtcNow &&
                     x.StartTimeUtc >= terms.StartFlightDate &&
                     x.EndTimeUtc <= terms.EndFlightDate &&
                     x.IsActiveInWeb == true)
@@ -66,7 +67,8 @@
 
         public FlightViewModel GetFlightById(int id)
         {
-            var flight = this.db.Offers.FirstOrDefault(x => x.Id == id && x.IsActiveInWeb == true);
+            // flight have to be in future
+            var flight = this.db.Offers.FirstOrDefault(x => x.Id == id && x.IsActiveInWeb == true && x.StartTimeUtc > DateTime.UtcNow);
 
             if (flight == null)
             {

@@ -2,7 +2,7 @@
 {
     public class TicketStatus
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         public string Status { get; set; }
     }

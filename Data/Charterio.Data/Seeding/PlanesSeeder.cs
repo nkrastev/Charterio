@@ -19,6 +19,8 @@
             await dbContext.Planes.AddAsync(new Plane { Model = "Airbus A319" });
             await dbContext.Planes.AddAsync(new Plane { Model = "McDonnell Douglas - MD82" });
             await dbContext.Planes.AddAsync(new Plane { Model = "Embraer - 190" });
+            await dbContext.Planes.AddAsync(new Plane { Model = "Boeing - 737 MAX" });
+            await dbContext.Planes.AddAsync(new Plane { Model = "Boeing - BBJ" });
         }
     }
 }

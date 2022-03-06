@@ -8,10 +8,10 @@
 
     public class Ticket : IAuditInfo
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         [Required]
-        public string TicketCode { get; set; }
+        public string TicketCode { get; init; }
 
         [Required]
         public TicketStatus TicketStatus { get; set; }

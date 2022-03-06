@@ -4,7 +4,7 @@
 
     public class Currency
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         [Required]
         [MaxLength(3)]

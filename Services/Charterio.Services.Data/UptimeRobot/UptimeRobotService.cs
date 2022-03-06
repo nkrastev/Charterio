@@ -3,6 +3,7 @@
     using System.Linq;
 
     using Charterio.Data;
+    using Charterio.Global;
     using Microsoft.Extensions.Configuration;
     using Newtonsoft.Json.Linq;
     using RestSharp;
@@ -78,7 +79,7 @@
             }
             catch (System.Exception)
             {
-                result = "External Api Error";
+                result = GlobalConstants.UptimeApiError;
             }
 
             return result;

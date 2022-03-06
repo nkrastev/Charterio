@@ -19,8 +19,8 @@
             {
                 var userCustomer = new ApplicationUser()
                 {
-                    UserName = "testuser@charterio.com",
-                    Email = "testuser@charterio.com",
+                    UserName = "user@charterio.com",
+                    Email = "user@charterio.com",
                     FirstName = "Test",
                     LastName = "Testov",
                     PhoneNumber = "00112233",
@@ -34,7 +34,7 @@
                     PhoneNumber = "11223344",
                 };
 
-                var password = "Papagal7!";
+                var password = "00000000";
 
                 var resultCustomer = await userManager.CreateAsync(userCustomer, password);
                 var resultAdmin = await userManager.CreateAsync(userAdministrator, password);

@@ -48,5 +48,13 @@
         public const string AdminEndBeforeStart = "End date cannot be before Start date.";
 
         public const string MsgSearchByTicketCode = "Only tickets from last 50 days are showed.";
+
+        public const int ItemsPerPage = 10;
+
+        public const string QuestionAnswered = "Answered";
+        public const string QuestionNotAnswered = "Not Answered";
+        public const string SendGridNoSubjectAndMessage = "Subject and message should be provided.";
+        public const string DataForTicketCode = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        public const string UptimeApiError = "External Api Error";
     }
 }

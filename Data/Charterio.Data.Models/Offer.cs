@@ -8,7 +8,7 @@
 
     public class Offer : IAuditInfo
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         [Required]
         public string Name { get; set; }

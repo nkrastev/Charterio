@@ -4,6 +4,7 @@
     using System.Linq;
 
     using Charterio.Data;
+    using Charterio.Global;
     using Charterio.Web.ViewModels.Administration.AdminMain;
     using Charterio.Web.ViewModels.Administration.Faq;
 
@@ -42,7 +43,7 @@
                     Id = x.Id,
                     Question = x.Question,
                     CreatedOn = x.CreatedOn.ToShortDateString(),
-                    ModifiedOn = x.ModifiedOn != null ? "Not Answered" : "Answered",
+                    ModifiedOn = x.ModifiedOn != null ? GlobalConstants.QuestionNotAnswered : GlobalConstants.QuestionAnswered,
                 })
                 .ToList();
             return questions;

@@ -4,7 +4,7 @@
 
     public class Faq
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         [Required]
         public string Question { get; set; }

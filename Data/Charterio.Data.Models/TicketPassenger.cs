@@ -6,7 +6,7 @@
 
     public class TicketPassenger
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         [Required]
         public Ticket Ticket { get; set; }

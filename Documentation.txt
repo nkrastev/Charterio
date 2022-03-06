@@ -10,3 +10,8 @@ Adding new payment method
 4. Set navigations in BookingController.cs (Success Url and Fail Url)
 5. Insert needed JS and forms in the view (Charterio.Web > Views > Booking > ConfirmData.cshtml)
 6. Disabling payment method can be done via Administation of the website from Settings page.
+
+Preregistered Users
+Username: user@charterio.com / Password: 00000000
+Username: administrator@charterio.com / Password: 00000000
+
