@@ -4,20 +4,22 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+
     using Charterio.Global;
     using global::SendGrid;
     using global::SendGrid.Helpers.Mail;
     using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.Logging;
 
     public class SendGrid : ISendGrid
     {
         private readonly SendGridClient client;
-        private readonly IConfiguration configuration;
+        private readonly IConfiguration configuration;        
 
         public SendGrid(IConfiguration configuration)
         {
             this.configuration = configuration;
-            this.client = new SendGridClient(this.ApiKey);
+            this.client = new SendGridClient(this.ApiKey);            
         }
 
         private string ApiKey => this.configuration["SendGridApiKey"];
@@ -26,7 +28,7 @@
         {
             if (string.IsNullOrWhiteSpace(subject) && string.IsNullOrWhiteSpace(htmlContent))
             {
-                throw new ArgumentException(GlobalConstants.SendGridNoSubjectAndMessage);
+                throw new Exception(GlobalConstants.SendGridNoSubjectAndMessage);
             }
 
             var fromAddress = new EmailAddress(from, fromName);
@@ -48,8 +50,7 @@
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                throw new Exception(GlobalConstants.LogErrorWhenTryingToSendMessageViaMail + e.Message);
             }
         }
     }

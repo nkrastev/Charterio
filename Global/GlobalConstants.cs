@@ -7,6 +7,10 @@
         public const string PaxTitleChd = "CHD";
         public const string PaxTitleInf = "INF";
 
+        public const string GoogleAnalyticsId = "G-4HYQWM41E5";
+        public const string MailChimpListId = "https://Charterio.us20.list-manage.com/subscribe/post?u=3b9fecb1c9818aa297601edc9&amp;id=068b93c0b0";
+        public const string ReviewsLink = "https://g.page/r/CT0HexxRJ7hBEAg/review";
+
         public const string ErrorEmptyOrWrongDob = "Date of birth field is required for infants in the format DD-MM-YYYY";
 
         public const string ErrorDobIsNotDobOfChild = "Infants are less than 2 years old. The Date you've entered is wrong.";
@@ -56,5 +60,19 @@
         public const string SendGridNoSubjectAndMessage = "Subject and message should be provided.";
         public const string DataForTicketCode = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         public const string UptimeApiError = "External Api Error";
+        public const string Uptime100Percent = "100";
+        public const string Error404Message = "The requested page cannot be found";
+        public const string LogErrorWhenTryingToSendMessageViaMail = "Exception Error occured while trying to send mail via sendgrid. SendGrid.cs";
+        public const string ArrowInText = " -> ";
+        public const string FlightTicket = "Flight Ticket ";
+
+        public const string LogInformationHostedService = "Calcel 'Not Paid for 30 min' ticket Service running.";
+        public const string LogInformationHostedServiceRunning = "Calcel 'Not Paid for 30 min' ticket Service running.";
+        public const string LogInformationHostedServiceStopping = "Hosted Service for canceling tickets is stopping.";
+        public const int HostedServiceLoopMinutes = 30;
+
+        public const string Ticket = "Ticket";
+
+        public const int AverageAirplaneSpeedInKmPerHour = 835;
     }
 }

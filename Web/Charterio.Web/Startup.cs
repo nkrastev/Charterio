@@ -106,7 +106,6 @@
             services.AddTransient<IPaymentAdministrationService, PaymentAdministrationService>();
 
             services.AddSingleton<CancelHostedService>();
-
             services.AddHostedService<CancelHostedService>(provider => provider.GetService<CancelHostedService>());
         }
 

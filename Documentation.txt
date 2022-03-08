@@ -12,6 +12,9 @@ Add your Braintree Api Key
     "PublicKey": "YourPublicKey",
     "PrivateKey": "YourPrivateKey"
   }
+Analytics account id can be changed via GlobalConstants.GoogleAnalyticsId
+MailChimp list id can be changed via GlobalConstants.MailChimpListId  
+GoogleReviews link can be changed via GlobalConstants.ReviewsLink
 
 Adding new payment method
 1. Add payment method to database ( PaymentMethods )

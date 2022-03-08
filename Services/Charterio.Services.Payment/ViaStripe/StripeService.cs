@@ -31,7 +31,7 @@
                 {
                   new SessionLineItemOptions
                   {
-                    Name = "Flight Ticket",
+                    Name = GlobalConstants.FlightTicket,
                     Quantity = 1,
                     Amount = (long?)(this.ticketService.CalculateTicketPrice(ticketId) * 100),
                     Currency = "EUR",

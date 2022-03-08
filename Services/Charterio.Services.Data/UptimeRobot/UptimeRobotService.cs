@@ -23,7 +23,7 @@
 
         public string GetRatio()
         {
-            string result = "100";
+            string result = GlobalConstants.Uptime100Percent;
 
             // empty table
             if (!this.db.UptimeRobots.Any())

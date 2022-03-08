@@ -151,7 +151,7 @@
                     Id = x.Id.ToString(),
                     Code = x.TicketCode,
                     Status = x.TicketStatus.Status,
-                    Offer = x.Offer.StartAirport.IataCode + " -> " + x.Offer.EndAirport.IataCode,
+                    Offer = x.Offer.StartAirport.IataCode + GlobalConstants.ArrowInText + x.Offer.EndAirport.IataCode,
                     PaxCount = x.TicketPassengers.Count().ToString(),
                 })
                 .OrderByDescending(x => x.Id)
@@ -198,7 +198,7 @@
             if (user != null && ticket != null)
             {
                 var html = new EmailHtmlTemplate().GenerateTemplate(ticket.TicketCode, paxList, flightDetails);
-                await this.emailSender.SendEmailAsync(GlobalConstants.SystemEmail, GlobalConstants.SystemName, user.Email, $"Flight Ticket {ticket.TicketCode}", html);
+                await this.emailSender.SendEmailAsync(GlobalConstants.SystemEmail, GlobalConstants.SystemName, user.Email, $"{GlobalConstants.FlightTicket}{ticket.TicketCode}", html);
             }
         }
 

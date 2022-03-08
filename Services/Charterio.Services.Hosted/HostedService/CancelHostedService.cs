@@ -1,6 +1,7 @@
 ﻿namespace Charterio.Services.Hosted.HostedService
 {
     using Charterio.Data;
+    using Charterio.Global;
     using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Logging;
 
@@ -21,9 +22,9 @@
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            this.logger.LogInformation("Calcel 'Not Paid for 30 min' ticket Service running.");
+            this.logger.LogInformation(GlobalConstants.LogInformationHostedService);
 
-            this.timer = new Timer(CancelNotPaidTickets, null, TimeSpan.Zero, TimeSpan.FromMinutes(30));
+            this.timer = new Timer(CancelNotPaidTickets, null, TimeSpan.Zero, TimeSpan.FromMinutes(GlobalConstants.HostedServiceLoopMinutes));
 
             return Task.CompletedTask;
         }
@@ -40,12 +41,12 @@
             }          
             this.db.SaveChanges();
 
-            this.logger.LogInformation("Hosted Service for canceling tickets is working. Count: {Count}", count);
+            this.logger.LogInformation(GlobalConstants.LogInformationHostedServiceRunning);
         }
 
         public Task StopAsync(CancellationToken stoppingToken)
         {
-            this.logger.LogInformation("Hosted Service for canceling tickets is stopping.");
+            this.logger.LogInformation(GlobalConstants.LogInformationHostedServiceStopping);
 
             this.timer?.Change(Timeout.Infinite, 0);
 

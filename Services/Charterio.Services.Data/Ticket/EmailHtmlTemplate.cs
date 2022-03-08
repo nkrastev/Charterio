@@ -27,7 +27,7 @@
             sb.AppendLine("<tr>");
             sb.AppendLine("<td>");
             sb.AppendLine("<table align=\"center\" border=\"0\" cellpadding=\"2\" cellspacing=\"2\" class=\"row - content stack\" style=\"mso - table - lspace: 0pt; mso - table - rspace: 0pt; background - color: #ffffff; color: #000000; width: 680px; text-align:center;\" width=\"680\">");
-            sb.AppendLine("<tr><td><img src=\"https://charterio.com/static/TicketConfirmation.jpg\" /></td></tr>");
+            sb.AppendLine("<tr><td><img src=\"https://res.cloudinary.com/charterio/image/upload/v1646770724/assets/TicketConfirmation_k0vabq.jpg\" /></td></tr>");
             sb.AppendLine("<tr><td><p>Tel: in the UK: 0888 11 22 33 44 (local rate).<br />Please note this number is for existing bookings only.Please have your booking code ready.</p></td></tr>");
             sb.AppendLine($"<h1>{ticketCode}</h1>");
             sb.AppendLine("<tr><td><hr /></td></tr>");

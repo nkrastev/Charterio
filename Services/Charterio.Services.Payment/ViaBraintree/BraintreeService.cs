@@ -8,6 +8,7 @@
 
     using Braintree;
     using Charterio.Data;
+    using Charterio.Global;
     using Charterio.Services.Data.Ticket;
     using Charterio.Web.ViewModels.Booking;
     using Microsoft.Extensions.Configuration;
@@ -34,7 +35,7 @@
             var request = new TransactionRequest
             {
                 Amount = (decimal)price,
-                OrderId = $"Ticket {model.TicketId}",
+                OrderId = $"{GlobalConstants.Ticket} {model.TicketId}",
                 PaymentMethodNonce = model.Nonce,
                 Options = new TransactionOptionsRequest
                 {
