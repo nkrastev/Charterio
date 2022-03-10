@@ -1,10 +1,7 @@
 ﻿namespace Charterio.Services.Data.Tests
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     using Charterio.Data;
     using Charterio.Data.Models;
@@ -139,7 +136,6 @@
         }
 
         [Fact]
-
         public void GetFlightsBySearchTermsReturnsCorrectFlightOffers()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_CorrectOffer").Options;
@@ -203,6 +199,233 @@
             var list = flightService.GetFlightsBySearchTerms(termsCorrect);
 
             Assert.Equal(1, list.Count);
+        }
+
+        [Fact]
+        public void IsFlightExistingReturnsFalse()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_FlightExisting").Options;
+            var dbContext = new ApplicationDbContext(options);
+            var allotmentService = new AllotmentService(dbContext);
+            var flightService = new FlightService(dbContext, allotmentService);
+
+            Assert.False(flightService.IsFlightExisting(1));
+        }
+
+        [Fact]
+        public void IsFlightExistingReturnsTrue()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_FlightExisting").Options;
+            var dbContext = new ApplicationDbContext(options);
+            var allotmentService = new AllotmentService(dbContext);
+            var flightService = new FlightService(dbContext, allotmentService);
+
+            var startAirport = new Airport
+            {
+                IataCode = "LON",
+                Name = "London Airport",
+                UtcPosition = 0,
+                Latitude = 1,
+                Longtitude = 2,
+            };
+            var endAirport = new Airport
+            {
+                IataCode = "AMS",
+                Name = "Amsterdam Airport",
+                UtcPosition = 0,
+                Latitude = 1,
+                Longtitude = 2,
+            };
+
+            dbContext.Airports.Add(startAirport);
+            dbContext.Airports.Add(endAirport);
+
+            dbContext.SaveChanges();
+
+            var offerFirst = new Offer
+            {
+                Name = "Charter > London - Amsterdam",
+                FlightId = 1,
+                StartAirportId = 1,
+                EndAirportId = 2,
+                StartTimeUtc = new DateTime(2023, 5, 26, 11, 20, 00).ToUniversalTime(),
+                EndTimeUtc = new DateTime(2023, 5, 26, 13, 05, 00).ToUniversalTime(),
+                Price = 189,
+                CurrencyId = 1,
+                AllotmentCount = 25,
+                IsActiveInWeb = true,
+                IsActiveInAdmin = true,
+                CreatedOn = new DateTime(2022, 1, 20, 13, 05, 00).ToUniversalTime(),
+                Categing = "1 bottle of water",
+                Luggage = "20 kg checked in luggage, 5 kg cabin luggage",
+            };
+            dbContext.Offers.Add(offerFirst);
+            dbContext.SaveChanges();
+
+            Assert.True(flightService.IsFlightExisting(1));
+        }
+
+        [Fact]
+
+        public void Cheapest3FlightReturnData()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_FlightExisting").Options;
+            var dbContext = new ApplicationDbContext(options);
+            var allotmentService = new AllotmentService(dbContext);
+            var flightService = new FlightService(dbContext, allotmentService);
+
+            var startAirport = new Airport
+            {
+                IataCode = "LON",
+                Name = "London Airport",
+                UtcPosition = 0,
+                Latitude = 1,
+                Longtitude = 2,
+            };
+            var endAirport = new Airport
+            {
+                IataCode = "AMS",
+                Name = "Amsterdam Airport",
+                UtcPosition = 0,
+                Latitude = 1,
+                Longtitude = 2,
+            };
+
+            dbContext.Airports.Add(startAirport);
+            dbContext.Airports.Add(endAirport);
+
+            dbContext.SaveChanges();
+
+            var offerFirst = new Offer
+            {
+                Name = "Charter > London - Amsterdam",
+                FlightId = 1,
+                StartAirportId = 1,
+                EndAirportId = 2,
+                StartTimeUtc = new DateTime(2023, 5, 26, 11, 20, 00).ToUniversalTime(),
+                EndTimeUtc = new DateTime(2023, 5, 26, 13, 05, 00).ToUniversalTime(),
+                Price = 189,
+                CurrencyId = 1,
+                AllotmentCount = 25,
+                IsActiveInWeb = true,
+                IsActiveInAdmin = true,
+                CreatedOn = new DateTime(2022, 1, 20, 13, 05, 00).ToUniversalTime(),
+                Categing = "1 bottle of water",
+                Luggage = "20 kg checked in luggage, 5 kg cabin luggage",
+            };
+            var second = offerFirst;
+            dbContext.Offers.Add(offerFirst);
+            dbContext.Offers.Add(second);
+            dbContext.SaveChanges();
+
+            Assert.NotNull(flightService.GetCheapest3Flights());
+        }
+
+        [Fact]
+
+        public void GetOfferPriceReturnsDouble()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_FlightPrice").Options;
+            var dbContext = new ApplicationDbContext(options);
+            var allotmentService = new AllotmentService(dbContext);
+            var flightService = new FlightService(dbContext, allotmentService);
+
+            var startAirport = new Airport
+            {
+                IataCode = "LON",
+                Name = "London Airport",
+                UtcPosition = 0,
+                Latitude = 1,
+                Longtitude = 2,
+            };
+            var endAirport = new Airport
+            {
+                IataCode = "AMS",
+                Name = "Amsterdam Airport",
+                UtcPosition = 0,
+                Latitude = 1,
+                Longtitude = 2,
+            };
+
+            dbContext.Airports.Add(startAirport);
+            dbContext.Airports.Add(endAirport);
+
+            dbContext.SaveChanges();
+
+            var offerFirst = new Offer
+            {
+                Name = "Charter > London - Amsterdam",
+                FlightId = 1,
+                StartAirportId = 1,
+                EndAirportId = 2,
+                StartTimeUtc = new DateTime(2023, 5, 26, 11, 20, 00).ToUniversalTime(),
+                EndTimeUtc = new DateTime(2023, 5, 26, 13, 05, 00).ToUniversalTime(),
+                Price = 189,
+                CurrencyId = 1,
+                AllotmentCount = 25,
+                IsActiveInWeb = true,
+                IsActiveInAdmin = true,
+                CreatedOn = new DateTime(2022, 1, 20, 13, 05, 00).ToUniversalTime(),
+                Categing = "1 bottle of water",
+                Luggage = "20 kg checked in luggage, 5 kg cabin luggage",
+            };
+            dbContext.Offers.Add(offerFirst);
+            dbContext.SaveChanges();
+
+            Assert.Equal(189, flightService.GetOfferPrice(1));
+        }
+
+        [Fact]
+        public void GetOfferAirportsAsStringReturnCorrectData()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_FlightPrice").Options;
+            var dbContext = new ApplicationDbContext(options);
+            var allotmentService = new AllotmentService(dbContext);
+            var flightService = new FlightService(dbContext, allotmentService);
+
+            var startAirport = new Airport
+            {
+                IataCode = "LON",
+                Name = "London Airport",
+                UtcPosition = 0,
+                Latitude = 1,
+                Longtitude = 2,
+            };
+            var endAirport = new Airport
+            {
+                IataCode = "AMS",
+                Name = "Amsterdam Airport",
+                UtcPosition = 0,
+                Latitude = 1,
+                Longtitude = 2,
+            };
+
+            dbContext.Airports.Add(startAirport);
+            dbContext.Airports.Add(endAirport);
+
+            dbContext.SaveChanges();
+
+            var offerFirst = new Offer
+            {
+                Name = "Charter > London - Amsterdam",
+                FlightId = 1,
+                StartAirportId = 1,
+                EndAirportId = 2,
+                StartTimeUtc = new DateTime(2023, 5, 26, 11, 20, 00).ToUniversalTime(),
+                EndTimeUtc = new DateTime(2023, 5, 26, 13, 05, 00).ToUniversalTime(),
+                Price = 189,
+                CurrencyId = 1,
+                AllotmentCount = 25,
+                IsActiveInWeb = true,
+                IsActiveInAdmin = true,
+                CreatedOn = new DateTime(2022, 1, 20, 13, 05, 00).ToUniversalTime(),
+                Categing = "1 bottle of water",
+                Luggage = "20 kg checked in luggage, 5 kg cabin luggage",
+            };
+            dbContext.Offers.Add(offerFirst);
+            dbContext.SaveChanges();
+
+            Assert.Equal("LON - AMS", flightService.GetOfferAirportsAsString(1));
         }
     }
 }
