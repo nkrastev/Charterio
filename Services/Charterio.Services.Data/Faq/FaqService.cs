@@ -6,6 +6,7 @@
 
     using Charterio.Data;
     using Charterio.Data.Models;
+    using Charterio.Global;
     using Charterio.Web.ViewModels.Administration.Faq;
     using Charterio.Web.ViewModels.Faq;
     using Microsoft.EntityFrameworkCore;
@@ -19,7 +20,7 @@
             this.db = db;
         }
 
-        public IEnumerable<FaqItemViewModel> GetAllFaq(int page, int itemsPerPage)
+        public IEnumerable<FaqItemViewModel> GetAllFaq(int page)
         {
             var faqs = this
                 .db
@@ -27,8 +28,8 @@
                 .AsNoTracking()
                 .OrderByDescending(x => x.Id)
                 .ToList()
-                .Skip((page - 1) * itemsPerPage)
-                .Take(itemsPerPage)
+                .Skip((page - 1) * GlobalConstants.ItemsPerPage)
+                .Take(GlobalConstants.ItemsPerPage)
                 .Select(x => new FaqItemViewModel
                 {
                     Id = x.Id,

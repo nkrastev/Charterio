@@ -15,7 +15,7 @@
                 return;
             }
 
-            var firstCustomer = dbContext.Users.Where(x => x.UserName == "testuser@charterio.com").FirstOrDefault();
+            var firstCustomer = dbContext.Users.Where(x => x.UserName == "user@charterio.com").FirstOrDefault();
 
             await dbContext.Tickets.AddAsync(new Ticket
             {

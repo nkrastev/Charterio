@@ -7,7 +7,7 @@
 
     public interface IFaqService
     {
-        IEnumerable<FaqItemViewModel> GetAllFaq(int page, int itemsPerPage);
+        IEnumerable<FaqItemViewModel> GetAllFaq(int page);
 
         int GetCount();
 

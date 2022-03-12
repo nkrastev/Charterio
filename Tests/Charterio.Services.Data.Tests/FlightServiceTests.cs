@@ -6,6 +6,7 @@
     using Charterio.Data;
     using Charterio.Data.Models;
     using Charterio.Services.Data.Flight;
+    using Charterio.Web.ViewModels.Administration.Flight;
     using Charterio.Web.ViewModels.Search;
     using Microsoft.EntityFrameworkCore;
     using Moq;
@@ -204,7 +205,7 @@
         [Fact]
         public void IsFlightExistingReturnsFalse()
         {
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_FlightExisting").Options;
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_FlightExistingFail").Options;
             var dbContext = new ApplicationDbContext(options);
             var allotmentService = new AllotmentService(dbContext);
             var flightService = new FlightService(dbContext, allotmentService);
@@ -215,7 +216,7 @@
         [Fact]
         public void IsFlightExistingReturnsTrue()
         {
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_FlightExisting").Options;
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_FlightExistingOk").Options;
             var dbContext = new ApplicationDbContext(options);
             var allotmentService = new AllotmentService(dbContext);
             var flightService = new FlightService(dbContext, allotmentService);
@@ -426,6 +427,110 @@
             dbContext.SaveChanges();
 
             Assert.Equal("LON - AMS", flightService.GetOfferAirportsAsString(1));
+        }
+
+        // Admin services
+        [Fact]
+        public void GetAllFlightsReturnsCorrectNumber()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_AdminFlights").Options;
+            var dbContext = new ApplicationDbContext(options);
+            var allotmentService = new AllotmentService(dbContext);
+            var flightService = new FlightService(dbContext, allotmentService);
+
+            var company = new Company
+            {
+                Name = "TestName",
+            };
+            var plane = new Plane
+            {
+                Model = "Test Model",
+            };
+
+            dbContext.Planes.Add(plane);
+            dbContext.Companies.Add(company);
+
+            dbContext.SaveChanges();
+
+            var flight = new Flight
+            {
+                CompanyId = 1,
+                PlaneId = 1,
+                Number = "Test Number",
+            };
+            dbContext.Flights.Add(flight);
+
+            dbContext.SaveChanges();
+
+            var countFlights = flightService.GetAllFlights().Count();
+
+            Assert.Equal(1, countFlights);
+        }
+
+        [Fact]
+        public void AddFlightIncreaseFlightCount()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_AddFlightsNew").Options;
+            var dbContext = new ApplicationDbContext(options);
+            var allotmentService = new AllotmentService(dbContext);
+            var flightService = new FlightService(dbContext, allotmentService);
+
+            var company = new Company
+            {
+                Name = "TestName",
+            };
+            var plane = new Plane
+            {
+                Model = "Test Model",
+            };
+
+            dbContext.Planes.Add(plane);
+            dbContext.Companies.Add(company);
+
+            dbContext.SaveChanges();
+
+            flightService.Add(new Web.ViewModels.Administration.Flight.FlightAdminAddViewModel
+            {
+                Number = "test",
+                CompanyId = "1",
+                PlaneId = "1",
+            });
+
+            var countFlights = flightService.GetAllFlights().Count();
+
+            Assert.Equal(1, countFlights);
+        }
+
+        [Fact]
+        public void GetFlightByIdReturnsCorrectData()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("Database_For_Tests_AddFlights").Options;
+            var dbContext = new ApplicationDbContext(options);
+            var allotmentService = new AllotmentService(dbContext);
+            var flightService = new FlightService(dbContext, allotmentService);
+
+            var company = new Company
+            {
+                Name = "TestName",
+            };
+            var plane = new Plane
+            {
+                Model = "Test Model",
+            };
+
+            dbContext.Planes.Add(plane);
+            dbContext.Companies.Add(company);
+
+            dbContext.SaveChanges();
+            flightService.Add(new Web.ViewModels.Administration.Flight.FlightAdminAddViewModel
+            {
+                Number = "test",
+                CompanyId = "1",
+                PlaneId = "1",
+            });
+
+            var flight = flightService.GetById(1);
+            Assert.Equal("test", flight.Number);
         }
     }
 }

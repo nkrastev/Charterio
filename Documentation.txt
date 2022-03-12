@@ -1,4 +1,7 @@
-V1.1 from 06-03-2022
+V1.2 from 12-03-2022
+
+First Run
+On first run disable CancelHostedService on Startup in order to create database correct.
 
 Setup
 In appsettings.Production.json, setup your connection string.
@@ -15,6 +18,7 @@ Add your Braintree Api Key
 Analytics account id can be changed via GlobalConstants.GoogleAnalyticsId
 MailChimp list id can be changed via GlobalConstants.MailChimpListId  
 GoogleReviews link can be changed via GlobalConstants.ReviewsLink
+Charterio.Web > Views > Contacts > Index.cshtml line 92 insert your own Google Maps Api Key
 
 Adding new payment method
 1. Add payment method to database ( PaymentMethods )

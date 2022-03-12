@@ -3,6 +3,8 @@
     using System;
     using System.Collections.Generic;
 
+    using Charterio.Global;
+
     public class FaqListViewModel
     {
         public IEnumerable<FaqItemViewModel> FaqsList { get; set; }
@@ -17,7 +19,7 @@
 
         public int NextPageNumber => this.PageNumber + 1;
 
-        public int PagesCount => (int)Math.Ceiling((decimal)this.FaqsCount / this.ItemsPerPage);
+        public int PagesCount => (int)Math.Ceiling((decimal)this.FaqsCount / GlobalConstants.ItemsPerPage);
 
         public int FaqsCount { get; set; }
 

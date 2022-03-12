@@ -19,7 +19,7 @@
             var data = new FaqListViewModel()
             {
                 PageNumber = pageNum,
-                FaqsList = this.faqService.GetAllFaq(pageNum, GlobalConstants.ItemsPerPage),
+                FaqsList = this.faqService.GetAllFaq(pageNum),
                 FaqsCount = this.faqService.GetCount(),
             };
 
