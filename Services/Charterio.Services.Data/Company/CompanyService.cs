@@ -1,11 +1,9 @@
-﻿namespace Charterio.Services.Data.Airplane
+﻿namespace Charterio.Services.Data.Company
 {
     using System.Collections.Generic;
     using System.Linq;
 
     using Charterio.Data;
-    using Charterio.Services.Data.Company;
-    using Charterio.Web.ViewModels.Administration.Airplane;
     using Charterio.Web.ViewModels.Administration.Company;
 
     public class CompanyService : ICompanyService

@@ -12,6 +12,7 @@
     using Charterio.Services.Data.Administration;
     using Charterio.Services.Data.Airplane;
     using Charterio.Services.Data.Airport;
+    using Charterio.Services.Data.Api;
     using Charterio.Services.Data.Company;
     using Charterio.Services.Data.Contacts;
     using Charterio.Services.Data.Flight;
@@ -67,6 +68,7 @@
                     {
                         options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
                     }).AddRazorRuntimeCompilation();
+
             services.AddRazorPages();
             services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -101,12 +103,14 @@
             services.AddTransient<IAllotmentService, AllotmentService>();
             services.AddTransient<ITicketService, TicketService>();
 
+            services.AddTransient<IFlightApiService, FlightApiService>();
+
             services.AddTransient<IStripeService, StripeService>();
             services.AddTransient<IBraintreeService, BraintreeService>();
             services.AddTransient<IPaymentAdministrationService, PaymentAdministrationService>();
 
-            services.AddSingleton<CancelHostedService>();
-            services.AddHostedService<CancelHostedService>(provider => provider.GetService<CancelHostedService>());
+            /*services.AddSingleton<CancelHostedService>();
+            services.AddHostedService<CancelHostedService>(provider => provider.GetService<CancelHostedService>());*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

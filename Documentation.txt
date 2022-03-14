@@ -1,4 +1,4 @@
-V1.2 from 12-03-2022
+V1.3 from 14-03-2022
 
 First Run
 On first run disable CancelHostedService on Startup in order to create database correct.
@@ -33,6 +33,10 @@ Adding new payment method
 Preregistered Users
 Username: user@charterio.com / Password: 00000000
 Username: administrator@charterio.com / Password: 00000000
+
+Api
+Available flights with status Visible in web and future departure date are visible via JSON
+rootDomainName/api/available-flights
 
 
 
