@@ -1,6 +1,5 @@
-﻿namespace Charterio.Services.Data
+﻿namespace Charterio.Services.Data.Faq
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 

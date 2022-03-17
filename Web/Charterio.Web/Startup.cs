@@ -15,6 +15,7 @@
     using Charterio.Services.Data.Api;
     using Charterio.Services.Data.Company;
     using Charterio.Services.Data.Contacts;
+    using Charterio.Services.Data.Faq;
     using Charterio.Services.Data.Flight;
     using Charterio.Services.Data.Offer;
     using Charterio.Services.Data.Question;
@@ -109,8 +110,8 @@
             services.AddTransient<IBraintreeService, BraintreeService>();
             services.AddTransient<IPaymentAdministrationService, PaymentAdministrationService>();
 
-            /*services.AddSingleton<CancelHostedService>();
-            services.AddHostedService<CancelHostedService>(provider => provider.GetService<CancelHostedService>());*/
+            services.AddSingleton<CancelHostedService>();
+            services.AddHostedService<CancelHostedService>(provider => provider.GetService<CancelHostedService>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
