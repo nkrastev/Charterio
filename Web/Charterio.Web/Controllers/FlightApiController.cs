@@ -4,9 +4,11 @@
 
     using Charterio.Services.Data.Api;
     using Charterio.Web.ViewModels.Api;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     [Route("api/available-flights")]
+    [Authorize]
     [ApiController]
     public class FlightApiController : ControllerBase
     {

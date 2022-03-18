@@ -10,7 +10,6 @@
     using Charterio.Global;
     using Charterio.Services.Data.SendGrid;
     using Charterio.Web.ViewModels.Administration.Question;
-    using Ganss.XSS;
 
     public class QuestionService : IQuestionService
     {

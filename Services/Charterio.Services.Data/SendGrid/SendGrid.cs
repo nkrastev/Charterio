@@ -14,12 +14,12 @@
     public class SendGrid : ISendGrid
     {
         private readonly SendGridClient client;
-        private readonly IConfiguration configuration;        
+        private readonly IConfiguration configuration;
 
         public SendGrid(IConfiguration configuration)
         {
             this.configuration = configuration;
-            this.client = new SendGridClient(this.ApiKey);            
+            this.client = new SendGridClient(this.ApiKey);
         }
 
         private string ApiKey => this.configuration["SendGridApiKey"];
