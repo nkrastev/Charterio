@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    
+
     using Charterio.Data;
     using Charterio.Data.Models;
     using Charterio.Services.Data.Question;
@@ -104,12 +104,12 @@
 
             await service.Answer(
                 new Web.ViewModels.Administration.Question.QuestionAnswerViewModel
-            {
-                QuestionId = 1,
-                UserEmail = "test@test.com",
-                Question = "Q1",
-                Answer = "A1",
-            },
+                {
+                    QuestionId = 1,
+                    UserEmail = "test@test.com",
+                    Question = "Q1",
+                    Answer = "A1",
+                },
                 "administrator@charterio.com");
 
             var targetQuestion = dbContext.UserQuestions.Where(x => x.Id == 1).FirstOrDefault();
