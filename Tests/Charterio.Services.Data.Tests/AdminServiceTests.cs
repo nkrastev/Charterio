@@ -1,11 +1,11 @@
 ﻿namespace Charterio.Services.Data.Tests
 {
+    using System.Collections.Generic;
+
     using Charterio.Data;
     using Charterio.Data.Models;
     using Charterio.Services.Data.Administration;
     using Microsoft.EntityFrameworkCore;
-    using System.Collections.Generic;
-    using System.Linq;
     using Xunit;
 
     public class AdminServiceTests
