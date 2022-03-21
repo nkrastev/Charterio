@@ -17,8 +17,26 @@ Charterio is a ready to use application for ticket management for charter flight
 **Api** https://charterio.com/api/available-flights
 
 ## Screenshots
-![Database scheme](https://res.cloudinary.com/charterio/image/upload/v1647886430/assets/db_scheme_fa9kqn.jpg)
-
+<p align="center">
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647886430/assets/db_scheme_fa9kqn.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901689/assets/homepage_ljnn4u.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901690/assets/search-result_ntwsip.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901689/assets/schedule_obho0z.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901689/assets/faq_ywdrgw.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901689/assets/contacts_hjixme.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901689/assets/flight-details_j1emsq.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901688/assets/confirm-and-pay_i9lkk1.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901689/assets/my-profile_heoq50.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901688/assets/404_xvwcwd.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901688/assets/admin-airport_knmsgh.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901688/assets/admin-airplane_ujcaap.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901688/assets/admin-flight_lv8byp.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901688/assets/admin-offer_g1azwi.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647901688/assets/admin-paymentmethods_vyc8t4.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647902771/assets/admin-questions_llirea.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647902771/assets/admin-answer_vci2v7.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1647902262/assets/mobile_zfjcju.jpg" />
+</p>
 
 ## Credits
 ASP.NET Core Template - [Nikolay Kostov](https://github.com/NikolayIT), [Stoyan Shopov](https://github.com/StoyanShopov), [Vladislav Karamfilov](https://github.com/vladislav-karamfilov)
