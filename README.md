@@ -7,8 +7,11 @@ Charterio is a ready to use application for ticket management for charter flight
 ## Functionallity and Test Accounts
 
 Stripe test card: 4242 4242 4242 4242 / Any future date, Any 3 digit CVC
-
 Braintree test card: 4111 1111 1111 1111 / Any future date, Any 3 digit CVC
+
+Users:
+Customer: u: user@charterio.com p: 00000000
+Administrator: u: administrator@charterio.com p: 00000000
 
 ## Screenshots
 
