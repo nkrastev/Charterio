@@ -24,7 +24,7 @@
 
         public string ProcessPayment(string stripeToken, string stripeEmail, int ticketId)
         {
-            var domain = "https://localhost:44319";
+            var domain = GlobalConstants.SiteDomain;
             var options = new Stripe.Checkout.SessionCreateOptions
             {
                 LineItems = new List<SessionLineItemOptions>

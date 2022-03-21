@@ -43,7 +43,7 @@
                     Id = x.Id,
                     Question = x.Question,
                     CreatedOn = x.CreatedOn.ToShortDateString(),
-                    ModifiedOn = x.ModifiedOn != null ? GlobalConstants.QuestionNotAnswered : GlobalConstants.QuestionAnswered,
+                    ModifiedOn = x.ModifiedOn != null ? GlobalConstants.QuestionAnswered : GlobalConstants.QuestionNotAnswered,
                 })
                 .ToList();
             return questions;

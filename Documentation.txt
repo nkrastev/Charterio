@@ -1,8 +1,5 @@
 V1.3 from 14-03-2022
 
-First Run
-On first run disable CancelHostedService on Startup in order to create database correct.
-
 Setup
 In appsettings.Production.json, setup your connection string.
 Add your SendGrid Api Key "SendGridApiKey": "YourApiKey"

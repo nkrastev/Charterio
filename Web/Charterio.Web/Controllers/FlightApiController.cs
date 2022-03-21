@@ -8,7 +8,6 @@
     using Microsoft.AspNetCore.Mvc;
 
     [Route("api/available-flights")]
-    [Authorize]
     [ApiController]
     public class FlightApiController : ControllerBase
     {

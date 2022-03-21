@@ -74,5 +74,7 @@
         public const string Ticket = "Ticket";
 
         public const int AverageAirplaneSpeedInKmPerHour = 835;
+        public const string SiteDomain = "https://localhost:44319";
+
     }
 }
