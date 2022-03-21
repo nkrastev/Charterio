@@ -2,7 +2,7 @@
 Live Demo can be checked at https://charterio.com
 
 ## Overview
-Charterio is a ready to use application for ticket management for charter flights which is easy to use and has a simple user-friendly interface. The backend is developed with MS SQL and Entity Framework Core, and the frontend is built with Bootstrap & JS. The application does not require registration for checking the prices of the tickets but simple one is needed in order to purchase them.
+Charterio is a ready to use application for ticket management for charter flights which is easy to use and has a simple user-friendly interface. Programming languages, technologies, libraries and frameworks: C#, ASP.NET Core, Entity Framework Core, JS, Bootstrap, jQuery. The app has integration with: Stripe and Braintree payment gateways, SendGrid and MailChimp for mail support and list management, UptimeRobot for monitoring of the uptime. Google Analytics and Google Maps integrated in the UI. Very simple Web Api with information about the available flights, dates and prices can be found at: domain/api/available-flights. Live demo is running on Windows Server 2022 Standard with MSSQL 2019. The application does not require registration for checking the prices of the tickets but simple one is needed in order to purchase them.
 
 ## Functionallity and Test Accounts
 
@@ -14,8 +14,13 @@ Charterio is a ready to use application for ticket management for charter flight
 
 **Administrator:** u: administrator@charterio.com p: 00000000
 
+**Api** https://charterio.com/api/available-flights
+
 ## Screenshots
 ![Database scheme](https://res.cloudinary.com/charterio/image/upload/v1647886430/assets/db_scheme_fa9kqn.jpg)
 
 
 ## Credits
+ASP.NET Core Template - [Nikolay Kostov](https://github.com/NikolayIT), [Stoyan Shopov](https://github.com/StoyanShopov), [Vladislav Karamfilov](https://github.com/vladislav-karamfilov)
+
+Project images - [Unsplash.com](https://unsplash.com/)
