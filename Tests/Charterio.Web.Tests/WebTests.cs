@@ -16,7 +16,7 @@
             this.server = server;
         }
 
-        [Fact(Skip = "Example test. Disabled for CI.")]
+        [Fact]
         public async Task IndexPageShouldReturnStatusCode200WithTitle()
         {
             var client = this.server.CreateClient();
@@ -26,12 +26,36 @@
             Assert.Contains("<title>", responseContent);
         }
 
-        [Fact(Skip = "Example test. Disabled for CI.")]
+        [Fact]
         public async Task AccountManagePageRequiresAuthorization()
         {
             var client = this.server.CreateClient(new WebApplicationFactoryClientOptions { AllowAutoRedirect = false });
             var response = await client.GetAsync("Identity/Account/Manage");
             Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task BookNowPageRequiresLoggedInUser()
+        {
+            var client = this.server.CreateClient(new WebApplicationFactoryClientOptions { AllowAutoRedirect = false });
+            var response = await client.GetAsync("booking?offer=1&pax=1");
+            Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task MyAccountPageRequiresLoggedInUser()
+        {
+            var client = this.server.CreateClient(new WebApplicationFactoryClientOptions { AllowAutoRedirect = false });
+            var response = await client.GetAsync("identity/account/manage");
+            Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task NotFoundReturnsCorrectStatusCodeOf404()
+        {
+            var client = this.server.CreateClient(new WebApplicationFactoryClientOptions { AllowAutoRedirect = false });
+            var response = await client.GetAsync("asjkhdg");
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }
     }
 }

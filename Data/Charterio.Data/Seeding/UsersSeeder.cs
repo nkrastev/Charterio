@@ -34,14 +34,29 @@
                     PhoneNumber = "11223344",
                 };
 
+                var userSelenium = new ApplicationUser()
+                {
+                    UserName = "selenium@charterio.com",
+                    Email = "selenium@charterio.com",
+                    FirstName = "Selenium",
+                    LastName = "User",
+                    PhoneNumber = "11223344",
+                };
+
                 var password = "00000000";
 
                 var resultCustomer = await userManager.CreateAsync(userCustomer, password);
                 var resultAdmin = await userManager.CreateAsync(userAdministrator, password);
+                var resultSelenium = await userManager.CreateAsync(userSelenium, password);
 
                 if (resultCustomer.Succeeded)
                 {
                     await userManager.AddToRoleAsync(userCustomer, GlobalConstants.CustomerRoleName);
+                }
+
+                if (resultSelenium.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(userSelenium, GlobalConstants.CustomerRoleName);
                 }
 
                 if (resultAdmin.Succeeded)

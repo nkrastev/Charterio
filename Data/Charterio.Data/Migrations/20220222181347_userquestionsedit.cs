@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Charterio.Data.migrations
+namespace Charterio.Data.Migrations
 {
     public partial class userquestionsedit : Migration
     {

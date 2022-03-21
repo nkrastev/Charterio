@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Charterio.Data.migrations
+namespace Charterio.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20220222181347_userquestionsedit")]

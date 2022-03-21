@@ -36,7 +36,7 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Hosting;    
+    using Microsoft.Extensions.Hosting;
     using Stripe;
 
     public class Startup
@@ -110,8 +110,7 @@
             services.AddTransient<IBraintreeService, BraintreeService>();
             services.AddTransient<IPaymentAdministrationService, PaymentAdministrationService>();
 
-            services.AddSingleton<CancelHostedService>();
-            services.AddHostedService<CancelHostedService>(provider => provider.GetService<CancelHostedService>());
+            services.AddTransient<CancelHostedService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

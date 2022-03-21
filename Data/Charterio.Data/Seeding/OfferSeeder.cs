@@ -93,12 +93,12 @@
             await dbContext.Offers.AddAsync(
                 new Offer
                 {
-                    Name = "Charter > London - Paris for Test purpose N1 (1 April)",
+                    Name = "Charter > London - Paris for Test purpose N1 (20 April)",
                     FlightId = 1,
                     StartAirportId = 1,
                     EndAirportId = 2,
-                    StartTimeUtc = new DateTime(2022, 4, 1, 9, 20, 00).ToUniversalTime(),
-                    EndTimeUtc = new DateTime(2022, 4, 1, 17, 10, 00).ToUniversalTime(),
+                    StartTimeUtc = new DateTime(2022, 4, 20, 9, 20, 00).ToUniversalTime(),
+                    EndTimeUtc = new DateTime(2022, 4, 20, 17, 10, 00).ToUniversalTime(),
                     Price = 87,
                     CurrencyId = 1,
                     AllotmentCount = 10,
@@ -111,12 +111,12 @@
             await dbContext.Offers.AddAsync(
                 new Offer
                 {
-                    Name = "Charter > London - Paris for Test purpose N2 (1 April)",
+                    Name = "Charter > London - Paris for Test purpose N2 (20 April)",
                     FlightId = 1,
                     StartAirportId = 1,
                     EndAirportId = 2,
-                    StartTimeUtc = new DateTime(2022, 4, 1, 11, 20, 00).ToUniversalTime(),
-                    EndTimeUtc = new DateTime(2022, 4, 1, 18, 10, 00).ToUniversalTime(),
+                    StartTimeUtc = new DateTime(2022, 4, 20, 11, 20, 00).ToUniversalTime(),
+                    EndTimeUtc = new DateTime(2022, 4, 20, 18, 10, 00).ToUniversalTime(),
                     Price = 320,
                     CurrencyId = 1,
                     AllotmentCount = 10,
@@ -129,12 +129,12 @@
             await dbContext.Offers.AddAsync(
                 new Offer
                 {
-                    Name = "Charter > London - Paris for Test purpose N3 (1 April)",
+                    Name = "Charter > London - Paris for Test purpose N3 (20 April)",
                     FlightId = 1,
                     StartAirportId = 1,
                     EndAirportId = 2,
-                    StartTimeUtc = new DateTime(2022, 4, 1, 22, 20, 00).ToUniversalTime(),
-                    EndTimeUtc = new DateTime(2022, 4, 1, 23, 10, 00).ToUniversalTime(),
+                    StartTimeUtc = new DateTime(2022, 4, 20, 22, 20, 00).ToUniversalTime(),
+                    EndTimeUtc = new DateTime(2022, 4, 20, 23, 10, 00).ToUniversalTime(),
                     Price = 417,
                     CurrencyId = 1,
                     AllotmentCount = 5,
@@ -147,12 +147,12 @@
             await dbContext.Offers.AddAsync(
                 new Offer
                 {
-                    Name = "Charter > London - Paris for Test purpose N4 (1 April)",
+                    Name = "Charter > London - Paris for Test purpose N4 (20 April)",
                     FlightId = 1,
                     StartAirportId = 1,
                     EndAirportId = 2,
-                    StartTimeUtc = new DateTime(2022, 4, 1, 2, 20, 00).ToUniversalTime(),
-                    EndTimeUtc = new DateTime(2022, 4, 1, 8, 10, 00).ToUniversalTime(),
+                    StartTimeUtc = new DateTime(2022, 4, 20, 2, 20, 00).ToUniversalTime(),
+                    EndTimeUtc = new DateTime(2022, 4, 20, 8, 10, 00).ToUniversalTime(),
                     Price = 175,
                     CurrencyId = 1,
                     AllotmentCount = 10,
