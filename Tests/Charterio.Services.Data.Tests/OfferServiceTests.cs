@@ -1,15 +1,16 @@
 ﻿namespace Charterio.Services.Data.Tests
 {
-    using Charterio.Data;
-    using Charterio.Data.Models;
-    using Charterio.Services.Data.Offer;
-    using Charterio.Web.ViewModels.Administration.Offer;
-    using Microsoft.EntityFrameworkCore;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+
+    using Charterio.Data;
+    using Charterio.Data.Models;
+    using Charterio.Services.Data.Offer;
+    using Charterio.Web.ViewModels.Administration.Offer;
+    using Microsoft.EntityFrameworkCore;
 
     using Xunit;
 

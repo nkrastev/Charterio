@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="Moq" Version="4.17.1" />
@@ -30,6 +31,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\Charterio.Data\Charterio.Data.csproj" />
     <ProjectReference Include="..\..\Services\Charterio.Services.Data\Charterio.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Services\Charterio.Services.Payment\Charterio.Services.Payment.csproj" />
+    <ProjectReference Include="..\..\Web\Charterio.Web\Charterio.Web.csproj" />
   </ItemGroup>
 
 </Project>

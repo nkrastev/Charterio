@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Security.Claims;
     using System.Threading.Tasks;
 
     using Braintree;
@@ -246,8 +247,8 @@
 
         public IActionResult Ticket(int tid)
         {
-            // Check if ticketId is valid
-            if (!this.ticketService.IsTicketIdValid(tid))
+            // Check if ticketId is valid and user has access to it
+            if (!this.ticketService.IsTicketIdValid(tid) || !this.ticketService.IfUserHasAccessToTicket(this.User.FindFirstValue(ClaimTypes.NameIdentifier), tid))
             {
                 return this.Redirect("~/SomethingIsWrong");
             }

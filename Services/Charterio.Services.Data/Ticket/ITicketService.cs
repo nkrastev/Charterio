@@ -23,5 +23,7 @@
         Task SendConfirmationEmailAsync(int ticketId);
 
         List<string> GetActivePaymentMethods();
+
+        bool IfUserHasAccessToTicket(string userId, int ticketId);
     }
 }

@@ -191,7 +191,6 @@
                 CurrencyId = 1,
                 AllotmentCount = 10,
                 IsActiveInWeb = true,
-
             });
 
             dbContext.Tickets.Add(new Ticket
@@ -250,7 +249,6 @@
                 CurrencyId = 1,
                 AllotmentCount = 10,
                 IsActiveInWeb = true,
-
             });
             var user = new ApplicationUser
             {
@@ -346,6 +344,50 @@
             // Assert
             Assert.NotNull(ticket);
             Assert.Equal("XXX", ticket.TicketCode);
+        }
+
+        [Fact]
+        public void UserHasAccessOnlyToTicketsThatOwns()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("UserHasAccessOnlyToTicketsThatOwns").Options;
+            var dbContext = new ApplicationDbContext(options);
+
+            var appSettingsStub = new Dictionary<string, string> { { "SendGridApiKey", "3" }, };
+            var configuration = new ConfigurationBuilder()
+                .AddInMemoryCollection(appSettingsStub)
+                .Build();
+
+            var allotmentService = new AllotmentService(dbContext);
+            var flightService = new FlightService(dbContext, allotmentService);
+            var emailSender = new SendGrid(configuration);
+
+            var service = new TicketService(dbContext, flightService, allotmentService, emailSender);
+
+            dbContext.Tickets.Add(new Ticket
+            {
+                Id = 1,
+                TicketCode = "XXX",
+                TicketStatusId = 1,
+                TicketIssuerId = 1,
+                OfferId = 1,
+                UserId = "0864f1fa-6c17-4157-80bf-dc5f5f0796d8",
+            });
+
+            // Ticket with Id 2 is owned by another user
+            dbContext.Tickets.Add(new Ticket
+            {
+                Id = 2,
+                TicketCode = "XXX",
+                TicketStatusId = 1,
+                TicketIssuerId = 1,
+                OfferId = 1,
+                UserId = "0864f1fa-6c17-4157-80bf-dc5f5f079699",
+            });
+            dbContext.SaveChanges();
+
+            // Act & Assert
+            Assert.True(service.IfUserHasAccessToTicket("0864f1fa-6c17-4157-80bf-dc5f5f0796d8", 1));
+            Assert.False(service.IfUserHasAccessToTicket("0864f1fa-6c17-4157-80bf-dc5f5f0796d8", 2));
         }
     }
 }

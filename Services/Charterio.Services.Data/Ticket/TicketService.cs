@@ -85,6 +85,19 @@
             return lastAddedTicket.Id;
         }
 
+        public bool IfUserHasAccessToTicket(string userId, int ticketId)
+        {
+            var targetTicket = this.db.Tickets.Where(x => x.Id == ticketId && x.UserId == userId).FirstOrDefault();
+            if (targetTicket != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public TicketViewModel GetTicketById(int ticketId)
         {
             var targetTicket = this.db.Tickets.Where(x => x.Id == ticketId)
