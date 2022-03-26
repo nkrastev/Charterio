@@ -19,6 +19,7 @@ Charterio is a ready to use application for ticket management for charter flight
 ## Screenshots
 <p align="center">
 <img src="https://res.cloudinary.com/charterio/image/upload/v1647886430/assets/db_scheme_fa9kqn.jpg" />
+<img src="https://res.cloudinary.com/charterio/image/upload/v1648308921/assets/tests_flfmqi.jpg" />  
 <img src="https://res.cloudinary.com/charterio/image/upload/v1647901689/assets/homepage_ljnn4u.jpg" />
 <img src="https://res.cloudinary.com/charterio/image/upload/v1647901690/assets/search-result_ntwsip.jpg" />
 <img src="https://res.cloudinary.com/charterio/image/upload/v1647901689/assets/schedule_obho0z.jpg" />
