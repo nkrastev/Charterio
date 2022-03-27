@@ -5,6 +5,7 @@
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
+
     using Charterio.Data;
     using Charterio.Data.Models;
     using Charterio.Services.Data.Flight;
@@ -292,7 +293,7 @@
             await service.MarkTicketAsPaid(1, "transactionId", 150);
             var stringSecondResult = await service.MarkTicketAsPaid(1, "SecondTransactionId", 150);
 
-            Assert.Equal("OK", stringSecondResult);            
+            Assert.Equal("OK", stringSecondResult);
         }
     }
 }

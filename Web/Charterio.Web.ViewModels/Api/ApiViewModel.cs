@@ -1,6 +1,5 @@
 ﻿namespace Charterio.Web.ViewModels.Api
 {
-
     public class ApiViewModel
     {
         public int Id { get; set; }

@@ -108,7 +108,6 @@
             dbContext.UserQuestions.Add(new UserQuestion { Id = 11, Question = "Q1", UserName = "Name", UserPhone = "17", UserEmail = "Valid@email.com" });
             dbContext.UserQuestions.Add(new UserQuestion { Id = 12, Question = "Q1", UserName = "Name", UserPhone = "17", UserEmail = "Valid@email.com" });
 
-
             dbContext.SaveChanges();
 
             // Act

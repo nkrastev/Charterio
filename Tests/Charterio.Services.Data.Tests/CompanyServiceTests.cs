@@ -57,8 +57,8 @@
             var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("GetByIdReturnsCorrectData").Options;
             var dbContext = new ApplicationDbContext(options);
             var service = new CompanyService(dbContext);
-            service.Add(new Web.ViewModels.Administration.Company.CompanyAddViewModel{ Name = "First name", });
-            service.Add(new Web.ViewModels.Administration.Company.CompanyAddViewModel{ Name = "Second name", });
+            service.Add(new Web.ViewModels.Administration.Company.CompanyAddViewModel { Name = "First name", });
+            service.Add(new Web.ViewModels.Administration.Company.CompanyAddViewModel { Name = "Second name", });
 
             Assert.Equal("Second name", service.GetById(2).Name);
         }

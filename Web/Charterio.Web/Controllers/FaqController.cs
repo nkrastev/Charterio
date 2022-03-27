@@ -16,14 +16,26 @@
 
         public IActionResult Index(int pageNum = 1)
         {
+            var data = this.GetDataByPage(pageNum);
+
+            // If pageNum if out of range, get data for first one
+            if (data.PagesCount < pageNum)
+            {
+                data = this.GetDataByPage(1);
+            }
+
+            return this.View(data);
+        }
+
+        private FaqListViewModel GetDataByPage(int pageNum)
+        {
             var data = new FaqListViewModel()
             {
                 PageNumber = pageNum,
                 FaqsList = this.faqService.GetAllFaq(pageNum),
                 FaqsCount = this.faqService.GetCount(),
             };
-
-            return this.View(data);
+            return data;
         }
     }
 }
