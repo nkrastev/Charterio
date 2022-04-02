@@ -128,14 +128,7 @@
 
         public bool IsTicketIdValid(int ticketId)
         {
-            if (!this.db.Tickets.Where(x => x.Id == ticketId).Any())
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return this.db.Tickets.Where(x => x.Id == ticketId).Any();
         }
 
         public void MarkTicketAsCancelled(int ticketId)

@@ -44,6 +44,7 @@
                 Id = x.Id,
                 Model = x.Model,
             }).FirstOrDefault();
+
             if (plane != null)
             {
                 return plane;
