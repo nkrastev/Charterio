@@ -1,5 +1,5 @@
 # Ticket Management System For Charter Flights
-Live Demo can be checked at https://charterio.com
+Live Demo can be checked at https://charterio.com (Database is automatically rolled back every 12 hours)
 
 ## Overview
 Charterio is a ready to use application for ticket management for charter flights which is easy to use and has a simple user-friendly interface. Programming languages, technologies, libraries and frameworks: C#, ASP.NET Core, Entity Framework Core, JS, Bootstrap, jQuery. The app has integration with: Stripe and Braintree payment gateways, SendGrid and MailChimp for mail support and list management, UptimeRobot for monitoring of the uptime. Google Analytics and Google Maps integrated in the UI. Very simple Web Api with information about the available flights, dates and prices can be found at: domain/api/available-flights. Live demo is running on Windows Server 2022 Standard with MSSQL 2019. The application does not require registration for checking the prices of the tickets but simple one is needed in order to purchase them.
