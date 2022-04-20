@@ -22757,3 +22757,9 @@ th {
     padding-right: 5px;
     padding-left: 5px;
 }
+.notification{
+    text-align:center;
+    line-height:2em;
+    background-color:#e25a5a;
+    color:#ffffff;
+}
