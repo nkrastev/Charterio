@@ -1,7 +1,7 @@
 ﻿namespace Charterio.Web
 {
     using System.Reflection;
-
+    using AspNetCoreRateLimit;
     using Charterio.Data;
     using Charterio.Data.Common;
     using Charterio.Data.Common.Repositories;
@@ -51,6 +51,17 @@
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddOptions();
+            services.AddMemoryCache();
+
+            // load general configuration from appsettings.json
+            services.Configure<ClientRateLimitOptions>(this.configuration.GetSection("ClientRateLimiting"));
+
+            // load client rules from appsettings.json
+            services.Configure<ClientRateLimitPolicies>(this.configuration.GetSection("ClientRateLimitPolicies"));
+
+            services.AddInMemoryRateLimiting();
+
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(this.configuration.GetConnectionString("DefaultConnection")));
 
@@ -75,6 +86,8 @@
 
             services.AddSingleton(this.configuration);
             services.AddSingleton<IHtmlSanitizer, HtmlSanitizer>();
+
+            services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
             // Data repositories
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
@@ -146,6 +159,8 @@
                     await next();
                 }
             });
+
+            app.UseClientRateLimiting();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
