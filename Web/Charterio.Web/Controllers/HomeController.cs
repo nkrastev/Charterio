@@ -33,7 +33,7 @@
                 homeViewModel.AirportsForDropDown.Add(new ViewModels.Airport.AirportViewModel { IataCode = airportItem.IataCode, Name = airportItem.Name });
             }
 
-            this.ViewBag.Uptime = this.uptimeRobotService.GetRatio();
+            this.ViewBag.Uptime = this.uptimeRobotService.GetRatioAsync();
 
             return this.View(homeViewModel);
         }

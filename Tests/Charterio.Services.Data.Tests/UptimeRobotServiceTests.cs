@@ -25,7 +25,7 @@
 
             var service = new UptimeRobotService(dbContext, configuration);
 
-            Assert.IsType<string>(service.GetRatio());
+            Assert.IsType<string>(service.GetRatioAsync());
         }
 
         [Fact]
@@ -40,7 +40,7 @@
                 .Build();
 
             var service = new UptimeRobotService(dbContext, configuration);
-            service.GetRatio();
+            service.GetRatioAsync();
 
             var countAfter = dbContext.UptimeRobots.ToList().Count();
             Assert.Equal(1, countAfter);
@@ -58,11 +58,11 @@
                 .Build();
 
             var service = new UptimeRobotService(dbContext, configuration);
-            service.GetRatio();
+            service.GetRatioAsync();
 
             Assert.Single(dbContext.UptimeRobots.ToList());
 
-            service.GetRatio();
+            service.GetRatioAsync();
             Assert.Single(dbContext.UptimeRobots.ToList());
         }
 
@@ -78,14 +78,14 @@
                 .Build();
 
             var service = new UptimeRobotService(dbContext, configuration);
-            service.GetRatio();
+            service.GetRatioAsync();
 
             Assert.Single(dbContext.UptimeRobots.ToList());
 
             // First entry is inserted. Set created on to yesterday and run service again
             var ratio = dbContext.UptimeRobots.FirstOrDefault();
             ratio.CreatedOn = DateTime.Now.AddDays(-1);
-            service.GetRatio();
+            service.GetRatioAsync();
             Assert.Equal(2, dbContext.UptimeRobots.ToList().Count);
         }
     }

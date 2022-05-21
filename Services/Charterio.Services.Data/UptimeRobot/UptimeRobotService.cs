@@ -1,7 +1,10 @@
 ﻿namespace Charterio.Services.Data.UptimeRobot
 {
+    using System;
+    using System.Collections.Generic;
     using System.Linq;
-
+    using System.Net.Http;
+    using System.Threading.Tasks;
     using Charterio.Data;
     using Charterio.Global;
     using Microsoft.Extensions.Configuration;
@@ -21,14 +24,14 @@
 
         private string ApiKey => this.configuration["UptimeApiKey"];
 
-        public string GetRatio()
+        public string GetRatioAsync()
         {
             string result = GlobalConstants.Uptime100Percent;
 
             // empty table
             if (!this.db.UptimeRobots.Any())
             {
-                result = GetRatioFromApi(this.ApiKey);
+                result = GetRatioFromApiAsync(this.ApiKey);
                 this.db.UptimeRobots.Add(new Charterio.Data.Models.UptimeRobot
                 {
                     Ratio = result,
@@ -44,7 +47,7 @@
                 if (lastEntry.CreatedOn.AddHours(2) < System.DateTime.UtcNow)
                 {
                     // the last entry is older than 2 hours, generate new
-                    result = GetRatioFromApi(this.ApiKey);
+                    result = GetRatioFromApiAsync(this.ApiKey);
                     this.db.UptimeRobots.Add(new Charterio.Data.Models.UptimeRobot
                     {
                         Ratio = result,
@@ -60,21 +63,28 @@
             return result;
         }
 
-        private static string GetRatioFromApi(string apiKey)
+        private static string GetRatioFromApiAsync(string apiKey)
         {
             string result;
 
             try
             {
-                var client = new RestClient("https://api.uptimerobot.com/v2/getMonitors");
-                var request = new RestRequest(Method.POST);
-                request.AddHeader("cache-control", "no-cache");
-                request.AddHeader("content-type", "application/x-www-form-urlencoded");
-                request.AddParameter("application/x-www-form-urlencoded", $"api_key={apiKey}&format=json&all_time_uptime_ratio=1", ParameterType.RequestBody);
+                var client = new HttpClient();
+                var values = new Dictionary<string, string>
+                  {
+                      { "cache-control", "no-cache" },
+                      { "content-type", "application/x-www-form-urlencoded" },
+                      { "api_key", apiKey },
+                      { "all_time_uptime_ratio", "1" },
+                  };
 
-                IRestResponse response = client.Execute(request);
+                var content = new FormUrlEncodedContent(values);
 
-                dynamic data = JObject.Parse(response.Content);
+                var response = client.PostAsync("https://api.uptimerobot.com/v2/getMonitors", content).Result;
+
+                var responseString = response.Content.ReadAsStringAsync().Result;
+                dynamic data = JObject.Parse(responseString);
+
                 result = data.monitors[0].all_time_uptime_ratio;
             }
             catch (System.Exception)
