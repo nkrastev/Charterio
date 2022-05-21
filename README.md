@@ -14,7 +14,7 @@ Charterio is a ready to use application for ticket management for charter flight
 
 **Administrator:** u: administrator@charterio.com p: 00000000
 
-**Api** https://charterio.com/api/available-flights
+**Api** https://charterio.com/api/available-flights (Rate limit: 2 per 10 seconds)
 
 ## Screenshots
 <p align="center">
