@@ -1,0 +1,13 @@
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\bin\Debug\net6.0\Charterio.Web.Infrastructure.deps.json
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\bin\Debug\net6.0\Charterio.Web.Infrastructure.dll
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\bin\Debug\net6.0\Charterio.Web.Infrastructure.pdb
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\obj\Debug\net6.0\Charterio.Web.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\obj\Debug\net6.0\Charterio.Web.Infrastructure.AssemblyInfoInputs.cache
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\obj\Debug\net6.0\Charterio.Web.Infrastructure.AssemblyInfo.cs
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\obj\Debug\net6.0\Charterio.Web.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\obj\Debug\net6.0\Charterio.Web.Infrastructure.sourcelink.json
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\obj\Debug\net6.0\Charterio.Web.Infrastructure.dll
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\obj\Debug\net6.0\refint\Charterio.Web.Infrastructure.dll
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\obj\Debug\net6.0\Charterio.Web.Infrastructure.pdb
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\obj\Debug\net6.0\ref\Charterio.Web.Infrastructure.dll
+D:\Git2023\Charterio\Web\Charterio.Web.Infrastructure\obj\Debug\net6.0\Charterio.Web.Infrastructure.csproj.AssemblyReference.cache

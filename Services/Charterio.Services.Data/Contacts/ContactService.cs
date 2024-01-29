@@ -5,7 +5,7 @@
     using Charterio.Data;
     using Charterio.Data.Models;
     using Charterio.Web.ViewModels.Contacts;
-    using Ganss.XSS;
+    using Ganss.Xss;
 
     public class ContactService : IContactService
     {

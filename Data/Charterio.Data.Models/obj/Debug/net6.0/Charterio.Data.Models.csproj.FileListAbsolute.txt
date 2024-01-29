@@ -1,0 +1,16 @@
+D:\Git2023\Charterio\Data\Charterio.Data.Models\bin\Debug\net6.0\Charterio.Data.Models.deps.json
+D:\Git2023\Charterio\Data\Charterio.Data.Models\bin\Debug\net6.0\Charterio.Data.Models.dll
+D:\Git2023\Charterio\Data\Charterio.Data.Models\bin\Debug\net6.0\Charterio.Data.Models.pdb
+D:\Git2023\Charterio\Data\Charterio.Data.Models\bin\Debug\net6.0\Charterio.Data.Common.dll
+D:\Git2023\Charterio\Data\Charterio.Data.Models\bin\Debug\net6.0\Charterio.Data.Common.pdb
+D:\Git2023\Charterio\Data\Charterio.Data.Models\obj\Debug\net6.0\Charterio.Data.Models.csproj.AssemblyReference.cache
+D:\Git2023\Charterio\Data\Charterio.Data.Models\obj\Debug\net6.0\Charterio.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git2023\Charterio\Data\Charterio.Data.Models\obj\Debug\net6.0\Charterio.Data.Models.AssemblyInfoInputs.cache
+D:\Git2023\Charterio\Data\Charterio.Data.Models\obj\Debug\net6.0\Charterio.Data.Models.AssemblyInfo.cs
+D:\Git2023\Charterio\Data\Charterio.Data.Models\obj\Debug\net6.0\Charterio.Data.Models.csproj.CoreCompileInputs.cache
+D:\Git2023\Charterio\Data\Charterio.Data.Models\obj\Debug\net6.0\Charterio.Data.Models.sourcelink.json
+D:\Git2023\Charterio\Data\Charterio.Data.Models\obj\Debug\net6.0\Charterio.Data.Models.csproj.CopyComplete
+D:\Git2023\Charterio\Data\Charterio.Data.Models\obj\Debug\net6.0\Charterio.Data.Models.dll
+D:\Git2023\Charterio\Data\Charterio.Data.Models\obj\Debug\net6.0\refint\Charterio.Data.Models.dll
+D:\Git2023\Charterio\Data\Charterio.Data.Models\obj\Debug\net6.0\Charterio.Data.Models.pdb
+D:\Git2023\Charterio\Data\Charterio.Data.Models\obj\Debug\net6.0\ref\Charterio.Data.Models.dll

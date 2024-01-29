@@ -1,0 +1,14 @@
+{
+  "Charterio.Data.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common",
+  "Charterio.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Data\\Charterio.Data",
+  "Charterio.Data.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Models",
+  "Charterio.Global, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Global",
+  "Charterio.Services.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Data",
+  "Charterio.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Services\\Charterio.Services",
+  "Charterio.Services.Hosted, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Hosted",
+  "Charterio.Services.Mapping, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Mapping",
+  "Charterio.Services.Payment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Payment",
+  "Charterio.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Web\\Charterio.Web",
+  "Charterio.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Web\\Charterio.Web.Infrastructure",
+  "Charterio.Web.ViewModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Git2023\\Charterio\\Web\\Charterio.Web.ViewModels"
+}

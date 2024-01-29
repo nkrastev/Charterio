@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
 
     using Charterio.Data;
+    using Charterio.Data.Models;
     using Charterio.Global;
     using Charterio.Services.Data.SendGrid;
     using Charterio.Services.Data.Ticket;
@@ -31,11 +32,16 @@
                 {
                   new SessionLineItemOptions
                   {
-                    Name = GlobalConstants.FlightTicket,
-                    Quantity = 1,
-                    Amount = (long?)(this.ticketService.CalculateTicketPrice(ticketId) * 100),
-                    Currency = "EUR",
-                    Description = GlobalConstants.StripePaymentDescription,
+                      PriceData = new SessionLineItemPriceDataOptions
+                      {
+                        UnitAmount=(long?)(this.ticketService.CalculateTicketPrice(ticketId) * 100),
+                        Currency = "EUR",
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                            Name = GlobalConstants.FlightTicket,
+                        },
+                      },
+                      Quantity = 1,
                   },
                 },
                 Metadata = new Dictionary<string, string> { { "TicketId", ticketId.ToString() } },

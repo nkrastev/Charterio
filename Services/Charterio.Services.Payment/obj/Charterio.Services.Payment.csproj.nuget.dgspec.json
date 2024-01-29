@@ -1,0 +1,698 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Payment\\Charterio.Services.Payment.csproj": {}
+  },
+  "projects": {
+    "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj",
+        "projectName": "Charterio.Data.Common",
+        "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj",
+        "packagesPath": "C:\\Users\\Nikolay\\.nuget\\packages\\",
+        "outputPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nikolay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Braintree": {
+              "target": "Package",
+              "version": "[5.23.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Models\\Charterio.Data.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Models\\Charterio.Data.Models.csproj",
+        "projectName": "Charterio.Data.Models",
+        "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Models\\Charterio.Data.Models.csproj",
+        "packagesPath": "C:\\Users\\Nikolay\\.nuget\\packages\\",
+        "outputPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nikolay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Braintree": {
+              "target": "Package",
+              "version": "[5.23.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git2023\\Charterio\\Data\\Charterio.Data\\Charterio.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git2023\\Charterio\\Data\\Charterio.Data\\Charterio.Data.csproj",
+        "projectName": "Charterio.Data",
+        "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data\\Charterio.Data.csproj",
+        "packagesPath": "C:\\Users\\Nikolay\\.nuget\\packages\\",
+        "outputPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nikolay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj"
+              },
+              "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Models\\Charterio.Data.Models.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Models\\Charterio.Data.Models.csproj"
+              },
+              "D:\\Git2023\\Charterio\\Global\\Charterio.Global.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Global\\Charterio.Global.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Braintree": {
+              "target": "Package",
+              "version": "[5.23.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git2023\\Charterio\\Global\\Charterio.Global.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git2023\\Charterio\\Global\\Charterio.Global.csproj",
+        "projectName": "Charterio.Global",
+        "projectPath": "D:\\Git2023\\Charterio\\Global\\Charterio.Global.csproj",
+        "packagesPath": "C:\\Users\\Nikolay\\.nuget\\packages\\",
+        "outputPath": "D:\\Git2023\\Charterio\\Global\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nikolay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Braintree": {
+              "target": "Package",
+              "version": "[5.23.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Data\\Charterio.Services.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Data\\Charterio.Services.Data.csproj",
+        "projectName": "Charterio.Services.Data",
+        "projectPath": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Data\\Charterio.Services.Data.csproj",
+        "packagesPath": "C:\\Users\\Nikolay\\.nuget\\packages\\",
+        "outputPath": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nikolay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj"
+              },
+              "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Models\\Charterio.Data.Models.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Models\\Charterio.Data.Models.csproj"
+              },
+              "D:\\Git2023\\Charterio\\Data\\Charterio.Data\\Charterio.Data.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data\\Charterio.Data.csproj"
+              },
+              "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Mapping\\Charterio.Services.Mapping.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Mapping\\Charterio.Services.Mapping.csproj"
+              },
+              "D:\\Git2023\\Charterio\\Web\\Charterio.Web.ViewModels\\Charterio.Web.ViewModels.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Web\\Charterio.Web.ViewModels\\Charterio.Web.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Braintree": {
+              "target": "Package",
+              "version": "[5.23.0, )"
+            },
+            "HtmlSanitizer": {
+              "target": "Package",
+              "version": "[8.0.811, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Mapping\\Charterio.Services.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Mapping\\Charterio.Services.Mapping.csproj",
+        "projectName": "Charterio.Services.Mapping",
+        "projectPath": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Mapping\\Charterio.Services.Mapping.csproj",
+        "packagesPath": "C:\\Users\\Nikolay\\.nuget\\packages\\",
+        "outputPath": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Mapping\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nikolay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Braintree": {
+              "target": "Package",
+              "version": "[5.23.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Payment\\Charterio.Services.Payment.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Payment\\Charterio.Services.Payment.csproj",
+        "projectName": "Charterio.Services.Payment",
+        "projectPath": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Payment\\Charterio.Services.Payment.csproj",
+        "packagesPath": "C:\\Users\\Nikolay\\.nuget\\packages\\",
+        "outputPath": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Payment\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nikolay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Git2023\\Charterio\\Data\\Charterio.Data\\Charterio.Data.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data\\Charterio.Data.csproj"
+              },
+              "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Data\\Charterio.Services.Data.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Data\\Charterio.Services.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Braintree": {
+              "target": "Package",
+              "version": "[5.23.0, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[43.12.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Git2023\\Charterio\\Web\\Charterio.Web.ViewModels\\Charterio.Web.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Git2023\\Charterio\\Web\\Charterio.Web.ViewModels\\Charterio.Web.ViewModels.csproj",
+        "projectName": "Charterio.Web.ViewModels",
+        "projectPath": "D:\\Git2023\\Charterio\\Web\\Charterio.Web.ViewModels\\Charterio.Web.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\Nikolay\\.nuget\\packages\\",
+        "outputPath": "D:\\Git2023\\Charterio\\Web\\Charterio.Web.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nikolay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Common\\Charterio.Data.Common.csproj"
+              },
+              "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Models\\Charterio.Data.Models.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Data\\Charterio.Data.Models\\Charterio.Data.Models.csproj"
+              },
+              "D:\\Git2023\\Charterio\\Global\\Charterio.Global.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Global\\Charterio.Global.csproj"
+              },
+              "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Mapping\\Charterio.Services.Mapping.csproj": {
+                "projectPath": "D:\\Git2023\\Charterio\\Services\\Charterio.Services.Mapping\\Charterio.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Braintree": {
+              "target": "Package",
+              "version": "[5.23.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.AspNetCore.Mvc.RazorPages": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.312, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

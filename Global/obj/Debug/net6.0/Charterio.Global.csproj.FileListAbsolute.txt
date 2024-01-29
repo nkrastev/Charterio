@@ -1,0 +1,13 @@
+D:\Git2023\Charterio\Global\bin\Debug\net6.0\Charterio.Global.deps.json
+D:\Git2023\Charterio\Global\bin\Debug\net6.0\Charterio.Global.dll
+D:\Git2023\Charterio\Global\bin\Debug\net6.0\Charterio.Global.pdb
+D:\Git2023\Charterio\Global\obj\Debug\net6.0\Charterio.Global.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git2023\Charterio\Global\obj\Debug\net6.0\Charterio.Global.AssemblyInfoInputs.cache
+D:\Git2023\Charterio\Global\obj\Debug\net6.0\Charterio.Global.AssemblyInfo.cs
+D:\Git2023\Charterio\Global\obj\Debug\net6.0\Charterio.Global.csproj.CoreCompileInputs.cache
+D:\Git2023\Charterio\Global\obj\Debug\net6.0\Charterio.Global.sourcelink.json
+D:\Git2023\Charterio\Global\obj\Debug\net6.0\Charterio.Global.dll
+D:\Git2023\Charterio\Global\obj\Debug\net6.0\refint\Charterio.Global.dll
+D:\Git2023\Charterio\Global\obj\Debug\net6.0\Charterio.Global.pdb
+D:\Git2023\Charterio\Global\obj\Debug\net6.0\ref\Charterio.Global.dll
+D:\Git2023\Charterio\Global\obj\Debug\net6.0\Charterio.Global.csproj.AssemblyReference.cache

@@ -10,7 +10,7 @@
     using Charterio.Data.Models;
     using Charterio.Services.Data.Contacts;
     using Charterio.Web.ViewModels.Contacts;
-    using Ganss.XSS;
+    using Ganss.Xss;
     using Microsoft.EntityFrameworkCore;
     using Xunit;
 

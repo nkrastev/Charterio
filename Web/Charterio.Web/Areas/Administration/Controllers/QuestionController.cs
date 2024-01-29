@@ -3,7 +3,7 @@
     using Charterio.Global;
     using Charterio.Services.Data.Question;
     using Charterio.Web.ViewModels.Administration.Question;
-    using Ganss.XSS;
+    using Ganss.Xss;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 

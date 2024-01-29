@@ -1,0 +1,13 @@
+D:\Git2023\Charterio\Services\Charterio.Services\bin\Debug\net6.0\Charterio.Services.deps.json
+D:\Git2023\Charterio\Services\Charterio.Services\bin\Debug\net6.0\Charterio.Services.dll
+D:\Git2023\Charterio\Services\Charterio.Services\bin\Debug\net6.0\Charterio.Services.pdb
+D:\Git2023\Charterio\Services\Charterio.Services\obj\Debug\net6.0\Charterio.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git2023\Charterio\Services\Charterio.Services\obj\Debug\net6.0\Charterio.Services.AssemblyInfoInputs.cache
+D:\Git2023\Charterio\Services\Charterio.Services\obj\Debug\net6.0\Charterio.Services.AssemblyInfo.cs
+D:\Git2023\Charterio\Services\Charterio.Services\obj\Debug\net6.0\Charterio.Services.csproj.CoreCompileInputs.cache
+D:\Git2023\Charterio\Services\Charterio.Services\obj\Debug\net6.0\Charterio.Services.sourcelink.json
+D:\Git2023\Charterio\Services\Charterio.Services\obj\Debug\net6.0\Charterio.Services.dll
+D:\Git2023\Charterio\Services\Charterio.Services\obj\Debug\net6.0\refint\Charterio.Services.dll
+D:\Git2023\Charterio\Services\Charterio.Services\obj\Debug\net6.0\Charterio.Services.pdb
+D:\Git2023\Charterio\Services\Charterio.Services\obj\Debug\net6.0\ref\Charterio.Services.dll
+D:\Git2023\Charterio\Services\Charterio.Services\obj\Debug\net6.0\Charterio.Services.csproj.AssemblyReference.cache

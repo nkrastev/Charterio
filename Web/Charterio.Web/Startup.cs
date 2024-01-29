@@ -29,7 +29,7 @@
     using Charterio.Services.Payment.ViaBraintree;
     using Charterio.Services.Payment.ViaStripe;
     using Charterio.Web.ViewModels;
-    using Ganss.XSS;
+    using Ganss.Xss;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;

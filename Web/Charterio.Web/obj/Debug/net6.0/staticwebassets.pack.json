@@ -1,0 +1,597 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\css\\main.css",
+      "PackagePath": "staticwebassets\\assets\\css\\main.css"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\404cat.png",
+      "PackagePath": "staticwebassets\\assets\\img\\404cat.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\404error.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\404error.jpg"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\destinations.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\destinations.jpg"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\logo-braintree.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-braintree.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\logo-color-big.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-color-big.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\logo-color-sm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-color-sm.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\logo-dark.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-dark.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\logo-for-map.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-for-map.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\logo-icon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-icon.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\logo-mailchimp.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-mailchimp.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\logo-sendgrid.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-sendgrid.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\logo-stripe.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-stripe.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\logo-uptime.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-uptime.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\mainGit.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\mainGit.jpg"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\not404error.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\not404error.jpg"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\slider1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider1.jpg"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\img\\slider2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider2.jpg"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\js\\charterio.js",
+      "PackagePath": "staticwebassets\\assets\\js\\charterio.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\daterangepicker\\css\\daterangepicker.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\daterangepicker\\css\\daterangepicker.css"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\daterangepicker\\js\\daterangepicker.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\daterangepicker\\js\\daterangepicker.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\daterangepicker\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\daterangepicker\\js\\moment.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\jquery\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jquery\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\jquery\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jquery\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\jquery\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jquery\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\jquery\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jquery\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\jquery\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jquery\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\jquery\\jquery-3.4.1.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jquery\\jquery-3.4.1.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\jquery\\jquery-migrate-3.0.0.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jquery\\jquery-migrate-3.0.0.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\jquery\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jquery\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\jquery\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jquery\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\menuzord\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\menuzord\\css\\font-awesome.css"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\menuzord\\css\\menuzord-animations.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\menuzord\\css\\menuzord-animations.css"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\menuzord\\css\\menuzord.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\menuzord\\css\\menuzord.css"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\menuzord\\js\\jquery-1.11.1.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\menuzord\\js\\jquery-1.11.1.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\menuzord\\js\\menuzord.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\menuzord\\js\\menuzord.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\NOTICE.txt",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\NOTICE.txt"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\assets\\coloredbg.png",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\assets\\coloredbg.png"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\assets\\loader.gif",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\assets\\loader.gif"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\css\\closedhand.cur",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\css\\closedhand.cur"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\css\\openhand.cur",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\css\\openhand.cur"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\css\\settings.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\css\\settings.css"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\fonts\\revicons\\revicons.eot",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\fonts\\revicons\\revicons.eot"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\fonts\\revicons\\revicons.svg",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\fonts\\revicons\\revicons.svg"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\fonts\\revicons\\revicons.ttf",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\fonts\\revicons\\revicons.ttf"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\fonts\\revicons\\revicons.woff",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\fonts\\revicons\\revicons.woff"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.actions.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.actions.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.carousel.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.carousel.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.kenburn.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.kenburn.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.layeranimation.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.layeranimation.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.migration.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.migration.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.navigation.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.navigation.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.parallax.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.parallax.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.slideanims.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.slideanims.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.video.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\extensions\\revolution.extension.video.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\jquery.revslider-star-test.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\jquery.revslider-star-test.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\jquery.revslider.embed.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\jquery.revslider.embed.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\jquery.themepunch.enablelog.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\jquery.themepunch.enablelog.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\jquery.themepunch.revolution.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\jquery.themepunch.revolution.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\js\\jquery.themepunch.tools.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\js\\jquery.themepunch.tools.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\json_slider.html",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\json_slider.html"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\revolution\\slider.html",
+      "PackagePath": "staticwebassets\\assets\\plugins\\revolution\\slider.html"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\css\\select2.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\css\\select2.css"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\css\\select2.min.css"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\af.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\af.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\ar.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\ar.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\az.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\az.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\bg.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\bg.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\bs.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\bs.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\ca.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\ca.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\cs.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\cs.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\da.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\da.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\de.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\de.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\dsb.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\dsb.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\el.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\el.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\en.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\en.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\es.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\es.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\et.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\et.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\eu.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\eu.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\fa.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\fa.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\fi.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\fi.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\fr.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\fr.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\gl.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\gl.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\he.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\he.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\hi.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\hi.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\hr.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\hr.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\hsb.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\hsb.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\hu.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\hu.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\hy.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\hy.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\id.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\id.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\is.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\is.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\it.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\it.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\ja.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\ja.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\km.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\km.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\ko.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\ko.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\lt.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\lt.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\lv.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\lv.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\mk.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\mk.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\ms.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\ms.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\nb.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\nb.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\nl.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\nl.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\pl.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\pl.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\ps.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\ps.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\pt-BR.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\pt-BR.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\pt.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\pt.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\ro.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\ro.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\ru.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\ru.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\sk.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\sk.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\sl.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\sl.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\sr-Cyrl.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\sr-Cyrl.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\sr.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\sr.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\sv.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\sv.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\th.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\th.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\tk.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\tk.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\tr.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\tr.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\uk.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\uk.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\vi.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\vi.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\zh-CN.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\zh-CN.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\i18n\\zh-TW.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\i18n\\zh-TW.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\select2.full.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\select2.full.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\select2.full.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\select2.full.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\select2.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\select2.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\select2\\js\\select2.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\select2.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\selectric\\jquery.selectric.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\selectric\\jquery.selectric.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\selectric\\jquery.selectric.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\selectric\\jquery.selectric.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\selectric\\selectric.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\selectric\\selectric.css"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\velocity\\velocity.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\velocity\\velocity.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\wow\\wow.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\wow\\wow.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\assets\\plugins\\wow\\wow.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\wow\\wow.min.js"
+    },
+    {
+      "Id": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Charterio.Web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Charterio.Web.props",
+      "PackagePath": "build\\Charterio.Web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Charterio.Web.props",
+      "PackagePath": "buildMultiTargeting\\Charterio.Web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Charterio.Web.props",
+      "PackagePath": "buildTransitive\\Charterio.Web.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
