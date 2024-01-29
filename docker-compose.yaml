@@ -1,0 +1,30 @@
+version: '1.0'
+
+services:
+    charterio_db:
+        container_name: charterio_db
+        image: mcr.microsoft.com/mssql/server        
+        volumes:
+            - sqlvolume:/var/opt/mssql
+        restart: always
+        environment:
+            ACCEPT_EULA: "Y"
+            MSSQL_SA_PASSWORD: "myStrongPassword12#"
+        expose:
+            - 1433            
+        networks:
+            - charterio_network
+    charterio_app:
+        container_name: charterio_app
+        build:
+            context: ./
+            dockerfile: Dockerfile     
+        ports:
+            - 81:80
+        restart: always        
+        networks:
+            - charterio_network
+volumes:
+    sqlvolume:    
+networks:
+    charterio_network:

@@ -28,6 +28,7 @@
     <PkgMessagePackAnalyzer Condition=" '$(PkgMessagePackAnalyzer)' == '' ">C:\Users\Nikolay\.nuget\packages\messagepackanalyzer\2.1.152</PkgMessagePackAnalyzer>
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\Nikolay\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgMicrosoft_CodeAnalysis_AnalyzerUtilities Condition=" '$(PkgMicrosoft_CodeAnalysis_AnalyzerUtilities)' == '' ">C:\Users\Nikolay\.nuget\packages\microsoft.codeanalysis.analyzerutilities\3.3.0</PkgMicrosoft_CodeAnalysis_AnalyzerUtilities>
+    <PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets Condition=" '$(PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets)' == '' ">C:\Users\Nikolay\.nuget\packages\microsoft.visualstudio.azure.containers.tools.targets\1.19.5</PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets>
     <PkgBuildBundlerMinifier Condition=" '$(PkgBuildBundlerMinifier)' == '' ">C:\Users\Nikolay\.nuget\packages\buildbundlerminifier\3.2.449</PkgBuildBundlerMinifier>
   </PropertyGroup>
 </Project>

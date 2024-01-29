@@ -53,6 +53,7 @@
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.2",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.5",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.5",
           "Stripe.net": "43.12.0",
           "StyleCop.Analyzers": "1.2.0-beta.312",
@@ -2058,6 +2059,7 @@
       },
       "Microsoft.NETCore.Platforms/1.1.1": {},
       "Microsoft.NETCore.Targets/1.1.3": {},
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.5": {},
       "Microsoft.VisualStudio.Debugger.Contracts/17.2.0": {
         "dependencies": {
           "MessagePack": "2.1.152",
@@ -6119,6 +6121,13 @@
       "sha512": "sha512-3Wrmi0kJDzClwAC+iBdUBpEKmEle8FQNsCs77fkiOIw/9oYA07bL1EZNX0kQ2OMN3xpwvl0vAtOCYY3ndDNlhQ==",
       "path": "microsoft.netcore.targets/1.1.3",
       "hashPath": "microsoft.netcore.targets.1.1.3.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Kaa1rBZdJFq5A0qgAcl6Bmk/UqLXTq9acEqxUlPEBA8oscmakLfkvuSXfG7Wa9t1/keaT85EuuDNgOo+Z9VYOQ==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.5",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Debugger.Contracts/17.2.0": {
       "type": "package",

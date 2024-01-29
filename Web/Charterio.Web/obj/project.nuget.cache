@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QZWwy+ItOTGNCaGsdl8KeM7wq1BHwruxziV9nUeGEwXkOmuyZ3adozwqxjMS6rua1c+cbG4/WF2QPxcMq08Mjg==",
+  "dgSpecHash": "OB3zVlYoZfbaULf7ofKmOKlr3hpZ3Gz5BptBSsyaCCMzcA2D1n7Tu4eXR7sF+KVcgo4XRuGoPCnlOEk85L3hJQ==",
   "success": true,
   "projectFilePath": "D:\\Git2023\\Charterio\\Web\\Charterio.Web\\Charterio.Web.csproj",
   "expectedPackageFiles": [
@@ -120,6 +120,7 @@
     "C:\\Users\\Nikolay\\.nuget\\packages\\microsoft.net.stringtools\\1.0.0\\microsoft.net.stringtools.1.0.0.nupkg.sha512",
     "C:\\Users\\Nikolay\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "C:\\Users\\Nikolay\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
+    "C:\\Users\\Nikolay\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
     "C:\\Users\\Nikolay\\.nuget\\packages\\microsoft.visualstudio.debugger.contracts\\17.2.0\\microsoft.visualstudio.debugger.contracts.17.2.0.nupkg.sha512",
     "C:\\Users\\Nikolay\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\6.0.5\\microsoft.visualstudio.web.codegeneration.6.0.5.nupkg.sha512",
     "C:\\Users\\Nikolay\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\6.0.5\\microsoft.visualstudio.web.codegeneration.core.6.0.5.nupkg.sha512",

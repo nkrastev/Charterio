@@ -9,311 +9,311 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Charterio.Web
 build_property.RootNamespace = Charterio.Web
-build_property.ProjectDir = D:\Git2023\Charterio\Web\Charterio.Web\
+build_property.ProjectDir = d:\Git2023\Charterio\Web\Charterio.Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = D:\Git2023\Charterio\Web\Charterio.Web
+build_property.MSBuildProjectDirectory = d:\Git2023\Charterio\Web\Charterio.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Git2023/Charterio/stylecop.json]
+[d:/Git2023/Charterio/stylecop.json]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Administration/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Administration/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcQWRtaW5pc3RyYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airplane/Add.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airplane/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcQWlycGxhbmVcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airplane/Edit.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airplane/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcQWlycGxhbmVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airplane/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airplane/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcQWlycGxhbmVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airport/Add.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airport/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcQWlycG9ydFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airport/Edit.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airport/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcQWlycG9ydFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airport/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Airport/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcQWlycG9ydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Company/Add.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Company/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcQ29tcGFueVxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Company/Edit.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Company/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcQ29tcGFueVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Company/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Company/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcQ29tcGFueVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Faq/Add.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Faq/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRmFxXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Faq/Edit.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Faq/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRmFxXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Faq/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Faq/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRmFxXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Flight/Add.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Flight/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRmxpZ2h0XEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Flight/Edit.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Flight/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRmxpZ2h0XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Flight/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Flight/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRmxpZ2h0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Offer/Add.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Offer/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcT2ZmZXJcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Offer/Edit.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Offer/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcT2ZmZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Offer/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Offer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcT2ZmZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Payment/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Payment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcUGF5bWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Question/Answer.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Question/Answer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcUXVlc3Rpb25cQW5zd2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Question/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Question/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcUXVlc3Rpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Shared/_AdminMenu.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Shared/_AdminMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcU2hhcmVkXF9BZG1pbk1lbnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Ticket/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/Ticket/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcVGlja2V0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/_ViewImports.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/_ViewStart.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Administration/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Login.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/_ProfileMenuPartitial.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/_ProfileMenuPartitial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1Byb2ZpbGVNZW51UGFydGl0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Register.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/_ViewImports.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/_ViewStart.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/ConfirmData.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/ConfirmData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDb25maXJtRGF0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/FailBraintree.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/FailBraintree.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xGYWlsQnJhaW50cmVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/FailStripe.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/FailStripe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xGYWlsU3RyaXBlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/SuccessBraintree.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/SuccessBraintree.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTdWNjZXNzQnJhaW50cmVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/SuccessStripe.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/SuccessStripe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTdWNjZXNzU3RyaXBlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/Ticket.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Booking/Ticket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xUaWNrZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Contacts/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Contacts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Contacts/ThankYou.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Contacts/ThankYou.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcVGhhbmtZb3UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Detail/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Detail/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Faq/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Faq/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFxXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Home/AccessDenied.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Home/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Home/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Home/PageNotFound.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Home/PageNotFound.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYWdlTm90Rm91bmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Home/Privacy.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Home/SomethingIsWrong.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Home/SomethingIsWrong.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTb21ldGhpbmdJc1dyb25nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Home/Tos.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Home/Tos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Schedule/Index.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Schedule/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Search/SearchFlight.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Search/SearchFlight.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXFNlYXJjaEZsaWdodC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/Error.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_Cheapest3Flights.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_Cheapest3Flights.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DaGVhcGVzdDNGbGlnaHRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_CookieConsentPartial.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_CookieConsentPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db29raWVDb25zZW50UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_HomeBrief.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_HomeBrief.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ib21lQnJpZWYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_HomeSliderPartitial.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_HomeSliderPartitial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ib21lU2xpZGVyUGFydGl0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_Layout.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_LoginPartial.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_MailChimp.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_MailChimp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWlsQ2hpbXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_ReviewsPartitial.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/Shared/_ReviewsPartitial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9SZXZpZXdzUGFydGl0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/_ViewImports.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Git2023/Charterio/Web/Charterio.Web/Views/_ViewStart.cshtml]
+[d:/Git2023/Charterio/Web/Charterio.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

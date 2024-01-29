@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Charterio.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+729d6f332ef7f9de358f93a8b21dfbc3930a74ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8745418a1bdeeafdc2781826e1792cc4ce2c4869")]
 [assembly: System.Reflection.AssemblyProductAttribute("Charterio.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Charterio.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

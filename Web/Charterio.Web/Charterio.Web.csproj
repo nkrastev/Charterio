@@ -9,6 +9,8 @@
   <PropertyGroup>
     <CodeAnalysisRuleSet>..\..\Rules.ruleset</CodeAnalysisRuleSet>
 	  <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+	  <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	  <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json" />
@@ -24,6 +26,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.5" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />

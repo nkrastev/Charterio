@@ -603,3 +603,4 @@ D:\Git2023\Charterio\Web\Charterio.Web\obj\Debug\net6.0\refint\Charterio.Web.dll
 D:\Git2023\Charterio\Web\Charterio.Web\obj\Debug\net6.0\Charterio.Web.pdb
 D:\Git2023\Charterio\Web\Charterio.Web\obj\Debug\net6.0\Charterio.Web.genruntimeconfig.cache
 D:\Git2023\Charterio\Web\Charterio.Web\obj\Debug\net6.0\ref\Charterio.Web.dll
+D:\Git2023\Charterio\Web\Charterio.Web\obj\Debug\net6.0\Charterio.Web.MvcApplicationPartsAssemblyInfo.cs
